@@ -1,0 +1,31 @@
+site_name: Andy's Notes
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - search.highlight
+  code_style: monokai  # Monokai for consistent code block styling
+  palette:
+    scheme: slate  # Default dark mode theme
+    toggle:
+      icon: material/weather-sunny  # Icon for switching modes
+      name: Switch theme
+
+markdown_extensions:
+  - codehilite:
+      guess_lang: false  # Prevent guessing language for better accuracy
+      use_pygments: true
+  - pymdownx.superfences  # Enhanced support for fenced code blocks
+  - pymdownx.highlight  # Advanced syntax highlighting
+
+nav:
+  - Home: index.md
+  - Digital Systems Design: 
+    - Overview: DSD/index.md
+    - Verilog: DSD/verilog.md
+    - Logic Design: DSD/logicDesign.md
+    - Simulations: DSD/simulations.md
+    - Examples: DSD/applications.md
+
+
