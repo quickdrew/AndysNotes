@@ -1,0 +1,13 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/1185818338_4103831958_223132457.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_3004386748_1362290860.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_1141282389_3616884650.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_631386583_2944522959.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_1532358866_2528095863.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_1141282389_203650386.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_3988512069_2342646043.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_1141282389_1589900362.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_2163363002_2115135195.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_1141282389_2264628753.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_1237225461_3010424572.mp4'
+file 'file:C:/Users/quick/Code/AndysNotes/Manim/media/videos/scene/480p15/partial_movie_files/ContinuousTimeSignal/624642324_1704852926_526599538.mp4'

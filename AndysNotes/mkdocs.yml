@@ -27,5 +27,12 @@ nav:
     - Logic Design: DSD/logicDesign.md
     - Simulations: DSD/simulations.md
     - Examples: DSD/applications.md
+  - Signals And Systems:
+    - Overview: SignalsSystems/pages/index.md
+    - Continuous-Time Signals and Systems: SignalsSystems/pages/contTimeBasics.md
+  - Automotive:
+    - Overview: Automotive/pages/index.md
+    - Electrical/Electronic Architecture: Automotive/pages/architecture.md
+
 
 
