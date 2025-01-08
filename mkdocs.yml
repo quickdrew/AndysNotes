@@ -40,6 +40,9 @@ nav:
     - Logic Design: DSD/logicDesign.md
     - Simulations: DSD/simulations.md
     - Examples: DSD/applications.md
+  - Physics:
+    - Overview: Physics/pages/index.md
+    - Quanta and Fields: Physics/pages/quanta.md
   - Signals And Systems:
     - Overview: SignalsSystems/pages/index.md
     - Continuous-Time Signals and Systems: SignalsSystems/pages/contTimeBasics.md

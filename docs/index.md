@@ -6,5 +6,6 @@ Welcome to the **Andy's Notes**! This site is a collection of notes, insights, a
 - [Automotive](Automotive/pages/index.md)
 - [Cyber Security](Cybersecurity/pages/index.md)
 - [Digital Systems Design](DSD/index.md)
+- [Physics](Physics/pages/index.md)
 - [Signals and Systems](SignalsSystems/index.md)
 
