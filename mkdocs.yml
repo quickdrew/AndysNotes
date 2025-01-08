@@ -1,0 +1,53 @@
+site_name: Andy's Notes
+
+theme:
+  name: material
+  features:
+    - toc.integrate  # Integrates the Table of Contents into the left navigation bar
+    - navigation.tabs  # Adds tabs at the top for better navigation
+    - search.suggest  # Auto-suggest search queries
+    - search.highlight  # Highlights search terms in results
+  palette:
+    primary: "teal"
+    accent: "orange"
+    scheme: slate  # Dark mode by default
+  font:
+    text: "Roboto"
+    code: "Fira Code"
+
+markdown_extensions:
+  - toc:
+      permalink: true  # Adds permalinks to headings
+      baselevel: 2  # Start ToC from H2 headings
+  - codehilite:
+      guess_lang: false  # Prevent guessing the language
+      use_pygments: true
+  - pymdownx.superfences  # Support for advanced fenced code blocks
+  - admonition  # Support for notes, warnings, and tips
+  - pymdownx.emoji  # Adds emoji support
+
+nav:
+  - Home: index.md
+  - Automotive:
+    - Overview: Automotive/pages/index.md
+    - Electrical/Electronic Architecture: Automotive/pages/architecture.md
+    - External Sensors and Signals: Automotive/pages/sensorsSignals.md
+  - Cyber Security:
+    - Overview: Cybersecurity/pages/index.md
+  - Digital Systems Design: 
+    - Overview: DSD/index.md
+    - Verilog: DSD/verilog.md
+    - Logic Design: DSD/logicDesign.md
+    - Simulations: DSD/simulations.md
+    - Examples: DSD/applications.md
+  - Signals And Systems:
+    - Overview: SignalsSystems/pages/index.md
+    - Continuous-Time Signals and Systems: SignalsSystems/pages/contTimeBasics.md
+
+
+extra_css:
+  - overrides/custom.css  # Custom styles for headings, text, and dark mode
+
+extra:
+  footer:
+    text: "© 2025 Andy's Notes. All rights reserved."
