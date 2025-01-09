@@ -79,7 +79,8 @@ The EPR paradox led to experiments testing **Bell's Theorem**, which showed that
 ### 4. **Decoherence: The Quantum-Classical Divide**
 Decoherence explains how a quantum system appears to transition into classical behavior due to interactions with its environment, including measurement apparatus and surroundings.
 
-#### Key Concepts:
+**Key Concepts:**
+
 - **Interaction with the Environment**: Decoherence occurs when a quantum system interacts with its environment, such as measurement devices, air molecules, or photons. These interactions cause the quantum system to become **entangled** with the environment, making the superpositions of quantum states effectively unobservable.
 - **Entanglement with the Measurement Apparatus**: In quantum mechanics, when a measurement is made, the quantum system becomes entangled with the measuring device. This means that the state of the system and the state of the apparatus are linked. The act of measurement doesn't just collapse the system's state but causes both the system and the apparatus to evolve into a combined state.
 - **Loss of Superposition**: As the quantum system entangles with the environment or measuring device, its superposition states (e.g., being in two places at once) effectively disappear. The system appears to collapse into one definite classical state as the environment "measures" it.
@@ -94,12 +95,52 @@ Decoherence explains how a quantum system appears to transition into classical b
 
 ---
 
+### 5. Foundations of Quantum Mechanics
 
-## **Takeaways**
-1. Entanglement highlights the non-local and probabilistic nature of quantum mechanics.
-2. Particle decay demonstrates quantum uncertainty, governed by exponential probability distributions.
-3. The EPR puzzle and Bell’s Theorem provide key insights into the foundations of quantum mechanics.
-4. Measurement collapses the wavefunction, making entanglement a key challenge for interpretations of quantum theory.
+The foundations of quantum mechanics explore principles, interpretations, and unresolved questions at the core of the theory. Below are common theories:
+
+1. **Copenhagen Interpretation**  
+   Quantum systems are described by a wavefunction that collapses upon measurement. Measurement defines reality, but the collapse mechanism remains unexplained.
+
+2. **Many-Worlds Interpretation**  
+   All possible outcomes occur in separate, branching universes. There is no wavefunction collapse, and the universe evolves deterministically.
+
+3. **Pilot-Wave Theory (Bohmian Mechanics)**  
+   Particles follow definite trajectories guided by a "pilot wave." This restores determinism but introduces non-local interactions.
+
+4. **Quantum Bayesianism (QBism)**  
+   The wavefunction represents an observer’s subjective knowledge. Measurement outcomes are probabilistic, avoiding objective collapse.
+
+5. **Relational Quantum Mechanics**  
+   Properties of a quantum system exist only relative to an observer or another system. Reality is observer-dependent, avoiding universal collapse.
+
+6. **Objective Collapse Theories**  
+   Wavefunction collapse is a real, physical process independent of observation. Examples include GRW theory, which aims to bridge quantum and classical behavior.
+
+Each interpretation addresses the role of measurement, the nature of reality, and the origins of randomness, highlighting the ongoing debate in quantum mechanics.
+
+## Takeaways
+
+1. **Wavefunctions and Probabilities**  
+   Quantum states are represented by wavefunctions, with probabilities derived from their squared amplitudes. Particle decay exemplifies how these probabilities evolve over time.
+
+2. **Momentum Conservation in Quantum Systems**  
+   Momentum conservation in particle decay allows properties of unobserved decay products to be inferred from observed ones, a crucial principle in particle physics.
+
+3. **Entanglement and Non-Locality**  
+   Entangled particles share a combined quantum state, meaning the measurement of one instantly determines the state of the other, regardless of distance. This underpins phenomena like "spooky action at a distance."
+
+4. **The EPR Puzzle and Bell’s Theorem**  
+   The EPR paradox challenges quantum mechanics with concepts like local realism, but Bell’s Theorem confirms quantum mechanics’ intrinsic non-locality, ruling out local hidden variable theories.
+
+5. **Decoherence and the Quantum-Classical Divide**  
+   Decoherence explains how quantum systems lose their coherence through interaction with the environment, transitioning to classical-like behavior without requiring wavefunction collapse.
+
+6. **Interpretations of Quantum Mechanics**  
+   Competing interpretations—such as Copenhagen, Many-Worlds, and Pilot-Wave—offer differing perspectives on measurement, reality, and randomness, reflecting the unresolved nature of quantum foundations.
+
+
+
 
 # Resources
 1. [Quanta and Fields by Sean Carroll](https://www.amazon.com/Quanta-Fields-Biggest-Ideas-Universe/dp/0593186605)

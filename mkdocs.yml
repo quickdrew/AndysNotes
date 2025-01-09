@@ -45,6 +45,7 @@ nav:
     - Wave Function: Physics/pages/waveFunction.md
     - Measurement: Physics/pages/measurement.md
     - Entanglement: Physics/pages/entanglement.md
+    - Fields: Physics/pages/fields.md
   - Signals And Systems:
     - Overview: SignalsSystems/pages/index.md
     - Continuous-Time Signals and Systems: SignalsSystems/pages/contTimeBasics.md
