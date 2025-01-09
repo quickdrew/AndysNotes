@@ -24,6 +24,7 @@ Key points about the absolute value:
   $$
   P(a \leq x \leq b) = \int_a^b |ψ(x, t)|^2 dx
   $$
+  
 - **Normalization**: The total probability of finding the particle in all space must be 1. This imposes the normalization condition:
   $$
   \int_{-\infty}^{\infty} |ψ(x, t)|^2 dx = 1
