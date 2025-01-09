@@ -143,6 +143,6 @@
 
 ---
 <div style="display: flex; justify-content: space-between;">
-  <a href="waveFunction.md"><- Wave Function</a>
-  <a href="entanglement.md">Entanglement -></a>
+  <a href="../waveFunction"><- Wave Function</a>
+  <a href="../entanglement">Entanglement -></a>
 </div>

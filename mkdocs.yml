@@ -42,14 +42,19 @@ nav:
     - Examples: DSD/applications.md
   - Physics:
     - Overview: Physics/pages/index.md
-    - Quanta and Fields: Physics/pages/quanta.md
+    - Wave Function: Physics/pages/waveFunction.md
+    - Measurement: Physics/pages/measurement.md
+    - Entanglement: Physics/pages/entanglement.md
   - Signals And Systems:
     - Overview: SignalsSystems/pages/index.md
     - Continuous-Time Signals and Systems: SignalsSystems/pages/contTimeBasics.md
 
 
 extra_css:
-  - overrides/custom.css  # Custom styles for headings, text, and dark mode
+  - overrides/custom.css  # Custom CSS file in 'overrides' folder
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
 
 extra:
   footer:

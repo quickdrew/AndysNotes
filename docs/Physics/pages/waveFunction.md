@@ -25,11 +25,9 @@ Key points about the absolute value:
   P(a \leq x \leq b) = \int_a^b |ψ(x, t)|^2 dx
   $$  
 - **Normalization**: The total probability of finding the particle in all space must be 1. This imposes the normalization condition:
-  
   $$
   \int_{-\infty}^{\infty} |ψ(x, t)|^2 dx = 1
   $$
-  
 - **Interpretation**: While the wave function itself is a complex number, only its absolute value squared has a physical interpretation.
 
 ### The Hamiltonian
@@ -239,6 +237,6 @@ Wave-particle duality is the principle that particles and waves exhibit both wav
 
 ---
 <div style="display: flex; justify-content: space-between;">
-  <a href="index.md"><- Overview</a>
-  <a href="measurement.md">Measurement -></a>
+  <a href="../index"><- Overview</a>
+  <a href="../measurement">Measurement -></a>
 </div>

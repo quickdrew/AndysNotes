@@ -1,53 +1,10 @@
-/* Ensure custom heading colors override default styles */
-.md-typeset h1 {
-  color: #80cbc4 !important; /* Teal for H1 */
-}
-
-.md-typeset h2 {
-  color: #4caf50 !important; /* Green for H2 */
-}
-
-.md-typeset h3 {
-  color: #ff9800 !important; /* Orange for H3 */
-}
-
-/* Ensure default text color is applied across the site */
-body, .md-typeset {
-  color: #e0e0e0 !important; /* Light grey text for better contrast */
-}
-
-/* Dark mode background */
+/* Set dark background and light text */
 body {
-  background-color: #121212 !important; /* Dark background */
+  background-color: #121212 !important;  /* Dark background */
+  color: #e0e0e0 !important;             /* Light text */
 }
 
-/* Sidebar background */
-.md-sidebar {
-  background-color: #1e1e1e !important; /* Slightly lighter dark for contrast */
-}
-
-/* Navigation and link styling */
-.md-nav__link, a {
-  color: #80cbc4 !important; /* Teal links */
-}
-
-.md-nav__link:hover, a:hover {
-  color: #ff9800 !important; /* Orange links on hover */
-  text-decoration: underline;
-}
-
-/* Search bar customization */
-.md-search__input {
-  background-color: #2b2b2b !important; /* Dark input box */
-  color: #e0e0e0 !important; /* Light text */
-  border: 1px solid #4caf50 !important; /* Green border */
-}
-
-/* Footer styling */
-.md-footer {
-  background-color: #1e1e1e !important; /* Footer background */
-  color: #e0e0e0 !important; /* Footer text */
-  text-align: center;
-  font-size: 14px;
-  padding: 10px 0;
+/* Ensure page titles and headings are styled */
+h1, h2, h3 {
+  color: #80cbc4 !important;  /* Teal for H1, H2, H3 */
 }
