@@ -1,11 +1,6 @@
-# Introduction 
+# The Wave Function
 
-This is a collection of notes I've taken while reading [Quanta and Fields by Sean Carroll](https://www.amazon.com/Quanta-Fields-Biggest-Ideas-Universe/dp/0593186605), unless refrenced otherwise, assume all information (keep in mind his words are being interpreted by a layman) was derived from Sean Carroll.
-
-
-# Wave Function
-
-## Schrödinger's Equation and the Wave Function
+## The Equations
 
 ### Schrödinger’s Equation
 The Schrödinger equation is the cornerstone of quantum mechanics. It describes how the wave function of a quantum system evolves over time:
@@ -79,7 +74,7 @@ The form of the Hamiltonian determines the dynamics of the quantum system and go
 
 ### Atomic Models and Discrete Energies
 
-*The Atom and Subatomic Discoveries*
+**The Atom and Subatomic Discoveries**
 - **John Dalton (1803)**: Proposed that matter is composed of indivisible atoms.
 - **Dmitri Mendeleev (1869)**: Developed the periodic table, emphasizing the discrete properties of elements.
 - **J.J. Thomson (1897)**: Discovered the electron, introducing subatomic particles to atomic theory.
@@ -109,7 +104,7 @@ The form of the Hamiltonian determines the dynamics of the quantum system and go
 
 - **Werner Heisenberg (1927)**: Introduced the uncertainty principle, which states that certain pairs of physical properties, such as position and momentum, cannot be simultaneously measured with arbitrary precision.
 
-**Schrödinger’s Equation**
+**[Schrödinger’s Equation](#schrödingers-equation)**
 - **Erwin Schrödinger (1926)**: Developed the wave equation to describe quantum systems. The wave function $\psi(x, t)$ represents the quantum state of a particle and evolves according to:
   $$
   i \hbar \frac{\partial \psi}{\partial t} = \hat{H} \psi
@@ -238,3 +233,10 @@ Wave-particle duality is the principle that particles and waves exhibit both wav
 # Resources
 1. [LibreTexts Chemistry - Blackbody Radiation Cannot Be Explained Classically](https://chem.libretexts.org/Courses/Pacific_Union_College/Quantum_Chemistry/01:_The_Dawn_of_the_Quantum_Theory/1.01:_Blackbody_Radiation_Cannot_Be_Explained_Classically)
 2. [Quanta and Fields by Sean Carroll](https://www.amazon.com/Quanta-Fields-Biggest-Ideas-Universe/dp/0593186605)
+
+
+---
+<div style="display: flex; justify-content: space-between;">
+  <a href="index.md"><- Overview</a>
+  <a href="measurement.md">Measurement -></a>
+</div>
