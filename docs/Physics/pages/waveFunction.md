@@ -1,4 +1,4 @@
-## The Equations
+# Schrödinger equation
 ---
 The **Schrödinger equation** is the cornerstone of quantum mechanics. It describes how the wave function of a quantum system evolves over time:
 
@@ -11,6 +11,8 @@ $$
 - `ψ(x, t)` is the wave function, representing the quantum state of the system,
 - `Ĥ` is the Hamiltonian operator, representing the total energy of the system (kinetic + potential).
 ---
+
+# The Wave Function
 The **Wave Function**, `ψ(x, t)`, is a complex-valued function that encapsulates all the information about a quantum system. It serves as a mathematical representation of the particle's quantum state, containing information about properties such as position, momentum, and energy.
 
 The absolute value squared of the wave function, `|ψ(x, t)|^2`, is interpreted as the probability density of finding a particle at position `x` and time `t`. This interpretation was introduced by Max Born and is central to the probabilistic nature of quantum mechanics.
@@ -28,6 +30,7 @@ Key points about the absolute value:
 - **Interpretation**: While the wave function itself is a complex number, only its absolute value squared has a physical interpretation.
 
 ---
+# The Hamiltonian
 The **Hamiltonian** operator, `Ĥ`, defines the total energy of a quantum system and can take different forms depending on the system being studied. Some common examples include:
 
 1. **Free Particle**:
@@ -57,7 +60,7 @@ The **Hamiltonian** operator, `Ĥ`, defines the total energy of a quantum system
 The form of the Hamiltonian determines the dynamics of the quantum system and governs the evolution of the wave function over time.
 
 ---
-## A Brief History of the Development of the Wave Function
+# A Brief History of the Development of the Wave Function
 **Light as a Wave**
 
 - **Christiaan Huygens (1678)**: Proposed the wave theory of light, suggesting that light travels as waves, contrary to Isaac Newton's particle theory.
