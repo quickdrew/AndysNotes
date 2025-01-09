@@ -23,12 +23,13 @@ Key points about the absolute value:
 - **Probability Density**: `|ψ(x, t)|^2` represents the likelihood of locating a particle in a specific region of space. For example, in one dimension, the probability of finding the particle between positions `a` and `b` is given by:
   $$
   P(a \leq x \leq b) = \int_a^b |ψ(x, t)|^2 dx
-  $$
-  
+  $$  
 - **Normalization**: The total probability of finding the particle in all space must be 1. This imposes the normalization condition:
+  
   $$
   \int_{-\infty}^{\infty} |ψ(x, t)|^2 dx = 1
   $$
+  
 - **Interpretation**: While the wave function itself is a complex number, only its absolute value squared has a physical interpretation.
 
 ### The Hamiltonian
