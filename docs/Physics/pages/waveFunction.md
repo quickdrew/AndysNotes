@@ -2,7 +2,9 @@
 
 ### Schrödinger’s Equation
 The Schrödinger equation is the cornerstone of quantum mechanics. It describes how the wave function of a quantum system evolves over time:
-$$i \hbar \frac{\partial \psi}{\partial t} = \hat{H} \psi$$
+$$
+i \hbar \frac{\partial \psi}{\partial t} = \hat{H} \psi
+$$
 
 where:
 - `i` is the imaginary unit (√-1),

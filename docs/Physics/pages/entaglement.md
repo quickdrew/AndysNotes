@@ -7,9 +7,9 @@
 
 ### 1. **Particle Decay and Momentum**
 In quantum mechanics, particle decay is described by the wavefunction:
-$$
-|\psi(t)\rangle = \alpha(t) |\text{undecayed}\rangle + \beta(t) |\text{decayed}\rangle
-$$
+
+$$|\psi(t)\rangle = \alpha(t) |\text{undecayed}\rangle + \beta(t) |\text{decayed}\rangle$$
+
 Here, $\alpha(t)$ represents the amplitude for the particle to remain undecayed, and $\beta(t)$ represents the amplitude for the particle to decay. The normalization condition ensures:
 $$
 |\alpha(t)|^2 + |\beta(t)|^2 = 1
