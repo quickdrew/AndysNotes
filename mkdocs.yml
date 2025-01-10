@@ -3,7 +3,7 @@ site_name: Andy's Notes
 theme:
   name: material
   palette:
-    - scheme: default
+    - scheme: slate  
       primary: teal
       accent: orange
     - scheme: slate
