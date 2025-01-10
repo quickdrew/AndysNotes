@@ -41,8 +41,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -60,10 +60,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -84,7 +86,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Andy&#39;s Notes" class="md-header__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
@@ -114,7 +118,25 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -141,8 +163,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -167,124 +187,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../Automotive/pages/" class="md-tabs__link">
-          
-  
-  Automotive
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../Cybersecurity/pages/" class="md-tabs__link">
-          
-  
-  Cyber Security
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../DSD/" class="md-tabs__link">
-          
-  
-  Digital Systems Design
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
-          
-  
-  Physics
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../SignalsSystems/pages/" class="md-tabs__link">
-          
-  
-  Signals And Systems
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -298,12 +200,8 @@
                     
 
 
-  
 
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Andy&#39;s Notes" class="md-nav__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
@@ -344,9 +242,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -453,9 +348,6 @@
     
     
     
-      
-      
-    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -518,9 +410,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -671,21 +560,15 @@
     
     
     
-      
-        
-        
-      
-      
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -779,6 +662,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -807,6 +692,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -815,16 +702,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#entanglement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entanglement
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Entanglement">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#key-concepts" class="md-nav__link">
     <span class="md-ellipsis">
       Key Concepts
@@ -883,25 +760,11 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       Takeaways
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resources
     </span>
   </a>
   
@@ -952,9 +815,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1038,6 +898,101 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-particle-decay-and-momentum" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Particle Decay and Momentum
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-entanglement-one-state-many-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Entanglement: One State, Many Parts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-spooky-action-at-a-distance-and-the-epr-puzzle" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Spooky Action at a Distance and the EPR Puzzle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-decoherence-the-quantum-classical-divide" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Decoherence: The Quantum-Classical Divide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-foundations-of-quantum-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Foundations of Quantum Mechanics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -1046,13 +1001,11 @@
                   
 
 
-  <h1>Entanglement</h1>
-
-<h2 id="entanglement">Entanglement<a class="headerlink" href="#entanglement" title="Permanent link">&para;</a></h2>
+<h1 id="entanglement">Entanglement</h1>
 <p><em>From Sean Carroll's "Quantum and Fields"</em></p>
 <hr />
-<h3 id="key-concepts"><strong>Key Concepts</strong><a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h3>
-<h4 id="1-particle-decay-and-momentum">1. <strong>Particle Decay and Momentum</strong><a class="headerlink" href="#1-particle-decay-and-momentum" title="Permanent link">&para;</a></h4>
+<h2 id="key-concepts"><strong>Key Concepts</strong></h2>
+<h3 id="1-particle-decay-and-momentum">1. <strong>Particle Decay and Momentum</strong></h3>
 <p>In quantum mechanics, particle decay is described by the wavefunction:</p>
 <p>$$|\psi(t)\rangle = \alpha(t) |\text{undecayed}\rangle + \beta(t) |\text{decayed}\rangle$$</p>
 <p>Here, $\alpha(t)$ represents the amplitude for the particle to remain undecayed, and $\beta(t)$ represents the amplitude for the particle to decay. The normalization condition ensures:
@@ -1075,7 +1028,7 @@ $$
 $$
 If we know the position of the original boson before decay, we can measure the momentum of one of the decay products (e.g., the positron) and use momentum conservation to determine the momentum of the other particle, even without directly measuring it. This is useful in particle physics experiments, where some particles (like neutrinos) are hard to detect directly. By measuring other decay products, we can infer properties of the undetected particles.</p>
 <hr />
-<h4 id="2-entanglement-one-state-many-parts">2. <strong>Entanglement: One State, Many Parts</strong><a class="headerlink" href="#2-entanglement-one-state-many-parts" title="Permanent link">&para;</a></h4>
+<h3 id="2-entanglement-one-state-many-parts">2. <strong>Entanglement: One State, Many Parts</strong></h3>
 <p>Entanglement describes a quantum phenomenon where the states of two or more particles become deeply interconnected. Unlike classical systems, where particles are independent, entangled particles share a combined quantum state. This means that measuring one particle’s state instantly determines the state of the other, no matter the distance between them.</p>
 <p>The entangled state is typically written as:
 $$
@@ -1085,7 +1038,7 @@ Here, $|\uparrow\rangle_1$ and $|\downarrow\rangle_2$ represent the spin states 
 <p>Building on the previous example of particle decay, we see how momentum conservation connects the decay products. Similarly, entangled particles are not independent; they are connected in such a way that measuring one particle gives us information about the other, even if they are far apart.</p>
 <p>In quantum mechanics, entanglement goes beyond momentum conservation. It links the properties of particles in a non-local way, forming a single quantum system that cannot be separated into individual parts. This phenomenon is fundamental to quantum technologies like quantum cryptography and quantum teleportation, which exploit these correlations to achieve tasks impossible with classical systems.</p>
 <hr />
-<h4 id="3-spooky-action-at-a-distance-and-the-epr-puzzle">3. <strong>Spooky Action at a Distance and the EPR Puzzle</strong><a class="headerlink" href="#3-spooky-action-at-a-distance-and-the-epr-puzzle" title="Permanent link">&para;</a></h4>
+<h3 id="3-spooky-action-at-a-distance-and-the-epr-puzzle">3. <strong>Spooky Action at a Distance and the EPR Puzzle</strong></h3>
 <p>The term "spooky action at a distance" was coined by Einstein to criticize the non-local nature of quantum entanglement. It describes how entangled particles exhibit correlations that seem to violate the principle of locality, which states that objects are only directly influenced by their immediate surroundings.</p>
 <p><strong>Key Features</strong></p>
 <ul>
@@ -1105,7 +1058,7 @@ Here, $|\uparrow\rangle_1$ and $|\downarrow\rangle_2$ represent the spin states 
 <p>Quantum mechanics rejects <strong>local realism</strong> and embraces <strong>non-locality</strong> through entanglement, where the state of entangled particles is not determined until one is measured, and the measurement of one affects the state of the other instantly.</p>
 <p>The EPR paradox led to experiments testing <strong>Bell's Theorem</strong>, which showed that quantum mechanics’ predictions cannot be reproduced by any theory based on local hidden variables, confirming that non-locality is an intrinsic feature of quantum mechanics.</p>
 <hr />
-<h4 id="4-decoherence-the-quantum-classical-divide">4. <strong>Decoherence: The Quantum-Classical Divide</strong><a class="headerlink" href="#4-decoherence-the-quantum-classical-divide" title="Permanent link">&para;</a></h4>
+<h3 id="4-decoherence-the-quantum-classical-divide">4. <strong>Decoherence: The Quantum-Classical Divide</strong></h3>
 <p>Decoherence explains how a quantum system appears to transition into classical behavior due to interactions with its environment, including measurement apparatus and surroundings.</p>
 <p><strong>Key Concepts:</strong></p>
 <ul>
@@ -1121,7 +1074,7 @@ Here, $|\uparrow\rangle_1$ and $|\downarrow\rangle_2$ represent the spin states 
 <li><strong>Quantum Computing</strong>: In quantum computing, decoherence is a significant challenge. Qubits are highly susceptible to decoherence from environmental interactions, which limits the time during which quantum information can be preserved. Reducing decoherence is critical for reliable quantum computing.</li>
 </ul>
 <hr />
-<h4 id="5-foundations-of-quantum-mechanics">5. Foundations of Quantum Mechanics<a class="headerlink" href="#5-foundations-of-quantum-mechanics" title="Permanent link">&para;</a></h4>
+<h3 id="5-foundations-of-quantum-mechanics">5. Foundations of Quantum Mechanics</h3>
 <p>The foundations of quantum mechanics explore principles, interpretations, and unresolved questions at the core of the theory. Below are common theories:</p>
 <ol>
 <li>
@@ -1150,7 +1103,7 @@ Here, $|\uparrow\rangle_1$ and $|\downarrow\rangle_2$ represent the spin states 
 </li>
 </ol>
 <p>Each interpretation addresses the role of measurement, the nature of reality, and the origins of randomness, highlighting the ongoing debate in quantum mechanics.</p>
-<h3 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h3>
+<h2 id="takeaways">Takeaways</h2>
 <ol>
 <li>
 <p><strong>Wavefunctions and Probabilities</strong><br />
@@ -1177,7 +1130,7 @@ Here, $|\uparrow\rangle_1$ and $|\downarrow\rangle_2$ represent the spin states 
    Competing interpretations—such as Copenhagen, Many-Worlds, and Pilot-Wave—offer differing perspectives on measurement, reality, and randomness, reflecting the unresolved nature of quantum foundations.</p>
 </li>
 </ol>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<h1 id="resources">Resources</h1>
 <ol>
 <li><a href="https://www.amazon.com/Quanta-Fields-Biggest-Ideas-Universe/dp/0593186605">Quanta and Fields by Sean Carroll</a></li>
 </ol>
@@ -1232,7 +1185,7 @@ Here, $|\uparrow\rangle_1$ and $|\downarrow\rangle_2$ represent the spin states 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>

@@ -41,8 +41,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -60,10 +60,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -84,7 +86,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Andy&#39;s Notes" class="md-header__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
@@ -114,7 +118,25 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -141,8 +163,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -167,124 +187,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../Automotive/pages/" class="md-tabs__link">
-          
-  
-  Automotive
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../Cybersecurity/pages/" class="md-tabs__link">
-          
-  
-  Cyber Security
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../DSD/" class="md-tabs__link">
-          
-  
-  Digital Systems Design
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
-          
-  
-  Physics
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../SignalsSystems/pages/" class="md-tabs__link">
-          
-  
-  Signals And Systems
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -298,12 +200,8 @@
                     
 
 
-  
 
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Andy&#39;s Notes" class="md-nav__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
@@ -344,9 +242,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -453,9 +348,6 @@
     
     
     
-      
-      
-    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -518,9 +410,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -671,21 +560,15 @@
     
     
     
-      
-        
-        
-      
-      
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -758,6 +641,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -786,6 +671,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -794,16 +681,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#measurement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Measurement
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Measurement">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#key-concepts" class="md-nav__link">
     <span class="md-ellipsis">
       Key Concepts
@@ -898,8 +775,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#important-examples" class="md-nav__link">
     <span class="md-ellipsis">
       Important Examples
@@ -940,25 +817,11 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       Takeaways
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resources
     </span>
   </a>
   
@@ -1030,9 +893,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1116,6 +976,179 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-quantum-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Quantum Measurement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-wavefunction-collapse-and-quantum-indeterminism" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Wavefunction Collapse and Quantum Indeterminism
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-wave-particle-duality-and-the-double-slit-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Wave-Particle Duality and the Double-Slit Experiment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-reality-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The Reality Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hilbert-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Hilbert Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-qubits" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Qubits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-operators-and-observables" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Operators and Observables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-uncertainty-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Uncertainty Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-momentum-and-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Momentum and Measurement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spin-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spin Measurement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-slit-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Double-Slit Experiment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-and-momentum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position and Momentum
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -1124,13 +1157,11 @@
                   
 
 
-  <h1>Measurement</h1>
-
-<h2 id="measurement">Measurement<a class="headerlink" href="#measurement" title="Permanent link">&para;</a></h2>
+<h1 id="measurement">Measurement</h1>
 <p><em>Based off Sean Carroll's "Quantum and Fields"</em></p>
 <hr />
-<h3 id="key-concepts"><strong>Key Concepts</strong><a class="headerlink" href="#key-concepts" title="Permanent link">&para;</a></h3>
-<h4 id="1-quantum-measurement">1. <strong>Quantum Measurement</strong><a class="headerlink" href="#1-quantum-measurement" title="Permanent link">&para;</a></h4>
+<h2 id="key-concepts"><strong>Key Concepts</strong></h2>
+<h3 id="1-quantum-measurement">1. <strong>Quantum Measurement</strong></h3>
 <ul>
 <li>Measurement in quantum mechanics fundamentally differs from classical systems.</li>
 <li>Observables are represented by operators, and their outcomes are eigenvalues of these operators.</li>
@@ -1140,14 +1171,14 @@
 <li>Measurement collapses the wavefunction $\psi$ to the eigenstate $|a_i\rangle$.</li>
 </ul>
 <hr />
-<h4 id="2-wavefunction-collapse-and-quantum-indeterminism">2. <strong>Wavefunction Collapse and Quantum Indeterminism</strong><a class="headerlink" href="#2-wavefunction-collapse-and-quantum-indeterminism" title="Permanent link">&para;</a></h4>
+<h3 id="2-wavefunction-collapse-and-quantum-indeterminism">2. <strong>Wavefunction Collapse and Quantum Indeterminism</strong></h3>
 <ul>
 <li><strong>Quantum Indeterminism</strong>: Outcomes in quantum mechanics are probabilistic rather than deterministic.</li>
 <li>The wavefunction ($\psi$) encodes the probabilities of all possible measurement outcomes.</li>
 <li>Measurement changes the wavefunction, reducing it to the observed eigenstate (collapse).</li>
 </ul>
 <hr />
-<h4 id="3-wave-particle-duality-and-the-double-slit-experiment">3. <strong>Wave-Particle Duality and the Double-Slit Experiment</strong><a class="headerlink" href="#3-wave-particle-duality-and-the-double-slit-experiment" title="Permanent link">&para;</a></h4>
+<h3 id="3-wave-particle-duality-and-the-double-slit-experiment">3. <strong>Wave-Particle Duality and the Double-Slit Experiment</strong></h3>
 <ul>
 <li><strong>Wave-Particle Duality</strong>: Particles like photons and electrons exhibit both wave-like and particle-like behavior.</li>
 <li><strong>Double-Slit Experiment</strong>:</li>
@@ -1158,7 +1189,7 @@
   - Demonstrates quantum superposition and indeterminism.
   - Measurement changes the behavior of the system.</p>
 <hr />
-<h4 id="4-the-reality-problem">4. <strong>The Reality Problem</strong><a class="headerlink" href="#4-the-reality-problem" title="Permanent link">&para;</a></h4>
+<h3 id="4-the-reality-problem">4. <strong>The Reality Problem</strong></h3>
 <ul>
 <li>The "reality problem" addresses whether the wavefunction represents:</li>
 <li><strong>Physical Reality</strong>: A real entity in the universe.</li>
@@ -1168,7 +1199,7 @@
   - <strong>Copenhagen Interpretation</strong>: The wavefunction collapses upon measurement.
   - <strong>Many-Worlds Interpretation</strong>: No collapse occurs; all outcomes exist in parallel universes.</p>
 <hr />
-<h4 id="5-hilbert-space">5. <strong>Hilbert Space</strong><a class="headerlink" href="#5-hilbert-space" title="Permanent link">&para;</a></h4>
+<h3 id="5-hilbert-space">5. <strong>Hilbert Space</strong></h3>
 <ul>
 <li>A <strong>Hilbert Space</strong> is the mathematical framework for quantum states.</li>
 <li>Each quantum state is represented as a vector in this abstract space.</li>
@@ -1191,7 +1222,7 @@
     - Hilbert space is linear, allowing superposition.
     - Classical space-time is not inherently linear in this sense.</p>
 <hr />
-<h4 id="6-qubits">6. <strong>Qubits</strong><a class="headerlink" href="#6-qubits" title="Permanent link">&para;</a></h4>
+<h3 id="6-qubits">6. <strong>Qubits</strong></h3>
 <ul>
 <li>A <strong>qubit</strong> is the quantum analog of a classical bit, represented as a superposition of two basis states:</li>
 </ul>
@@ -1201,7 +1232,7 @@
 <li>Measurement collapses the qubit state to either $|0\rangle$ or $|1\rangle$ with probabilities $|\alpha|^2$ and $|\beta|^2$.</li>
 </ul>
 <hr />
-<h4 id="7-operators-and-observables">7. <strong>Operators and Observables</strong><a class="headerlink" href="#7-operators-and-observables" title="Permanent link">&para;</a></h4>
+<h3 id="7-operators-and-observables">7. <strong>Operators and Observables</strong></h3>
 <ul>
 <li>Operators correspond to measurable quantities (e.g., position, momentum, spin).</li>
 <li>
@@ -1214,7 +1245,7 @@
 <li><strong>Incompatible Observables</strong>: $[\hat{A}, \hat{B}] \neq 0$.</li>
 </ul>
 <hr />
-<h4 id="8-uncertainty-principle">8. <strong>Uncertainty Principle</strong><a class="headerlink" href="#8-uncertainty-principle" title="Permanent link">&para;</a></h4>
+<h3 id="8-uncertainty-principle">8. <strong>Uncertainty Principle</strong></h3>
 <ul>
 <li>The Heisenberg Uncertainty Principle limits simultaneous knowledge of conjugate variables, such as position ($x$) and momentum ($p$):</li>
 </ul>
@@ -1229,7 +1260,7 @@
   - Measuring the wavefunction's position-space representation increases uncertainty in its momentum-space representation, and vice versa.
   - For an intuitive understanding, see <a href="https://www.youtube.com/watch?v=MBnnXbOM5S4&amp;t=732s">3Blue1Brown's video on the uncertainty principle</a>.</p>
 <hr />
-<h4 id="9-momentum-and-measurement">9. <strong>Momentum and Measurement</strong><a class="headerlink" href="#9-momentum-and-measurement" title="Permanent link">&para;</a></h4>
+<h3 id="9-momentum-and-measurement">9. <strong>Momentum and Measurement</strong></h3>
 <ul>
 <li>
 <p>Momentum is a fundamental observable in quantum mechanics, represented by the operator:
@@ -1240,22 +1271,22 @@
 </li>
 </ul>
 <hr />
-<h3 id="important-examples"><strong>Important Examples</strong><a class="headerlink" href="#important-examples" title="Permanent link">&para;</a></h3>
-<h4 id="spin-measurement"><strong>Spin Measurement</strong><a class="headerlink" href="#spin-measurement" title="Permanent link">&para;</a></h4>
+<h2 id="important-examples"><strong>Important Examples</strong></h2>
+<h3 id="spin-measurement"><strong>Spin Measurement</strong></h3>
 <ul>
 <li>Measuring spin along an axis collapses the state to $|+\rangle$ or $|-\rangle$.</li>
 <li>Spin measurements along different axes (e.g., $x, y, z$) are incompatible.</li>
 </ul>
-<h4 id="double-slit-experiment"><strong>Double-Slit Experiment</strong><a class="headerlink" href="#double-slit-experiment" title="Permanent link">&para;</a></h4>
+<h3 id="double-slit-experiment"><strong>Double-Slit Experiment</strong></h3>
 <ul>
 <li>Demonstrates quantum superposition and the role of measurement.</li>
 </ul>
-<h4 id="position-and-momentum"><strong>Position and Momentum</strong><a class="headerlink" href="#position-and-momentum" title="Permanent link">&para;</a></h4>
+<h3 id="position-and-momentum"><strong>Position and Momentum</strong></h3>
 <ul>
 <li>Conjugate variables governed by the uncertainty relation $\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$.</li>
 </ul>
 <hr />
-<h3 id="takeaways"><strong>Takeaways</strong><a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h3>
+<h2 id="takeaways"><strong>Takeaways</strong></h2>
 <ol>
 <li>Measurement is central to quantum mechanics, introducing probabilities and wavefunction collapse.</li>
 <li>Observables are tied to operators; outcomes depend on eigenvalues and eigenstates.</li>
@@ -1264,7 +1295,7 @@
 <li>Hilbert space provides the mathematical framework for quantum mechanics.</li>
 </ol>
 <hr />
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<h1 id="resources">Resources</h1>
 <ol>
 <li><a href="https://www.amazon.com/Quanta-Fields-Biggest-Ideas-Universe/dp/0593186605">Quanta and Fields by Sean Carroll</a></li>
 <li><a href="https://www.youtube.com/watch?v=MBnnXbOM5S4&amp;t=732s">3Blue1Brown's video on the uncertainty principle</a></li>
@@ -1320,7 +1351,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
