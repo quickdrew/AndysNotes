@@ -2,29 +2,19 @@ site_name: Andy's Notes
 
 theme:
   name: material
-  features:
-    - toc.integrate  # Integrates the Table of Contents into the left navigation bar
-    - navigation.tabs  # Adds tabs at the top for better navigation
-    - search.suggest  # Auto-suggest search queries
-    - search.highlight  # Highlights search terms in results
   palette:
-    primary: "teal"
-    accent: "orange"
-    scheme: slate  # Dark mode by default
-  font:
-    text: "Roboto"
-    code: "Fira Code"
+    - scheme: default
+      primary: teal
+      accent: orange
+    - scheme: slate
+      primary: teal
+      accent: orange
 
 markdown_extensions:
-  - toc:
-      permalink: true  # Adds permalinks to headings
-      baselevel: 2  # Start ToC from H2 headings
-  - codehilite:
-      guess_lang: false  # Prevent guessing the language
-      use_pygments: true
-  - pymdownx.superfences  # Support for advanced fenced code blocks
-  - admonition  # Support for notes, warnings, and tips
-  - pymdownx.emoji  # Adds emoji support
+  - admonition        # Support for notes, warnings, and tips
+  - codehilite        # Syntax highlighting for code blocks
+  - toc               # Generates a table of contents
+
 
 nav:
   - Home: index.md
@@ -49,10 +39,6 @@ nav:
   - Signals And Systems:
     - Overview: SignalsSystems/pages/index.md
     - Continuous-Time Signals and Systems: SignalsSystems/pages/contTimeBasics.md
-
-
-extra_css:
-  - overrides/custom.css  # Custom CSS file in 'overrides' folder
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js

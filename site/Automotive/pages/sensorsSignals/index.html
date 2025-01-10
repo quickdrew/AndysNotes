@@ -41,8 +41,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -60,10 +60,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -84,7 +86,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Andy&#39;s Notes" class="md-header__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
@@ -114,7 +118,25 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -141,8 +163,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -167,124 +187,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
-          
-  
-  Automotive
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../Cybersecurity/pages/" class="md-tabs__link">
-          
-  
-  Cyber Security
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../DSD/" class="md-tabs__link">
-          
-  
-  Digital Systems Design
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../Physics/pages/" class="md-tabs__link">
-          
-  
-  Physics
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../SignalsSystems/pages/" class="md-tabs__link">
-          
-  
-  Signals And Systems
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -298,12 +200,8 @@
                     
 
 
-  
 
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Andy&#39;s Notes" class="md-nav__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
@@ -347,21 +245,15 @@
     
     
     
-      
-        
-        
-      
-      
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -434,6 +326,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -462,6 +356,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -470,16 +366,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#external-automotive-sensors-and-signals" class="md-nav__link">
-    <span class="md-ellipsis">
-      External Automotive Sensors and Signals
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="External Automotive Sensors and Signals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#vision-based-sensors" class="md-nav__link">
     <span class="md-ellipsis">
       Vision-Based Sensors
@@ -511,8 +397,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#proximity-and-object-detection-sensors" class="md-nav__link">
     <span class="md-ellipsis">
       Proximity and Object Detection Sensors
@@ -553,8 +439,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#communication-and-navigation-systems" class="md-nav__link">
     <span class="md-ellipsis">
       Communication and Navigation Systems
@@ -595,8 +481,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#access-and-monitoring-systems" class="md-nav__link">
     <span class="md-ellipsis">
       Access and Monitoring Systems
@@ -628,18 +514,13 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       Summary
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -667,9 +548,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -733,9 +611,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -884,9 +759,6 @@
     
     
     
-      
-      
-    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -997,6 +869,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1012,9 +905,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1098,6 +988,191 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vision-based-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vision-Based Sensors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vision-Based Sensors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cameras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cameras
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrared-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrared Sensors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximity-and-object-detection-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proximity and Object Detection Sensors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proximity and Object Detection Sensors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lidar-light-detection-and-ranging" class="md-nav__link">
+    <span class="md-ellipsis">
+      LiDAR (Light Detection and Ranging)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radar-radio-detection-and-ranging" class="md-nav__link">
+    <span class="md-ellipsis">
+      RADAR (Radio Detection and Ranging)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ultrasonic-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ultrasonic Sensors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communication-and-navigation-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication and Navigation Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communication and Navigation Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vehicle-to-everything-v2x-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vehicle-to-Everything (V2X) Communication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telematics-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Telematics Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss-global-navigation-satellite-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      GNSS (Global Navigation Satellite System)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-and-monitoring-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access and Monitoring Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access and Monitoring Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passive-keyless-entry-pke-and-remote-keyless-entry-rke" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passive Keyless Entry (PKE) and Remote Keyless Entry (RKE)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tire-pressure-monitoring-system-tpms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tire Pressure Monitoring System (TPMS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -1106,63 +1181,61 @@
                   
 
 
-  <h1>External Sensors and Signals</h1>
-
-<h2 id="external-automotive-sensors-and-signals">External Automotive Sensors and Signals<a class="headerlink" href="#external-automotive-sensors-and-signals" title="Permanent link">&para;</a></h2>
+<h1 id="external-automotive-sensors-and-signals">External Automotive Sensors and Signals</h1>
 <p>Modern vehicles integrate a variety of sensors to interact with their external environment. These sensors are critical for safety, efficiency, and comfort. Below is a description of key external sensors, their functionalities, and the data they provide.</p>
 <hr />
-<h3 id="vision-based-sensors">Vision-Based Sensors<a class="headerlink" href="#vision-based-sensors" title="Permanent link">&para;</a></h3>
-<h4 id="cameras">Cameras<a class="headerlink" href="#cameras" title="Permanent link">&para;</a></h4>
+<h2 id="vision-based-sensors">Vision-Based Sensors</h2>
+<h3 id="cameras">Cameras</h3>
 <p>Cameras capture visual data for various applications. They are used for digital rear-view mirrors, traffic sign recognition, surround view systems, and lane-keeping assistance.</p>
 <p>Operation: Cameras detect light on a photosensitive surface using a lens and process the data into images for use by ECUs. They typically support 8 MP resolution at 60 FPS, use GMSL links for data transmission at rates up to 6 GB/s, and are often configured via I2C.</p>
 <p>Risks: Interference can lead to misidentification of objects or privacy violations.</p>
-<h4 id="infrared-sensors">Infrared Sensors<a class="headerlink" href="#infrared-sensors" title="Permanent link">&para;</a></h4>
+<h3 id="infrared-sensors">Infrared Sensors</h3>
 <p>Infrared sensors detect heat signatures, improving visibility in low-light conditions.</p>
 <p>Applications: Night vision systems, pedestrian detection, and animal detection.</p>
 <p>Operation: Detect emitted infrared radiation and process it into thermal images.</p>
 <p>Risks: Sensor obfuscation can reduce visibility.</p>
 <hr />
-<h3 id="proximity-and-object-detection-sensors">Proximity and Object Detection Sensors<a class="headerlink" href="#proximity-and-object-detection-sensors" title="Permanent link">&para;</a></h3>
-<h4 id="lidar-light-detection-and-ranging">LiDAR (Light Detection and Ranging)<a class="headerlink" href="#lidar-light-detection-and-ranging" title="Permanent link">&para;</a></h4>
+<h2 id="proximity-and-object-detection-sensors">Proximity and Object Detection Sensors</h2>
+<h3 id="lidar-light-detection-and-ranging">LiDAR (Light Detection and Ranging)</h3>
 <p>LiDAR generates 3D spatial maps by emitting laser pulses. It is used for object detection and classification, as well as autonomous navigation.</p>
 <p>Operation: Measures time-of-flight of laser pulses to calculate distances and interfaces with the host ECU via 1000Base-T1 Ethernet.</p>
 <p>Risks: Tampering can disrupt object detection and compromise safety systems.</p>
-<h4 id="radar-radio-detection-and-ranging">RADAR (Radio Detection and Ranging)<a class="headerlink" href="#radar-radio-detection-and-ranging" title="Permanent link">&para;</a></h4>
+<h3 id="radar-radio-detection-and-ranging">RADAR (Radio Detection and Ranging)</h3>
 <p>RADAR detects objects using electromagnetic waves. It is applied in adaptive cruise control, collision avoidance, and blind-spot monitoring.</p>
 <p>Operation: Measures range and speed using the Doppler effect and connects to the host ECU via CAN or Ethernet.</p>
 <p>Risks: Jamming or spoofing can impact obstacle detection.</p>
-<h4 id="ultrasonic-sensors">Ultrasonic Sensors<a class="headerlink" href="#ultrasonic-sensors" title="Permanent link">&para;</a></h4>
+<h3 id="ultrasonic-sensors">Ultrasonic Sensors</h3>
 <p>Ultrasonic sensors detect nearby objects using high-frequency sound waves. They are commonly used for parking assistance and proximity alerts.</p>
 <p>Operation: Emit sound waves and calculate the distance based on reflected echoes. They communicate with the ECU via CAN.</p>
 <p>Risks: Signal interference can compromise obstacle detection.</p>
 <hr />
-<h3 id="communication-and-navigation-systems">Communication and Navigation Systems<a class="headerlink" href="#communication-and-navigation-systems" title="Permanent link">&para;</a></h3>
-<h4 id="vehicle-to-everything-v2x-communication">Vehicle-to-Everything (V2X) Communication<a class="headerlink" href="#vehicle-to-everything-v2x-communication" title="Permanent link">&para;</a></h4>
+<h2 id="communication-and-navigation-systems">Communication and Navigation Systems</h2>
+<h3 id="vehicle-to-everything-v2x-communication">Vehicle-to-Everything (V2X) Communication</h3>
 <p>V2X communication enables interaction between vehicles, infrastructure, and other road users.</p>
 <p>Applications: Traffic management and collision prevention.</p>
 <p>Operation: Uses DSRC or cellular networks for wireless data exchange.</p>
 <p>Risks: Cyberattacks can compromise communication reliability.</p>
-<h4 id="telematics-systems">Telematics Systems<a class="headerlink" href="#telematics-systems" title="Permanent link">&para;</a></h4>
+<h3 id="telematics-systems">Telematics Systems</h3>
 <p>Telematics systems integrate GPS, cellular communication, and sensors to enable real-time data exchange with remote servers.</p>
 <p>Applications: Fleet management, remote diagnostics, over-the-air (OTA) updates, and stolen vehicle recovery.</p>
 <p>Operation: Collects data from sensors like GPS and speedometers, sends it to cloud servers via cellular networks, and allows bidirectional communication for remote management.</p>
 <p>Risks: Data breaches can expose sensitive information, and communication hijacking can lead to unauthorized vehicle control or tracking.</p>
-<h4 id="gnss-global-navigation-satellite-system">GNSS (Global Navigation Satellite System)<a class="headerlink" href="#gnss-global-navigation-satellite-system" title="Permanent link">&para;</a></h4>
+<h3 id="gnss-global-navigation-satellite-system">GNSS (Global Navigation Satellite System)</h3>
 <p>GNSS provides location, velocity, and timing information. It is used for navigation, geofencing, and route optimization.</p>
 <p>Operation: Receives satellite signals to determine position and interfaces with the host ECU via CAN or UART.</p>
 <p>Risks: Spoofing or jamming can disrupt localization and timing.</p>
 <hr />
-<h3 id="access-and-monitoring-systems">Access and Monitoring Systems<a class="headerlink" href="#access-and-monitoring-systems" title="Permanent link">&para;</a></h3>
-<h4 id="passive-keyless-entry-pke-and-remote-keyless-entry-rke">Passive Keyless Entry (PKE) and Remote Keyless Entry (RKE)<a class="headerlink" href="#passive-keyless-entry-pke-and-remote-keyless-entry-rke" title="Permanent link">&para;</a></h4>
+<h2 id="access-and-monitoring-systems">Access and Monitoring Systems</h2>
+<h3 id="passive-keyless-entry-pke-and-remote-keyless-entry-rke">Passive Keyless Entry (PKE) and Remote Keyless Entry (RKE)</h3>
 <p>PKE and RKE systems enable automatic vehicle access and remote locking/unlocking.</p>
 <p>Operation: PKE detects key proximity using low-frequency (LF) and ultra-high frequency (UHF) signals, while RKE uses RF signals for remote interaction.</p>
 <p>Risks: Relay attacks can exploit vulnerabilities in signal transmission.</p>
-<h4 id="tire-pressure-monitoring-system-tpms">Tire Pressure Monitoring System (TPMS)<a class="headerlink" href="#tire-pressure-monitoring-system-tpms" title="Permanent link">&para;</a></h4>
+<h3 id="tire-pressure-monitoring-system-tpms">Tire Pressure Monitoring System (TPMS)</h3>
 <p>TPMS monitors tire pressure to ensure safety and efficiency.</p>
 <p>Operation: Sensors transmit pressure data wirelessly to the ECU, typically at 315 MHz or 433 MHz.</p>
 <p>Risks: Signal spoofing can result in false alerts or undetected issues.</p>
 <hr />
-<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<h2 id="summary">Summary</h2>
 <p>These external sensors and systems form the backbone of modern vehicles, enabling advanced functionalities and ensuring safety. Grouping and understanding their roles, communication methods, and potential vulnerabilities is critical for optimizing performance and securing operations.</p>
 
 
@@ -1210,7 +1283,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>

@@ -41,8 +41,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -60,10 +60,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -84,7 +86,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Andy&#39;s Notes" class="md-header__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
@@ -114,7 +118,25 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -141,8 +163,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -167,124 +187,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../Automotive/pages/" class="md-tabs__link">
-          
-  
-  Automotive
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../Cybersecurity/pages/" class="md-tabs__link">
-          
-  
-  Cyber Security
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
-          
-  
-  Digital Systems Design
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../Physics/pages/" class="md-tabs__link">
-          
-  
-  Physics
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../SignalsSystems/pages/" class="md-tabs__link">
-          
-  
-  Signals And Systems
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -298,12 +200,8 @@
                     
 
 
-  
 
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Andy&#39;s Notes" class="md-nav__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
@@ -344,9 +242,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -453,9 +348,6 @@
     
     
     
-      
-      
-    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -521,21 +413,15 @@
     
     
     
-      
-        
-        
-      
-      
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -803,9 +689,6 @@
     
     
     
-      
-      
-    
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -916,6 +799,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Physics/pages/fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -931,9 +835,6 @@
   
     
     
-    
-      
-      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1017,6 +918,123 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Algebra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequential-and-combinational-assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequential and Combinational Assignments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequential and Combinational Assignments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relevant-constructs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relevant Constructs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      State Machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-state-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of State Machines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -1027,7 +1045,7 @@
 
   <h1>Logic Design</h1>
 
-<h3 id="boolean-algebra">Boolean Algebra<a class="headerlink" href="#boolean-algebra" title="Permanent link">&para;</a></h3>
+<h2 id="boolean-algebra">Boolean Algebra</h2>
 <table>
 <thead>
 <tr>
@@ -1154,59 +1172,59 @@
 </tr>
 </tbody>
 </table>
-<h3 id="sequential-and-combinational-assignments">Sequential and Combinational Assignments<a class="headerlink" href="#sequential-and-combinational-assignments" title="Permanent link">&para;</a></h3>
+<h2 id="sequential-and-combinational-assignments">Sequential and Combinational Assignments</h2>
 <ul>
 <li><strong>Sequential = Procedural:</strong> Sequential logic updates state based on clock edges and uses procedural assignments, typically with <strong>non-blocking (<code>&lt;=</code>) assignments</strong>. It is modeled inside <code>always</code> blocks that are sensitive to clock edges (e.g., <code>posedge clk</code>). This describes systems like flip-flops or registers that rely on previous states.</li>
 </ul>
 <p><strong>Example:</strong>
-  <div class="highlight"><pre><span></span><code><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="k">posedge</span><span class="w"> </span><span class="n">clk</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">posedge</span><span class="w"> </span><span class="n">reset</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">reset</span><span class="p">)</span>
-<span class="w">        </span><span class="n">q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w">      </span><span class="c1">// Asynchronous reset</span>
-<span class="w">    </span><span class="k">else</span>
-<span class="w">        </span><span class="n">q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w">      </span><span class="c1">// Update q with d at clock edge</span>
-<span class="k">end</span>
-</code></pre></div></p>
+  <code>verilog
+  always @(posedge clk or posedge reset) begin
+      if (reset)
+          q &lt;= 0;      // Asynchronous reset
+      else
+          q &lt;= d;      // Update q with d at clock edge
+  end</code></p>
 <ul>
 <li>
 <p><strong>Combinational = Continuous:</strong> Combinational logic depends purely on the current inputs and is described using <strong>continuous (blocking) assignments</strong>. It models circuits like AND, OR gates, where output is updated as soon as inputs change, without regard to clock cycles.</p>
 <p><strong>Example:</strong>
-<div class="highlight"><pre><span></span><code><span class="k">assign</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// Output y changes immediately based on a and b</span>
-</code></pre></div></p>
+<code>verilog
+assign y = a &amp; b;  // Output y changes immediately based on a and b</code></p>
 </li>
 </ul>
-<h4 id="relevant-constructs">Relevant Constructs<a class="headerlink" href="#relevant-constructs" title="Permanent link">&para;</a></h4>
+<h3 id="relevant-constructs">Relevant Constructs</h3>
 <ul>
 <li>
 <p><strong><code>always</code> blocks:</strong> Used to describe both sequential and combinational logic. For sequential logic, <code>always @(posedge clk)</code> or <code>always @(negedge clk)</code> is used, whereas for combinational logic, <code>always @(*)</code> is used to capture all input changes automatically.
     <strong>Example:</strong>
-    <div class="highlight"><pre><span></span><code><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// Combinational logic triggered by any input change</span>
-<span class="k">end</span>
-</code></pre></div></p>
+    <code>verilog
+    always @(*) begin
+        result = a | b;  // Combinational logic triggered by any input change
+    end</code></p>
 </li>
 <li>
 <p><strong><code>initial</code> blocks:</strong> Used to define initial conditions in simulations. They execute once at the start of the simulation and are commonly used for testbenches or initializing registers/variables in simulation but are not synthesized into hardware.
     <strong>Example</strong>
-    <div class="highlight"><pre><span></span><code><span class="k">initial</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">    </span><span class="n">reg_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// Initialize reg_x to 0 at simulation start</span>
-<span class="k">end</span>
-</code></pre></div></p>
+    <code>verilog
+    initial begin
+        reg_x = 0;  // Initialize reg_x to 0 at simulation start
+    end</code></p>
 </li>
 </ul>
-<h4 id="key-points">Key Points<a class="headerlink" href="#key-points" title="Permanent link">&para;</a></h4>
+<h3 id="key-points">Key Points</h3>
 <ul>
 <li><strong>Blocking (<code>=</code>) vs. Non-blocking (<code>&lt;=</code>):</strong> In sequential logic (<code>always @(posedge clk)</code>), use non-blocking assignments (<code>&lt;=</code>) to ensure parallel updates. In combinational logic, blocking assignments (<code>=</code>) can be used to execute statements sequentially.</li>
 </ul>
-<h3 id="state-machine">State Machine<a class="headerlink" href="#state-machine" title="Permanent link">&para;</a></h3>
+<h2 id="state-machine">State Machine</h2>
 <p>A state machine is a computational model used to design both software and hardware systems. It consists of a set of states, transitions between states, and actions that occur based on inputs.</p>
-<h4 id="components">Components<a class="headerlink" href="#components" title="Permanent link">&para;</a></h4>
+<h3 id="components">Components</h3>
 <ol>
 <li><strong>States</strong>: Defined conditions or situations the system can be in.</li>
 <li><strong>Transitions</strong>: Conditions that trigger a change from one state to another.</li>
 <li><strong>Inputs</strong>: External events or conditions that affect state transitions.</li>
 <li><strong>Outputs</strong>: Actions or results produced during or after a state transition.</li>
 </ol>
-<h4 id="types-of-state-machines">Types of State Machines<a class="headerlink" href="#types-of-state-machines" title="Permanent link">&para;</a></h4>
+<h3 id="types-of-state-machines">Types of State Machines</h3>
 <ol>
 <li><strong>Finite State Machine (FSM)</strong>: Has a finite number of states and transitions between them.</li>
 <li><strong>Deterministic FSM (DFA)</strong>: Every state has exactly one transition for each input.</li>
@@ -1218,14 +1236,14 @@
 </li>
 <li><strong>Moore Machine</strong>: The output depends only on the current state.</li>
 </ol>
-<h4 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h4>
+<h3 id="applications">Applications</h3>
 <ul>
 <li><strong>Control Systems</strong>: Used in embedded systems for managing device behavior.</li>
 <li><strong>Protocols</strong>: Helps in defining the sequence of operations in communication protocols.</li>
 <li><strong>Game Design</strong>: To model different game states such as playing, paused, or game over.</li>
 </ul>
-<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">fsm_example</span><span class="w"> </span><span class="p">(</span>
+<h3 id="example">Example</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">fsm_example</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">clk</span><span class="p">,</span><span class="w">        </span><span class="c1">// Clock input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">reset</span><span class="p">,</span><span class="w">      </span><span class="c1">// Asynchronous reset signal (active high)</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">trigger</span><span class="p">,</span><span class="w">    </span><span class="c1">// Trigger input to transition between states</span>
@@ -1340,7 +1358,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.integrate", "navigation.tabs", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
