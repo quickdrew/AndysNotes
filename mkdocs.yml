@@ -42,6 +42,7 @@ nav:
         - Fields: Physics/pages/fields.md
   - Protocols and Interfaces:
     - Overview: Protocols/pages/index.md
+    - CAN: Protocols/pages/can.md
   - Signals And Systems:
       - Overview: SignalsSystems/pages/index.md
       - Digital Signal Processing: SignalsSystems/pages/introDsp.md
