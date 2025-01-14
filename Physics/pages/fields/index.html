@@ -124,12 +124,6 @@
     <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
-    
-  
 </form>
       
     
@@ -895,11 +889,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../SignalsSystems/pages/contTimeBasics/" class="md-nav__link">
+      <a href="../../../SignalsSystems/pages/introDsp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Continuous-Time Signals and Systems
+    Digital Signal Processing
   </span>
   
 
@@ -1085,13 +1079,13 @@
 <li><strong>Interacting Fields</strong>:<br />
     In reality, fields often interact, introducing complexities like scattering, bound states, and nonlinear effects. These interactions make the theory rich—and much more challenging.</li>
 </ul>
-<p>A common example for the Hamiltonian density (\mathcal{H}) of a <strong>free scalar field</strong> (\phi(\mathbf{x}, t)) is:</p>
-<p>$$
+<p>A common example for the Hamiltonian density <span class="arithmatex">\(\mathcal{H}\)</span> of a <strong>free scalar field</strong>  <span class="arithmatex">\(\phi(\mathbf{x}, t)\)</span> is:</p>
+<div class="arithmatex">\[
 \mathcal{H} \;=\; \frac{1}{2}\,\pi^2(\mathbf{x}, t) 
 \;+\;\frac{1}{2}\,(\nabla \phi(\mathbf{x}, t))^2 
 \;+\;\frac{1}{2}\,m^2\,\phi^2(\mathbf{x}, t),
-$$</p>
-<p>where (\pi(\mathbf{x}, t)) is the conjugate momentum to (\phi(\mathbf{x}, t)). Integrating this over all space gives the total Hamiltonian (H).</p>
+\]</div>
+<p>where <span class="arithmatex">\(\pi(\mathbf{x}, t)\)</span> is the conjugate momentum to <span class="arithmatex">\(\phi(\mathbf{x}, t)\)</span>. Integrating this over all space gives the total Hamiltonian <span class="arithmatex">\(H\)</span>.</p>
 <hr />
 <h3 id="3-free-fields-and-mass">3. <strong>Free Fields and Mass</strong></h3>
 <p>Free fields have no interaction potential. They spread out over space instead of being localized to a particular region. Even if a free field is said to carry “mass,” it does not automatically localize the field itself. Instead, the mass term in the Hamiltonian affects how excitations (particles) of the field propagate or decay.</p>
@@ -1108,7 +1102,7 @@ $$</p>
 <p>A powerful way to think about fields is by decomposing them into <strong>modes</strong>—wave-like solutions that span all of space.</p>
 <ul>
 <li><strong>Plane Waves</strong><br />
-  A free field can be represented as a superposition of plane waves with different wavevectors (\mathbf{k}). Mathematically, one common expression is:</li>
+  A free field can be represented as a superposition of plane waves with different wavevectors <span class="arithmatex">\(\mathbf{k}\)</span>. Mathematically, one common expression is:</li>
 </ul>
 <p>$$
   \phi(\mathbf{x}, t) 
@@ -1118,15 +1112,15 @@ $$</p>
     a_{\mathbf{k}}^*\,e^{-\,i(\mathbf{k}\cdot\mathbf{x} \;-\; \omega_{\mathbf{k}}\,t)}
   \Big],
   $$</p>
-<p>where (\omega_{\mathbf{k}} = \sqrt{\mathbf{k}^2 + m^2}) for a scalar field (in units where (c = 1)).</p>
+<p>where <span class="arithmatex">\(\omega_{\mathbf{k}} = \sqrt{\mathbf{k}^2 + m^2}\)</span> for a scalar field (in units where <span class="arithmatex">\(c = 1\)</span>).</p>
 <ul>
 <li>
-<p><strong>Fourier Transform and (\mathbf{k})-Space</strong><br />
-  Going from real space (\mathbf{x}) to momentum space (\mathbf{k}) via the Fourier transform simplifies the mathematics of wave propagation and lays the groundwork for quantization.  </p>
+<p><strong>Fourier Transform and <span class="arithmatex">\(\mathbf{k}\)</span>-Space</strong><br />
+  Going from real space <span class="arithmatex">\(\mathbf{x}\)</span> to momentum space <span class="arithmatex">\(\mathbf{k}\)</span> via the Fourier transform simplifies the mathematics of wave propagation and lays the groundwork for quantization.  </p>
 </li>
 <li>
 <p><strong>Energy of a Mode</strong><br />
-  For a free scalar field, each (\mathbf{k})-mode behaves like a harmonic oscillator with energy levels spaced by (\hbar \omega_{\mathbf{k}}). This fact underlies the idea that a free quantum field is essentially an infinite collection of quantum harmonic oscillators.</p>
+  For a free scalar field, each <span class="arithmatex">\(\mathbf{k}\)</span>-mode behaves like a harmonic oscillator with energy levels spaced by <span class="arithmatex">\(\hbar \omega_{\mathbf{k}}\)</span>. This fact underlies the idea that a free quantum field is essentially an infinite collection of quantum harmonic oscillators.</p>
 </li>
 </ul>
 <hr />
@@ -1135,7 +1129,7 @@ $$</p>
 <ul>
 <li>
 <p><strong>Configuration Space</strong><br />
-  The “position” variable in standard quantum mechanics is replaced by the entire configuration of the field at each point in space. Formally, you might write a <strong>wavefunctional</strong> (\Psi[\phi]), which assigns amplitudes to every possible shape (configuration) of the field (\phi).</p>
+  The “position” variable in standard quantum mechanics is replaced by the entire configuration of the field at each point in space. Formally, you might write a <strong>wavefunctional</strong> <span class="arithmatex">\(\Psi[\phi]\)</span>, which assigns amplitudes to every possible shape (configuration) of the field <span class="arithmatex">\(\phi\)</span>.</p>
 </li>
 <li>
 <p><strong>No Single-Particle Restriction</strong><br />
@@ -1147,12 +1141,12 @@ $$</p>
 <p>While this chapter focuses on fields themselves, the notion of “particle” arises when a field is excited in quantized energy levels (the modes). QFT unifies the idea of <strong>wave-particle duality</strong>: both wave-like and particle-like pictures emerge from the same underlying field.</p>
 <ul>
 <li><strong>Creation and Annihilation Operators (Preview)</strong><br />
-  In a rigorous formulation, each mode (\mathbf{k}) is treated as a quantized harmonic oscillator. We introduce operators (\hat{a}^\dagger_{\mathbf{k}}) (creation) and (\hat{a}_{\mathbf{k}}) (annihilation) that raise or lower the number of quanta in that mode. For example, you might see:</li>
+  In a rigorous formulation, each mode <span class="arithmatex">\(\mathbf{k}\)</span> is treated as a quantized harmonic oscillator. We introduce operators <span class="arithmatex">\(\hat{a}^\dagger_{\mathbf{k}}\)</span> (creation) and <span class="arithmatex">\(\hat{a}_{\mathbf{k}}\)</span> (annihilation) that raise or lower the number of quanta in that mode. For example, you might see:</li>
 </ul>
 <p>$$
   \hat{\phi}(\mathbf{x}) 
   \;=\; \int \frac{d^3k}{(2\pi)^3} \,\frac{1}{\sqrt{2\,\omega_{\mathbf{k}}}} 
-  \Big(!
+  \Big( 
     \hat{a}<em>{\mathbf{k}}\,e^{\,i\,\mathbf{k}\cdot \mathbf{x}} 
     \;+\; 
     \hat{a}</em>{\mathbf{k}}^\dagger\,e^{-\,i\,\mathbf{k}\cdot \mathbf{x}}
@@ -1257,7 +1251,9 @@ $$</p>
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

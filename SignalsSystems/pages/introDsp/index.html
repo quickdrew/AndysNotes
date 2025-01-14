@@ -18,7 +18,7 @@
     
     
       
-        <title>Continuous-Time Signals and Systems - Andy's Notes</title>
+        <title>Digital Signal Processing - Andy's Notes</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#continuous-time-signals-and-systems" class="md-skip">
+        <a href="#introduction-to-digital-signal-processing-dsp" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Continuous-Time Signals and Systems
+              Digital Signal Processing
             
           </span>
         </div>
@@ -120,12 +120,6 @@
     
     
     <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
     
   
 </form>
@@ -766,15 +760,90 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Digital Signal Processing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Continuous-Time Signals and Systems
+    Digital Signal Processing
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-dsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is DSP?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-analog-and-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing Analog and Digital
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-phase-i-and-quadrature-q-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-Phase (I) and Quadrature (Q) Signals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qsd-and-qse" class="md-nav__link">
+    <span class="md-ellipsis">
+      QSD and QSE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -808,6 +877,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-dsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is DSP?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-analog-and-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing Analog and Digital
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-phase-i-and-quadrature-q-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-Phase (I) and Quadrature (Q) Signals
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qsd-and-qse" class="md-nav__link">
+    <span class="md-ellipsis">
+      QSD and QSE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -821,7 +943,64 @@
                   
 
 
-<h1 id="continuous-time-signals-and-systems">Continuous-Time Signals and Systems</h1>
+<h1 id="introduction-to-digital-signal-processing-dsp">Introduction to Digital Signal Processing (DSP)</h1>
+<hr />
+<h2 id="what-is-dsp">What is DSP?</h2>
+<p>Digital Signal Processing (<strong>DSP</strong>) involves analyzing, manipulating, and synthesizing signals using digital techniques. Rather than working directly with continuous-time signals (as in analog systems), DSP first converts analog signals into a sequence of discrete samples.</p>
+<ul>
+<li><strong>Sampling</strong>: Converting a continuous-time signal <span class="arithmatex">\( x(t) \)</span> into a discrete-time sequence <span class="arithmatex">\( x[n] \)</span> by taking periodic snapshots at intervals <span class="arithmatex">\( T_s \)</span>.  </li>
+<li><strong>Quantization</strong>: Mapping each sample to a finite set of integer levels.  </li>
+</ul>
+<p>Thus, a continuous waveform is represented in a digital form suitable for storage, transmission, or further numerical processing.</p>
+<hr />
+<h2 id="comparing-analog-and-digital">Comparing Analog and Digital</h2>
+<p>Analog systems handle continuously varying voltages, currents, or other physical quantities. Digital systems, on the other hand, work with discrete numerical values (bits).</p>
+<p><strong>Analog Systems</strong><br />
+  - Continuous in time and amplitude.<br />
+  - Subject to noise accumulation over long distances.<br />
+  - Hardware-based filters (resistors, capacitors, inductors) adjust frequency response.</p>
+<p><strong>Superheterodyne AM Receiver Block and Circuit Diagrams</strong>
+<img alt="Block Diagram of Superheterodyne AM Receiver" src="../../assets/SuperheterodyneAMReceiver.png" /></p>
+<p><img alt="Ciruit Diagram of Superheterodyne AM Receiver" src="../../assets/SuperheterodyneAMReceiverCircuit.png" /></p>
+<p>To gain idea of the incresed hardware complexity associated with anaolog system, above is the Block and circuit diagram of a Superheterodyne AM Receiver. See refrences for a deeper dive. Compare it to the SDR below.</p>
+<p><strong>Digital Systems</strong><br />
+  - Discrete in time and amplitude.<br />
+  - Noise-resistant (regeneration of binary signals can reduce error).<br />
+  - Highly flexible: Filters, transforms, and algorithms can be reprogrammed or updated.  </p>
+<p><img alt="SDR Bock Diagram" src="../../assets/Diagram-of-the-SDR-Receiver.png" /></p>
+<p>Unlike the analog system above, the SDR only needs hardware to tune the signal down to an <a href="https://en.wikipedia.org/wiki/Intermediate_frequency">intermediate frequency (IF)</a> then it is sampled and handled via software.</p>
+<hr />
+<h2 id="in-phase-i-and-quadrature-q-signals">In-Phase (I) and Quadrature (Q) Signals</h2>
+<p>When a signal is transmitted or received at a particular carrier frequency <span class="arithmatex">\( f_c \)</span>, it can be decomposed into two orthogonal components:</p>
+<ol>
+<li>An <strong>in-phase</strong> component, denoted <span class="arithmatex">\( I \)</span>, often aligned with a cosine wave.  </li>
+<li>A <strong>quadrature</strong> component, denoted <span class="arithmatex">\( Q \)</span>, often aligned with a sine wave.</li>
+</ol>
+<p>Mathematically, a bandpass signal <span class="arithmatex">\( s(t) \)</span> at frequency <span class="arithmatex">\( f_c \)</span> can be represented as:</p>
+<div class="arithmatex">\[
+s(t) = I(t)\cos(2\pi f_c t) - Q(t)\sin(2\pi f_c t).
+\]</div>
+<p><strong>Why "In-Phase" and "Quadrature"?</strong><br />
+- The two components are out of phase by <span class="arithmatex">\( 90^\circ \)</span> (i.e., <span class="arithmatex">\(\pi/2\)</span> radians).<br />
+- They form an <strong>orthogonal basis</strong>, allowing them to be processed independently and recombined without interference.</p>
+<hr />
+<h2 id="qsd-and-qse">QSD and QSE</h2>
+<ul>
+<li><strong>Quadrature Sampling Detector (QSD)</strong>:<br />
+  A technique for down-converting a high-frequency signal to baseband by simultaneously sampling in-phase and quadrature components.  </li>
+<li><strong>Quadrature Sampling Exciter (QSE)</strong>:<br />
+  The reverse operation—up-converting baseband I/Q signals to a higher, desired carrier frequency.</li>
+</ul>
+<p>These approaches exploit the fact that many modern communication standards use I/Q modulation for efficient data encoding.</p>
+<hr />
+<h2 id="resources">Resources</h2>
+<ol>
+<li><a href="https://www.amazon.com/Digital-Signal-Processing-Software-Defined/dp/B0D25FV48C/ref=sr_1_1?crid=32LXX62AOZ0BA&amp;dib=eyJ2IjoiMSJ9.R_1R8SigayttUZXlhcjbUW4A81TJeKH4WzOejjJGg0yTqW76tfbE7jMqHl2b3lvFOLmMS_iB7Q1Yred6XYGhaQqVh-nYOyHjen5hS1U-TN5Bqnkuj-HVJbJM_roPm40yXVPUDsv6HTXrt1uQvQfE7L8oO0EXgtDOvwYNOyBYf08QPwsQlYj0l4a2GoWp7IFYWZOBiQZIHuLQUw4S9AZzgeRp5k8hrRI3LaXKNtKexQM.GK-IyOzXyHoqx2d0XrzYOc8xjukiJunsjQGZt2ZJeQM&amp;dib_tag=se&amp;keywords=dsp+and+sdr+t41&amp;qid=1736877453&amp;sprefix=dsp+and+sdr+t41%2Caps%2C166&amp;sr=8-1">Digital Signal Processing and Software Defined Radio: Theory and Construction of the T41-EP Software Defined Transceiver by Albert F Peter and Dr. Jack Purdum</a></li>
+<li><a href="https://arm-software.github.io/CMSIS_6/latest/General/index.html">Common Microcontroller Software Interface Standard</a></li>
+<li><a href="https://circuitdigest.com/article/superheterodyne-am-receiver">Superheterodyne AM Receiver - Working with Block Diagram and Schematics by Aleksander Kopyto</a></li>
+</ol>
+<hr />
+<p><a href="../index">← Previous</a> | <a href="../more-dsp-topics">Next →</a></p>
 
 
 
@@ -873,7 +1052,9 @@
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

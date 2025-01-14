@@ -124,12 +124,6 @@
     <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
-    
-  
 </form>
       
     
@@ -781,45 +775,21 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Important Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#spin-measurement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Spin Measurement
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#double-slit-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Double-Slit Experiment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#position-and-momentum" class="md-nav__link">
-    <span class="md-ellipsis">
-      Position and Momentum
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
     </span>
   </a>
   
@@ -946,11 +916,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../SignalsSystems/pages/contTimeBasics/" class="md-nav__link">
+      <a href="../../../SignalsSystems/pages/introDsp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Continuous-Time Signals and Systems
+    Digital Signal Processing
   </span>
   
 
@@ -1096,45 +1066,21 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Important Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#spin-measurement" class="md-nav__link">
-    <span class="md-ellipsis">
-      Spin Measurement
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#double-slit-experiment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Double-Slit Experiment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#position-and-momentum" class="md-nav__link">
-    <span class="md-ellipsis">
-      Position and Momentum
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
     </span>
   </a>
   
@@ -1156,153 +1102,132 @@
 
 
 <h1 id="measurement">Measurement</h1>
-<p><em>Based off Sean Carroll's "Quantum and Fields"</em></p>
+<p><em>Based on Sean Carroll's "Quantum and Fields"</em></p>
 <hr />
-<h2 id="key-concepts"><strong>Key Concepts</strong></h2>
-<h3 id="1-quantum-measurement">1. <strong>Quantum Measurement</strong></h3>
+<h2 id="key-concepts">Key Concepts</h2>
+<h3 id="1-quantum-measurement">1. Quantum Measurement</h3>
+<p>In quantum mechanics, <strong>measurement</strong> differs significantly from classical systems.</p>
 <ul>
-<li>Measurement in quantum mechanics fundamentally differs from classical systems.</li>
-<li>Observables are represented by operators, and their outcomes are eigenvalues of these operators.</li>
-<li>The <strong>Born Rule</strong> describes the probability of measurement outcomes:<br />
-  $$ P(a_i) = |\langle \psi | a_i \rangle|^2 $$</li>
-<li>$P(a_i)$: Probability of observing eigenvalue $a_i$.</li>
-<li>Measurement collapses the wavefunction $\psi$ to the eigenstate $|a_i\rangle$.</li>
+<li><strong>Observables</strong> are represented by operators; the <strong>eigenvalues</strong> of these operators correspond to possible measurement outcomes.  </li>
+<li><strong>Born Rule</strong> for measuring an eigenvalue <span class="arithmatex">\( a_i \)</span>:</li>
 </ul>
+<p>$$
+  P(a_i) = \bigl|\langle \psi \mid a_i\rangle \bigr|^2
+  $$</p>
+<p>Upon measurement, the wavefunction <span class="arithmatex">\(\psi\)</span> collapses to the corresponding eigenstate <span class="arithmatex">\(\lvert a_i\rangle\)</span>.</p>
 <hr />
-<h3 id="2-wavefunction-collapse-and-quantum-indeterminism">2. <strong>Wavefunction Collapse and Quantum Indeterminism</strong></h3>
+<h3 id="2-wavefunction-collapse-and-quantum-indeterminism">2. Wavefunction Collapse and Quantum Indeterminism</h3>
 <ul>
-<li><strong>Quantum Indeterminism</strong>: Outcomes in quantum mechanics are probabilistic rather than deterministic.</li>
-<li>The wavefunction ($\psi$) encodes the probabilities of all possible measurement outcomes.</li>
-<li>Measurement changes the wavefunction, reducing it to the observed eigenstate (collapse).</li>
-</ul>
-<hr />
-<h3 id="3-wave-particle-duality-and-the-double-slit-experiment">3. <strong>Wave-Particle Duality and the Double-Slit Experiment</strong></h3>
-<ul>
-<li><strong>Wave-Particle Duality</strong>: Particles like photons and electrons exhibit both wave-like and particle-like behavior.</li>
-<li><strong>Double-Slit Experiment</strong>:</li>
-<li>Without observation: Particles pass through both slits as waves, creating an interference pattern.</li>
-<li>With observation: Particles act as discrete entities, and the interference pattern disappears.</li>
-</ul>
-<p><strong>Implications</strong>:
-  - Demonstrates quantum superposition and indeterminism.
-  - Measurement changes the behavior of the system.</p>
-<hr />
-<h3 id="4-the-reality-problem">4. <strong>The Reality Problem</strong></h3>
-<ul>
-<li>The "reality problem" addresses whether the wavefunction represents:</li>
-<li><strong>Physical Reality</strong>: A real entity in the universe.</li>
-<li><strong>Epistemic Reality</strong>: A mathematical tool for calculating probabilities.</li>
-</ul>
-<p><strong>Key Interpretations</strong>:
-  - <strong>Copenhagen Interpretation</strong>: The wavefunction collapses upon measurement.
-  - <strong>Many-Worlds Interpretation</strong>: No collapse occurs; all outcomes exist in parallel universes.</p>
-<hr />
-<h3 id="5-hilbert-space">5. <strong>Hilbert Space</strong></h3>
-<ul>
-<li>A <strong>Hilbert Space</strong> is the mathematical framework for quantum states.</li>
-<li>Each quantum state is represented as a vector in this abstract space.</li>
-<li>Operators (e.g., position, momentum) act on these vectors to predict outcomes.</li>
-</ul>
-<p><strong>Key Properties</strong>:
-  - Infinite-dimensional for continuous variables.
-  - Inner product ($\langle \psi_1 | \psi_2 \rangle$) defines probabilities and orthogonality.</p>
-<p><strong>Differences from Classical Space-Time</strong>:
-  - <strong>Nature</strong>:
-    - Classical space-time describes the physical geometry of the universe.
-    - Hilbert space is an abstract mathematical space for quantum states.
-  - <strong>Dimensionality</strong>:
-    - Classical space-time: Finite (3 spatial + 1 temporal).
-    - Hilbert space: Potentially infinite-dimensional.
-  - <strong>Purpose</strong>:
-    - Classical space-time locates objects in the physical universe.
-    - Hilbert space provides a framework for predicting quantum outcomes.
-  - <strong>Structure</strong>:
-    - Hilbert space is linear, allowing superposition.
-    - Classical space-time is not inherently linear in this sense.</p>
-<hr />
-<h3 id="6-qubits">6. <strong>Qubits</strong></h3>
-<ul>
-<li>A <strong>qubit</strong> is the quantum analog of a classical bit, represented as a superposition of two basis states:</li>
-</ul>
-<p>$$ |\psi\rangle = \alpha|0\rangle + \beta|1\rangle $$
-  where $\alpha$ and $\beta$ are complex coefficients satisfying $|\alpha|^2 + |\beta|^2 = 1$.</p>
-<ul>
-<li>Measurement collapses the qubit state to either $|0\rangle$ or $|1\rangle$ with probabilities $|\alpha|^2$ and $|\beta|^2$.</li>
+<li><strong>Quantum Indeterminism</strong>: Outcomes are probabilistic rather than deterministic.</li>
+<li>The wavefunction <span class="arithmatex">\(\psi\)</span> encodes probabilities for all possible measurement results.</li>
+<li>A measurement collapses <span class="arithmatex">\(\psi\)</span> to the observed eigenstate.</li>
 </ul>
 <hr />
-<h3 id="7-operators-and-observables">7. <strong>Operators and Observables</strong></h3>
+<h3 id="3-wave-particle-duality-and-the-double-slit-experiment">3. Wave-Particle Duality and the Double-Slit Experiment</h3>
 <ul>
-<li>Operators correspond to measurable quantities (e.g., position, momentum, spin).</li>
-<li>
-<p><strong>Commutation relations</strong> determine compatibility:
-  $$ [\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A} $$</p>
-</li>
-<li>
-<p><strong>Compatible Observables</strong>: $[\hat{A}, \hat{B}] = 0$ (can be measured simultaneously).</p>
-</li>
-<li><strong>Incompatible Observables</strong>: $[\hat{A}, \hat{B}] \neq 0$.</li>
+<li><strong>Wave-Particle Duality</strong>: Particles (e.g., electrons, photons) exhibit both wave-like and particle-like properties.</li>
+<li><strong>Double-Slit Experiment</strong>:  </li>
+<li>Without observation: Particles pass through both slits like waves, creating an interference pattern.  </li>
+<li>With observation: Particles act like discrete entities, and the interference pattern vanishes.</li>
+</ul>
+<p><strong>Implications</strong>:<br />
+- Demonstrates quantum superposition and indeterminism.<br />
+- Highlights how measurement alters system behavior.</p>
+<hr />
+<h3 id="4-the-reality-problem">4. The Reality Problem</h3>
+<p><strong>Key Question</strong>: Does the wavefunction represent physical reality or a mere tool for probability?</p>
+<ul>
+<li><strong>Copenhagen Interpretation</strong>: Wavefunction collapses upon measurement.  </li>
+<li><strong>Many-Worlds Interpretation</strong>: No collapse; all outcomes occur in parallel branches.</li>
 </ul>
 <hr />
-<h3 id="8-uncertainty-principle">8. <strong>Uncertainty Principle</strong></h3>
+<h3 id="5-hilbert-space">5. Hilbert Space</h3>
 <ul>
-<li>The Heisenberg Uncertainty Principle limits simultaneous knowledge of conjugate variables, such as position ($x$) and momentum ($p$):</li>
+<li><strong>Hilbert space</strong> provides the mathematical framework for quantum states, with each state represented as a vector in this space.</li>
+<li>Operators (e.g., position, momentum, spin) act on these vectors to predict outcomes.</li>
 </ul>
-<p><strong>Formula</strong>:<br />
-  $$ \Delta x \cdot \Delta p \geq \frac{\hbar}{2} $$</p>
-<ul>
-<li>$\Delta x$: Uncertainty in position.  </li>
-<li>$\Delta p$: Uncertainty in momentum.</li>
-</ul>
-<p><strong>Explanation</strong>:
-  - This arises from the wave-like nature of quantum systems and the Fourier transform.
-  - Measuring the wavefunction's position-space representation increases uncertainty in its momentum-space representation, and vice versa.
-  - For an intuitive understanding, see <a href="https://www.youtube.com/watch?v=MBnnXbOM5S4&amp;t=732s">3Blue1Brown's video on the uncertainty principle</a>.</p>
+<p><strong>Key Properties</strong>:<br />
+- Potentially infinite-dimensional.<br />
+- Inner product <span class="arithmatex">\(\langle \psi_1 \mid \psi_2\rangle\)</span> defines probabilities and orthogonality.</p>
+<p><strong>Differences from Classical Space-Time</strong>:<br />
+- <strong>Nature</strong>: Classical space-time describes physical geometry; Hilbert space is an abstract state space.<br />
+- <strong>Dimensionality</strong>: Space-time has 3+1 dimensions; Hilbert space can be infinite-dimensional.<br />
+- <strong>Purpose</strong>: Space-time locates objects physically; Hilbert space underpins quantum predictions.<br />
+- <strong>Structure</strong>: Hilbert space is linear (enabling superposition), whereas space-time is not necessarily linear in that sense.</p>
 <hr />
-<h3 id="9-momentum-and-measurement">9. <strong>Momentum and Measurement</strong></h3>
+<h3 id="6-qubits">6. Qubits</h3>
+<p>A <strong>qubit</strong> is the quantum analog of a classical bit:</p>
+<div class="arithmatex">\[
+|\psi\rangle = \alpha|0\rangle + \beta|1\rangle
+\quad\text{with}\quad |\alpha|^2 + |\beta|^2 = 1.
+\]</div>
 <ul>
-<li>
-<p>Momentum is a fundamental observable in quantum mechanics, represented by the operator:
-  $$ \hat{p} = -i\hbar \frac{\partial}{\partial x} $$</p>
-</li>
-<li>
-<p>Measuring momentum collapses the wavefunction to a momentum eigenstate.</p>
-</li>
+<li>Measurement collapses the qubit to <span class="arithmatex">\(\lvert 0\rangle\)</span> or <span class="arithmatex">\(\lvert 1\rangle\)</span> with probabilities <span class="arithmatex">\(|\alpha|^2\)</span> and <span class="arithmatex">\(|\beta|^2\)</span>.</li>
 </ul>
 <hr />
-<h2 id="important-examples"><strong>Important Examples</strong></h2>
-<h3 id="spin-measurement"><strong>Spin Measurement</strong></h3>
+<h3 id="7-operators-and-observables">7. Operators and Observables</h3>
 <ul>
-<li>Measuring spin along an axis collapses the state to $|+\rangle$ or $|-\rangle$.</li>
-<li>Spin measurements along different axes (e.g., $x, y, z$) are incompatible.</li>
+<li>Operators correspond to measurable quantities.  </li>
+<li><strong>Commutation Relations</strong>:</li>
 </ul>
-<h3 id="double-slit-experiment"><strong>Double-Slit Experiment</strong></h3>
+<p>$$
+  [\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}.
+  $$</p>
 <ul>
-<li>Demonstrates quantum superposition and the role of measurement.</li>
-</ul>
-<h3 id="position-and-momentum"><strong>Position and Momentum</strong></h3>
-<ul>
-<li>Conjugate variables governed by the uncertainty relation $\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$.</li>
+<li>If <span class="arithmatex">\([\hat{A}, \hat{B}] = 0\)</span>, they are <strong>compatible</strong> (can be measured simultaneously).  </li>
+<li>If <span class="arithmatex">\([\hat{A}, \hat{B}] \neq 0\)</span>, they are <strong>incompatible</strong>.</li>
 </ul>
 <hr />
-<h2 id="takeaways"><strong>Takeaways</strong></h2>
+<h3 id="8-uncertainty-principle">8. Uncertainty Principle</h3>
+<p>The <strong>Heisenberg Uncertainty Principle</strong> limits simultaneous knowledge of certain pairs of observables (e.g., position <span class="arithmatex">\(x\)</span> and momentum <span class="arithmatex">\(p\)</span>).</p>
+<div class="arithmatex">\[
+\Delta x \,\Delta p \,\ge \,\frac{\hbar}{2}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\Delta x\)</span>: Uncertainty in position  </li>
+<li><span class="arithmatex">\(\Delta p\)</span>: Uncertainty in momentum</li>
+</ul>
+<p><strong>Explanation</strong>:<br />
+- Arises from the wave nature of quantum systems (Fourier transform relationship).<br />
+- Localizing a wavefunction in position space broadens it in momentum space, and vice versa.<br />
+- For an illustrative video, see <a href="https://www.youtube.com/watch?v=MBnnXbOM5S4&amp;t=732s">3Blue1Brown’s explanation</a>.</p>
+<hr />
+<h3 id="9-momentum-and-measurement">9. Momentum and Measurement</h3>
+<ul>
+<li><strong>Momentum</strong> is represented by the operator:</li>
+</ul>
+<p>$$
+  \hat{p} = -\,i\hbar \,\frac{\partial}{\partial x}.
+  $$</p>
+<ul>
+<li>Measuring momentum collapses the wavefunction into a momentum eigenstate.</li>
+</ul>
+<hr />
+<h2 id="important-examples">Important Examples</h2>
+<p><strong>Spin Measurement</strong><br />
+- Measuring spin along any axis collapses the state to <span class="arithmatex">\(|+\rangle\)</span> or <span class="arithmatex">\(|-\rangle\)</span>.<br />
+- Spin measurements along different axes (e.g., <span class="arithmatex">\(x, y, z\)</span>) are incompatible.</p>
+<p><strong>Double-Slit Experiment</strong><br />
+- Demonstrates quantum superposition and the significance of measurement.</p>
+<p><strong>Position and Momentum</strong><br />
+- Conjugate variables governed by <span class="arithmatex">\(\Delta x \,\Delta p \,\ge \,\hbar/2\)</span>.</p>
+<hr />
+<h2 id="takeaways">Takeaways</h2>
 <ol>
-<li>Measurement is central to quantum mechanics, introducing probabilities and wavefunction collapse.</li>
-<li>Observables are tied to operators; outcomes depend on eigenvalues and eigenstates.</li>
-<li>The uncertainty principle and wave-particle duality highlight the unique nature of quantum systems.</li>
-<li>The double-slit experiment exemplifies quantum indeterminism and the measurement problem.</li>
-<li>Hilbert space provides the mathematical framework for quantum mechanics.</li>
+<li>Measurement is central to quantum mechanics, introducing probabilities and wavefunction collapse.  </li>
+<li>Observables are encoded as operators, whose eigenvalues/eigenstates determine outcomes.  </li>
+<li>The uncertainty principle and wave-particle duality emphasize the unique nature of quantum systems.  </li>
+<li>The double-slit experiment highlights indeterminism and the measurement problem.  </li>
+<li>Hilbert space provides the core mathematical structure of quantum mechanics.</li>
 </ol>
 <hr />
-<h1 id="resources">Resources</h1>
+<h2 id="resources">Resources</h2>
 <ol>
-<li><a href="https://www.amazon.com/Quanta-Fields-Biggest-Ideas-Universe/dp/0593186605">Quanta and Fields by Sean Carroll</a></li>
+<li><a href="https://www.amazon.com/Quanta-Fields-Biggest-Ideas-Universe/dp/0593186605">Quanta and Fields by Sean Carroll</a>  </li>
 <li><a href="https://www.youtube.com/watch?v=MBnnXbOM5S4&amp;t=732s">3Blue1Brown's video on the uncertainty principle</a></li>
 </ol>
 <hr />
-<div style="display: flex; justify-content: space-between;">
-  <a href="../waveFunction"><- Wave Function</a>
-  <a href="../entanglement">Entanglement -></a>
-</div>
+<p><a href="../waveFunction">← Wave Function</a> | <a href="../entanglement">Entanglement →</a></p>
 
 
 
@@ -1354,7 +1279,9 @@
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
