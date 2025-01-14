@@ -82,7 +82,7 @@ The form of the Hamiltonian determines the dynamics of the quantum system and go
 
 **[Blackbody Radiation](#blackbody-thermal-radiation-problem-and-its-solution) and Quantization**
 
-- **Max Planck (1900)**: Solved the blackbody radiation problem by introducing energy quantization: $$E = h \nu$$ , where `h` is Planck's constant and `v` is the frequency.
+- **Max Planck (1900)**: Solved the blackbody radiation problem by introducing energy quantization: $E = h \nu$ , where `h` is Planck's constant and `v` is the frequency.
 - **Albert Einstein (1905)**: Explained the photoelectric effect using quantized light particles (photons), supporting the wave-particle duality of light.
 
 **Atomic Spectra and Discrete Energy Levels**

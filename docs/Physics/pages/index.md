@@ -7,4 +7,5 @@ This is a collection of notes I've taken while reading [Quanta and Fields by Sea
 1. [The Wave Function](waveFunction.md)
 2. [Measurement](measurement.md)
 3. [Entanglement](entanglement.md)
+4. [Fields](fields.md)
 

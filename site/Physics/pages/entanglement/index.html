@@ -124,12 +124,6 @@
     <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
-    
-  
 </form>
       
     
@@ -1005,24 +999,24 @@
 <h2 id="key-concepts"><strong>Key Concepts</strong></h2>
 <h3 id="1-particle-decay-and-momentum">1. <strong>Particle Decay and Momentum</strong></h3>
 <p>In quantum mechanics, particle decay is described by the wavefunction:</p>
-<p>$$|\psi(t)\rangle = \alpha(t) |\text{undecayed}\rangle + \beta(t) |\text{decayed}\rangle$$</p>
-<p>Here, $\alpha(t)$ represents the amplitude for the particle to remain undecayed, and $\beta(t)$ represents the amplitude for the particle to decay. The normalization condition ensures:
+<div class="arithmatex">\[|\psi(t)\rangle = \alpha(t) |\text{undecayed}\rangle + \beta(t) |\text{decayed}\rangle\]</div>
+<p>Here, <span class="arithmatex">\(\alpha(t)\)</span> represents the amplitude for the particle to remain undecayed, and <span class="arithmatex">\(\beta(t)\)</span> represents the amplitude for the particle to decay. The normalization condition ensures:
 $$
 |\alpha(t)|^2 + |\beta(t)|^2 = 1
 $$</p>
-<p>Over time, the probability of the particle remaining undecayed decreases, and the probability of decay increases. The survival probability at time $t$ is $P_{\text{undecayed}}(t) = |\alpha(t)|^2$, and the probability of the particle decaying is $P_{\text{decayed}}(t) = 1 - |\alpha(t)|^2$.</p>
+<p>Over time, the probability of the particle remaining undecayed decreases, and the probability of decay increases. The survival probability at time <span class="arithmatex">\(t\)</span> is <span class="arithmatex">\(P_{\text{undecayed}}(t) = |\alpha(t)|^2\)</span>, and the probability of the particle decaying is <span class="arithmatex">\(P_{\text{decayed}}(t) = 1 - |\alpha(t)|^2\)</span>.</p>
 <p><strong>Momentum conservation</strong> plays a crucial role in particle decay. The total momentum before and after decay remains the same:
 $$
 \vec{p}<em>{\text{original}} = \vec{p}</em>{1} + \vec{p}<em>{2}
 $$
-where $\vec{p}</em>{\text{original}}$ is the momentum of the original particle, and $\vec{p}<em>{1}$ and $\vec{p}</em>{2}$ are the momenta of the decay products. This allows us to calculate the momentum of one decay product without directly observing it:
+where <span class="arithmatex">\(\vec{p}_{\text{original}}\)</span> is the momentum of the original particle, and <span class="arithmatex">\(\vec{p}_{1}\)</span> and <span class="arithmatex">\(\vec{p}_{2}\)</span> are the momenta of the decay products. This allows us to calculate the momentum of one decay product without directly observing it:
 $$
-\vec{p}<em>{2} = \vec{p}</em>{\text{original}} - \vec{p}_{1}
+\vec{p}</em>{2} = \vec{p}<em>{\text{original}} - \vec{p}</em>{1}
 $$</p>
 <p><strong>Example: Decaying Boson</strong><br />
-Consider a stationary boson that decays into an electron-positron pair. Since the original boson has no initial momentum ($\vec{p}<em>{\text{original}} = 0$), the momentum of the electron and positron must be equal and opposite to conserve momentum:
+Consider a stationary boson that decays into an electron-positron pair. Since the original boson has no initial momentum (<span class="arithmatex">\(\vec{p}_{\text{original}} = 0\)</span>), the momentum of the electron and positron must be equal and opposite to conserve momentum:
 $$
-\vec{p}</em>{\text{positron}} = -\vec{p}_{\text{electron}}
+\vec{p}<em>{\text{positron}} = -\vec{p}</em>{\text{electron}}
 $$
 If we know the position of the original boson before decay, we can measure the momentum of one of the decay products (e.g., the positron) and use momentum conservation to determine the momentum of the other particle, even without directly measuring it. This is useful in particle physics experiments, where some particles (like neutrinos) are hard to detect directly. By measuring other decay products, we can infer properties of the undetected particles.</p>
 <hr />
@@ -1032,7 +1026,7 @@ If we know the position of the original boson before decay, we can measure the m
 $$
 |\psi\rangle = \frac{1}{\sqrt{2}} \left( |\uparrow\rangle_1 |\downarrow\rangle_2 - |\downarrow\rangle_1 |\uparrow\rangle_2 \right)
 $$
-Here, $|\uparrow\rangle_1$ and $|\downarrow\rangle_2$ represent the spin states of two entangled particles. Measuring the spin of one particle gives immediate knowledge of the spin of the other.</p>
+Here, <span class="arithmatex">\(|\uparrow\rangle_1\)</span> and <span class="arithmatex">\(|\downarrow\rangle_2\)</span> represent the spin states of two entangled particles. Measuring the spin of one particle gives immediate knowledge of the spin of the other.</p>
 <p>Building on the previous example of particle decay, we see how momentum conservation connects the decay products. Similarly, entangled particles are not independent; they are connected in such a way that measuring one particle gives us information about the other, even if they are far apart.</p>
 <p>In quantum mechanics, entanglement goes beyond momentum conservation. It links the properties of particles in a non-local way, forming a single quantum system that cannot be separated into individual parts. This phenomenon is fundamental to quantum technologies like quantum cryptography and quantum teleportation, which exploit these correlations to achieve tasks impossible with classical systems.</p>
 <hr />
@@ -1213,7 +1207,9 @@ Here, $|\uparrow\rangle_1$ and $|\downarrow\rangle_2$ represent the spin states 
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

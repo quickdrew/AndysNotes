@@ -28,7 +28,7 @@ In quantum theory, **energy** is introduced through the *Hamiltonian*, the opera
   - **Interacting Fields**:  
     In reality, fields often interact, introducing complexities like scattering, bound states, and nonlinear effects. These interactions make the theory rich—and much more challenging.
 
-A common example for the Hamiltonian density \(\mathcal{H}\) of a **free scalar field** \(\phi(\mathbf{x}, t)\) is:
+A common example for the Hamiltonian density $\mathcal{H}$ of a **free scalar field**  $\phi(\mathbf{x}, t)$ is:
 
 $$
 \mathcal{H} \;=\; \frac{1}{2}\,\pi^2(\mathbf{x}, t) 
@@ -46,9 +46,11 @@ Free fields have no interaction potential. They spread out over space instead of
 - **Why 'Mass' Still Matters**  
   In QFT, “mass” determines the dispersion relation of excitations—how the energy relates to momentum:
 
+
   $$
   E^2 \;=\; \mathbf{p}^2c^2 \;+\; m^2c^4.
   $$
+
 
   A massive particle’s energy depends differently on momentum than a massless particle’s (like a photon). Nevertheless, the field itself remains everywhere, with quanta that *appear* as localized excitations when observed.
 
@@ -99,12 +101,13 @@ While this chapter focuses on fields themselves, the notion of “particle” ar
   $$
   \hat{\phi}(\mathbf{x}) 
   \;=\; \int \frac{d^3k}{(2\pi)^3} \,\frac{1}{\sqrt{2\,\omega_{\mathbf{k}}}} 
-  \Big(\!
+  \Big( 
     \hat{a}_{\mathbf{k}}\,e^{\,i\,\mathbf{k}\cdot \mathbf{x}} 
     \;+\; 
     \hat{a}_{\mathbf{k}}^\dagger\,e^{-\,i\,\mathbf{k}\cdot \mathbf{x}}
   \Big).
   $$
+
 
   We’ll see how these operators formalize the link between fields and particles in upcoming sections.
 

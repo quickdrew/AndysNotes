@@ -3,45 +3,45 @@ site_name: Andy's Notes
 theme:
   name: material
   palette:
-    - scheme: slate  
-      primary: teal
-      accent: orange
     - scheme: slate
       primary: teal
       accent: orange
 
 markdown_extensions:
-  - admonition        # Support for notes, warnings, and tips
-  - codehilite        # Syntax highlighting for code blocks
-  - toc               # Generates a table of contents
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - codehilite
+  - toc
 
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - Home: index.md
   - Automotive:
-    - Overview: Automotive/pages/index.md
-    - Electrical/Electronic Architecture: Automotive/pages/architecture.md
-    - External Sensors and Signals: Automotive/pages/sensorsSignals.md
+      - Overview: Automotive/pages/index.md
+      - Electrical/Electronic Architecture: Automotive/pages/architecture.md
+      - External Sensors and Signals: Automotive/pages/sensorsSignals.md
   - Cyber Security:
-    - Overview: Cybersecurity/pages/index.md
-  - Digital Systems Design: 
-    - Overview: DSD/index.md
-    - Verilog: DSD/verilog.md
-    - Logic Design: DSD/logicDesign.md
-    - Simulations: DSD/simulations.md
-    - Examples: DSD/applications.md
+      - Overview: Cybersecurity/pages/index.md
+  - Digital Systems Design:
+      - Overview: DSD/index.md
+      - Verilog: DSD/verilog.md
+      - Logic Design: DSD/logicDesign.md
+      - Simulations: DSD/simulations.md
+      - Examples: DSD/applications.md
   - Physics:
-    - Overview: Physics/pages/index.md
-    - Wave Function: Physics/pages/waveFunction.md
-    - Measurement: Physics/pages/measurement.md
-    - Entanglement: Physics/pages/entanglement.md
-    - Fields: Physics/pages/fields.md
+      - Overview: Physics/pages/index.md
+      - Wave Function: Physics/pages/waveFunction.md
+      - Measurement: Physics/pages/measurement.md
+      - Entanglement: Physics/pages/entanglement.md
+      - Fields: Physics/pages/fields.md
   - Signals And Systems:
-    - Overview: SignalsSystems/pages/index.md
-    - Continuous-Time Signals and Systems: SignalsSystems/pages/contTimeBasics.md
-
-extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
+      - Overview: SignalsSystems/pages/index.md
+      - Digital Signal Processing: SignalsSystems/pages/introDsp.md
 
 extra:
   footer:

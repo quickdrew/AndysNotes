@@ -124,12 +124,6 @@
     <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
-    
-  
 </form>
       
     
@@ -1165,14 +1159,14 @@
 <li>Observables are represented by operators, and their outcomes are eigenvalues of these operators.</li>
 <li>The <strong>Born Rule</strong> describes the probability of measurement outcomes:<br />
   $$ P(a_i) = |\langle \psi | a_i \rangle|^2 $$</li>
-<li>$P(a_i)$: Probability of observing eigenvalue $a_i$.</li>
-<li>Measurement collapses the wavefunction $\psi$ to the eigenstate $|a_i\rangle$.</li>
+<li><span class="arithmatex">\(P(a_i)\)</span>: Probability of observing eigenvalue <span class="arithmatex">\(a_i\)</span>.</li>
+<li>Measurement collapses the wavefunction <span class="arithmatex">\(\psi\)</span> to the eigenstate <span class="arithmatex">\(|a_i\rangle\)</span>.</li>
 </ul>
 <hr />
 <h3 id="2-wavefunction-collapse-and-quantum-indeterminism">2. <strong>Wavefunction Collapse and Quantum Indeterminism</strong></h3>
 <ul>
 <li><strong>Quantum Indeterminism</strong>: Outcomes in quantum mechanics are probabilistic rather than deterministic.</li>
-<li>The wavefunction ($\psi$) encodes the probabilities of all possible measurement outcomes.</li>
+<li>The wavefunction (<span class="arithmatex">\(\psi\)</span>) encodes the probabilities of all possible measurement outcomes.</li>
 <li>Measurement changes the wavefunction, reducing it to the observed eigenstate (collapse).</li>
 </ul>
 <hr />
@@ -1205,7 +1199,7 @@
 </ul>
 <p><strong>Key Properties</strong>:
   - Infinite-dimensional for continuous variables.
-  - Inner product ($\langle \psi_1 | \psi_2 \rangle$) defines probabilities and orthogonality.</p>
+  - Inner product (<span class="arithmatex">\(\langle \psi_1 | \psi_2 \rangle\)</span>) defines probabilities and orthogonality.</p>
 <p><strong>Differences from Classical Space-Time</strong>:
   - <strong>Nature</strong>:
     - Classical space-time describes the physical geometry of the universe.
@@ -1225,9 +1219,9 @@
 <li>A <strong>qubit</strong> is the quantum analog of a classical bit, represented as a superposition of two basis states:</li>
 </ul>
 <p>$$ |\psi\rangle = \alpha|0\rangle + \beta|1\rangle $$
-  where $\alpha$ and $\beta$ are complex coefficients satisfying $|\alpha|^2 + |\beta|^2 = 1$.</p>
+  where <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> are complex coefficients satisfying <span class="arithmatex">\(|\alpha|^2 + |\beta|^2 = 1\)</span>.</p>
 <ul>
-<li>Measurement collapses the qubit state to either $|0\rangle$ or $|1\rangle$ with probabilities $|\alpha|^2$ and $|\beta|^2$.</li>
+<li>Measurement collapses the qubit state to either <span class="arithmatex">\(|0\rangle\)</span> or <span class="arithmatex">\(|1\rangle\)</span> with probabilities <span class="arithmatex">\(|\alpha|^2\)</span> and <span class="arithmatex">\(|\beta|^2\)</span>.</li>
 </ul>
 <hr />
 <h3 id="7-operators-and-observables">7. <strong>Operators and Observables</strong></h3>
@@ -1238,20 +1232,20 @@
   $$ [\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A} $$</p>
 </li>
 <li>
-<p><strong>Compatible Observables</strong>: $[\hat{A}, \hat{B}] = 0$ (can be measured simultaneously).</p>
+<p><strong>Compatible Observables</strong>: <span class="arithmatex">\([\hat{A}, \hat{B}] = 0\)</span> (can be measured simultaneously).</p>
 </li>
-<li><strong>Incompatible Observables</strong>: $[\hat{A}, \hat{B}] \neq 0$.</li>
+<li><strong>Incompatible Observables</strong>: <span class="arithmatex">\([\hat{A}, \hat{B}] \neq 0\)</span>.</li>
 </ul>
 <hr />
 <h3 id="8-uncertainty-principle">8. <strong>Uncertainty Principle</strong></h3>
 <ul>
-<li>The Heisenberg Uncertainty Principle limits simultaneous knowledge of conjugate variables, such as position ($x$) and momentum ($p$):</li>
+<li>The Heisenberg Uncertainty Principle limits simultaneous knowledge of conjugate variables, such as position (<span class="arithmatex">\(x\)</span>) and momentum (<span class="arithmatex">\(p\)</span>):</li>
 </ul>
 <p><strong>Formula</strong>:<br />
   $$ \Delta x \cdot \Delta p \geq \frac{\hbar}{2} $$</p>
 <ul>
-<li>$\Delta x$: Uncertainty in position.  </li>
-<li>$\Delta p$: Uncertainty in momentum.</li>
+<li><span class="arithmatex">\(\Delta x\)</span>: Uncertainty in position.  </li>
+<li><span class="arithmatex">\(\Delta p\)</span>: Uncertainty in momentum.</li>
 </ul>
 <p><strong>Explanation</strong>:
   - This arises from the wave-like nature of quantum systems and the Fourier transform.
@@ -1272,8 +1266,8 @@
 <h2 id="important-examples"><strong>Important Examples</strong></h2>
 <h3 id="spin-measurement"><strong>Spin Measurement</strong></h3>
 <ul>
-<li>Measuring spin along an axis collapses the state to $|+\rangle$ or $|-\rangle$.</li>
-<li>Spin measurements along different axes (e.g., $x, y, z$) are incompatible.</li>
+<li>Measuring spin along an axis collapses the state to <span class="arithmatex">\(|+\rangle\)</span> or <span class="arithmatex">\(|-\rangle\)</span>.</li>
+<li>Spin measurements along different axes (e.g., <span class="arithmatex">\(x, y, z\)</span>) are incompatible.</li>
 </ul>
 <h3 id="double-slit-experiment"><strong>Double-Slit Experiment</strong></h3>
 <ul>
@@ -1281,7 +1275,7 @@
 </ul>
 <h3 id="position-and-momentum"><strong>Position and Momentum</strong></h3>
 <ul>
-<li>Conjugate variables governed by the uncertainty relation $\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$.</li>
+<li>Conjugate variables governed by the uncertainty relation <span class="arithmatex">\(\Delta x \cdot \Delta p \geq \frac{\hbar}{2}\)</span>.</li>
 </ul>
 <hr />
 <h2 id="takeaways"><strong>Takeaways</strong></h2>
@@ -1354,7 +1348,9 @@
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

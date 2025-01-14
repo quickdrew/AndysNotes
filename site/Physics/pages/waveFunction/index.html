@@ -124,12 +124,6 @@
     <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
-    
-  
 </form>
       
     
@@ -826,9 +820,9 @@
 <h1 id="schrodinger-equation">Schrödinger equation</h1>
 <hr />
 <p>The <strong>Schrödinger equation</strong> is the cornerstone of quantum mechanics. It describes how the wave function of a quantum system evolves over time:</p>
-<p>$$
+<div class="arithmatex">\[
 i \hbar \frac{\partial \psi}{\partial t} = \hat{H} \psi
-$$</p>
+\]</div>
 <ul>
 <li><code>i</code> is the imaginary unit (√-1),</li>
 <li><code>ℏ</code> is the reduced Planck’s constant,</li>
@@ -911,7 +905,7 @@ $$</p>
 </ul>
 <p><strong><a href="#blackbody-thermal-radiation-problem-and-its-solution">Blackbody Radiation</a> and Quantization</strong></p>
 <ul>
-<li><strong>Max Planck (1900)</strong>: Solved the blackbody radiation problem by introducing energy quantization: $$E = h \nu$$ , where <code>h</code> is Planck's constant and <code>v</code> is the frequency.</li>
+<li><strong>Max Planck (1900)</strong>: Solved the blackbody radiation problem by introducing energy quantization: <span class="arithmatex">\(<span class="arithmatex">\(E = h \nu\)</span>\)</span> , where <code>h</code> is Planck's constant and <code>v</code> is the frequency.</li>
 <li><strong>Albert Einstein (1905)</strong>: Explained the photoelectric effect using quantized light particles (photons), supporting the wave-particle duality of light.</li>
 </ul>
 <p><strong>Atomic Spectra and Discrete Energy Levels</strong></p>
@@ -936,15 +930,15 @@ $$</p>
 </ul>
 <p><strong><a href="#schrödingers-equation">Schrödinger’s Equation</a></strong></p>
 <ul>
-<li><strong>Erwin Schrödinger (1926)</strong>: Developed the wave equation to describe quantum systems. The wave function $\psi(x, t)$ represents the quantum state of a particle and evolves according to:
+<li><strong>Erwin Schrödinger (1926)</strong>: Developed the wave equation to describe quantum systems. The wave function <span class="arithmatex">\(\psi(x, t)\)</span> represents the quantum state of a particle and evolves according to:
   $$
   i \hbar \frac{\partial \psi}{\partial t} = \hat{H} \psi
   $$
-  where $\hat{H}$ is the Hamiltonian operator. Schrödinger's work explained atomic phenomena such as electron orbitals.</li>
+  where <span class="arithmatex">\(\hat{H}\)</span> is the Hamiltonian operator. Schrödinger's work explained atomic phenomena such as electron orbitals.</li>
 </ul>
 <p><strong>Interpretation of the Wave Function</strong></p>
 <ul>
-<li><strong>Max Born (1926)</strong>: Interpreted $\psi$ as a probability amplitude, with $|\psi|^2$ giving the probability density of finding a particle in a given state. This marked a departure from deterministic classical mechanics.</li>
+<li><strong>Max Born (1926)</strong>: Interpreted <span class="arithmatex">\(\psi\)</span> as a probability amplitude, with <span class="arithmatex">\(|\psi|^2\)</span> giving the probability density of finding a particle in a given state. This marked a departure from deterministic classical mechanics.</li>
 </ul>
 <p><strong>Complementarity and Uncertainty</strong></p>
 <ul>
@@ -957,7 +951,7 @@ $$</p>
 <p>Blackbody radiation refers to the electromagnetic radiation emitted by an idealized object that absorbs all incident radiation, regardless of wavelength or angle. This object, called a blackbody, emits radiation solely based on its temperature. By the late 19th century, experimental studies of blackbody radiation revealed discrepancies that classical physics could not explain.</p>
 <p><strong>Classical Predictions</strong></p>
 <ul>
-<li><strong>Rayleigh-Jeans Law</strong>: Classical physics, using the equipartition theorem, predicted that the intensity of blackbody radiation at short wavelengths (high frequencies) would grow infinitely, leading to what became known as the <em>ultraviolet catastrophe</em>. Mathematically, the intensity ( I(\nu, T) ) was given by:
+<li><strong>Rayleigh-Jeans Law</strong>: Classical physics, using the equipartition theorem, predicted that the intensity of blackbody radiation at short wavelengths (high frequencies) would grow infinitely, leading to what became known as the <em>ultraviolet catastrophe</em>. Mathematically, the intensity <span class="arithmatex">\( I(\nu, T) \)</span> was given by:
 $$
 I(\nu, T) = \frac{8 \pi \nu^2}{c^3} k_B T
 $$</li>
@@ -979,7 +973,7 @@ $$
 E = h \nu
 $$
 where:
-- <strong>h</strong>: Planck's constant ((6.626 \times 10^{-34} \, \text{Js}))
+- <strong>h</strong>: Planck's constant (<span class="arithmatex">\(6.626 \times 10^{-34} \, \text{Js}\)</span>)
 - <strong>v</strong>: Frequency of radiation</p>
 <p><strong>Planck’s Law</strong></p>
 <p>Using this assumption, Planck derived an equation that accurately described the observed blackbody radiation spectrum:
@@ -1111,7 +1105,9 @@ This equation successfully matched experimental data at all wavelengths, resolvi
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
