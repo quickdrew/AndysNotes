@@ -35,13 +35,20 @@ nav:
       - Examples: DSD/applications.md
   - Physics:
       - Overview: Physics/pages/index.md
-      - Wave Function: Physics/pages/waveFunction.md
-      - Measurement: Physics/pages/measurement.md
-      - Entanglement: Physics/pages/entanglement.md
-      - Fields: Physics/pages/fields.md
+      - Quanta and Fields: 
+        - Wave Function: Physics/pages/waveFunction.md
+        - Measurement: Physics/pages/measurement.md
+        - Entanglement: Physics/pages/entanglement.md
+        - Fields: Physics/pages/fields.md
+  - Protocols and Interfaces:
+    - Overview: Protocols/pages/index.md
   - Signals And Systems:
       - Overview: SignalsSystems/pages/index.md
       - Digital Signal Processing: SignalsSystems/pages/introDsp.md
+  - Software:
+      - Overview: Software/pages/index.md
+      - Software Development Flow: Software/pages/developmentProcess.md
+      - C Programming Language: Software/pages/c.md
 
 extra:
   footer:

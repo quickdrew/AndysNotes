@@ -7,5 +7,14 @@ Welcome to the **Andy's Notes**! This site is a collection of notes, insights, a
 - [Cyber Security](Cybersecurity/pages/index.md)
 - [Digital Systems Design](DSD/index.md)
 - [Physics](Physics/pages/index.md)
-- [Signals and Systems](SignalsSystems/index.md)
+- [Protocols](Protocols/pages/index.md)
+- [Signals and Systems](SignalsSystems/pages/index.md)
+- [Software](Software/pages/index.md)
+
+
+## Resources 
+- [Embedded Systems Engineering Roadmap](https://github.com/m3y54m/embedded-engineering-roadmap)
+
+
+
 
