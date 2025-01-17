@@ -3,7 +3,7 @@
 - [Vehicle Electrical/Electronic Architecture](architecture.md)
 - [Sensors and Signals](sensorsSignals.md)
 - [Controller Area Network (CAN)](../../Protocols/pages/can.md)
-
+- [Power Distribution Module](pdm.md)
 
 # Resources
 
