@@ -25,6 +25,10 @@ nav:
       - Overview: Automotive/pages/index.md
       - Electrical/Electronic Architecture: Automotive/pages/architecture.md
       - External Sensors and Signals: Automotive/pages/sensorsSignals.md
+      - Protocols:
+        - CAN: Protocols/pages/can.md
+      - Hardware: 
+        - Power Distribution Module: Automotive/pages/pdm.md
   - Cyber Security:
       - Overview: Cybersecurity/pages/index.md
   - Digital Systems Design:
