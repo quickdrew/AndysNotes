@@ -47,9 +47,10 @@ nav:
   - Protocols and Interfaces:
     - Overview: Protocols/pages/index.md
     - CAN: Protocols/pages/can.md
-  - Signals And Systems:
-      - Overview: SignalsSystems/pages/index.md
-      - Digital Signal Processing: SignalsSystems/pages/introDsp.md
+  - Signals:
+      - Overview: Signals/pages/index.md
+      - Digital Signal Processing: Signals/pages/introDsp.md
+      - FCC Electromagnetic Spectrum: Signals/pages/spectrum.md
   - Software:
       - Overview: Software/pages/index.md
       - Software Development Flow: Software/pages/developmentProcess.md
