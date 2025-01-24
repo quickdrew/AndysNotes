@@ -21,6 +21,10 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Artificial Intelligence: 
+      - Overview: ai/pages/index.md
+      - Hardware and Programming: ai/pages/hardware.md
+      - Nivida's Jetson Nano: ai/pages/jetson.md
   - Automotive:
       - Overview: Automotive/pages/index.md
       - Electrical/Electronic Architecture: Automotive/pages/architecture.md
@@ -47,6 +51,8 @@ nav:
   - Protocols and Interfaces:
     - Overview: Protocols/pages/index.md
     - CAN: Protocols/pages/can.md
+  - Senior Design:
+    - Overview: senior_design/pages/index.md
   - Signals:
       - Overview: Signals/pages/index.md
       - Digital Signal Processing: Signals/pages/introDsp.md
