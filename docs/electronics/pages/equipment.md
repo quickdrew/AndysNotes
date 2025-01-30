@@ -8,7 +8,7 @@ Oscilloscope probes connect the circuit under test to the oscilloscope. A typica
 
 **Types of Oscilloscope Probes**
 
-![Probes](../assets/probes)
+![Probes](../assets/probes.png)
 
 1. **Passive Probes** – The most common type, available in **1×** (low-frequency, low-voltage) and **10×** (high-frequency, high-voltage) configurations.  
 2. **Active Probes** – Include transistors and amplifiers, requiring power. Suitable for high-frequency, low-capacitance applications.  
