@@ -41,6 +41,9 @@ nav:
       - Logic Design: DSD/logicDesign.md
       - Simulations: DSD/simulations.md
       - Examples: DSD/applications.md
+  - Electronics:
+      - Overview: electronics/pages/index.md
+      - Measuring Equipment: electronics/pages/equipment.md
   - Physics:
       - Overview: Physics/pages/index.md
       - Quanta and Fields: 

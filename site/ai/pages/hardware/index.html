@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../measurement/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../fields/">
+        <link rel="next" href="../jetson/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Entanglement - Andy's Notes</title>
+        <title>Hardware and Programming - Andy's Notes</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#entanglement" class="md-skip">
+        <a href="#ai-hardware-and-programming" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Entanglement
+              Hardware and Programming
             
           </span>
         </div>
@@ -230,17 +230,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -254,7 +256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Artificial Intelligence
@@ -268,7 +270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ai/pages/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -286,10 +288,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../ai/pages/hardware/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hardware and Programming
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -298,6 +320,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-limits-in-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Limits in AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational Limits in AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-von-neumann-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Von Neumann bottleneck
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-memory-performace-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Memory Performace Gap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-bound-vs-compute-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory-bound vs Compute-bound
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-view-of-a-dnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational View of a DNN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational View of a DNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#its-just-matrix-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Its Just Matrix Math
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-the-dnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training the DNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executing-the-dnn-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executing the DNN (Inference)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -310,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ai/pages/jetson/" class="md-nav__link">
+      <a href="../jetson/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -778,19 +922,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -804,7 +946,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Physics
@@ -818,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../Physics/pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -836,19 +978,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
         
           
           <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
@@ -862,7 +1002,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             Quanta and Fields
@@ -876,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../waveFunction/" class="md-nav__link">
+      <a href="../../../Physics/pages/waveFunction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -897,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../measurement/" class="md-nav__link">
+      <a href="../../../Physics/pages/measurement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -915,30 +1055,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Entanglement
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/entanglement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -947,95 +1067,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Concepts
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Concepts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-particle-decay-and-momentum" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Particle Decay and Momentum
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-entanglement-one-state-many-parts" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Entanglement: One State, Many Parts
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-spooky-action-at-a-distance-and-the-epr-puzzle" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Spooky Action at a Distance and the EPR Puzzle
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-decoherence-theory-the-quantum-classical-divide" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Decoherence Theory: The Quantum-Classical Divide
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-foundations-of-quantum-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Foundations of Quantum Mechanics
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#takeaways" class="md-nav__link">
-    <span class="md-ellipsis">
-      Takeaways
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1048,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fields/" class="md-nav__link">
+      <a href="../../../Physics/pages/fields/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1461,55 +1492,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
+  <a href="#instructor" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Concepts
+      Instructor
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Key Concepts">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-limits-in-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Limits in AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational Limits in AI">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-particle-decay-and-momentum" class="md-nav__link">
+  <a href="#the-von-neumann-bottleneck" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Particle Decay and Momentum
+      The Von Neumann bottleneck
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-entanglement-one-state-many-parts" class="md-nav__link">
+  <a href="#the-memory-performace-gap" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Entanglement: One State, Many Parts
+      The Memory Performace Gap
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-spooky-action-at-a-distance-and-the-epr-puzzle" class="md-nav__link">
+  <a href="#memory-bound-vs-compute-bound" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Spooky Action at a Distance and the EPR Puzzle
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-decoherence-theory-the-quantum-classical-divide" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Decoherence Theory: The Quantum-Classical Divide
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-foundations-of-quantum-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Foundations of Quantum Mechanics
+      Memory-bound vs Compute-bound
     </span>
   </a>
   
@@ -1521,11 +1552,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#takeaways" class="md-nav__link">
+  <a href="#computational-view-of-a-dnn" class="md-nav__link">
     <span class="md-ellipsis">
-      Takeaways
+      Computational View of a DNN
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Computational View of a DNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#its-just-matrix-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Its Just Matrix Math
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-the-dnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training the DNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executing-the-dnn-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executing the DNN (Inference)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1544,169 +1608,87 @@
                   
 
 
-<h1 id="entanglement">Entanglement</h1>
-<p><em>From Sean Carroll's "Quantum and Fields"</em></p>
-<hr />
-<h2 id="key-concepts"><strong>Key Concepts</strong></h2>
-<h3 id="1-particle-decay-and-momentum">1. <strong>Particle Decay and Momentum</strong></h3>
-<p>In quantum mechanics, particle decay is described by the wavefunction:</p>
-<div class="arithmatex">\[|\psi(t)\rangle = \alpha(t) |\text{undecayed}\rangle + \beta(t) |\text{decayed}\rangle\]</div>
-<p>Here, <span class="arithmatex">\(\alpha(t)\)</span> represents the amplitude for the particle to remain undecayed, and <span class="arithmatex">\(\beta(t)\)</span> represents the amplitude for the particle to decay. The normalization condition ensures:
-$$
-|\alpha(t)|^2 + |\beta(t)|^2 = 1
-$$</p>
-<p>Over time, the probability of the particle remaining undecayed decreases, and the probability of decay increases. The survival probability at time <span class="arithmatex">\(t\)</span> is <span class="arithmatex">\(P_{\text{undecayed}}(t) = |\alpha(t)|^2\)</span>, and the probability of the particle decaying is <span class="arithmatex">\(P_{\text{decayed}}(t) = 1 - |\alpha(t)|^2\)</span>.</p>
-<p><strong>Momentum conservation</strong> plays a crucial role in particle decay. The total momentum before and after decay remains the same:
-$$
-\vec{p}<em>{\text{original}} = \vec{p}</em>{1} + \vec{p}<em>{2}
-$$
-where <span class="arithmatex">\(\vec{p}_{\text{original}}\)</span> is the momentum of the original particle, and <span class="arithmatex">\(\vec{p}_{1}\)</span> and <span class="arithmatex">\(\vec{p}_{2}\)</span> are the momenta of the decay products. This allows us to calculate the momentum of one decay product without directly observing it:
-$$
-\vec{p}</em>{2} = \vec{p}<em>{\text{original}} - \vec{p}</em>{1}
-$$</p>
-<p><strong>Example: Decaying Boson</strong><br />
-Consider a stationary boson that decays into an electron-positron pair. Since the original boson has no initial momentum (<span class="arithmatex">\(\vec{p}_{\text{original}} = 0\)</span>), the momentum of the electron and positron must be equal and opposite to conserve momentum:
-$$
-\vec{p}<em>{\text{positron}} = -\vec{p}</em>{\text{electron}}
-$$
-If we know the position of the original boson before decay, we can measure the momentum of one of the decay products (e.g., the positron) and use momentum conservation to determine the momentum of the other particle, even without directly measuring it. This is useful in particle physics experiments, where some particles (like neutrinos) are hard to detect directly. By measuring other decay products, we can infer properties of the undetected particles.</p>
-<hr />
-<h3 id="2-entanglement-one-state-many-parts">2. <strong>Entanglement: One State, Many Parts</strong></h3>
-<p>Entanglement describes a quantum phenomenon where the states of two or more particles become deeply interconnected. Unlike classical systems, where particles are independent, entangled particles share a combined quantum state. This means that measuring one particle’s state instantly determines the state of the other, no matter the distance between them.</p>
-<p>The entangled state is typically written as:
-$$
-|\psi\rangle = \frac{1}{\sqrt{2}} \left( |\uparrow\rangle_1 |\downarrow\rangle_2 - |\downarrow\rangle_1 |\uparrow\rangle_2 \right)
-$$
-Here, <span class="arithmatex">\(|\uparrow\rangle_1\)</span> and <span class="arithmatex">\(|\downarrow\rangle_2\)</span> represent the spin states of two entangled particles. Measuring the spin of one particle gives immediate knowledge of the spin of the other.</p>
-<p>Building on the previous example of particle decay, we see how momentum conservation connects the decay products. Similarly, entangled particles are not independent; they are connected in such a way that measuring one particle gives us information about the other, even if they are far apart.</p>
-<p>In quantum mechanics, entanglement goes beyond momentum conservation. It links the properties of particles in a non-local way, forming a single quantum system that cannot be separated into individual parts. This phenomenon is fundamental to quantum technologies like quantum cryptography and quantum teleportation, which exploit these correlations to achieve tasks impossible with classical systems.</p>
-<hr />
-<h3 id="3-spooky-action-at-a-distance-and-the-epr-puzzle">3. <strong>Spooky Action at a Distance and the EPR Puzzle</strong></h3>
-<p>The term "spooky action at a distance" was coined by Einstein to criticize the non-local nature of quantum entanglement. It describes how entangled particles exhibit correlations that seem to violate the principle of locality, which states that objects are only directly influenced by their immediate surroundings.</p>
-<p><strong>Key Features</strong></p>
+<h1 id="ai-hardware-and-programming">AI Hardware and Programming</h1>
+<h2 id="instructor">Instructor</h2>
+<p>Notes are mainy derived from <strong>Dr. Chen Pan's</strong> Hardware and programming course at <strong>UTSA</strong>.</p>
 <ul>
-<li>Entangled particles, even when separated by vast distances, are correlated in such a way that measuring one particle’s state (e.g., its spin or polarization) immediately determines the state of the other. This happens instantaneously, seemingly defying the constraints of space and time.</li>
-<li>Importantly, this "spooky action" does not allow faster-than-light communication, thus preserving causality in quantum mechanics. While the information is transmitted instantaneously, it cannot be used to send information faster than light, which prevents paradoxes.  <ul>
-<li>For example, if Bob and Alice have an entangled pair and travel great distances from each other, when Bob measures his particle, he will immediately know the state of Alice’s particle. However, Alice, unaware of Bob's measurement, still has the same odds of measurement outcomes as if Bob never measured his particle. The act of measuring Bob's particle doesn't change the fact that Alice's measurement will still have a probabilistic outcome based on her own measurements. Making the instantaneous information useless for communication between observers.</li>
+<li>Instructor Email: chen.pan@utsa.edu</li>
 </ul>
-</li>
-</ul>
-<p><strong>The EPR Puzzle</strong></p>
-<p>Proposed by Einstein, Podolsky, and Rosen (EPR) in 1935, the EPR thought experiment challenged the completeness of quantum mechanics. EPR argued that if quantum mechanics were complete, it would have to explain physical reality through either:</p>
-<ol>
-<li><strong>Local Realism</strong>: Particles have pre-existing properties (hidden variables) that determine their behavior before measurement.</li>
-<li><strong>Non-Locality</strong>: The measurement of one particle instantaneously affects the state of another, regardless of the distance between them.</li>
-</ol>
-<p>EPR believed that <strong>non-locality</strong> was problematic because it implies that quantum mechanics allows for instantaneous influences between distant particles, which violates classical ideas of locality and causality. This made quantum mechanics seem incomplete because it relied on non-local effects without offering a fully deterministic explanation.</p>
-<p>Quantum mechanics rejects <strong>local realism</strong> and embraces <strong>non-locality</strong> through entanglement, where the state of entangled particles is not determined until one is measured, and the measurement of one affects the state of the other instantly.</p>
-<p>The EPR paradox led to experiments testing <strong>Bell's Theorem</strong>, which showed that quantum mechanics’ predictions cannot be reproduced by any theory based on local hidden variables, confirming that non-locality is an intrinsic feature of quantum mechanics.</p>
-<hr />
-<h3 id="4-decoherence-theory-the-quantum-classical-divide">4. <strong>Decoherence Theory: The Quantum-Classical Divide</strong></h3>
-<p>Decoherence Theory argues the wave function never truly collapses. Instead, the appearance of collapse happens because the quantum system becomes entangled with its environment, making certain quantum behaviors (like interference) inaccessible to us as observers.</p>
-<p><strong>Key Concepts</strong></p>
+<h2 id="overview">Overview</h2>
 <ul>
-<li>
-<p><strong>Interaction with the Environment</strong>:<br />
-  Decoherence occurs when a quantum system interacts with its environment, such as measurement devices, air molecules, or photons. These interactions cause the quantum system to become <strong>entangled</strong> with the environment, making the superpositions of quantum states effectively unobservable.</p>
-</li>
-<li>
-<p><strong>Entanglement with the Measurement Apparatus</strong>:<br />
-  In quantum mechanics, when a measurement is made, the quantum system becomes entangled with the measuring device. This means that the state of the system and the state of the apparatus are linked. The act of measurement doesn't just collapse the system's state but causes both the system and the apparatus to evolve into a combined state.</p>
-</li>
-<li>
-<p><strong>Why Big Things Appear Classical</strong>:<br />
-  Macroscopic systems interact with their environment on a massive scale, causing rapid and irreversible decoherence. The entanglement between the system and its surroundings destroys quantum coherence, making superpositions unobservable and the system behave as though it has a single classical state.</p>
-</li>
-<li>
-<p><strong>Loss of Superposition</strong>:<br />
-  As the quantum system entangles with the environment or measuring device, its superposition states (e.g., being in two places at once) effectively disappear. The system appears to collapse into one definite classical state as the environment "measures" it.</p>
-</li>
-<li>
-<p><strong>No Wavefunction Collapse</strong>:<br />
-  Decoherence does not imply a traditional wavefunction collapse. Instead, it explains why certain outcomes appear classical: the system is entangled with the environment in such a way that it no longer displays quantum superposition in a measurable way.</p>
-</li>
+<li>Understanding microarchitecture of various AI hardware, parallel computing, and deep learning</li>
+<li>Low level (C\C++) programming for executing AI algorithms</li>
+<li>Bridge the gap between hardware and software in AI.</li>
 </ul>
-<p><strong>Implications</strong></p>
-<ul>
-<li>
-<p><strong>Quantum to Classical Transition</strong>:<br />
-  Decoherence helps explain why macroscopic systems behave classically. When a quantum system interacts with a large environment, it loses its quantum coherence and behaves as a classical system, even though the underlying dynamics remain quantum.</p>
-</li>
-<li>
-<p><strong>Measurement Problem</strong>:<br />
-  Decoherence helps solve the measurement problem by showing how measurement interactions between the system and the apparatus lead to classical outcomes. The entanglement between the system and measurement apparatus prevents the superposition from being observed in practice.</p>
-</li>
-<li>
-<p><strong>Quantum Computing</strong>:<br />
-  In quantum computing, decoherence is a significant challenge. Qubits are highly susceptible to decoherence from environmental interactions, which limits the time during which quantum information can be preserved. Reducing decoherence is critical for reliable quantum computing.</p>
-</li>
-</ul>
-<hr />
-<h3 id="5-foundations-of-quantum-mechanics">5. Foundations of Quantum Mechanics</h3>
-<p>The foundations of quantum mechanics explore principles, interpretations, and unresolved questions at the core of the theory. Below are common theories:</p>
+<h2 id="computational-limits-in-ai">Computational Limits in AI</h2>
+<p>AI differs from traditional sequential code in that it relies heavily on <strong>parallelism</strong> and processing large datasets, making operations like matrix multiplication central to tasks like training and inference. While sequential code (found in most classical microcontrollers/microcomputers) executes one instruction at a time, AI performs millions of computations simultaneously, requiring hardware like GPUs or TPUs for efficient parallel processing. AI also demands high memory bandwidth, low latency, and specialized accelerators to handle its computational intensity, exceeding the capabilities of traditional architectures designed for sequential tasks.</p>
+<h3 id="the-von-neumann-bottleneck">The Von Neumann bottleneck</h3>
+<p>The <strong>Von Neumann architecture</strong> is a foundational computing model that organizes a computer into three main components: a <strong>CPU (central processing unit)</strong>, <strong>memory</strong> (for storing data and instructions), and <strong>I/O devices</strong>. It operates by fetching instructions from memory, decoding them, and executing them sequentially, which is known as the <strong>fetch-decode-execute cycle</strong>. While the Von Neumann architecture underpins most general-purpose computers, its inherent bottleneck—limited bandwidth between the CPU and memory (the "Von Neumann bottleneck")—poses challenges for AI workloads, which often require high-speed processing of massive datasets. To address this, specialized AI hardware, such as GPUs, TPUs, and neuromorphic chips, is designed to parallelize computations and overcome memory bottlenecks, enabling efficient training and inference for complex AI models. Thus, while AI builds on the principles of the Von Neumann architecture, it increasingly relies on adaptations and specialized architectures optimized for its unique demands.</p>
+<p><img alt="Von Neumann bottleneck" src="../../assets/vonn.png" /></p>
+<h3 id="the-memory-performace-gap">The Memory Performace Gap</h3>
+<p>The <strong>memory performance gap</strong> is the mismatch between CPU speed and slower memory access, creating a bottleneck for AI workloads that rely on fast data processing. AI hardware mitigates this with high-bandwidth memory (HBM), larger caches, and optimized architectures like GPUs and TPUs, which improve memory throughput and enable efficient parallel processing of large datasets.</p>
+<p><img alt="Memory Gap" src="../../assets/memory_gap.png" />
+Source: <a href="https://www.researchgate.net/figure/Trend-of-processing-vs-memory-performance-on-time-Hardware-parallelism-eg-in-the_fig3_329400858">researchgate</a></p>
+<h3 id="memory-bound-vs-compute-bound">Memory-bound vs Compute-bound</h3>
+<p><strong>Memory-Bound</strong> tasks are limited by the speed of data transfer between memory and the processor, causing the CPU or GPU to wait for data. Examples include fetching large datasets or model weights in AI.</p>
+<p><strong>Compute-Bound</strong> tasks are limited by the processor's computational power, with the CPU or GPU fully utilized for calculations. Examples include matrix multiplications in deep learning.</p>
+<p>In AI, memory-bound tasks benefit from faster memory or bandwidth, while compute-bound tasks require more powerful processors or accelerators.</p>
+<h2 id="computational-view-of-a-dnn">Computational View of a DNN</h2>
+<p><img alt="DNN" src="../../assets/dnn.png" /></p>
+<h3 id="its-just-matrix-math">Its Just Matrix Math</h3>
+<p>In deep neural networks (DNN), matrix math is the foundation for propagating data through layers, as depicted in the diagram. Each layer starts with <strong>input features</strong> (<span class="arithmatex">\( \mathbf{x}_1, \mathbf{x}_2, \dots \)</span>) that are combined with a <strong>weight matrix</strong> (<span class="arithmatex">\( \mathbf{W} \)</span>) to compute <strong>scores</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{z} = \mathbf{W} \cdot \mathbf{x} + \mathbf{b}
+\]</div>
+<p>The scores are then passed through an <strong>activation function</strong> <span class="arithmatex">\( f(\cdot) \)</span>, such as the one shown in the diagram, to introduce non-linearity:</p>
+<div class="arithmatex">\[
+\mathbf{y} = f(\mathbf{z})
+\]</div>
+<p>The result, <span class="arithmatex">\( \mathbf{y} \)</span>, represents the output of <strong>hidden units</strong> in each layer, which then serve as inputs to the next layer. This process is repeated across multiple layers, from the <strong>first layer</strong> (weights, scores, and activation functions) through the <strong>hidden layers</strong> to the final layer, which produces the <strong>output units</strong>.</p>
+<p>Each hidden layer transforms its inputs into a new representation using the same sequence: weights, scores, activation functions, and outputs. These operations are computationally intensive but highly parallelizable, making GPUs and TPUs essential for efficiently handling the large-scale computations in deep learning.</p>
+<h3 id="training-the-dnn">Training the DNN</h3>
+<p>Training is the process of learning the optimal weights and biases for a DNN. It involves:</p>
 <ol>
-<li>
-<p><strong>Copenhagen Interpretation</strong><br />
-   Quantum systems are described by a wavefunction that collapses upon measurement. Measurement defines reality, but the collapse mechanism remains unexplained.</p>
-</li>
-<li>
-<p><strong>Many-Worlds Interpretation</strong><br />
-   All possible outcomes occur in separate, branching universes. There is no wavefunction collapse, and the universe evolves deterministically.</p>
-</li>
-<li>
-<p><strong>Pilot-Wave Theory (Bohmian Mechanics)</strong><br />
-   Particles follow definite trajectories guided by a "pilot wave." This restores determinism but introduces non-local interactions.</p>
-</li>
-<li>
-<p><strong>Quantum Bayesianism (QBism)</strong><br />
-   The wavefunction represents an observer’s subjective knowledge. Measurement outcomes are probabilistic, avoiding objective collapse.</p>
-</li>
-<li>
-<p><strong>Relational Quantum Mechanics</strong><br />
-   Properties of a quantum system exist only relative to an observer or another system. Reality is observer-dependent, avoiding universal collapse.</p>
-</li>
-<li>
-<p><strong>Objective Collapse Theories</strong><br />
-   Wavefunction collapse is a real, physical process independent of observation. Examples include GRW theory, which aims to bridge quantum and classical behavior.</p>
-</li>
+<li><strong>Forward Pass</strong>: Input features are propagated through the network to compute predictions.</li>
+<li><strong>Loss Calculation</strong>: The error between predictions and targets is measured using a loss function.</li>
+<li><strong>Backpropagation</strong>: Gradients of the loss with respect to the weights are calculated.</li>
+<li><strong>Weight Update</strong>: Weights are adjusted using an optimizer (e.g., SGD) to minimize the error.</li>
 </ol>
-<p>Each interpretation addresses the role of measurement, the nature of reality, and the origins of randomness, highlighting the ongoing debate in quantum mechanics.</p>
-<h2 id="takeaways">Takeaways</h2>
+<p>This process repeats over many iterations (epochs) until the model converges.</p>
+<h3 id="executing-the-dnn-inference">Executing the DNN (Inference)</h3>
+<p>Inference uses the trained weights to make predictions. It involves:</p>
 <ol>
-<li>
-<p><strong>Wavefunctions and Probabilities</strong><br />
-   Quantum states are represented by wavefunctions, with probabilities derived from their squared amplitudes. Particle decay exemplifies how these probabilities evolve over time.</p>
-</li>
-<li>
-<p><strong>Momentum Conservation in Quantum Systems</strong><br />
-   Momentum conservation in particle decay allows properties of unobserved decay products to be inferred from observed ones, a crucial principle in particle physics.</p>
-</li>
-<li>
-<p><strong>Entanglement and Non-Locality</strong><br />
-   Entangled particles share a combined quantum state, meaning the measurement of one instantly determines the state of the other, regardless of distance. This underpins phenomena like "spooky action at a distance."</p>
-</li>
-<li>
-<p><strong>The EPR Puzzle and Bell’s Theorem</strong><br />
-   The EPR paradox challenges quantum mechanics with concepts like local realism, but Bell’s Theorem confirms quantum mechanics’ intrinsic non-locality, ruling out local hidden variable theories.</p>
-</li>
-<li>
-<p><strong>Decoherence and the Quantum-Classical Divide</strong><br />
-   Decoherence explains how quantum systems lose their coherence through interaction with the environment, transitioning to classical-like behavior without requiring wavefunction collapse.</p>
-</li>
-<li>
-<p><strong>Interpretations of Quantum Mechanics</strong><br />
-   Competing interpretations—such as Copenhagen, Many-Worlds, and Pilot-Wave—offer differing perspectives on measurement, reality, and randomness, reflecting the unresolved nature of quantum foundations.</p>
-</li>
+<li><strong>Forward Pass Only</strong>: Input features propagate through the network to compute outputs.</li>
+<li><strong>Prediction</strong>: The final output represents the model's decision.</li>
 </ol>
-<h1 id="resources">Resources</h1>
-<ol>
-<li><a href="https://www.amazon.com/Quanta-Fields-Biggest-Ideas-Universe/dp/0593186605">Quanta and Fields by Sean Carroll</a></li>
-</ol>
-<hr />
-<div style="display: flex; justify-content: space-between;">
-  <a href="../measurement"><- Measurement</a>
-  <a href="../fields">Fields -></a>
-</div>
+<p>Unlike training, inference is faster and less computationally intensive as it skips backpropagation and weight updates.</p>
+<p><strong>Key Differences</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Aspect</strong></th>
+<th><strong>Training</strong></th>
+<th><strong>Inference</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Learn weights.</td>
+<td>Make predictions.</td>
+</tr>
+<tr>
+<td><strong>Operations</strong></td>
+<td>Forward pass + backpropagation.</td>
+<td>Forward pass only.</td>
+</tr>
+<tr>
+<td><strong>Resource Needs</strong></td>
+<td>High (GPUs/TPUs).</td>
+<td>Low, optimized for speed.</td>
+</tr>
+</tbody>
+</table>
 
 
 

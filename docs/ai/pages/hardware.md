@@ -83,3 +83,146 @@ Unlike training, inference is faster and less computationally intensive as it sk
 | **Purpose**       | Learn weights.                   | Make predictions.                |
 | **Operations**    | Forward pass + backpropagation.  | Forward pass only.               |
 | **Resource Needs**| High (GPUs/TPUs).                | Low, optimized for speed.        |
+
+
+---
+## Computer Architecture
+
+![architecture](../assets/computerarchitecture.jpg)
+
+### Instruction Sets 
+
+RISC (Reduced Instruction Set Computing) and CISC (Complex Instruction Set Computing) are two CPU architecture approaches that impact instruction execution, power efficiency, and complexity.
+
+| Feature         | **RISC (Reduced Instruction Set Computing)** | **CISC (Complex Instruction Set Computing)** |
+|---------------|----------------------------------|----------------------------------|
+| **Instruction Set** | Small, fixed-length, simple | Large, variable-length, complex |
+| **Execution**  | One or few cycles per instruction | Some instructions take multiple cycles |
+| **Memory Access** | Load/Store model (separate memory instructions) | Memory operations embedded in instructions |
+| **Code Size** | More instructions but simpler | Fewer instructions but more complex |
+| **Pipelining** | Easier to implement | More difficult due to complex decoding |
+| **Power Efficiency** | More efficient, ideal for mobile and embedded devices | Higher power consumption, used in desktops and servers |
+| **Examples** | ARM, RISC-V, PowerPC | x86 (Intel, AMD), IBM System/360 |
+
+---
+
+### Flynn's Taxonomy
+
+Flynn's Taxonomy classifies computer architectures based on **how instructions and data are processed**. It consists of four primary categories: **SISD, SIMD, MISD, and MIMD**.
+
+![Flynn's Taxonomy](../assets/FlynnsTaxonomy.png)
+
+
+| **Category** | **Description** | **Usage Examples** |
+|-------------|----------------|--------------------|
+| **SISD** (Single Instruction, Single Data) | Traditional sequential execution, one instruction operates on one data at a time. | Early CPUs, simple microcontrollers |
+| **SIMD** (Single Instruction, Multiple Data) | One instruction applied to multiple data elements simultaneously. | GPUs, vector processors, AI deep learning |
+| **MISD** (Multiple Instruction, Single Data) | Multiple instructions process the same data stream simultaneously. Rarely used. | Fault-tolerant computing (e.g., redundant military systems) |
+| **MIMD** (Multiple Instruction, Multiple Data) | Multiple processors execute different instructions on different data streams. | Multi-core CPUs, distributed computing, cloud systems |
+
+
+---
+
+### **Old vs. Real Computer Architecture**
+
+Computing architectures can be categorized into **old (theoretical) models** and **real (practical) implementations**. Old architectures define foundational principles, while real architectures build upon them with modern enhancements.
+
+| **Architecture Type** | **Description** | **Examples** |
+|---------------------|----------------|-------------|
+| **Old Architectures** | Conceptual models shaping computing principles, often with limitations in speed and memory efficiency. | Von Neumann (shared memory for data/instructions), Harvard (separate memory paths), Stack-based (operations via stack), Accumulator-based (single register for operations) |
+| **Real Architectures** | Practical implementations optimizing speed, parallelism, and efficiency for real-world applications. | RISC (ARM, RISC-V), CISC (x86), VLIW (Intel Itanium), Superscalar (modern x86, ARM Cortex), Multi-core (Intel Core, AMD Ryzen) |
+
+Modern processors often blend **Von Neumann’s model with elements of Harvard architecture** to enhance performance. Superscalar and multi-core architectures leverage parallel execution for increased computing power, making them dominant in **general-purpose computing, AI acceleration, and cloud systems**.
+
+
+## Memory
+
+
+![memory hierarchy](../assets/Memory-Hierarchy.jpg)
+
+---
+
+### **Types of Memory in Computer Architecture**
+Memory can be categorized into **primary, secondary, and virtual memory**, each serving different roles in a computer system.
+
+**A. Primary Memory (Volatile)**
+
+| **Memory Type** | **Description** | **Examples** |
+|---------------|----------------|-------------|
+| **Registers** | Small storage inside the CPU for immediate processing. | Program Counter (PC), Accumulator |
+| **Cache Memory** | Stores frequently accessed data for faster CPU access. | L1, L2, L3 cache |
+| **RAM (Random Access Memory)** | Stores currently running programs and data. | DDR4, DDR5 |
+
+**B. Secondary Memory (Non-Volatile)**
+
+| **Memory Type** | **Description** | **Examples** |
+|---------------|----------------|-------------|
+| **HDD (Hard Disk Drive)** | Magnetic storage with moving parts, slower but cheaper. | Traditional laptop HDDs |
+| **SSD (Solid State Drive)** | Flash-based storage, much faster than HDDs. | NVMe SSD, SATA SSD |
+
+**C. Virtual Memory**
+
+| **Memory Type** | **Description** | **Examples** |
+|---------------|----------------|-------------|
+| **Swap Space** | Uses disk space as an extension of RAM. | Linux Swap, Windows Pagefile |
+| **Paging** | Divides memory into fixed-size pages to manage virtual memory. | 4KB page size in OS |
+
+---
+
+### **Memory Access Methods**
+| **Access Method** | **Description** | **Example** |
+|-----------------|----------------|-------------|
+| **Sequential Access** | Reads data in a linear order. | Magnetic tape storage |
+| **Direct Access** | Jumps directly to memory locations. | Hard drives, SSDs |
+| **Random Access** | Any memory cell can be accessed in constant time. | RAM, Cache |
+
+---
+
+### **Virtual Memory**
+
+Virtual memory is a memory management technique that allows a computer to use **more memory than physically available** by utilizing disk storage as an extension of RAM. It provides an abstraction that enables programs to operate as if they have access to a **large, contiguous block of memory**, even if the physical RAM is limited.
+
+**How Virtual Memory Works**
+
+1. **Paging** – The operating system divides memory into fixed-sized **pages** (e.g., 4KB) and stores inactive pages on the disk.
+2. **Page Table** – Keeps track of mappings between **virtual addresses** (used by programs) and **physical addresses** (actual RAM locations).
+3. **Page Faults** – When a program accesses a page that is not in RAM, the OS retrieves it from disk, causing a **performance delay**.
+4. **Swap Space** – A reserved portion of disk storage where the OS stores temporarily unused memory pages.
+
+**Benefits of Virtual Memory**
+
+| **Feature** | **Description** |
+|------------|----------------|
+| **Increases Available Memory** | Programs can use more memory than the installed RAM. |
+| **Memory Isolation** | Each process operates in its own memory space, preventing crashes from affecting other processes. |
+| **Efficient Multitasking** | Multiple programs can run without worrying about limited RAM. |
+| **Simplifies Memory Management** | Programs don’t need to manage physical memory directly. |
+
+**Virtual Memory vs. Physical Memory**
+
+| **Aspect** | **Virtual Memory** | **Physical Memory (RAM)** |
+|-----------|------------------|--------------------|
+| **Location** | Simulated in disk storage | Actual hardware memory |
+| **Speed** | Slower (depends on disk speed) | Fast (nanosecond-level access) |
+| **Capacity** | Larger than RAM | Limited by installed hardware |
+| **Usage** | Extends available memory | Stores active processes |
+
+**Challenges of Virtual Memory**
+
+- **Slower Performance** – Retrieving data from disk (swap space) is much slower than accessing RAM.
+- **Thrashing** – If too many pages are swapped frequently, performance degrades significantly.
+- **Disk Wear** – On SSDs, excessive swapping can reduce lifespan.
+
+Virtual memory is a key component of **modern operating systems** (Windows, Linux, macOS) and is essential for running large applications with limited physical RAM.
+
+---
+
+### **Memory Management in Operating Systems**
+Operating systems manage memory through:
+
+1. **Paging:** Divides memory into pages, swapping in/out as needed.
+2. **Segmentation:** Divides memory into segments (code, stack, heap).
+3. **Virtual Memory:** Uses disk space to extend RAM.
+
+---
+

@@ -8,6 +8,7 @@ Welcome to the **Andy's Notes**! This site is a collection of notes, insights, a
 - [Cyber Security](Cybersecurity/pages/index.md)
 - [Digital Systems Design](DSD/index.md)
 - [Physics](Physics/pages/index.md)
+- [Electronics](electronics/pages/index.md)
 - [Protocols and Interfaces](Protocols/pages/index.md)
 - [Senior Design](senior_design/pages/index.md)
 - [Signals](Signals/pages/index.md)
