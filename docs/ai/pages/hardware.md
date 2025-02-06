@@ -6,6 +6,11 @@ Notes are mainy derived from **Dr. Chen Pan's** Hardware and programming course 
 - Instructor Email: chen.pan@utsa.edu
 
 
+## Resources
+
+- [Computer Architecture: A Quantitative Approach 6th Edition](https://archive.org/details/computerarchitectureaquantitativeapproach6thedition/page/n11/mode/2up?view=theater)
+
+
 ## Overview
 
 - Understanding microarchitecture of various AI hardware, parallel computing, and deep learning
@@ -36,6 +41,12 @@ Source: [researchgate](https://www.researchgate.net/figure/Trend-of-processing-v
 
 In AI, memory-bound tasks benefit from faster memory or bandwidth, while compute-bound tasks require more powerful processors or accelerators.
 
+
+### The Power Gap
+
+![IOT Power Gap](../assets/power_gap.png)
+
+Battery technology is not keeping up to power requirments of embedded systems. To combat this, energy harvesting alternatives like solar, RF, heat, or kinetic energy harvesting are being explored.
 
 ## Computational View of a DNN
 
@@ -86,7 +97,7 @@ Unlike training, inference is faster and less computationally intensive as it sk
 
 
 ---
-## Computer Architecture
+## Computer Architecture Basics
 
 ![architecture](../assets/computerarchitecture.jpg)
 
@@ -135,7 +146,7 @@ Computing architectures can be categorized into **old (theoretical) models** and
 Modern processors often blend **Von Neumann’s model with elements of Harvard architecture** to enhance performance. Superscalar and multi-core architectures leverage parallel execution for increased computing power, making them dominant in **general-purpose computing, AI acceleration, and cloud systems**.
 
 
-## Memory
+## Memory Hierarchy Design
 
 
 ![memory hierarchy](../assets/Memory-Hierarchy.jpg)
@@ -177,8 +188,52 @@ Memory can be categorized into **primary, secondary, and virtual memory**, each 
 | **Random Access** | Any memory cell can be accessed in constant time. | RAM, Cache |
 
 ---
+### Cache Fundamentals
+
+Modern systems bridge the processor-memory speed gap with caches. When a word is missing (a miss), a contiguous block is fetched from lower memory and stored in the cache with an identifying tag.
+
+**Cache Organization:**
+
+- **Set Associative:** Blocks map to a set based on their address.
+
+    - *Direct-Mapped:* One block per set.
+     - *Fully Associative:* Blocks can be placed anywhere.
+
+**Write Strategies:**
+
+- **Write-Through:** Updates cache and memory simultaneously.
+- **Write-Back:** Updates the cache only; writes back when the block is evicted.
+- **Write Buffers:** Mitigate write latency by queuing updates.
+
+**Performance Metrics:**
+
+- **Miss Rate:** The fraction of accesses that result in a miss, categorized as:
+
+    - *Compulsory:* First-time accesses.
+    - *Capacity:* Occur when the cache is too small.
+    - *Conflict:* Happen due to set-associativity limits.
+
+- **Average Memory Access Time (AMAT):**  
+  \[
+  \text{AMAT} = \text{Hit Time} + (\text{Miss Rate} \times \text{Miss Penalty})
+  \]
+
+**Key Optimizations:**
+
+1. **Larger Block Size:** Leverages spatial locality but may increase miss penalty.
+2. **Bigger Caches:** Reduces capacity misses at the cost of increased power and potentially longer hit times.
+3. **Higher Associativity:** Lowers conflict misses, possibly increasing hit time.
+4. **Multilevel Caches:** Combine small, fast caches (L1) with larger ones (L2/L3) for efficiency.
+5. **Read Priority:** Uses write buffers to give reads precedence, reducing miss penalties.
+6. **Virtual Indexing:** Avoids delays from address translation during cache indexing.
+
+**Design Trade-Offs:**: System designs (servers, desktops, PMDs) balance these factors differently, considering performance, power, cost, and workload characteristics.
+
+---
 
 ### **Virtual Memory**
+
+![vm](../assets/vitural_memory.png)
 
 Virtual memory is a memory management technique that allows a computer to use **more memory than physically available** by utilizing disk storage as an extension of RAM. It provides an abstraction that enables programs to operate as if they have access to a **large, contiguous block of memory**, even if the physical RAM is limited.
 
@@ -226,3 +281,148 @@ Operating systems manage memory through:
 
 ---
 
+### **Emerging Nonvolatile Memory**
+
+![Emerging Memory](../assets/emerg_memory.png)
+
+
+**NAND Flash (Floating Gate Transistor)**
+
+- Based on floating-gate transistors, where electrons are trapped in a floating gate to store data.
+- Widely used in SSDs, USB drives, and memory cards.
+- **Advantages:** High density and low cost per bit.
+- **Disadvantages:** Limited endurance due to charge leakage over time.
+
+**FRAM (Ferroelectric RAM)**
+
+- Uses a ferroelectric material (often PZT) to store data by switching polarization states.
+- **Advantages:** Low power consumption, high-speed read/write, and better endurance than Flash.
+- **Disadvantages:** Lower density and higher cost than Flash memory.
+
+**PCM (Phase-Change Memory)**
+
+- Utilizes phase-change material (GST - Germanium-Antimony-Tellurium) that switches between amorphous and crystalline states to represent data.
+- **Advantages:** Faster than Flash, better endurance, and potential for high-density storage.
+- **Disadvantages:** High write energy and material degradation over repeated cycles.
+
+**STT-RAM (Spin-Transfer Torque RAM)**
+
+- Based on magnetic tunnel junctions, where data is stored using the spin of electrons.
+- **Advantages:** High speed, non-volatility, and low power consumption.
+- **Disadvantages:** Higher cost and fabrication complexity.
+
+**RRAM (Resistive RAM)**
+
+- Stores data by changing the resistance of a material through the movement of oxygen vacancies.
+- **Advantages:** Low power, fast switching speed, and scalability.
+- **Disadvantages:** Variability in resistance states and endurance issues.
+
+Each of these memory technologies offers trade-offs in speed, endurance, power consumption, and scalability, making them suitable for different applications.
+
+
+## Instruction-Level Parallelism (ILP)
+
+### **Overview**
+Since 1985, processors have used pipelining to improve performance by overlapping the execution of instructions. This overlapping is called **instruction-level parallelism (ILP)**, as multiple instructions can be executed in parallel. This chapter explores various techniques to enhance ILP beyond basic pipelining.
+
+To understand ILP, it is essential to first understand **basic pipelining**, a fundamental technique used to improve CPU performance.
+
+### **Basic Pipelining**
+A **pipeline** is a sequence of processing stages where each stage completes a part of an instruction. Instead of waiting for one instruction to fully execute before starting the next, a processor with a pipeline allows multiple instructions to be **in different stages of execution simultaneously**.
+
+A classic **5-stage pipeline** consists of:
+
+1. **Instruction Fetch (IF)**: The processor retrieves the next instruction from memory.
+
+2. **Instruction Decode (ID)**: The instruction is decoded, and the control unit determines what needs to be done.
+
+3. **Execute (EX)**: The operation is performed using the Arithmetic Logic Unit (ALU) or another relevant execution unit.
+
+4. **Memory Access (MEM)**: If the instruction involves memory (load/store), this stage accesses memory.
+
+5. **Write Back (WB)**: The result is written back to registers.
+
+**How pipelining speeds this up:**
+
+Without pipelining, instructions execute sequentially, meaning each instruction must complete all five stages before the next begins. With pipelining, multiple instructions are in different stages at the same time, improving throughput. In an ideal scenario, a 5-stage pipeline can **complete one instruction per cycle** after the pipeline is filled.
+
+For example, if each stage takes 1 cycle, executing 5 instructions sequentially would take **5 × 5 = 25 cycles** without pipelining. With pipelining, once the pipeline is full, one instruction completes every cycle, leading to execution in **9 cycles** instead of 25.
+
+**Pipeline limitations:**
+
+Despite its benefits, pipelining is **not** always perfect. Three main types of hazards can **stall the pipeline**, reducing efficiency:
+
+- **Structural Hazards**: Occur when hardware resources (e.g., memory, ALUs) are insufficient to execute multiple instructions in parallel.
+
+- **Data Hazards**: Occur when one instruction depends on the result of a previous instruction still in the pipeline.
+
+- **Control Hazards**: Occur when the pipeline does not know which instruction to fetch next due to a branch.
+
+---
+
+### ILP Techniques
+
+### **Basic Block ILP**
+
+- A **basic block** is a sequence of instructions with **no internal branches**.
+- The **branch frequency** in MIPS programs is typically **15%-25%**, limiting parallelism within a basic block.
+
+### **Loop-Level Parallelism**
+
+- **Parallelism across loop iterations** is more significant than within basic blocks.
+- Example: Adding two arrays using a loop allows independent iterations to execute in parallel.
+- **Loop unrolling** (either statically by the compiler or dynamically by hardware) increases ILP.
+
+### **SIMD and Vector Processing**
+
+- **Single Instruction, Multiple Data (SIMD)** exploits **data-level parallelism** by processing multiple data items simultaneously.
+- **Vector processors** execute entire vectors of data in parallel, reducing instruction count.
+
+---
+
+## Dependences and Hazards in ILP
+
+### **Data Dependences**
+Data dependences determine whether instructions can be executed in parallel. There are three types:
+
+1. **True Data Dependence (RAW - Read After Write)**  
+   - Instruction **j** reads a value produced by instruction **i**.
+   - **Must be preserved** to ensure correct results.
+
+2. **Name Dependences (False Dependences)**
+   - **Antidependence (WAR - Write After Read)**: **j** writes to a register before **i** reads it.
+   - **Output Dependence (WAW - Write After Write)**: Both **i** and **j** write to the same register.
+   - **Register Renaming** resolves name dependences.
+
+3. **Control Dependences**
+   - Determine execution order based on **branch conditions**.
+   - **Preserving control dependences ensures correct program behavior**.
+
+### **Data Hazards**
+Hazards occur when dependent instructions overlap incorrectly:
+
+- **RAW (Read After Write)** → Data not yet written before being read.
+- **WAW (Write After Write)** → Writes occur in the wrong order.
+- **WAR (Write After Read)** → Read occurs after a new write, leading to incorrect results.
+
+### **Control Hazards**
+- Occur due to **branch instructions**.
+- Solutions:
+  - **Branch prediction**
+  - **Speculation (executing instructions before certainty of need)**
+
+---
+
+## Handling ILP Constraints
+
+### **Speculation**
+- **Hardware speculation** executes instructions before branches are resolved, **undoing incorrect execution if necessary**.
+- **Software speculation** (compiler-based) reorders instructions assuming a likely branch outcome.
+
+### **Summary**
+- **ILP exploits instruction execution overlap** to improve performance.
+- **Dependences and hazards limit ILP**, requiring **pipeline optimizations**.
+- **Loop unrolling, SIMD, and speculation** improve ILP.
+- **Modern processors use a mix of dynamic and static ILP approaches**.
+
+Future processors must balance **ILP and thread-level parallelism** for optimal performance.
