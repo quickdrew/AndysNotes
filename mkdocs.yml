@@ -23,7 +23,11 @@ nav:
   - Home: index.md
   - Artificial Intelligence: 
       - Overview: ai/pages/index.md
-      - Hardware and Programming: ai/pages/hardware.md
+      - Hardware and Programming: 
+          - Hardware Overview: ai/pages/hardware.md
+          - Memory Hierarchy Design: ai/pages/memory.md
+          - Parallel Computing: ai/pages/parallelism.md
+      - Neural Networks: ai/pages/neural.md
       - Nivida's Jetson Nano: ai/pages/jetson.md
   - Automotive:
       - Overview: Automotive/pages/index.md
@@ -44,6 +48,7 @@ nav:
   - Electronics:
       - Overview: electronics/pages/index.md
       - Measuring Equipment: electronics/pages/equipment.md
+      - Operational Amplifiers: electronics/pages/opamp.md
   - Physics:
       - Overview: Physics/pages/index.md
       - Quanta and Fields: 
