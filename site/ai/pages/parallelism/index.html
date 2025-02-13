@@ -1,0 +1,2489 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../memory/">
+      
+      
+        <link rel="next" href="../neural/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Parallel Computing - Andy's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#parallel-computing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Andy&#39;s Notes" class="md-header__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Andy's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Parallel Computing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Andy&#39;s Notes" class="md-nav__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Andy's Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Artificial Intelligence
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hardware and Programming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware and Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Hierarchy Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Parallel Computing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Parallel Computing
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flynns-taxonomy-of-parallel-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flynn’s Taxonomy of Parallel Architectures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Parallelism
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Parallelism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temporal-parallelism-pipelining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal Parallelism (Pipelining)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spatial-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial Parallelism
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Processing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalar-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superscalar-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superscalar Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-instruction-level-parallelism-ilp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Instruction-Level Parallelism (ILP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Instruction-Level Parallelism (ILP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-ilp" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is ILP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ilp-vs-ipc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ILP vs. IPC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hazards-and-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hazards and Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hazards and Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Data Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-control-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Control Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-memory-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memory Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-ilp-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why ILP Matters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-thread-level-parallelism-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Thread-Level Parallelism (TLP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Thread-Level Parallelism (TLP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-tlp-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why TLP Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of TLP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-multithreading-uses-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Multithreading Uses TLP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flynns-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flynn’s Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-big-picture-of-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Big Picture of TLP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-graphics-processing-units-gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Graphics Processing Units (GPUs)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Graphics Processing Units (GPUs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpu-vs-cpu-architectural-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU vs. CPU: Architectural Differences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-simd-and-simt-execution-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SIMD and SIMT Execution Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-warps" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Warps?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warp-execution-and-latency-hiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Warp Execution and Latency Hiding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-parallelism-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Parallelism in Practice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neural/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jetson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nivida's Jetson Nano
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Automotive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Automotive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Automotive/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Automotive/pages/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electrical/Electronic Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Automotive/pages/sensorsSignals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Sensors and Signals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Protocols
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Protocols
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Protocols/pages/can/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Automotive/pages/pdm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Power Distribution Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cyber Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cyber Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecurity/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Digital Systems Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Digital Systems Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/verilog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verilog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/logicDesign/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logic Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/simulations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Electronics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../electronics/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../electronics/pages/equipment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Measuring Equipment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../electronics/pages/opamp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Amplifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Physics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Physics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quanta and Fields
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quanta and Fields
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/waveFunction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wave Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/measurement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Measurement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/entanglement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entanglement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Protocols and Interfaces
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Protocols and Interfaces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Protocols/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Protocols/pages/can/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Senior Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Senior Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../senior_design/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Signals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Signals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signals/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signals/pages/introDsp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Digital Signal Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signals/pages/spectrum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FCC Electromagnetic Spectrum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/pages/developmentProcess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Development Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/pages/c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C Programming Language
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flynns-taxonomy-of-parallel-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flynn’s Taxonomy of Parallel Architectures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Parallelism
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Parallelism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temporal-parallelism-pipelining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal Parallelism (Pipelining)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spatial-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial Parallelism
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Processing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalar-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superscalar-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superscalar Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-instruction-level-parallelism-ilp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Instruction-Level Parallelism (ILP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Instruction-Level Parallelism (ILP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-ilp" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is ILP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ilp-vs-ipc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ILP vs. IPC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hazards-and-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hazards and Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hazards and Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Data Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-control-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Control Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-memory-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memory Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-ilp-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why ILP Matters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-thread-level-parallelism-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Thread-Level Parallelism (TLP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Thread-Level Parallelism (TLP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-tlp-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why TLP Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of TLP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-multithreading-uses-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Multithreading Uses TLP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flynns-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flynn’s Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-big-picture-of-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Big Picture of TLP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-graphics-processing-units-gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Graphics Processing Units (GPUs)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Graphics Processing Units (GPUs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpu-vs-cpu-architectural-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU vs. CPU: Architectural Differences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-simd-and-simt-execution-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SIMD and SIMT Execution Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-warps" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Warps?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warp-execution-and-latency-hiding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Warp Execution and Latency Hiding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-parallelism-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU Parallelism in Practice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="parallel-computing">Parallel Computing</h1>
+<p><strong>Parallel architecture</strong> refers to a computer system design that allows multiple processors or computing units to execute tasks concurrently. This approach improves performance, efficiency, and scalability by leveraging parallelism at several levels.</p>
+<p><strong>Parallelism</strong> in computing is the practice of executing multiple computations simultaneously by dividing work into smaller sub-tasks that can be processed independently. Modern systems use various forms of parallelism to meet the demands of complex and data‐intensive applications.</p>
+<h2 id="flynns-taxonomy-of-parallel-architectures">Flynn’s Taxonomy of Parallel Architectures</h2>
+<p>Flynn’s Taxonomy classifies computer architectures based on how instructions and data are processed.</p>
+<p><img alt="FT" src="../../assets/FlynnsTaxonomy.png" /></p>
+<table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Usage Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SISD</strong> (Single Instruction, Single Data)</td>
+<td>Traditional sequential processing: one instruction operates on one data element at a time.</td>
+<td>Early CPUs, simple microcontrollers</td>
+</tr>
+<tr>
+<td><strong>SIMD</strong> (Single Instruction, Multiple Data)</td>
+<td>A single instruction is simultaneously applied to multiple data elements.</td>
+<td>GPUs, vector processors, deep learning accelerators</td>
+</tr>
+<tr>
+<td><strong>MISD</strong> (Multiple Instruction, Single Data)</td>
+<td>Multiple instructions process the same data stream. This model is rarely used in practice.</td>
+<td>Fault-tolerant systems in critical applications (e.g., redundant military systems)</td>
+</tr>
+<tr>
+<td><strong>MIMD</strong> (Multiple Instruction, Multiple Data)</td>
+<td>Different processors execute different instructions on separate data streams.</td>
+<td>Multi-core CPUs, distributed computing, cloud systems</td>
+</tr>
+</tbody>
+</table>
+<p>Modern systems often blend characteristics of SIMD and MIMD, creating <strong>hybrid architectures</strong> that balance flexibility with high throughput. For example, GPUs integrate both data-level and thread-level parallelism to handle a variety of workloads.</p>
+<h2 id="types-of-parallelism"><strong>Types of Parallelism</strong></h2>
+<p>Parallelism can be categorized into different types based on how tasks are executed. Two fundamental types are <strong>temporal parallelism (pipelining)</strong> and <strong>spatial parallelism</strong>.  </p>
+<h3 id="temporal-parallelism-pipelining"><strong>Temporal Parallelism (Pipelining)</strong></h3>
+<p>Temporal parallelism divides a task into sequential stages that can be overlapped, improving overall throughput. A great way to understand this is through a <strong>cookie-baking process</strong>:  </p>
+<ul>
+<li>Without parallelism: You roll out the dough (5 min) and then bake it (15 min), taking <strong>20 minutes per batch</strong>.  </li>
+<li>With pipelining: While the first batch is baking, you start preparing the next one. This doesn’t change the time required for a single batch but allows <strong>continuous production</strong>, reducing the wait time between finished batches.  </li>
+</ul>
+<p>This analogy mirrors how CPUs execute instructions in a <strong>pipeline</strong>, where different stages (fetch, decode, execute, etc.) are processing different instructions simultaneously. Just like a baker needs <strong>separate trays</strong> to avoid mixing batches, processors use <strong>pipeline registers</strong> to store intermediate data. While the total time for the first output remains the same, <strong>subsequent results come out much faster</strong>, boosting overall performance.  </p>
+<p><img alt="Pipe" src="../../assets/pipe.png" />
+<em>Source: Dr. Chen Pan (UTSA)</em></p>
+<h3 id="spatial-parallelism"><strong>Spatial Parallelism</strong></h3>
+<p>Spatial parallelism, on the other hand, involves executing tasks <strong>simultaneously</strong> using separate hardware units. Instead of working in stages, tasks run in parallel from the start.  </p>
+<p>Imagine Ben has a helper and an extra oven. Now, <strong>two batches</strong> can be processed at the same time—effectively <strong>doubling throughput</strong> while keeping the time per batch unchanged.  </p>
+<p>This type of parallelism is commonly seen in:</p>
+<ul>
+<li><strong>Multithreaded systems:</strong> Where independent threads run on separate cores.</li>
+<li><strong>GPU architectures:</strong> Which execute many threads in parallel using a SIMT (Single Instruction, Multiple Threads) model.</li>
+</ul>
+<h2 id="types-of-processing">Types of Processing</h2>
+<p><strong>Processing</strong> refers to how a CPU executes instructions.</p>
+<h3 id="scalar-processing">Scalar Processing</h3>
+<p>A <strong>scalar</strong> CPU executes one instruction at a time. This category includes <strong>pipelined processors</strong>, which improve instruction throughput by overlapping the execution of multiple instructions through different stages of processing. However, despite the efficiency gains from pipelining, a scalar processor fundamentally handles only one operation per cycle.</p>
+<h3 id="vector-processing">Vector Processing</h3>
+<p>A <strong>vector</strong> CPU also executes one instruction at a time, but it operates on <strong>vector data</strong> instead of single scalar values. This allows the processor to perform computations on multiple elements simultaneously. For example, the instruction:</p>
+<div class="codehilite"><pre><span></span><code>X[0:7] + Y[0:7]
+</code></pre></div>
+
+<p>performs element-wise addition on two vectors of eight elements in a single operation. On a scalar processor, this would require eight separate instructions to achieve the same result.</p>
+<h3 id="superscalar-processing">Superscalar Processing</h3>
+<p>A <strong>superscalar</strong> CPU is capable of executing multiple <strong>unrelated</strong> instructions simultaneously. It achieves this by having multiple execution units that can work in parallel. For example, a superscalar processor could execute the following two instructions concurrently:</p>
+<div class="codehilite"><pre><span></span><code>ADD X + Y
+MUL W * Z
+</code></pre></div>
+
+<p>This parallelism increases overall instruction throughput and efficiency, making superscalar processors well-suited for high-performance computing applications.</p>
+<hr />
+<h2 id="understanding-instruction-level-parallelism-ilp">Understanding Instruction-Level Parallelism (ILP)</h2>
+<h3 id="what-is-ilp">What is ILP?</h3>
+<p>Instruction-Level Parallelism (ILP) refers to the extent to which multiple instructions in a program can be executed simultaneously. ILP is an <strong>attribute of the program</strong>, meaning it depends on the nature of the instructions, the <strong>Instruction Set Architecture (ISA)</strong>, and how well the <strong>compiler</strong> organizes the code for parallel execution.</p>
+<h3 id="ilp-vs-ipc">ILP vs. IPC</h3>
+<p>While ILP describes the <strong>potential parallelism</strong> within a program, <strong>Instructions Per Cycle (IPC)</strong> measures the <strong>actual</strong> instruction throughput of a processor. The key differences are:</p>
+<ul>
+<li><strong>ILP is theoretical</strong>: It represents the maximum parallelism that can be extracted from a program.</li>
+<li><strong>IPC is practical</strong>: It depends on the actual hardware implementation and various runtime factors.</li>
+<li><strong>ILP sets an upper bound on IPC</strong>, but the achievable IPC is limited by hardware constraints such as instruction latencies, cache behavior, and processor execution capabilities.</li>
+</ul>
+<h3 id="hazards-and-dependencies">Hazards and Dependencies</h3>
+<p>To effectively exploit ILP, we must understand various <strong>hazards</strong> (situations that prevent parallel execution). The three main types of dependencies that cause hazards are:</p>
+<h4 id="1-data-dependencies">1. Data Dependencies</h4>
+<p>Data dependencies occur when an instruction depends on the result of a previous instruction. There are three types:</p>
+<ul>
+<li><strong>True Dependency (Read After Write, RAW)</strong>: The second instruction needs data produced by the first instruction.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>ADD R1, R2, R3   # R1 = R2 + R3  
+SUB R4, R1, R5   # R4 = R1 - R5 (Depends on ADD result)
+</code></pre></div>
+
+<ul>
+<li><strong>Anti Dependency (Write After Read, WAR)</strong>: The second instruction writes to a register before the first instruction reads it.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>SUB R1, R2, R3   # Reads R2
+ADD R2, R4, R5   # Writes to R2 before SUB reads it
+</code></pre></div>
+
+<ul>
+<li><strong>Output Dependency (Write After Write, WAW)</strong>: Two instructions write to the same register.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>MUL R1, R2, R3   # Writes to R1
+ADD R1, R4, R5   # Also writes to R1, causing a conflict
+</code></pre></div>
+
+<h4 id="2-control-dependencies">2. Control Dependencies</h4>
+<p>Control dependencies occur when an instruction’s execution depends on the outcome of a previous branch instruction.</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">BEQ</span><span class="w"> </span><span class="nv">R1</span>,<span class="w"> </span><span class="nv">R2</span>,<span class="w"> </span><span class="nv">LABEL</span><span class="w">  </span>#<span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="nv">R1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">R2</span>,<span class="w"> </span><span class="nv">jump</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">LABEL</span>
+<span class="nv">ADD</span><span class="w"> </span><span class="nv">R3</span>,<span class="w"> </span><span class="nv">R4</span>,<span class="w"> </span><span class="nv">R5</span><span class="w">     </span>#<span class="w"> </span><span class="nv">Only</span><span class="w"> </span><span class="nv">executed</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">branch</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">taken</span>
+</code></pre></div>
+
+<p>Processors use <strong>branch prediction</strong> and speculative execution to mitigate control dependencies, but incorrect predictions lead to performance penalties due to pipeline flushes.</p>
+<h4 id="3-memory-dependencies">3. Memory Dependencies</h4>
+<p>Memory dependencies arise when multiple instructions access memory, potentially causing conflicts:</p>
+<ul>
+<li><strong>Load After Store (Read After Write, RAW)</strong>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nx">STORE</span><span class="w"> </span><span class="nx">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">Store</span><span class="w"> </span><span class="nx">R1</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">memory</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">R2</span>
+<span class="nx">LOAD</span><span class="w"> </span><span class="nx">R3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="nx">Read</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">memory</span><span class="w"> </span><span class="nx">location</span>
+</code></pre></div>
+
+<p>The processor must ensure the store completes before the load.</p>
+<ul>
+<li><strong>Store After Load (Write After Read, WAR)</strong>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nx">LOAD</span><span class="w"> </span><span class="nx">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="nx">Load</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">memory</span>
+<span class="nx">STORE</span><span class="w"> </span><span class="nx">R3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">Store</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">new</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">address</span>
+</code></pre></div>
+
+<p>If reordered improperly, the store might overwrite a value before it is used.</p>
+<ul>
+<li><strong>Store After Store (Write After Write, WAW)</strong>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="nx">STORE</span><span class="w"> </span><span class="nx">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">Write</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">memory</span>
+<span class="nx">STORE</span><span class="w"> </span><span class="nx">R3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">Write</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">different</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">address</span>
+</code></pre></div>
+
+<p>The second store must execute in the correct order to maintain program correctness.</p>
+<hr />
+<h3 id="why-ilp-matters">Why ILP Matters</h3>
+<p>ILP is fundamental to modern processor design as it enables higher performance without increasing clock speeds. Exploiting ILP efficiently can lead to significant improvements in <strong>throughput, power efficiency, and execution speed</strong>. However, real-world execution is constrained by <strong>hardware limitations and hazards</strong> such as data, control, and memory dependencies. </p>
+<p>Understanding ILP also ties into broader topics like <strong>superscalar architectures, out-of-order execution, speculative execution, and multi-threading</strong>. Techniques like <strong>register renaming, branch prediction, and speculative execution</strong> help mitigate dependency issues and increase <strong>IPC</strong>, making processors more efficient. </p>
+<p>In the evolution of computing, ILP has been a key driver behind performance gains. While traditional single-core processors aimed to maximize ILP within a single thread, modern computing often combines ILP with <strong>thread-level parallelism (TLP) and data-level parallelism (DLP)</strong> to achieve even greater performance scalability. </p>
+<hr />
+<h2 id="understanding-thread-level-parallelism-tlp">Understanding Thread-Level Parallelism (TLP)</h2>
+<h3 id="why-tlp-matters">Why TLP Matters</h3>
+<p>As extracting additional ILP from a <strong>single sequential thread</strong> becomes increasingly difficult, modern architectures have shifted toward <strong>Thread-Level Parallelism (TLP)</strong> to enhance performance. TLP allows multiple threads to execute concurrently, improving processor utilization and throughput.</p>
+<h3 id="types-of-tlp">Types of TLP</h3>
+<ul>
+<li><strong>TLP from Multiprogramming</strong>: The processor executes multiple independent programs by switching between them, optimizing CPU usage by reducing idle time. This is beneficial in operating systems that need to handle multiple user applications simultaneously, such as running a web browser, a music player, and background system tasks concurrently.</li>
+<li><strong>TLP from Multithreaded Applications</strong>: A single program is divided into multiple concurrent threads, each executing a portion of the task simultaneously. This enhances performance for applications requiring high responsiveness or heavy computation, such as video processing, gaming engines, web servers handling multiple client requests, and parallel database transactions.</li>
+</ul>
+<h3 id="how-multithreading-uses-tlp">How Multithreading Uses TLP</h3>
+<p>Multithreading enables processors to <strong>execute multiple threads in parallel</strong>, improving <strong>utilization</strong> of resources. This is particularly useful when individual threads face stalls (e.g., waiting for memory access).</p>
+<p><img alt="Multithread" src="../../assets/multithread_pipeline.png" />
+<em>Source: Dr. Chen Pan (UTSA)</em></p>
+<p>Each thread maintains its own <strong>user state</strong>, including:</p>
+<ul>
+<li><strong>Program Counter (PC)</strong></li>
+<li><strong>General-Purpose Registers (GPRs)</strong></li>
+<li><strong>Stack and Memory Context</strong></li>
+</ul>
+<h3 id="flynns-taxonomy">Flynn’s Taxonomy</h3>
+<p>Flynn’s Taxonomy categorizes computer architectures based on instruction and data processing.</p>
+<p><img alt="FT" src="../../assets/FlynnsTaxonomy.png" /></p>
+<table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Usage Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SISD</strong> (Single Instruction, Single Data)</td>
+<td>Traditional sequential processing: one instruction operates on one data element at a time.</td>
+<td>Early CPUs, simple microcontrollers</td>
+</tr>
+<tr>
+<td><strong>SIMD</strong> (Single Instruction, Multiple Data)</td>
+<td>A single instruction is simultaneously applied to multiple data elements.</td>
+<td>GPUs, vector processors, deep learning accelerators</td>
+</tr>
+<tr>
+<td><strong>MISD</strong> (Multiple Instruction, Single Data)</td>
+<td>Multiple instructions process the same data stream. This model is rarely used in practice.</td>
+<td>Fault-tolerant systems in critical applications (e.g., redundant military systems)</td>
+</tr>
+<tr>
+<td><strong>MIMD</strong> (Multiple Instruction, Multiple Data)</td>
+<td>Different processors execute different instructions on separate data streams.</td>
+<td>Multi-core CPUs, distributed computing, cloud systems</td>
+</tr>
+</tbody>
+</table>
+<p>Modern computing relies on a <strong>blend of SIMD, MIMD, ILP, and TLP</strong> to maximize efficiency. GPUs, for example, utilize <strong>SIMD for high throughput</strong> while leveraging <strong>TLP to manage thousands of concurrent threads</strong>.</p>
+<hr />
+<h3 id="the-big-picture-of-tlp">The Big Picture of TLP</h3>
+<p>ILP and TLP represent two complementary approaches to increasing computational performance. While ILP focuses on extracting <strong>fine-grained parallelism within a single thread</strong>, TLP exploits <strong>coarse-grained parallelism</strong> across multiple threads. Modern architectures integrate both ILP and TLP to achieve optimal performance across diverse workloads, from <strong>single-threaded applications to massively parallel computing environments</strong>.</p>
+<p>Future discussions will explore how modern hardware, such as <strong>multi-core processors, simultaneous multithreading (SMT), and heterogeneous computing</strong>, further enhance parallel execution.</p>
+<hr />
+<h2 id="understanding-graphics-processing-units-gpus">Understanding Graphics Processing Units (GPUs)</h2>
+<h3 id="gpu-vs-cpu-architectural-differences">GPU vs. CPU: Architectural Differences</h3>
+<p>While CPUs are optimized for <strong>low-latency, sequential processing</strong>, GPUs are designed for <strong>high-throughput, massively parallel computation</strong>. This fundamental difference arises from their respective design goals:</p>
+<ul>
+<li><strong>CPUs:</strong> Prioritize fast execution of a few tasks, featuring deep cache hierarchies and complex branch prediction.</li>
+<li><strong>GPUs:</strong> Optimize for parallel execution of thousands of lightweight threads, with a large number of simple cores and minimal caching.</li>
+</ul>
+<h3 id="the-simd-and-simt-execution-model">The SIMD and SIMT Execution Model</h3>
+<p>GPUs leverage <strong>Single Instruction Multiple Data (SIMD)</strong> and <strong>Single Instruction Multiple Threads (SIMT)</strong> architectures to achieve parallelism:</p>
+<p><img alt="SIMT" src="../../assets/SIMT.png" /></p>
+<p><strong>SIMD:</strong> A single instruction operates on multiple data elements simultaneously, making it efficient for tasks like matrix operations and image processing.</p>
+<p><strong>SIMT:</strong> Extends SIMD by organizing threads into <strong>warps</strong>, where each thread executes the same instruction but on different data elements.</p>
+<h3 id="what-are-warps">What Are Warps?</h3>
+<p>A <strong>warp</strong> is a group of threads that execute the same instruction simultaneously on different data elements. Warps are the fundamental unit of execution in a GPU's <strong>Streaming Multiprocessors (SMs)</strong>. Typically, a warp consists of <strong>32 threads</strong> in modern NVIDIA GPUs, but this number can vary by architecture.</p>
+<ul>
+<li><strong>Warp Scheduling:</strong> A GPU schedules warps dynamically to maximize computational throughput. If one warp is waiting on memory, another can execute to utilize processing resources efficiently.</li>
+<li><strong>Divergence Handling:</strong> If different threads within a warp take different execution paths (due to conditional branching), the warp may have to serialize execution, reducing efficiency.</li>
+</ul>
+<p>By structuring workloads to minimize warp divergence, developers can optimize GPU performance and fully leverage parallel execution capabilities.</p>
+<h3 id="warp-execution-and-latency-hiding">Warp Execution and Latency Hiding</h3>
+<p>GPUs use <strong>warps</strong> (groups of threads executing the same instruction) to efficiently manage parallel workloads. To <strong>hide memory access latency</strong>, GPUs employ <strong>fine-grained multithreading</strong>, switching between warps while waiting for data fetch operations to complete.</p>
+<h3 id="gpu-parallelism-in-practice">GPU Parallelism in Practice</h3>
+<p>GPUs accelerate computation-heavy workloads in various fields:</p>
+<ul>
+<li><strong>Machine Learning &amp; AI:</strong> Training deep neural networks with matrix multiplications and tensor operations.</li>
+<li><strong>Scientific Simulations:</strong> Weather modeling, fluid dynamics, and molecular simulations rely on parallel computations.</li>
+<li><strong>Graphics Rendering:</strong> Real-time rendering in video games and visual effects industries benefits from GPU parallelism.</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

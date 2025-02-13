@@ -1,0 +1,2402 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../hardware/">
+      
+      
+        <link rel="next" href="../parallelism/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Memory Hierarchy Design - Andy's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#memory-hierarchy-design" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Andy&#39;s Notes" class="md-header__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Andy's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Memory Hierarchy Design
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Andy&#39;s Notes" class="md-nav__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Andy's Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Artificial Intelligence
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hardware and Programming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware and Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Memory Hierarchy Design
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Memory Hierarchy Design
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memory-hierarchy-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Hierarchy Basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Hierarchy Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-placement-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Placement Strategies:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-write-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Write Strategies:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-miss-classification-3-cs-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Miss Classification (3 Cs Model):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Cache Performance:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-memory-access-time-amat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Average Memory Access Time (AMAT):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-memory-in-computer-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Memory in Computer Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Memory in Computer Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-primary-memory-volatile" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Primary Memory (Volatile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-secondary-memory-non-volatile" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Secondary Memory (Non-Volatile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Virtual Memory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-access-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Access Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Technology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Technology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-basic-memory-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic Memory Technologies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-advanced-dram-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Advanced DRAM Technologies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-memory-technology-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memory Technology Optimizations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-reliability-and-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Reliability and Error Correction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-optimizations-to-reduce-cache-miss-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiler Optimizations to Reduce Cache Miss Rate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiler Optimizations to Reduce Cache Miss Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-loop-interchange-improves-spatial-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Loop Interchange (Improves Spatial Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-blocking-improves-temporal-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Blocking (Improves Temporal Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioritization-for-matrix-multiplication-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prioritization for Matrix Multiplication Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parallelism/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parallel Computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neural/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Neural Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jetson/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nivida's Jetson Nano
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Automotive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Automotive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Automotive/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Automotive/pages/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electrical/Electronic Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Automotive/pages/sensorsSignals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Sensors and Signals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Protocols
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Protocols
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Protocols/pages/can/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Automotive/pages/pdm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Power Distribution Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cyber Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cyber Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cybersecurity/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Digital Systems Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Digital Systems Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/verilog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verilog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/logicDesign/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logic Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/simulations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DSD/applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Electronics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../electronics/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../electronics/pages/equipment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Measuring Equipment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../electronics/pages/opamp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operational Amplifiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Physics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Physics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quanta and Fields
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quanta and Fields
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/waveFunction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wave Function
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/measurement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Measurement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/entanglement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entanglement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Physics/pages/fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Protocols and Interfaces
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Protocols and Interfaces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Protocols/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Protocols/pages/can/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Senior Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Senior Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../senior_design/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Signals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Signals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signals/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signals/pages/introDsp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Digital Signal Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Signals/pages/spectrum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FCC Electromagnetic Spectrum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/pages/developmentProcess/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Development Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Software/pages/c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C Programming Language
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memory-hierarchy-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Hierarchy Basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Hierarchy Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-placement-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Placement Strategies:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-write-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Write Strategies:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-miss-classification-3-cs-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Miss Classification (3 Cs Model):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Cache Performance:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-memory-access-time-amat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Average Memory Access Time (AMAT):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-memory-in-computer-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Memory in Computer Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Memory in Computer Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-primary-memory-volatile" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Primary Memory (Volatile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-secondary-memory-non-volatile" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Secondary Memory (Non-Volatile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Virtual Memory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-access-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Access Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Technology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Technology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-basic-memory-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic Memory Technologies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-advanced-dram-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Advanced DRAM Technologies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-memory-technology-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memory Technology Optimizations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-reliability-and-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Reliability and Error Correction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-optimizations-to-reduce-cache-miss-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiler Optimizations to Reduce Cache Miss Rate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiler Optimizations to Reduce Cache Miss Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-loop-interchange-improves-spatial-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Loop Interchange (Improves Spatial Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-blocking-improves-temporal-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Blocking (Improves Temporal Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioritization-for-matrix-multiplication-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prioritization for Matrix Multiplication Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="memory-hierarchy-design">Memory Hierarchy Design</h1>
+<h2 id="memory-hierarchy-basics">Memory Hierarchy Basics</h2>
+<p><img alt="Memory Hierarchy 2" src="../../assets/Memory-Hierarchy2.jpg" /> </p>
+<p><img alt="Memory Hierarchy" src="../../assets/Memory-Hierarchy.jpg" /> </p>
+<p>Modern computing systems rely on <strong>memory hierarchies</strong> to bridge the gap between fast processors and slower main memory. When a requested word is not found in a cache (<strong>cache miss</strong>), the system fetches it from a lower-level memory, often bringing in an entire block due to <strong>spatial locality</strong>. Each cache block includes a <strong>tag</strong> to identify its memory address.</p>
+<h3 id="cache-placement-strategies">Cache Placement Strategies:</h3>
+<ol>
+<li><strong>Direct-Mapped Cache</strong> – Each block maps to exactly one location.</li>
+<li><strong>Fully Associative Cache</strong> – Blocks can be placed anywhere in the cache.</li>
+<li><strong>Set-Associative Cache</strong> – Blocks map to a limited number of locations (n-way set associativity).</li>
+</ol>
+<h3 id="cache-write-strategies">Cache Write Strategies:</h3>
+<ul>
+<li><strong>Write-Through</strong> – Data is written to both the cache and main memory simultaneously.</li>
+<li><strong>Write-Back</strong> – Data is written to the cache first and updated in main memory later, improving efficiency.</li>
+</ul>
+<h3 id="cache-miss-classification-3-cs-model">Cache Miss Classification (3 Cs Model):</h3>
+<ol>
+<li><strong>Compulsory Misses</strong> – Occur when data is accessed for the first time.</li>
+<li><strong>Capacity Misses</strong> – Happen when the cache cannot hold all necessary data.</li>
+<li><strong>Conflict Misses</strong> – Result from poor cache placement, causing unnecessary evictions.</li>
+</ol>
+<h3 id="optimizing-cache-performance">Optimizing Cache Performance:</h3>
+<ul>
+<li><strong>Larger Block Sizes</strong> reduce compulsory misses but may increase miss penalties.</li>
+<li><strong>Increasing Cache Size</strong> minimizes capacity misses at the cost of increased access time.</li>
+<li><strong>Higher Associativity</strong> reduces conflict misses but can increase complexity and power consumption.</li>
+<li><strong>Multilevel Caches</strong> balance speed and capacity (e.g., L1, L2, L3 caches).</li>
+</ul>
+<h3 id="average-memory-access-time-amat">Average Memory Access Time (AMAT):</h3>
+<p>A key metric for evaluating memory hierarchy performance:</p>
+<div class="arithmatex">\[
+\text{AMAT} = \text{Hit Time} + (\text{Miss Rate} \times \text{Miss Penalty})
+\]</div>
+<p>Optimizations such as <strong>multithreading and latency hiding</strong> help mitigate cache misses by overlapping memory accesses with computation.</p>
+<hr />
+<h2 id="types-of-memory-in-computer-architecture"><strong>Types of Memory in Computer Architecture</strong></h2>
+<p>Memory in a computer system is structured into <strong>primary, secondary, and virtual memory</strong>, each serving different roles in performance and storage hierarchy.</p>
+<h3 id="a-primary-memory-volatile"><strong>A. Primary Memory (Volatile)</strong></h3>
+<p>This memory type directly supports the CPU, ensuring fast access for ongoing computations.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Memory Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Registers</strong></td>
+<td>Small storage inside the CPU for immediate execution.</td>
+<td>Program Counter (PC), Accumulator</td>
+</tr>
+<tr>
+<td><strong>Cache Memory</strong></td>
+<td>Stores frequently accessed data for faster CPU access.</td>
+<td>L1, L2, L3 cache</td>
+</tr>
+<tr>
+<td><strong>RAM (Random Access Memory)</strong></td>
+<td>Stores currently running programs and data.</td>
+<td>DDR4, DDR5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b-secondary-memory-non-volatile"><strong>B. Secondary Memory (Non-Volatile)</strong></h3>
+<p>Used for <strong>long-term data storage</strong> and retains data even when the power is off.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Memory Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HDD (Hard Disk Drive)</strong></td>
+<td>Magnetic storage, slower but cost-effective.</td>
+<td>Traditional laptop HDDs</td>
+</tr>
+<tr>
+<td><strong>SSD (Solid State Drive)</strong></td>
+<td>Flash-based storage, much faster than HDDs.</td>
+<td>NVMe SSD, SATA SSD</td>
+</tr>
+<tr>
+<td><strong>Flash Memory</strong></td>
+<td>Non-volatile, used in portable devices and SSDs.</td>
+<td>USB drives, SD cards</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c-virtual-memory"><strong>C. Virtual Memory</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Memory Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Swap Space</strong></td>
+<td>Uses disk storage as an extension of RAM.</td>
+<td>Linux Swap, Windows Pagefile</td>
+</tr>
+<tr>
+<td><strong>Paging</strong></td>
+<td>Divides memory into fixed-size pages for management.</td>
+<td>4KB page size in OS</td>
+</tr>
+</tbody>
+</table>
+<p>Virtual memory extends <strong>RAM capacity</strong> by using a portion of disk storage as an extension, allowing the system to handle <strong>larger workloads</strong> than physical memory alone. It functions by treating <strong>physical memory as a cache</strong> for secondary storage, moving data between the two as needed. This process relies on <strong>paging</strong>, where memory is divided into fixed-size pages, and a <strong>Translation Lookaside Buffer (TLB)</strong> caches page table entries to speed up address translation.  </p>
+<p>Beyond extending memory, virtual memory also enhances <strong>process isolation and security</strong> by providing each program with its own virtual address space, preventing direct access to other processes’ memory. <strong>Virtual Machines (VMs)</strong> take this further by running entire operating systems within isolated environments, managed by a <strong>Virtual Machine Monitor (VMM)</strong> or <strong>hypervisor</strong>. VMs improve <strong>security, system reliability, and hardware utilization</strong>, making them essential for <strong>cloud computing and server virtualization</strong>.  </p>
+<p>Modern processors optimize virtual memory and VM performance through <strong>hardware-assisted virtualization</strong>, such as Intel VT-x and AMD-V, which reduce the overhead of managing multiple virtual address spaces. Additionally, techniques like <strong>nested page tables</strong> and <strong>direct memory access (DMA) virtualization</strong> enhance efficiency in handling virtualized workloads.</p>
+<p><img alt="NM" src="../../assets/vitural_memory.png" /></p>
+<p>Figure above shows a process memory layout, which is managed by virtual memory. It allows the CPU to access a continuous address space, even if data is stored across RAM (volatile) and NVM (non-volatile). <em>Source: Dr. Chen Pan UTSA</em></p>
+<hr />
+<h2 id="memory-access-methods"><strong>Memory Access Methods</strong></h2>
+<p>Different memory technologies use specific access methods to retrieve data efficiently.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Access Method</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sequential Access</strong></td>
+<td>Reads data in a linear order.</td>
+<td>Magnetic tape storage</td>
+</tr>
+<tr>
+<td><strong>Direct Access</strong></td>
+<td>Jumps directly to memory locations.</td>
+<td>HDDs, SSDs</td>
+</tr>
+<tr>
+<td><strong>Random Access</strong></td>
+<td>Any memory cell can be accessed instantly.</td>
+<td>RAM, Cache</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="memory-technology"><strong>Memory Technology</strong></h2>
+<h3 id="1-basic-memory-technologies"><strong>1. Basic Memory Technologies</strong></h3>
+<ul>
+<li><strong>SRAM (Static RAM)</strong> – Fastest, used in <strong>CPU caches (L1, L2, L3)</strong>, but expensive.</li>
+<li><strong>DRAM (Dynamic RAM)</strong> – Main memory, slower than SRAM but cheaper and denser.</li>
+<li><strong>Flash Memory</strong> – A type of <strong>EEPROM</strong>, Non-volatile, used in SSDs and embedded systems.</li>
+</ul>
+<p>In DRAM, the information is stored in a capacitor that holds a charge representing a bit of data. However, reading the data from the capacitor causes it to discharge, and since the charge leaks over time, the data is lost when read and must be rewritten. This is why DRAM requires periodic refreshing to maintain the data. In contrast, SRAM stores data in a flip-flop made of transistors, which does not lose its information when read. SRAM does not require refreshing and is faster than DRAM as a result.</p>
+<p><img alt="SRAM" src="../../assets/SRAM_Cell_%286_Transistors%29.svg.png" />
+<em>A six-transistor (6T) CMOS SRAM cell. WL: word line. BL: bit line. Realize how complex a single cell is compared to a DRAM cell below. Source: Public Domain, https://commons.wikimedia.org/w/index.php?curid=5771850</em></p>
+<p><img alt="DRAM" src="../../assets/DRAM_cell_field.png" />
+<em>A 4X4 DRAM array, realize how a single DRAM cell has only one transistor and one capacitor. Source: Dynamic random-access memory Wikipedia by JürgenZ</em></p>
+<h3 id="2-advanced-dram-technologies"><strong>2. Advanced DRAM Technologies</strong></h3>
+<ul>
+<li><strong>SDRAM (Synchronous DRAM):</strong> The foundation of modern memory, synchronized with the system clock for predictable, efficient data access.</li>
+<li><strong>DDR (Double Data Rate) SDRAM:</strong> Transfers data on both rising and falling clock edges, doubling bandwidth over SDRAM. Newer generations (DDR2–DDR5) improve speed, efficiency, and capacity. Essential for CPUs in desktops, laptops, and servers, balancing speed and cost.</li>
+<li><strong>GDDR (Graphics DRAM):</strong>  Optimized for GPUs with wider buses (32-bit), higher clock rates, and direct board soldering for 2–5× DDR3 bandwidth. Critical for gaming, AI, and high-speed graphics tasks needing rapid memory access.</li>
+<li><strong>HBM (High Bandwidth Memory):</strong> Stacks DRAM layers with an ultra-wide bus for extreme bandwidth and low power consumption. Used in AI, supercomputers, and high-end GPUs where traditional memory isn’t fast enough.</li>
+</ul>
+<p><img alt="HBM" src="../../assets/HBM.png" /></p>
+<p><em>Source: J. L. Hennessy and D. A. Patterson, Computer Architecture: A Quantitative Approach, 6th ed. Morgan Kaufmann, 2017.</em></p>
+<h3 id="3-memory-technology-optimizations"><strong>3. Memory Technology Optimizations</strong></h3>
+<p>To improve performance, modern computers use a <strong>memory hierarchy</strong> with the following strategies:</p>
+<ol>
+<li><strong>Larger Cache Sizes</strong> – Increases data retention, reducing main memory accesses.</li>
+<li><strong>Higher Associativity</strong> – Reduces <strong>cache misses</strong> by allowing more flexible data placement.</li>
+<li><strong>Multilevel Caches (L1, L2, L3)</strong> – Keeps frequently used data <strong>closer to the processor</strong>.</li>
+<li><strong>Burst Transfers and Prefetching</strong> – Reduces <strong>DRAM latency</strong> by pre-loading data.</li>
+<li><strong>Banked &amp; Interleaved DRAM</strong> – Enables <strong>parallel memory accesses</strong>, increasing efficiency.</li>
+<li><strong>Stacked Memory (HBM, 3D DRAM)</strong> – Reduces travel distances for <strong>lower latency and higher bandwidth</strong>.</li>
+</ol>
+<hr />
+<h2 id="memory-reliability-and-error-correction"><strong>Memory Reliability and Error Correction</strong></h2>
+<p>Memory failures are mitigated through <strong>Error Correction Codes (ECC)</strong> and redundancy techniques.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Error Handling Method</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parity Checking</strong></td>
+<td>Detects single-bit errors but cannot correct them.</td>
+</tr>
+<tr>
+<td><strong>ECC (Error Correction Code)</strong></td>
+<td>Detects and fixes <strong>single-bit errors</strong>.</td>
+</tr>
+<tr>
+<td><strong>Chipkill Technology</strong></td>
+<td>Used in data centers; recovers from complete <strong>memory chip failure</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>In large-scale computing (e.g., <strong>cloud servers, data centers</strong>), <strong>Chipkill and ECC memory</strong> are essential to ensure high <strong>data integrity and system stability</strong>.</p>
+<hr />
+<h2 id="compiler-optimizations-to-reduce-cache-miss-rate"><strong>Compiler Optimizations to Reduce Cache Miss Rate</strong></h2>
+<p>Efficient cache utilization can significantly improve performance without requiring hardware modifications. The following compiler optimizations reduce cache miss rates by improving <strong>spatial</strong> and <strong>temporal locality</strong>.</p>
+<hr />
+<h3 id="1-loop-interchange-improves-spatial-locality"><strong>1. Loop Interchange (Improves Spatial Locality)</strong></h3>
+<p>Nested loops may access data in an inefficient order, leading to <strong>cache misses</strong>. <strong>Loop interchange</strong> reorders loops so that memory accesses follow a sequential pattern, maximizing cache utilization.</p>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="cm">/* Before - Poor spatial locality (column-major order) */</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+
+<span class="cm">/* After - Optimized for row-major order */</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</code></pre></div>
+
+<ul>
+<li>The original version jumps through memory with a <strong>stride of 100</strong>, causing frequent <strong>cache misses</strong>.</li>
+<li>The optimized version accesses <strong>adjacent elements</strong>, improving <strong>spatial locality</strong>.</li>
+</ul>
+<hr />
+<h3 id="2-blocking-improves-temporal-locality"><strong>2. Blocking (Improves Temporal Locality)</strong></h3>
+<p><strong>Blocking</strong> reduces cache misses by ensuring frequently accessed data remains in the cache before being replaced.</p>
+<p><strong>Example: Naïve Matrix Multiplication (High Cache Misses)</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="cm">/* Standard matrix multiplication */</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="n">r</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<span class="w">        </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>The above implementation results in <strong>poor cache efficiency</strong> because:</li>
+<li>It reads an entire <strong>N × N matrix <code>z</code></strong> for every row of <code>x</code> and <code>y</code>.</li>
+<li>Cache capacity is exceeded, leading to frequent <strong>capacity misses</strong>.</li>
+</ul>
+<p><strong>Optimized Matrix Multiplication Using Blocking</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="cm">/* Optimized using blocking */</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">jj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">B</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">kk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">B</span><span class="p">)</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jj</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">jj</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">);</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kk</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">kk</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">);</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">r</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<span class="w">                </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Why is this better?</strong></li>
+<li>Instead of working on full rows/columns, we <strong>process smaller blocks that fit in the cache</strong>, reducing memory accesses.</li>
+<li>This leverages <strong>both spatial and temporal locality</strong>.</li>
+</ul>
+<hr />
+<h3 id="prioritization-for-matrix-multiplication-analysis"><strong>Prioritization for Matrix Multiplication Analysis</strong></h3>
+<p>To analyze the given matrix multiplication problem efficiently, we should prioritize the following steps:</p>
+<ol>
+<li>
+<p><strong>Determine Matrix Dimensions</strong>  </p>
+<ul>
+<li>Identify the size of <code>C = A × B</code>, ensuring <code>C</code> has dimensions <code>(m × n)</code>.</li>
+<li>Establish constraints for <code>l</code> based on memory availability.</li>
+</ul>
+</li>
+<li>
+<p><strong>Memory Allocation Constraints</strong>  </p>
+<ul>
+<li>Calculate the maximum possible <code>l</code> using memory constraints.</li>
+<li>Convert results to dimensions for <code>A</code>, <code>B</code>, and <code>C</code> considering 16-bit integer storage.</li>
+</ul>
+</li>
+<li>
+<p><strong>Compute Memory Access Time</strong>  </p>
+<ul>
+<li>Analyze cache behavior given <strong>fully associative cache</strong> with <strong>32B cache lines</strong>.</li>
+<li>Compute cache hit/miss penalties using <strong>Least Recently Used (LRU) replacement</strong>.</li>
+<li>Derive total <strong>cycles required</strong> for the matrix multiplication.</li>
+</ul>
+</li>
+<li>
+<p><strong>Optimize for Cache Efficiency</strong>  </p>
+<ul>
+<li>Identify poor cache utilization patterns in the given loop.</li>
+<li>Implement <strong>loop interchange</strong> or <strong>blocking</strong> to improve locality.</li>
+<li>Calculate performance improvement by reducing cache misses.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analyze Post-Computational Random Access</strong>  </p>
+<ul>
+<li>Compute the <strong>average memory access time</strong> when randomly accessing <code>A</code>, <code>B</code>, and <code>C</code>.</li>
+<li>Compare this with structured access times to draw conclusions on <strong>cache efficiency</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Final Conclusion</strong>  </p>
+<ul>
+<li>Summarize findings on how <strong>memory hierarchy impacts performance</strong>.</li>
+<li>Justify why <strong>locality-aware optimizations</strong> significantly improve execution speed.</li>
+</ul>
+</li>
+</ol>
+<p>By following this structured prioritization, we can effectively <strong>minimize memory latency and improve computational efficiency</strong> for matrix multiplication.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

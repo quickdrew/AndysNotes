@@ -4,13 +4,13 @@
 This section contains notes and resources related to **Artificial Intelligence (AI)**, including hardware, programming, and parallel computing concepts. It primarily draws from my **UTSA AI Hardware and Programming** course but applies to broader AI hardware topics.
 
 ## Topics Covered
-- **[Hardware and Programming](ai/pages/hardware.md)**
+- **[Hardware and Programming](hardware.md)**
     - Covers fundamentals relevant to AI, but not limited to AI.
-    - **[Memory Hierarchy Design](ai/pages/memory.md)**
-    - **[Parallel Computing](ai/pages/parallelism.md)**
-- **[Neural Networks](ai/pages/neural.md)**
+    - **[Memory Hierarchy Design](memory.md)**
+    - **[Parallel Computing](parallelism.md)**
+- **[Neural Networks](neural.md)**
     - Concepts and implementation details for training and running neural networks efficiently.
-- **[Nvidia's Jetson Nano](ai/pages/jetson.md)**
+- **[Nvidia's Jetson Nano](jetson.md)**
     - Notes and experiences using Nvidia’s Jetson Nano for AI and edge computing applications.
 
 
