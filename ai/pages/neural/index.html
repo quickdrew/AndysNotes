@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../verilog/">
+        <link rel="prev" href="../parallelism/">
       
       
-        <link rel="next" href="../simulations/">
+        <link rel="next" href="../jetson/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
     
     
       
-        <title>Logic Design - Andy's Notes</title>
+        <title>Neural Networks - Andy's Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#boolean-algebra" class="md-skip">
+        <a href="#computational-view-of-a-dnn" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Andy&#39;s Notes" class="md-header__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
+    <a href="../../.." title="Andy&#39;s Notes" class="md-header__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Logic Design
+              Neural Networks
             
           </span>
         </div>
@@ -195,7 +195,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Andy&#39;s Notes" class="md-nav__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
+    <a href="../../.." title="Andy&#39;s Notes" class="md-nav__button md-logo" aria-label="Andy's Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -213,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -230,17 +230,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -254,7 +256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Artificial Intelligence
@@ -268,7 +270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/pages/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -324,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/pages/hardware/" class="md-nav__link">
+      <a href="../hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -345,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/pages/memory/" class="md-nav__link">
+      <a href="../memory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -366,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/pages/parallelism/" class="md-nav__link">
+      <a href="../parallelism/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -392,10 +394,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../ai/pages/neural/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Neural Networks
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -404,6 +424,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computational-view-of-a-dnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational View of a DNN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational View of a DNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#its-just-matrix-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Its Just Matrix Math
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-the-dnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training the DNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executing-the-dnn-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executing the DNN (Inference)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -416,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/pages/jetson/" class="md-nav__link">
+      <a href="../jetson/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -479,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Automotive/pages/" class="md-nav__link">
+      <a href="../../../Automotive/pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -500,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Automotive/pages/architecture/" class="md-nav__link">
+      <a href="../../../Automotive/pages/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -521,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Automotive/pages/sensorsSignals/" class="md-nav__link">
+      <a href="../../../Automotive/pages/sensorsSignals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Protocols/pages/can/" class="md-nav__link">
+      <a href="../../../Protocols/pages/can/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Automotive/pages/pdm/" class="md-nav__link">
+      <a href="../../../Automotive/pages/pdm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -712,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cybersecurity/pages/" class="md-nav__link">
+      <a href="../../../Cybersecurity/pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -737,19 +817,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -763,7 +841,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Digital Systems Design
@@ -777,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../DSD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../verilog/" class="md-nav__link">
+      <a href="../../../DSD/verilog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -816,28 +894,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Logic Design
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../DSD/logicDesign/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -846,117 +906,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#boolean-algebra" class="md-nav__link">
-    <span class="md-ellipsis">
-      Boolean Algebra
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sequential-and-combinational-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sequential and Combinational Assignments
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sequential and Combinational Assignments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#relevant-constructs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relevant Constructs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Points
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-machine" class="md-nav__link">
-    <span class="md-ellipsis">
-      State Machine
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="State Machine">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#types-of-state-machines" class="md-nav__link">
-    <span class="md-ellipsis">
-      Types of State Machines
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      Applications
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -969,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simulations/" class="md-nav__link">
+      <a href="../../../DSD/simulations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -990,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../applications/" class="md-nav__link">
+      <a href="../../../DSD/applications/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1053,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electronics/pages/" class="md-nav__link">
+      <a href="../../../electronics/pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1074,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electronics/pages/equipment/" class="md-nav__link">
+      <a href="../../../electronics/pages/equipment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1095,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electronics/pages/opamp/" class="md-nav__link">
+      <a href="../../../electronics/pages/opamp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1158,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Physics/pages/" class="md-nav__link">
+      <a href="../../../Physics/pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Physics/pages/waveFunction/" class="md-nav__link">
+      <a href="../../../Physics/pages/waveFunction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1235,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Physics/pages/measurement/" class="md-nav__link">
+      <a href="../../../Physics/pages/measurement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1256,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Physics/pages/entanglement/" class="md-nav__link">
+      <a href="../../../Physics/pages/entanglement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1277,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Physics/pages/fields/" class="md-nav__link">
+      <a href="../../../Physics/pages/fields/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Protocols/pages/" class="md-nav__link">
+      <a href="../../../Protocols/pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1369,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Protocols/pages/can/" class="md-nav__link">
+      <a href="../../../Protocols/pages/can/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1432,7 +1381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../senior_design/pages/" class="md-nav__link">
+      <a href="../../../senior_design/pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1495,7 +1444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signals/pages/" class="md-nav__link">
+      <a href="../../../Signals/pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1516,7 +1465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signals/pages/introDsp/" class="md-nav__link">
+      <a href="../../../Signals/pages/introDsp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1537,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Signals/pages/spectrum/" class="md-nav__link">
+      <a href="../../../Signals/pages/spectrum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1600,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Software/pages/" class="md-nav__link">
+      <a href="../../../Software/pages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1621,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Software/pages/developmentProcess/" class="md-nav__link">
+      <a href="../../../Software/pages/developmentProcess/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1642,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Software/pages/c/" class="md-nav__link">
+      <a href="../../../Software/pages/c/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1688,88 +1637,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#boolean-algebra" class="md-nav__link">
+  <a href="#computational-view-of-a-dnn" class="md-nav__link">
     <span class="md-ellipsis">
-      Boolean Algebra
+      Computational View of a DNN
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sequential-and-combinational-assignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sequential and Combinational Assignments
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sequential and Combinational Assignments">
+    <nav class="md-nav" aria-label="Computational View of a DNN">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#relevant-constructs" class="md-nav__link">
+  <a href="#its-just-matrix-math" class="md-nav__link">
     <span class="md-ellipsis">
-      Relevant Constructs
+      Its Just Matrix Math
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
+  <a href="#training-the-dnn" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Points
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-machine" class="md-nav__link">
-    <span class="md-ellipsis">
-      State Machine
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="State Machine">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Components
+      Training the DNN
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#types-of-state-machines" class="md-nav__link">
+  <a href="#executing-the-dnn-inference" class="md-nav__link">
     <span class="md-ellipsis">
-      Types of State Machines
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      Applications
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
+      Executing the DNN (Inference)
     </span>
   </a>
   
@@ -1795,275 +1693,64 @@
                   
 
 
-  <h1>Logic Design</h1>
+  <h1>Neural Networks</h1>
 
-<h2 id="boolean-algebra">Boolean Algebra</h2>
+<h2 id="computational-view-of-a-dnn">Computational View of a DNN</h2>
+<p><img alt="DNN" src="../../assets/dnn.png" /></p>
+<h3 id="its-just-matrix-math">Its Just Matrix Math</h3>
+<p>In deep neural networks (DNN), matrix math is the foundation for propagating data through layers, as depicted in the diagram. Each layer starts with <strong>input features</strong> (<span class="arithmatex">\( \mathbf{x}_1, \mathbf{x}_2, \dots \)</span>) that are combined with a <strong>weight matrix</strong> (<span class="arithmatex">\( \mathbf{W} \)</span>) to compute <strong>scores</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{z} = \mathbf{W} \cdot \mathbf{x} + \mathbf{b}
+\]</div>
+<p>The scores are then passed through an <strong>activation function</strong> <span class="arithmatex">\( f(\cdot) \)</span>, such as the one shown in the diagram, to introduce non-linearity:</p>
+<div class="arithmatex">\[
+\mathbf{y} = f(\mathbf{z})
+\]</div>
+<p>The result, <span class="arithmatex">\( \mathbf{y} \)</span>, represents the output of <strong>hidden units</strong> in each layer, which then serve as inputs to the next layer. This process is repeated across multiple layers, from the <strong>first layer</strong> (weights, scores, and activation functions) through the <strong>hidden layers</strong> to the final layer, which produces the <strong>output units</strong>.</p>
+<p>Each hidden layer transforms its inputs into a new representation using the same sequence: weights, scores, activation functions, and outputs. These operations are computationally intensive but highly parallelizable, making GPUs and TPUs essential for efficiently handling the large-scale computations in deep learning.</p>
+<h3 id="training-the-dnn">Training the DNN</h3>
+<p>Training is the process of learning the optimal weights and biases for a DNN. It involves:</p>
+<ol>
+<li><strong>Forward Pass</strong>: Input features are propagated through the network to compute predictions.</li>
+<li><strong>Loss Calculation</strong>: The error between predictions and targets is measured using a loss function.</li>
+<li><strong>Backpropagation</strong>: Gradients of the loss with respect to the weights are calculated.</li>
+<li><strong>Weight Update</strong>: Weights are adjusted using an optimizer (e.g., SGD) to minimize the error.</li>
+</ol>
+<p>This process repeats over many iterations (epochs) until the model converges.</p>
+<h3 id="executing-the-dnn-inference">Executing the DNN (Inference)</h3>
+<p>Inference uses the trained weights to make predictions. It involves:</p>
+<ol>
+<li><strong>Forward Pass Only</strong>: Input features propagate through the network to compute outputs.</li>
+<li><strong>Prediction</strong>: The final output represents the model's decision.</li>
+</ol>
+<p>Unlike training, inference is faster and less computationally intensive as it skips backpropagation and weight updates.</p>
+<p><strong>Key Differences</strong></p>
 <table>
 <thead>
 <tr>
-<th>Rule</th>
-<th>Expression</th>
-<th>Hint</th>
+<th><strong>Aspect</strong></th>
+<th><strong>Training</strong></th>
+<th><strong>Inference</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Identity Law</td>
-<td>A + 0 = A</td>
-<td>No change when OR'ed with 0</td>
+<td><strong>Purpose</strong></td>
+<td>Learn weights.</td>
+<td>Make predictions.</td>
 </tr>
 <tr>
-<td>Identity Law</td>
-<td>A • 1 = A</td>
-<td>No change when AND'ed with 1</td>
+<td><strong>Operations</strong></td>
+<td>Forward pass + backpropagation.</td>
+<td>Forward pass only.</td>
 </tr>
 <tr>
-<td>Null Law</td>
-<td>A + 1 = 1</td>
-<td>OR'ing with 1 results in 1</td>
-</tr>
-<tr>
-<td>Null Law</td>
-<td>A • 0 = 0</td>
-<td>AND'ing with 0 results in 0</td>
-</tr>
-<tr>
-<td>Complement Law</td>
-<td>A + A' = 1</td>
-<td>A variable OR'ed with its complement is 1</td>
-</tr>
-<tr>
-<td>Complement Law</td>
-<td>A • A' = 0</td>
-<td>A variable AND'ed with its complement is 0</td>
-</tr>
-<tr>
-<td>Idempotent Law</td>
-<td>A + A = A</td>
-<td>OR'ing a variable with itself leaves it unchanged</td>
-</tr>
-<tr>
-<td>Idempotent Law</td>
-<td>A • A = A</td>
-<td>AND'ing a variable with itself leaves it unchanged</td>
-</tr>
-<tr>
-<td>Domination Law</td>
-<td>A + A'B = A + B</td>
-<td>Apply the Distributive Law to simplify</td>
-</tr>
-<tr>
-<td>Distributive Law</td>
-<td>A(B + C) = AB + AC</td>
-<td>Distributes AND over OR</td>
-</tr>
-<tr>
-<td>Distributive Law</td>
-<td>A + BC = (A + B)(A + C)</td>
-<td>Distributes OR over AND</td>
-</tr>
-<tr>
-<td>Absorption Law</td>
-<td>A + AB = A</td>
-<td>Removes redundant terms</td>
-</tr>
-<tr>
-<td>Absorption Law</td>
-<td>A(A + B) = A</td>
-<td>Removes redundant terms</td>
-</tr>
-<tr>
-<td>Double Negation Law</td>
-<td>(A')' = A</td>
-<td>Negation of a negation returns the original value</td>
-</tr>
-<tr>
-<td>De Morgan’s Law</td>
-<td>(A • B)' = A' + B'</td>
-<td>Apply to break AND terms when converting SOP to POS</td>
-</tr>
-<tr>
-<td>De Morgan’s Law</td>
-<td>(A + B)' = A' • B'</td>
-<td>Apply to break OR terms when converting POS to SOP</td>
-</tr>
-<tr>
-<td>Involution Law</td>
-<td>(A'') = A</td>
-<td>A variable twice negated is equal to itself</td>
-</tr>
-<tr>
-<td>Consensus Theorem</td>
-<td>AB + A'C + BC = AB + A'C</td>
-<td>Simplifies expressions by eliminating redundant terms</td>
-</tr>
-<tr>
-<td>Distributive (SOP to POS hint)</td>
-<td>A + BC = (A + B)(A + C)</td>
-<td>Useful for converting SOP to POS</td>
-</tr>
-<tr>
-<td>Distributive (POS to SOP hint)</td>
-<td>A(B + C) = AB + AC</td>
-<td>Useful for converting POS to SOP</td>
-</tr>
-<tr>
-<td>Demorgans (SOP to POS hint)</td>
-<td>(A • B)' = A' + B'</td>
-<td>Apply De Morgan’s Law during the conversion</td>
-</tr>
-<tr>
-<td>Demorgans (POS to SOP hint)</td>
-<td>(A + B)' = A' • B'</td>
-<td>Apply De Morgan’s Law during the conversion</td>
-</tr>
-<tr>
-<td>Redundancy Law</td>
-<td>AB + AB' = A</td>
-<td>Removes redundant variables from the equation</td>
+<td><strong>Resource Needs</strong></td>
+<td>High (GPUs/TPUs).</td>
+<td>Low, optimized for speed.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="sequential-and-combinational-assignments">Sequential and Combinational Assignments</h2>
-<ul>
-<li><strong>Sequential = Procedural:</strong> Sequential logic updates state based on clock edges and uses procedural assignments, typically with <strong>non-blocking (<code>&lt;=</code>) assignments</strong>. It is modeled inside <code>always</code> blocks that are sensitive to clock edges (e.g., <code>posedge clk</code>). This describes systems like flip-flops or registers that rely on previous states.</li>
-</ul>
-<p><strong>Example:</strong>
-  <code>verilog
-  always @(posedge clk or posedge reset) begin
-      if (reset)
-          q &lt;= 0;      // Asynchronous reset
-      else
-          q &lt;= d;      // Update q with d at clock edge
-  end</code></p>
-<ul>
-<li>
-<p><strong>Combinational = Continuous:</strong> Combinational logic depends purely on the current inputs and is described using <strong>continuous (blocking) assignments</strong>. It models circuits like AND, OR gates, where output is updated as soon as inputs change, without regard to clock cycles.</p>
-<p><strong>Example:</strong>
-<code>verilog
-assign y = a &amp; b;  // Output y changes immediately based on a and b</code></p>
-</li>
-</ul>
-<h3 id="relevant-constructs">Relevant Constructs</h3>
-<ul>
-<li>
-<p><strong><code>always</code> blocks:</strong> Used to describe both sequential and combinational logic. For sequential logic, <code>always @(posedge clk)</code> or <code>always @(negedge clk)</code> is used, whereas for combinational logic, <code>always @(*)</code> is used to capture all input changes automatically.
-    <strong>Example:</strong>
-    <code>verilog
-    always @(*) begin
-        result = a | b;  // Combinational logic triggered by any input change
-    end</code></p>
-</li>
-<li>
-<p><strong><code>initial</code> blocks:</strong> Used to define initial conditions in simulations. They execute once at the start of the simulation and are commonly used for testbenches or initializing registers/variables in simulation but are not synthesized into hardware.
-    <strong>Example</strong>
-    <code>verilog
-    initial begin
-        reg_x = 0;  // Initialize reg_x to 0 at simulation start
-    end</code></p>
-</li>
-</ul>
-<h3 id="key-points">Key Points</h3>
-<ul>
-<li><strong>Blocking (<code>=</code>) vs. Non-blocking (<code>&lt;=</code>):</strong> In sequential logic (<code>always @(posedge clk)</code>), use non-blocking assignments (<code>&lt;=</code>) to ensure parallel updates. In combinational logic, blocking assignments (<code>=</code>) can be used to execute statements sequentially.</li>
-</ul>
-<h2 id="state-machine">State Machine</h2>
-<p>A state machine is a computational model used to design both software and hardware systems. It consists of a set of states, transitions between states, and actions that occur based on inputs.</p>
-<h3 id="components">Components</h3>
-<ol>
-<li><strong>States</strong>: Defined conditions or situations the system can be in.</li>
-<li><strong>Transitions</strong>: Conditions that trigger a change from one state to another.</li>
-<li><strong>Inputs</strong>: External events or conditions that affect state transitions.</li>
-<li><strong>Outputs</strong>: Actions or results produced during or after a state transition.</li>
-</ol>
-<h3 id="types-of-state-machines">Types of State Machines</h3>
-<ol>
-<li><strong>Finite State Machine (FSM)</strong>: Has a finite number of states and transitions between them.</li>
-<li><strong>Deterministic FSM (DFA)</strong>: Every state has exactly one transition for each input.</li>
-<li>
-<p><strong>Non-deterministic FSM (NFA)</strong>: A state can have multiple transitions for the same input.</p>
-</li>
-<li>
-<p><strong>Mealy Machine</strong>: The output depends on both the current state and the input.</p>
-</li>
-<li><strong>Moore Machine</strong>: The output depends only on the current state.</li>
-</ol>
-<h3 id="applications">Applications</h3>
-<ul>
-<li><strong>Control Systems</strong>: Used in embedded systems for managing device behavior.</li>
-<li><strong>Protocols</strong>: Helps in defining the sequence of operations in communication protocols.</li>
-<li><strong>Game Design</strong>: To model different game states such as playing, paused, or game over.</li>
-</ul>
-<h3 id="example">Example</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">fsm_example</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">clk</span><span class="p">,</span><span class="w">        </span><span class="c1">// Clock input</span>
-<span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">reset</span><span class="p">,</span><span class="w">      </span><span class="c1">// Asynchronous reset signal (active high)</span>
-<span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">trigger</span><span class="p">,</span><span class="w">    </span><span class="c1">// Trigger input to transition between states</span>
-<span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="kt">reg</span><span class="w"> </span><span class="n">out</span><span class="w">         </span><span class="c1">// Output signal that depends on the current state</span>
-<span class="p">);</span>
-
-<span class="w">    </span><span class="c1">// Define the states as an enumerated type using a 2-bit register</span>
-<span class="w">    </span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="kt">reg</span><span class="w"> </span><span class="p">[</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">IDLE</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mh">2</span><span class="mb">&#39;b00</span><span class="p">,</span><span class="w">    </span><span class="c1">// State 0: Idle state (default)</span>
-<span class="w">        </span><span class="n">STATE1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">2</span><span class="mb">&#39;b01</span><span class="p">,</span><span class="w">    </span><span class="c1">// State 1: Represents the first active state</span>
-<span class="w">        </span><span class="n">STATE2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">2</span><span class="mb">&#39;b10</span><span class="w">     </span><span class="c1">// State 2: Represents the second active state</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">state_t</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// Current state and next state registers</span>
-<span class="w">    </span><span class="kt">reg</span><span class="w"> </span><span class="n">state_t</span><span class="w"> </span><span class="n">current_state</span><span class="p">,</span><span class="w"> </span><span class="n">next_state</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// Sequential logic for state transition</span>
-<span class="w">    </span><span class="c1">// This block updates the current state on every clock edge or reset</span>
-<span class="w">    </span><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="k">posedge</span><span class="w"> </span><span class="n">clk</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">posedge</span><span class="w"> </span><span class="n">reset</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">reset</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">            </span><span class="n">current_state</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">IDLE</span><span class="p">;</span><span class="w">   </span><span class="c1">// On reset, go to IDLE state</span>
-<span class="w">        </span><span class="k">end</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">            </span><span class="n">current_state</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">next_state</span><span class="p">;</span><span class="w">  </span><span class="c1">// On clock, update to the next state</span>
-<span class="w">        </span><span class="k">end</span>
-<span class="w">    </span><span class="k">end</span>
-
-<span class="w">    </span><span class="c1">// Combinational logic for state transition based on current state and input trigger</span>
-<span class="w">    </span><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">        </span><span class="c1">// Default next state and output values</span>
-<span class="w">        </span><span class="n">next_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current_state</span><span class="p">;</span><span class="w"> </span><span class="c1">// Hold the current state by default</span>
-<span class="w">        </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span><span class="w">                 </span><span class="c1">// Default output is 0</span>
-
-<span class="w">        </span><span class="c1">// State transition logic</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="n">current_state</span><span class="p">)</span>
-<span class="w">            </span><span class="nl">IDLE:</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">                </span><span class="c1">// In IDLE, if &#39;trigger&#39; is high, move to STATE1</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">trigger</span><span class="p">)</span>
-<span class="w">                    </span><span class="n">next_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">STATE1</span><span class="p">;</span>
-<span class="w">                </span><span class="c1">// Output remains 0 in IDLE</span>
-<span class="w">            </span><span class="k">end</span>
-
-<span class="w">            </span><span class="nl">STATE1:</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">                </span><span class="c1">// In STATE1, set output high</span>
-<span class="w">                </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
-<span class="w">                </span><span class="c1">// If &#39;trigger&#39; is high, move to STATE2, otherwise go back to IDLE</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">trigger</span><span class="p">)</span>
-<span class="w">                    </span><span class="n">next_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">STATE2</span><span class="p">;</span>
-<span class="w">                </span><span class="k">else</span>
-<span class="w">                    </span><span class="n">next_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IDLE</span><span class="p">;</span>
-<span class="w">            </span><span class="k">end</span>
-
-<span class="w">            </span><span class="nl">STATE2:</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">                </span><span class="c1">// In STATE2, output remains high</span>
-<span class="w">                </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
-<span class="w">                </span><span class="c1">// If &#39;trigger&#39; goes low, return to IDLE</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">trigger</span><span class="p">)</span>
-<span class="w">                    </span><span class="n">next_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IDLE</span><span class="p">;</span>
-<span class="w">            </span><span class="k">end</span>
-
-<span class="w">            </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">                </span><span class="c1">// Default case to handle any undefined state (shouldn&#39;t happen)</span>
-<span class="w">                </span><span class="n">next_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IDLE</span><span class="p">;</span><span class="w"> </span><span class="c1">// Return to IDLE state if something goes wrong</span>
-<span class="w">            </span><span class="k">end</span>
-<span class="w">        </span><span class="k">endcase</span>
-<span class="w">    </span><span class="k">end</span>
-
-<span class="k">endmodule</span>
-</code></pre></div>
 
 
 
@@ -2110,12 +1797,12 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

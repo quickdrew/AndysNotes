@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../hardware/">
       
       
-        <link rel="next" href="../memory/">
+        <link rel="next" href="../parallelism/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Hardware Overview - Andy's Notes</title>
+        <title>Memory Hierarchy Design - Andy's Notes</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai-hardware-overview" class="md-skip">
+        <a href="#memory-hierarchy-design" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hardware Overview
+              Memory Hierarchy Design
             
           </span>
         </div>
@@ -325,6 +325,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -341,7 +362,7 @@
           
   
   <span class="md-ellipsis">
-    Hardware Overview
+    Memory Hierarchy Design
   </span>
   
 
@@ -352,7 +373,7 @@
         
   
   <span class="md-ellipsis">
-    Hardware Overview
+    Memory Hierarchy Design
   </span>
   
 
@@ -374,91 +395,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instructor" class="md-nav__link">
+  <a href="#memory-hierarchy-basics" class="md-nav__link">
     <span class="md-ellipsis">
-      Instructor
+      Memory Hierarchy Basics
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resources
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#computational-limits-in-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      Computational Limits in AI
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Computational Limits in AI">
+    <nav class="md-nav" aria-label="Memory Hierarchy Basics">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-von-neumann-bottleneck" class="md-nav__link">
+  <a href="#cache-placement-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      The Von Neumann bottleneck
+      Cache Placement Strategies:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-memory-performace-gap" class="md-nav__link">
+  <a href="#cache-write-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      The Memory Performace Gap
+      Cache Write Strategies:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#memory-bound-vs-compute-bound" class="md-nav__link">
+  <a href="#cache-miss-classification-3-cs-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Memory-bound vs Compute-bound
+      Cache Miss Classification (3 Cs Model):
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-power-gap" class="md-nav__link">
+  <a href="#optimizing-cache-performance" class="md-nav__link">
     <span class="md-ellipsis">
-      The Power Gap
+      Optimizing Cache Performance:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#performance-trends-bandwidth-over-latency" class="md-nav__link">
+  <a href="#average-memory-access-time-amat" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Trends: Bandwidth Over Latency
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cost-vs-energy-efficiency-in-ai-hardware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cost vs. Energy Efficiency in AI Hardware
+      Average Memory Access Time (AMAT):
     </span>
   </a>
   
@@ -470,37 +455,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#computer-architecture-basics" class="md-nav__link">
+  <a href="#types-of-memory-in-computer-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Computer Architecture Basics
+      Types of Memory in Computer Architecture
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Computer Architecture Basics">
+    <nav class="md-nav" aria-label="Types of Memory in Computer Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#instruction-sets" class="md-nav__link">
+  <a href="#a-primary-memory-volatile" class="md-nav__link">
     <span class="md-ellipsis">
-      Instruction Sets
+      A. Primary Memory (Volatile)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#old-vs-real-computer-architecture" class="md-nav__link">
+  <a href="#b-secondary-memory-non-volatile" class="md-nav__link">
     <span class="md-ellipsis">
-      Old vs. Real Computer Architecture
+      B. Secondary Memory (Non-Volatile)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#parallel-architecture" class="md-nav__link">
+  <a href="#c-virtual-memory" class="md-nav__link">
     <span class="md-ellipsis">
-      Parallel Architecture
+      C. Virtual Memory
     </span>
   </a>
   
@@ -512,55 +497,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quantitative-principles-of-computer-design" class="md-nav__link">
+  <a href="#memory-access-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Quantitative Principles of Computer Design
+      Memory Access Methods
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Quantitative Principles of Computer Design">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Technology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Technology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#take-advantage-of-parallelism" class="md-nav__link">
+  <a href="#1-basic-memory-technologies" class="md-nav__link">
     <span class="md-ellipsis">
-      Take Advantage of Parallelism
+      1. Basic Memory Technologies
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#principle-of-locality" class="md-nav__link">
+  <a href="#2-advanced-dram-technologies" class="md-nav__link">
     <span class="md-ellipsis">
-      Principle of Locality
+      2. Advanced DRAM Technologies
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#focus-on-the-common-case" class="md-nav__link">
+  <a href="#3-memory-technology-optimizations" class="md-nav__link">
     <span class="md-ellipsis">
-      Focus on the Common Case
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#amdahls-law" class="md-nav__link">
-    <span class="md-ellipsis">
-      Amdahl’s Law
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-processor-performance-equation" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Processor Performance Equation
+      3. Memory Technology Optimizations
     </span>
   </a>
   
@@ -572,11 +548,53 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#memory-hierarchy-design" class="md-nav__link">
+  <a href="#memory-reliability-and-error-correction" class="md-nav__link">
     <span class="md-ellipsis">
-      Memory Hierarchy Design
+      Memory Reliability and Error Correction
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-optimizations-to-reduce-cache-miss-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiler Optimizations to Reduce Cache Miss Rate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiler Optimizations to Reduce Cache Miss Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-loop-interchange-improves-spatial-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Loop Interchange (Improves Spatial Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-blocking-improves-temporal-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Blocking (Improves Temporal Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioritization-for-matrix-multiplication-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prioritization for Matrix Multiplication Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -584,27 +602,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../memory/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Memory Hierarchy Design
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1810,91 +1807,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instructor" class="md-nav__link">
+  <a href="#memory-hierarchy-basics" class="md-nav__link">
     <span class="md-ellipsis">
-      Instructor
+      Memory Hierarchy Basics
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resources
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#computational-limits-in-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      Computational Limits in AI
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Computational Limits in AI">
+    <nav class="md-nav" aria-label="Memory Hierarchy Basics">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-von-neumann-bottleneck" class="md-nav__link">
+  <a href="#cache-placement-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      The Von Neumann bottleneck
+      Cache Placement Strategies:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-memory-performace-gap" class="md-nav__link">
+  <a href="#cache-write-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      The Memory Performace Gap
+      Cache Write Strategies:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#memory-bound-vs-compute-bound" class="md-nav__link">
+  <a href="#cache-miss-classification-3-cs-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Memory-bound vs Compute-bound
+      Cache Miss Classification (3 Cs Model):
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-power-gap" class="md-nav__link">
+  <a href="#optimizing-cache-performance" class="md-nav__link">
     <span class="md-ellipsis">
-      The Power Gap
+      Optimizing Cache Performance:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#performance-trends-bandwidth-over-latency" class="md-nav__link">
+  <a href="#average-memory-access-time-amat" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Trends: Bandwidth Over Latency
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cost-vs-energy-efficiency-in-ai-hardware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cost vs. Energy Efficiency in AI Hardware
+      Average Memory Access Time (AMAT):
     </span>
   </a>
   
@@ -1906,37 +1867,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#computer-architecture-basics" class="md-nav__link">
+  <a href="#types-of-memory-in-computer-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Computer Architecture Basics
+      Types of Memory in Computer Architecture
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Computer Architecture Basics">
+    <nav class="md-nav" aria-label="Types of Memory in Computer Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#instruction-sets" class="md-nav__link">
+  <a href="#a-primary-memory-volatile" class="md-nav__link">
     <span class="md-ellipsis">
-      Instruction Sets
+      A. Primary Memory (Volatile)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#old-vs-real-computer-architecture" class="md-nav__link">
+  <a href="#b-secondary-memory-non-volatile" class="md-nav__link">
     <span class="md-ellipsis">
-      Old vs. Real Computer Architecture
+      B. Secondary Memory (Non-Volatile)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#parallel-architecture" class="md-nav__link">
+  <a href="#c-virtual-memory" class="md-nav__link">
     <span class="md-ellipsis">
-      Parallel Architecture
+      C. Virtual Memory
     </span>
   </a>
   
@@ -1948,55 +1909,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quantitative-principles-of-computer-design" class="md-nav__link">
+  <a href="#memory-access-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Quantitative Principles of Computer Design
+      Memory Access Methods
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Quantitative Principles of Computer Design">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Technology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Technology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#take-advantage-of-parallelism" class="md-nav__link">
+  <a href="#1-basic-memory-technologies" class="md-nav__link">
     <span class="md-ellipsis">
-      Take Advantage of Parallelism
+      1. Basic Memory Technologies
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#principle-of-locality" class="md-nav__link">
+  <a href="#2-advanced-dram-technologies" class="md-nav__link">
     <span class="md-ellipsis">
-      Principle of Locality
+      2. Advanced DRAM Technologies
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#focus-on-the-common-case" class="md-nav__link">
+  <a href="#3-memory-technology-optimizations" class="md-nav__link">
     <span class="md-ellipsis">
-      Focus on the Common Case
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#amdahls-law" class="md-nav__link">
-    <span class="md-ellipsis">
-      Amdahl’s Law
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-processor-performance-equation" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Processor Performance Equation
+      3. Memory Technology Optimizations
     </span>
   </a>
   
@@ -2008,11 +1960,53 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#memory-hierarchy-design" class="md-nav__link">
+  <a href="#memory-reliability-and-error-correction" class="md-nav__link">
     <span class="md-ellipsis">
-      Memory Hierarchy Design
+      Memory Reliability and Error Correction
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-optimizations-to-reduce-cache-miss-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiler Optimizations to Reduce Cache Miss Rate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiler Optimizations to Reduce Cache Miss Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-loop-interchange-improves-spatial-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Loop Interchange (Improves Spatial Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-blocking-improves-temporal-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Blocking (Improves Temporal Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioritization-for-matrix-multiplication-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prioritization for Matrix Multiplication Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2031,177 +2025,323 @@
                   
 
 
-<h1 id="ai-hardware-overview">AI Hardware Overview</h1>
-<h2 id="instructor">Instructor</h2>
-<p>Notes are mainy derived from <strong>Dr. Chen Pan's</strong> Hardware and programming course at <strong>UTSA</strong>.</p>
+<h1 id="memory-hierarchy-design">Memory Hierarchy Design</h1>
+<h2 id="memory-hierarchy-basics">Memory Hierarchy Basics</h2>
+<p><img alt="Memory Hierarchy 2" src="../../assets/Memory-Hierarchy2.jpg" /> </p>
+<p><img alt="Memory Hierarchy" src="../../assets/Memory-Hierarchy.jpg" /> </p>
+<p>Modern computing systems rely on <strong>memory hierarchies</strong> to bridge the gap between fast processors and slower main memory. When a requested word is not found in a cache (<strong>cache miss</strong>), the system fetches it from a lower-level memory, often bringing in an entire block due to <strong>spatial locality</strong>. Each cache block includes a <strong>tag</strong> to identify its memory address.</p>
+<h3 id="cache-placement-strategies">Cache Placement Strategies:</h3>
+<ol>
+<li><strong>Direct-Mapped Cache</strong> – Each block maps to exactly one location.</li>
+<li><strong>Fully Associative Cache</strong> – Blocks can be placed anywhere in the cache.</li>
+<li><strong>Set-Associative Cache</strong> – Blocks map to a limited number of locations (n-way set associativity).</li>
+</ol>
+<h3 id="cache-write-strategies">Cache Write Strategies:</h3>
 <ul>
-<li>Instructor Email: chen.pan@utsa.edu</li>
+<li><strong>Write-Through</strong> – Data is written to both the cache and main memory simultaneously.</li>
+<li><strong>Write-Back</strong> – Data is written to the cache first and updated in main memory later, improving efficiency.</li>
 </ul>
-<h2 id="resources">Resources</h2>
+<h3 id="cache-miss-classification-3-cs-model">Cache Miss Classification (3 Cs Model):</h3>
+<ol>
+<li><strong>Compulsory Misses</strong> – Occur when data is accessed for the first time.</li>
+<li><strong>Capacity Misses</strong> – Happen when the cache cannot hold all necessary data.</li>
+<li><strong>Conflict Misses</strong> – Result from poor cache placement, causing unnecessary evictions.</li>
+</ol>
+<h3 id="optimizing-cache-performance">Optimizing Cache Performance:</h3>
 <ul>
-<li><a href="https://archive.org/details/computerarchitectureaquantitativeapproach6thedition/page/n11/mode/2up?view=theater">Computer Architecture: A Quantitative Approach 6th Edition</a></li>
+<li><strong>Larger Block Sizes</strong> reduce compulsory misses but may increase miss penalties.</li>
+<li><strong>Increasing Cache Size</strong> minimizes capacity misses at the cost of increased access time.</li>
+<li><strong>Higher Associativity</strong> reduces conflict misses but can increase complexity and power consumption.</li>
+<li><strong>Multilevel Caches</strong> balance speed and capacity (e.g., L1, L2, L3 caches).</li>
 </ul>
-<h2 id="overview">Overview</h2>
-<ul>
-<li>Understanding microarchitecture of various AI hardware, parallel computing, and deep learning</li>
-<li>Low level (C\C++) programming for executing AI algorithms</li>
-<li>Bridge the gap between hardware and software in AI.</li>
-</ul>
-<h2 id="computational-limits-in-ai">Computational Limits in AI</h2>
-<p>AI differs from traditional sequential code in that it relies heavily on <strong>parallelism</strong> and processing large datasets, making operations like matrix multiplication central to tasks like training and inference. While sequential code (found in most classical microcontrollers/microcomputers) executes one instruction at a time, AI performs millions of computations simultaneously, requiring hardware like GPUs or TPUs for efficient parallel processing. AI also demands high memory bandwidth, low latency, and specialized accelerators to handle its computational intensity, exceeding the capabilities of traditional architectures designed for sequential tasks.</p>
-<h3 id="the-von-neumann-bottleneck">The Von Neumann bottleneck</h3>
-<p>The <strong>Von Neumann architecture</strong> is a foundational computing model that organizes a computer into three main components: a <strong>CPU (central processing unit)</strong>, <strong>memory</strong> (for storing data and instructions), and <strong>I/O devices</strong>. It operates by fetching instructions from memory, decoding them, and executing them sequentially, which is known as the <strong>fetch-decode-execute cycle</strong>. While the Von Neumann architecture underpins most general-purpose computers, its inherent bottleneck—limited bandwidth between the CPU and memory (the "Von Neumann bottleneck")—poses challenges for AI workloads, which often require high-speed processing of massive datasets. To address this, specialized AI hardware, such as GPUs, TPUs, and neuromorphic chips, is designed to parallelize computations and overcome memory bottlenecks, enabling efficient training and inference for complex AI models. Thus, while AI builds on the principles of the Von Neumann architecture, it increasingly relies on adaptations and specialized architectures optimized for its unique demands.</p>
-<p><img alt="Von Neumann bottleneck" src="../../assets/vonn.png" /></p>
-<h3 id="the-memory-performace-gap">The Memory Performace Gap</h3>
-<p>The <strong>memory performance gap</strong> is the mismatch between CPU speed and slower memory access, creating a bottleneck for AI workloads that rely on fast data processing. AI hardware mitigates this with high-bandwidth memory (HBM), larger caches, and optimized architectures like GPUs and TPUs, which improve memory throughput and enable efficient parallel processing of large datasets.</p>
-<p><img alt="Memory Gap" src="../../assets/memory_gap.png" />
-Source: <a href="https://www.researchgate.net/figure/Trend-of-processing-vs-memory-performance-on-time-Hardware-parallelism-eg-in-the_fig3_329400858">researchgate</a></p>
-<h3 id="memory-bound-vs-compute-bound">Memory-bound vs Compute-bound</h3>
-<p><strong>Memory-Bound</strong> tasks are limited by the speed of data transfer between memory and the processor, causing the CPU or GPU to wait for data. Examples include fetching large datasets or model weights in AI.</p>
-<p><strong>Compute-Bound</strong> tasks are limited by the processor's computational power, with the CPU or GPU fully utilized for calculations. Examples include matrix multiplications in deep learning.</p>
-<p>In AI, memory-bound tasks benefit from faster memory or bandwidth, while compute-bound tasks require more powerful processors or accelerators.</p>
-<h3 id="the-power-gap">The Power Gap</h3>
-<p><img alt="IOT Power Gap" src="../../assets/power_gap.png" /></p>
-<p>Battery technology is not keeping up to power requirments of embedded systems. To combat this, energy harvesting alternatives like solar, RF, heat, or kinetic energy harvesting are being explored.</p>
+<h3 id="average-memory-access-time-amat">Average Memory Access Time (AMAT):</h3>
+<p>A key metric for evaluating memory hierarchy performance:</p>
+<div class="arithmatex">\[
+\text{AMAT} = \text{Hit Time} + (\text{Miss Rate} \times \text{Miss Penalty})
+\]</div>
+<p>Optimizations such as <strong>multithreading and latency hiding</strong> help mitigate cache misses by overlapping memory accesses with computation.</p>
 <hr />
-<h3 id="performance-trends-bandwidth-over-latency">Performance Trends: Bandwidth Over Latency</h3>
-<p>Modern AI and computing workloads are increasingly <strong>bandwidth-bound rather than latency-bound</strong>. While <strong>bandwidth improvements have scaled exponentially (400–32,000×)</strong>, <strong>latency improvements have been much slower (8–91×)</strong>. This discrepancy requires <strong>efficient data movement strategies</strong> in hardware design.</p>
-<p>To address this, modern AI architectures emphasize:</p>
-<ul>
-<li><strong>Parallelism</strong>: Increasing the number of processing units (e.g., GPUs, TPUs, multi-core CPUs).</li>
-<li><strong>Memory Hierarchies</strong>: Using multi-level caches and <strong>HBM</strong> to reduce memory access delays.</li>
-<li><strong>Interconnect Optimization</strong>: Using <strong>high-speed data buses, PCIe, and NVLink</strong> to improve bandwidth efficiency.</li>
-<li><strong>Data Locality Strategies</strong>: Prefetching and reusing data efficiently to minimize slow memory accesses.</li>
-</ul>
-<p><img alt="Bandwidth over Time" src="../../assets/bandwith.png" /></p>
-<hr />
-<h3 id="cost-vs-energy-efficiency-in-ai-hardware">Cost vs. Energy Efficiency in AI Hardware</h3>
-<p>In large-scale AI computing, <strong>energy efficiency is now as important as performance</strong>. As <strong>operational costs (power and cooling) exceed hardware costs in cloud data centers</strong>, AI accelerators must balance <strong>power efficiency with computational throughput</strong>. Key trends include:</p>
-<ul>
-<li><strong>Energy-efficient accelerators</strong>: TPUs and domain-specific processors reduce redundant computation.</li>
-<li><strong>Dark Silicon Awareness</strong>: Modern chips often have <strong>unused transistors</strong> due to power constraints, requiring careful workload distribution.</li>
-<li><strong>Performance per Watt</strong>: AI hardware is increasingly evaluated based on <strong>tasks per joule</strong> rather than raw FLOPS.</li>
-</ul>
-<hr />
-<h2 id="computer-architecture-basics">Computer Architecture Basics</h2>
-<p><img alt="architecture" src="../../assets/computerarchitecture.jpg" /></p>
-<h3 id="instruction-sets">Instruction Sets</h3>
-<p>RISC (Reduced Instruction Set Computing) and CISC (Complex Instruction Set Computing) are two CPU architecture approaches that impact instruction execution, power efficiency, and complexity.</p>
+<h2 id="types-of-memory-in-computer-architecture"><strong>Types of Memory in Computer Architecture</strong></h2>
+<p>Memory in a computer system is structured into <strong>primary, secondary, and virtual memory</strong>, each serving different roles in performance and storage hierarchy.</p>
+<h3 id="a-primary-memory-volatile"><strong>A. Primary Memory (Volatile)</strong></h3>
+<p>This memory type directly supports the CPU, ensuring fast access for ongoing computations.</p>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
-<th><strong>RISC (Reduced Instruction Set Computing)</strong></th>
-<th><strong>CISC (Complex Instruction Set Computing)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Instruction Set</strong></td>
-<td>Small, fixed-length, simple</td>
-<td>Large, variable-length, complex</td>
-</tr>
-<tr>
-<td><strong>Execution</strong></td>
-<td>One or few cycles per instruction</td>
-<td>Some instructions take multiple cycles</td>
-</tr>
-<tr>
-<td><strong>Memory Access</strong></td>
-<td>Load/Store model (separate memory instructions)</td>
-<td>Memory operations embedded in instructions</td>
-</tr>
-<tr>
-<td><strong>Code Size</strong></td>
-<td>More instructions but simpler</td>
-<td>Fewer instructions but more complex</td>
-</tr>
-<tr>
-<td><strong>Pipelining</strong></td>
-<td>Easier to implement</td>
-<td>More difficult due to complex decoding</td>
-</tr>
-<tr>
-<td><strong>Power Efficiency</strong></td>
-<td>More efficient, ideal for mobile and embedded devices</td>
-<td>Higher power consumption, used in desktops and servers</td>
-</tr>
-<tr>
-<td><strong>Examples</strong></td>
-<td>ARM, RISC-V, PowerPC</td>
-<td>x86 (Intel, AMD), IBM System/360</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="old-vs-real-computer-architecture"><strong>Old vs. Real Computer Architecture</strong></h3>
-<p>Computing architectures can be categorized into <strong>old (theoretical) models</strong> and <strong>real (practical) implementations</strong>. Old architectures define foundational principles, while real architectures build upon them with modern enhancements.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Architecture Type</strong></th>
+<th><strong>Memory Type</strong></th>
 <th><strong>Description</strong></th>
 <th><strong>Examples</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Old Architectures</strong></td>
-<td>Conceptual models shaping computing principles, often with limitations in speed and memory efficiency.</td>
-<td>Von Neumann (shared memory for data/instructions), Harvard (separate memory paths), Stack-based (operations via stack), Accumulator-based (single register for operations)</td>
+<td><strong>Registers</strong></td>
+<td>Small storage inside the CPU for immediate execution.</td>
+<td>Program Counter (PC), Accumulator</td>
 </tr>
 <tr>
-<td><strong>Real Architectures</strong></td>
-<td>Practical implementations optimizing speed, parallelism, and efficiency for real-world applications.</td>
-<td>RISC (ARM, RISC-V), CISC (x86), VLIW (Intel Itanium), Superscalar (modern x86, ARM Cortex), Multi-core (Intel Core, AMD Ryzen)</td>
+<td><strong>Cache Memory</strong></td>
+<td>Stores frequently accessed data for faster CPU access.</td>
+<td>L1, L2, L3 cache</td>
+</tr>
+<tr>
+<td><strong>RAM (Random Access Memory)</strong></td>
+<td>Stores currently running programs and data.</td>
+<td>DDR4, DDR5</td>
 </tr>
 </tbody>
 </table>
-<p>Modern processors often blend <strong>Von Neumann’s model with elements of Harvard architecture</strong> to enhance performance. Superscalar and multi-core architectures leverage parallel execution for increased computing power, making them dominant in <strong>general-purpose computing, AI acceleration, and cloud systems</strong>.</p>
+<h3 id="b-secondary-memory-non-volatile"><strong>B. Secondary Memory (Non-Volatile)</strong></h3>
+<p>Used for <strong>long-term data storage</strong> and retains data even when the power is off.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Memory Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HDD (Hard Disk Drive)</strong></td>
+<td>Magnetic storage, slower but cost-effective.</td>
+<td>Traditional laptop HDDs</td>
+</tr>
+<tr>
+<td><strong>SSD (Solid State Drive)</strong></td>
+<td>Flash-based storage, much faster than HDDs.</td>
+<td>NVMe SSD, SATA SSD</td>
+</tr>
+<tr>
+<td><strong>Flash Memory</strong></td>
+<td>Non-volatile, used in portable devices and SSDs.</td>
+<td>USB drives, SD cards</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c-virtual-memory"><strong>C. Virtual Memory</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Memory Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Swap Space</strong></td>
+<td>Uses disk storage as an extension of RAM.</td>
+<td>Linux Swap, Windows Pagefile</td>
+</tr>
+<tr>
+<td><strong>Paging</strong></td>
+<td>Divides memory into fixed-size pages for management.</td>
+<td>4KB page size in OS</td>
+</tr>
+</tbody>
+</table>
+<p>Virtual memory extends <strong>RAM capacity</strong> by using a portion of disk storage as an extension, allowing the system to handle <strong>larger workloads</strong> than physical memory alone. It functions by treating <strong>physical memory as a cache</strong> for secondary storage, moving data between the two as needed. This process relies on <strong>paging</strong>, where memory is divided into fixed-size pages, and a <strong>Translation Lookaside Buffer (TLB)</strong> caches page table entries to speed up address translation.  </p>
+<p>Beyond extending memory, virtual memory also enhances <strong>process isolation and security</strong> by providing each program with its own virtual address space, preventing direct access to other processes’ memory. <strong>Virtual Machines (VMs)</strong> take this further by running entire operating systems within isolated environments, managed by a <strong>Virtual Machine Monitor (VMM)</strong> or <strong>hypervisor</strong>. VMs improve <strong>security, system reliability, and hardware utilization</strong>, making them essential for <strong>cloud computing and server virtualization</strong>.  </p>
+<p>Modern processors optimize virtual memory and VM performance through <strong>hardware-assisted virtualization</strong>, such as Intel VT-x and AMD-V, which reduce the overhead of managing multiple virtual address spaces. Additionally, techniques like <strong>nested page tables</strong> and <strong>direct memory access (DMA) virtualization</strong> enhance efficiency in handling virtualized workloads.</p>
+<p><img alt="NM" src="../../assets/vitural_memory.png" /></p>
+<p>Figure above shows a process memory layout, which is managed by virtual memory. It allows the CPU to access a continuous address space, even if data is stored across RAM (volatile) and NVM (non-volatile). <em>Source: Dr. Chen Pan UTSA</em></p>
 <hr />
-<h3 id="parallel-architecture"><strong>Parallel Architecture</strong></h3>
-<p><a href="../parallelism/">Parallel architecture</a> is a computer system design that enables multiple processors or computing units to execute tasks simultaneously, improving speed and efficiency. It is essential for AI, big data, and modern computing, as workloads like deep learning, graphics processing, and cloud computing require massive parallelism to handle complex computations efficiently. With the slowdown of Moore’s Law, parallel processing is the key to scaling performance while maintaining energy efficiency. For a deep dive on this subject travel to <a href="../parallelism/">Parallel architecture</a></p>
+<h2 id="memory-access-methods"><strong>Memory Access Methods</strong></h2>
+<p>Different memory technologies use specific access methods to retrieve data efficiently.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Access Method</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sequential Access</strong></td>
+<td>Reads data in a linear order.</td>
+<td>Magnetic tape storage</td>
+</tr>
+<tr>
+<td><strong>Direct Access</strong></td>
+<td>Jumps directly to memory locations.</td>
+<td>HDDs, SSDs</td>
+</tr>
+<tr>
+<td><strong>Random Access</strong></td>
+<td>Any memory cell can be accessed instantly.</td>
+<td>RAM, Cache</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="quantitative-principles-of-computer-design">Quantitative Principles of Computer Design</h2>
-<h3 id="take-advantage-of-parallelism">Take Advantage of Parallelism</h3>
-<p><a href="../parallelism/">Parallelism</a> is a key strategy for improving computing performance. It can be leveraged at multiple levels:</p>
+<h2 id="memory-technology"><strong>Memory Technology</strong></h2>
+<h3 id="1-basic-memory-technologies"><strong>1. Basic Memory Technologies</strong></h3>
 <ul>
-<li><strong>System-Level Parallelism</strong>: Servers use multiple processors and storage devices to handle workloads efficiently.</li>
-<li><strong>Instruction-Level Parallelism (ILP)</strong>: Techniques such as pipelining improve execution speed by overlapping instruction execution.</li>
-<li><strong>Data-Level Parallelism (DLP)</strong>: Vector processing and SIMD instructions enable faster computations in AI and multimedia applications.</li>
+<li><strong>SRAM (Static RAM)</strong> – Fastest, used in <strong>CPU caches (L1, L2, L3)</strong>, but expensive.</li>
+<li><strong>DRAM (Dynamic RAM)</strong> – Main memory, slower than SRAM but cheaper and denser.</li>
+<li><strong>Flash Memory</strong> – A type of <strong>EEPROM</strong>, Non-volatile, used in SSDs and embedded systems.</li>
 </ul>
-<h3 id="principle-of-locality">Principle of Locality</h3>
-<p>Programs tend to reuse recently accessed data and instructions. This is classified into:</p>
+<p>In DRAM, the information is stored in a capacitor that holds a charge representing a bit of data. However, reading the data from the capacitor causes it to discharge, and since the charge leaks over time, the data is lost when read and must be rewritten. This is why DRAM requires periodic refreshing to maintain the data. In contrast, SRAM stores data in a flip-flop made of transistors, which does not lose its information when read. SRAM does not require refreshing and is faster than DRAM as a result.</p>
+<p><img alt="SRAM" src="../../assets/SRAM_Cell_%286_Transistors%29.svg.png" />
+<em>A six-transistor (6T) CMOS SRAM cell. WL: word line. BL: bit line. Realize how complex a single cell is compared to a DRAM cell below. Source: Public Domain, https://commons.wikimedia.org/w/index.php?curid=5771850</em></p>
+<p><img alt="DRAM" src="../../assets/DRAM_cell_field.png" />
+<em>A 4X4 DRAM array, realize how a single DRAM cell has only one transistor and one capacitor. Source: Dynamic random-access memory Wikipedia by JürgenZ</em></p>
+<h3 id="2-advanced-dram-technologies"><strong>2. Advanced DRAM Technologies</strong></h3>
 <ul>
-<li><strong>Temporal Locality</strong>: Frequently used data is likely to be accessed soon.</li>
-<li><strong>Spatial Locality</strong>: Data stored near recently accessed addresses is likely to be used.
-Optimizing memory hierarchies and cache design takes advantage of these principles to improve performance.</li>
+<li><strong>SDRAM (Synchronous DRAM):</strong> The foundation of modern memory, synchronized with the system clock for predictable, efficient data access.</li>
+<li><strong>DDR (Double Data Rate) SDRAM:</strong> Transfers data on both rising and falling clock edges, doubling bandwidth over SDRAM. Newer generations (DDR2–DDR5) improve speed, efficiency, and capacity. Essential for CPUs in desktops, laptops, and servers, balancing speed and cost.</li>
+<li><strong>GDDR (Graphics DRAM):</strong>  Optimized for GPUs with wider buses (32-bit), higher clock rates, and direct board soldering for 2–5× DDR3 bandwidth. Critical for gaming, AI, and high-speed graphics tasks needing rapid memory access.</li>
+<li><strong>HBM (High Bandwidth Memory):</strong> Stacks DRAM layers with an ultra-wide bus for extreme bandwidth and low power consumption. Used in AI, supercomputers, and high-end GPUs where traditional memory isn’t fast enough.</li>
 </ul>
-<h3 id="focus-on-the-common-case">Focus on the Common Case</h3>
-<p>Prioritizing optimizations for the most frequent operations leads to greater overall performance gains. Examples include:</p>
+<p><img alt="HBM" src="../../assets/HBM.png" /></p>
+<p><em>Source: J. L. Hennessy and D. A. Patterson, Computer Architecture: A Quantitative Approach, 6th ed. Morgan Kaufmann, 2017.</em></p>
+<h3 id="3-memory-technology-optimizations"><strong>3. Memory Technology Optimizations</strong></h3>
+<p>To improve performance, modern computers use a <strong>memory hierarchy</strong> with the following strategies:</p>
+<ol>
+<li><strong>Larger Cache Sizes</strong> – Increases data retention, reducing main memory accesses.</li>
+<li><strong>Higher Associativity</strong> – Reduces <strong>cache misses</strong> by allowing more flexible data placement.</li>
+<li><strong>Multilevel Caches (L1, L2, L3)</strong> – Keeps frequently used data <strong>closer to the processor</strong>.</li>
+<li><strong>Burst Transfers and Prefetching</strong> – Reduces <strong>DRAM latency</strong> by pre-loading data.</li>
+<li><strong>Banked &amp; Interleaved DRAM</strong> – Enables <strong>parallel memory accesses</strong>, increasing efficiency.</li>
+<li><strong>Stacked Memory (HBM, 3D DRAM)</strong> – Reduces travel distances for <strong>lower latency and higher bandwidth</strong>.</li>
+</ol>
+<hr />
+<h2 id="memory-reliability-and-error-correction"><strong>Memory Reliability and Error Correction</strong></h2>
+<p>Memory failures are mitigated through <strong>Error Correction Codes (ECC)</strong> and redundancy techniques.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Error Handling Method</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parity Checking</strong></td>
+<td>Detects single-bit errors but cannot correct them.</td>
+</tr>
+<tr>
+<td><strong>ECC (Error Correction Code)</strong></td>
+<td>Detects and fixes <strong>single-bit errors</strong>.</td>
+</tr>
+<tr>
+<td><strong>Chipkill Technology</strong></td>
+<td>Used in data centers; recovers from complete <strong>memory chip failure</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>In large-scale computing (e.g., <strong>cloud servers, data centers</strong>), <strong>Chipkill and ECC memory</strong> are essential to ensure high <strong>data integrity and system stability</strong>.</p>
+<hr />
+<h2 id="compiler-optimizations-to-reduce-cache-miss-rate"><strong>Compiler Optimizations to Reduce Cache Miss Rate</strong></h2>
+<p>Efficient cache utilization can significantly improve performance without requiring hardware modifications. The following compiler optimizations reduce cache miss rates by improving <strong>spatial</strong> and <strong>temporal locality</strong>.</p>
+<hr />
+<h3 id="1-loop-interchange-improves-spatial-locality"><strong>1. Loop Interchange (Improves Spatial Locality)</strong></h3>
+<p>Nested loops may access data in an inefficient order, leading to <strong>cache misses</strong>. <strong>Loop interchange</strong> reorders loops so that memory accesses follow a sequential pattern, maximizing cache utilization.</p>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="cm">/* Before - Poor spatial locality (column-major order) */</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+
+<span class="cm">/* After - Optimized for row-major order */</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</code></pre></div>
+
 <ul>
-<li><strong>Optimizing instruction fetch and decode units</strong> (used more often than multipliers).</li>
-<li><strong>Prioritizing memory accesses over rare operations</strong> to enhance speed.</li>
+<li>The original version jumps through memory with a <strong>stride of 100</strong>, causing frequent <strong>cache misses</strong>.</li>
+<li>The optimized version accesses <strong>adjacent elements</strong>, improving <strong>spatial locality</strong>.</li>
 </ul>
-<h3 id="amdahls-law">Amdahl’s Law</h3>
-<p>Amdahl’s Law quantifies the potential speedup of a system by optimizing a portion of its execution. The formula:</p>
-<div class="arithmatex">\[
-Speedup = \frac{1}{(1 - Fraction_{enhanced}) + \frac{Fraction_{enhanced}}{Speedup_{enhanced}}}
-\]</div>
-<p>Illustrates diminishing returns—speedup is limited by the fraction of time the enhancement can be utilized.</p>
-<h3 id="the-processor-performance-equation">The Processor Performance Equation</h3>
-<p>Performance depends on three key factors:</p>
-<div class="arithmatex">\[
-CPU\ Time = Instruction\ Count \times Cycles\ per\ Instruction \times Clock\ Cycle\ Time
-\]</div>
+<hr />
+<h3 id="2-blocking-improves-temporal-locality"><strong>2. Blocking (Improves Temporal Locality)</strong></h3>
+<p><strong>Blocking</strong> reduces cache misses by ensuring frequently accessed data remains in the cache before being replaced.</p>
+<p><strong>Example: Naïve Matrix Multiplication (High Cache Misses)</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="cm">/* Standard matrix multiplication */</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="n">r</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<span class="w">        </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+
 <ul>
-<li><strong>Clock Cycle Time</strong>: Determined by hardware and fabrication technology.</li>
-<li><strong>Cycles per Instruction (CPI)</strong>: Affected by instruction set and microarchitecture.</li>
-<li><strong>Instruction Count</strong>: Influenced by compiler optimizations and ISA efficiency.</li>
+<li>The above implementation results in <strong>poor cache efficiency</strong> because:</li>
+<li>It reads an entire <strong>N × N matrix <code>z</code></strong> for every row of <code>x</code> and <code>y</code>.</li>
+<li>Cache capacity is exceeded, leading to frequent <strong>capacity misses</strong>.</li>
 </ul>
-<p>Optimizing across these dimensions ensures efficient and high-performance computing systems.</p>
-<h2 id="memory-hierarchy-design">Memory Hierarchy Design</h2>
-<p>Computers use a <a href="../memory/">memory hierarchy</a> to balance speed and cost, with fast, small caches close to the processor and slower, larger memory further away. Since accessing main memory is slow, cache optimization techniques like loop blocking, prefetching, and associativity improvements help keep frequently used data nearby, reducing delays. Understanding how caches work and how to optimize memory access is essential for improving overall system performance, especially in tasks like matrix multiplication, AI workloads, and high-performance computing. For a deep dive visit: <a href="../memory/">Memory Hierarchy Design</a></p>
+<p><strong>Optimized Matrix Multiplication Using Blocking</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="cm">/* Optimized using blocking */</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">jj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">B</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">kk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">B</span><span class="p">)</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jj</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">jj</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">);</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kk</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">kk</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">);</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">r</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">z</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<span class="w">                </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Why is this better?</strong></li>
+<li>Instead of working on full rows/columns, we <strong>process smaller blocks that fit in the cache</strong>, reducing memory accesses.</li>
+<li>This leverages <strong>both spatial and temporal locality</strong>.</li>
+</ul>
+<hr />
+<h3 id="prioritization-for-matrix-multiplication-analysis"><strong>Prioritization for Matrix Multiplication Analysis</strong></h3>
+<p>To analyze the given matrix multiplication problem efficiently, we should prioritize the following steps:</p>
+<ol>
+<li>
+<p><strong>Determine Matrix Dimensions</strong>  </p>
+<ul>
+<li>Identify the size of <code>C = A × B</code>, ensuring <code>C</code> has dimensions <code>(m × n)</code>.</li>
+<li>Establish constraints for <code>l</code> based on memory availability.</li>
+</ul>
+</li>
+<li>
+<p><strong>Memory Allocation Constraints</strong>  </p>
+<ul>
+<li>Calculate the maximum possible <code>l</code> using memory constraints.</li>
+<li>Convert results to dimensions for <code>A</code>, <code>B</code>, and <code>C</code> considering 16-bit integer storage.</li>
+</ul>
+</li>
+<li>
+<p><strong>Compute Memory Access Time</strong>  </p>
+<ul>
+<li>Analyze cache behavior given <strong>fully associative cache</strong> with <strong>32B cache lines</strong>.</li>
+<li>Compute cache hit/miss penalties using <strong>Least Recently Used (LRU) replacement</strong>.</li>
+<li>Derive total <strong>cycles required</strong> for the matrix multiplication.</li>
+</ul>
+</li>
+<li>
+<p><strong>Optimize for Cache Efficiency</strong>  </p>
+<ul>
+<li>Identify poor cache utilization patterns in the given loop.</li>
+<li>Implement <strong>loop interchange</strong> or <strong>blocking</strong> to improve locality.</li>
+<li>Calculate performance improvement by reducing cache misses.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analyze Post-Computational Random Access</strong>  </p>
+<ul>
+<li>Compute the <strong>average memory access time</strong> when randomly accessing <code>A</code>, <code>B</code>, and <code>C</code>.</li>
+<li>Compare this with structured access times to draw conclusions on <strong>cache efficiency</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Final Conclusion</strong>  </p>
+<ul>
+<li>Summarize findings on how <strong>memory hierarchy impacts performance</strong>.</li>
+<li>Justify why <strong>locality-aware optimizations</strong> significantly improve execution speed.</li>
+</ul>
+</li>
+</ol>
+<p>By following this structured prioritization, we can effectively <strong>minimize memory latency and improve computational efficiency</strong> for matrix multiplication.</p>
 
 
 
