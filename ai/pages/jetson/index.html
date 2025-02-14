@@ -541,6 +541,84 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setting-up-yolo-on-jetson-nano-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up YOLO on Jetson Nano with Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up YOLO on Jetson Nano with Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-the-jetpack-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install the JetPack Docker Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-docker-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the Docker Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-docker-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Docker Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-yolo-inside-the-docker-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running YOLO Inside the Docker Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-yolo-untested" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training YOLO (untested)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleaning-up-docker-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleaning Up Docker Containers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1756,6 +1834,84 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setting-up-yolo-on-jetson-nano-with-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up YOLO on Jetson Nano with Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up YOLO on Jetson Nano with Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-the-jetpack-docker-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install the JetPack Docker Image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-docker-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the Docker Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-docker-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Docker Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-yolo-inside-the-docker-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running YOLO Inside the Docker Container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-yolo-untested" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training YOLO (untested)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleaning-up-docker-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleaning Up Docker Containers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1988,6 +2144,98 @@
 </li>
 </ol>
 <p><a href="https://github.com/dusty-nv/jetson-inference/blob/master/docs/segnet-console-2.md">Nividia Reference</a></p>
+<hr />
+<h2 id="setting-up-yolo-on-jetson-nano-with-docker">Setting Up YOLO on Jetson Nano with Docker</h2>
+<h3 id="install-the-jetpack-docker-image">Install the JetPack Docker Image</h3>
+<p>To get started, visit the <a href="https://docs.ultralytics.com/guides/nvidia-jetson/#install-onnxruntime-gpu_1">Ultralytics NVIDIA Jetson Guide</a> and follow the instructions to install the Ultralytics YOLO11 JetPack 4 Docker environment .</p>
+<h3 id="running-the-docker-environment">Running the Docker Environment</h3>
+<p>Once the container is downloaded, run it with:</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>--runtime<span class="o">=</span>nvidia<span class="w"> </span>ultralytics/ultralytics:latest-jetson-jetpack4
+</code></pre></div>
+
+<p>After running this command, you should see a prompt similar to:</p>
+<div class="codehilite"><pre><span></span><code>root@&lt;container_id&gt;:/ultralytics#
+</code></pre></div>
+
+<p>This means you are inside the YOLO Docker environment.</p>
+<h3 id="basic-docker-commands">Basic Docker Commands</h3>
+<p><strong>Check Running Containers</strong></p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>ps
+</code></pre></div>
+
+<p><strong>Check All Containers (Including Stopped Ones)</strong></p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>ps<span class="w"> </span>-a
+</code></pre></div>
+
+<p><strong>Restart a Stopped Container</strong></p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>start<span class="w"> </span>&lt;CONTAINER_ID&gt;
+</code></pre></div>
+
+<p><strong>Enter a Running Container</strong></p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;CONTAINER_ID&gt;<span class="w"> </span>bash
+</code></pre></div>
+
+<p><strong>Exit the Container</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nb">exit</span>
+</code></pre></div>
+
+<p><strong>Copy Files From a Stopped Container to Your Jetson Nano</strong></p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>cp<span class="w"> </span>&lt;CONTAINER_ID&gt;:/ultralytics/runs/detect/predict<span class="w"> </span>~/yolo_results
+</code></pre></div>
+
+<h3 id="running-yolo-inside-the-docker-container">Running YOLO Inside the Docker Container</h3>
+<p><strong>Verify YOLO Installation</strong></p>
+<div class="codehilite"><pre><span></span><code>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import ultralytics; print(ultralytics.__version__)&quot;</span>
+</code></pre></div>
+
+<p><strong>Run a YOLO Detection on a Sample Image</strong></p>
+<div class="codehilite"><pre><span></span><code>yolo<span class="w"> </span>detect<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolo11n.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span>https://ultralytics.com/images/zidane.jpg
+</code></pre></div>
+
+<p>Expected output:</p>
+<div class="codehilite"><pre><span></span><code>Results saved to /ultralytics/runs/detect/predict
+</code></pre></div>
+
+<p><strong>Check GPU Availability</strong></p>
+<div class="codehilite"><pre><span></span><code>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch; print(torch.cuda.is_available())&quot;</span>
+</code></pre></div>
+
+<p>If it prints <code>True</code>, YOLO is using CUDA.</p>
+<p><strong>Run YOLO on a Custom Image</strong>
+Make sure the image is accessible inside the container and run:</p>
+<div class="codehilite"><pre><span></span><code>yolo<span class="w"> </span>detect<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolo11n.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span>/path/to/your/image.jpg
+</code></pre></div>
+
+<h3 id="accessing-results">Accessing Results</h3>
+<p>YOLO saves detected images inside <code>/ultralytics/runs/detect/predict</code>. To access these files:</p>
+<ol>
+<li>Re-enter the container:</li>
+</ol>
+<p><code>bash
+   sudo docker exec -it &lt;CONTAINER_ID&gt; bash</code></p>
+<ol>
+<li>Navigate to the results folder:</li>
+</ol>
+<p><code>bash
+   cd /ultralytics/runs/detect/predict
+   ls</code></p>
+<ol>
+<li>Copy results to your Jetson Nano:</li>
+</ol>
+<p><code>bash
+   sudo docker cp &lt;CONTAINER_ID&gt;:/ultralytics/runs/detect/predict ~/yolo_results</code></p>
+<p>Now you can access them in <code>~/yolo_results</code>.</p>
+<h3 id="training-yolo-untested">Training YOLO (untested)</h3>
+<p>If you want to train YOLO on your own dataset, use:</p>
+<div class="codehilite"><pre><span></span><code>yolo<span class="w"> </span>train<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolo11n.pt<span class="w"> </span><span class="nv">data</span><span class="o">=</span>your_dataset.yaml<span class="w"> </span><span class="nv">epochs</span><span class="o">=</span><span class="m">50</span><span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">640</span>
+</code></pre></div>
+
+<h3 id="cleaning-up-docker-containers">Cleaning Up Docker Containers</h3>
+<p>If you have too many stopped containers, you can remove them with:</p>
+<div class="codehilite"><pre><span></span><code>sudo<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>prune
+</code></pre></div>
+
+<p>This deletes all stopped containers to free up space.</p>
 <hr />
 
 
