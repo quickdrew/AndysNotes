@@ -239,3 +239,120 @@ Semantic segmentation classifies every pixel in an image into categories (e.g., 
 
 ---
 
+## Setting Up YOLO on Jetson Nano with Docker
+
+### Install the JetPack Docker Image
+To get started, visit the [Ultralytics NVIDIA Jetson Guide](https://docs.ultralytics.com/guides/nvidia-jetson/#install-onnxruntime-gpu_1) and follow the instructions to install the Ultralytics YOLO11 JetPack 4 Docker environment .
+
+### Running the Docker Environment
+Once the container is downloaded, run it with:
+
+```bash
+sudo docker run -it --ipc=host --runtime=nvidia ultralytics/ultralytics:latest-jetson-jetpack4
+```
+
+After running this command, you should see a prompt similar to:
+
+```
+root@<container_id>:/ultralytics#
+```
+This means you are inside the YOLO Docker environment.
+
+### Basic Docker Commands
+
+**Check Running Containers**
+```bash
+sudo docker ps
+```
+
+**Check All Containers (Including Stopped Ones)**
+```bash
+sudo docker ps -a
+```
+
+**Restart a Stopped Container**
+```bash
+sudo docker start <CONTAINER_ID>
+```
+
+**Enter a Running Container**
+```bash
+sudo docker exec -it <CONTAINER_ID> bash
+```
+
+**Exit the Container**
+```bash
+exit
+```
+
+**Copy Files From a Stopped Container to Your Jetson Nano**
+```bash
+sudo docker cp <CONTAINER_ID>:/ultralytics/runs/detect/predict ~/yolo_results
+```
+
+### Running YOLO Inside the Docker Container
+
+**Verify YOLO Installation**
+```bash
+python3 -c "import ultralytics; print(ultralytics.__version__)"
+```
+
+**Run a YOLO Detection on a Sample Image**
+```bash
+yolo detect predict model=yolo11n.pt source=https://ultralytics.com/images/zidane.jpg
+```
+Expected output:
+```
+Results saved to /ultralytics/runs/detect/predict
+```
+
+**Check GPU Availability**
+```bash
+python3 -c "import torch; print(torch.cuda.is_available())"
+```
+If it prints `True`, YOLO is using CUDA.
+
+**Run YOLO on a Custom Image**
+Make sure the image is accessible inside the container and run:
+```bash
+yolo detect predict model=yolo11n.pt source=/path/to/your/image.jpg
+```
+
+### Accessing Results
+YOLO saves detected images inside `/ultralytics/runs/detect/predict`. To access these files:
+
+1. Re-enter the container:
+
+   ```bash
+   sudo docker exec -it <CONTAINER_ID> bash
+   ```
+
+2. Navigate to the results folder:
+
+   ```bash
+   cd /ultralytics/runs/detect/predict
+   ls
+   ```
+
+3. Copy results to your Jetson Nano:
+
+   ```bash
+   sudo docker cp <CONTAINER_ID>:/ultralytics/runs/detect/predict ~/yolo_results
+   ```
+
+   Now you can access them in `~/yolo_results`.
+
+### Training YOLO (untested)
+If you want to train YOLO on your own dataset, use:
+```bash
+yolo train model=yolo11n.pt data=your_dataset.yaml epochs=50 imgsz=640
+```
+
+### Cleaning Up Docker Containers
+If you have too many stopped containers, you can remove them with:
+```bash
+sudo docker container prune
+```
+This deletes all stopped containers to free up space.
+
+---

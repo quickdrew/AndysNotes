@@ -672,27 +672,51 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-are-warps" class="md-nav__link">
+  <a href="#understanding-warps" class="md-nav__link">
     <span class="md-ellipsis">
-      What Are Warps?
+      Understanding Warps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-programming-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA Programming Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CUDA Programming Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda-execution-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA Execution Model
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#warp-execution-and-latency-hiding" class="md-nav__link">
+  <a href="#fine-grained-multithreading-in-cuda" class="md-nav__link">
     <span class="md-ellipsis">
-      Warp Execution and Latency Hiding
+      Fine-Grained Multithreading in CUDA
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#gpu-parallelism-in-practice" class="md-nav__link">
+  <a href="#streaming-multiprocessors-sms" class="md-nav__link">
     <span class="md-ellipsis">
-      GPU Parallelism in Practice
+      Streaming Multiprocessors (SMs)
     </span>
   </a>
   
@@ -2147,27 +2171,51 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-are-warps" class="md-nav__link">
+  <a href="#understanding-warps" class="md-nav__link">
     <span class="md-ellipsis">
-      What Are Warps?
+      Understanding Warps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-programming-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA Programming Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CUDA Programming Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda-execution-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA Execution Model
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#warp-execution-and-latency-hiding" class="md-nav__link">
+  <a href="#fine-grained-multithreading-in-cuda" class="md-nav__link">
     <span class="md-ellipsis">
-      Warp Execution and Latency Hiding
+      Fine-Grained Multithreading in CUDA
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#gpu-parallelism-in-practice" class="md-nav__link">
+  <a href="#streaming-multiprocessors-sms" class="md-nav__link">
     <span class="md-ellipsis">
-      GPU Parallelism in Practice
+      Streaming Multiprocessors (SMs)
     </span>
   </a>
   
@@ -2402,33 +2450,77 @@ ADD R1, R4, R5   # Also writes to R1, causing a conflict
 <hr />
 <h2 id="understanding-graphics-processing-units-gpus">Understanding Graphics Processing Units (GPUs)</h2>
 <h3 id="gpu-vs-cpu-architectural-differences">GPU vs. CPU: Architectural Differences</h3>
+<p><img alt="" src="../../assets/gpu_cpu.png" />
+<em>Source: Dr. Chen Pan UTSA</em></p>
 <p>While CPUs are optimized for <strong>low-latency, sequential processing</strong>, GPUs are designed for <strong>high-throughput, massively parallel computation</strong>. This fundamental difference arises from their respective design goals:</p>
 <ul>
 <li><strong>CPUs:</strong> Prioritize fast execution of a few tasks, featuring deep cache hierarchies and complex branch prediction.</li>
 <li><strong>GPUs:</strong> Optimize for parallel execution of thousands of lightweight threads, with a large number of simple cores and minimal caching.</li>
 </ul>
+<p><img alt="" src="../../assets/gpu_cpu2.png" />
+<em>Source: Dr. Chen Pan UTSA</em></p>
 <h3 id="the-simd-and-simt-execution-model">The SIMD and SIMT Execution Model</h3>
 <p>GPUs leverage <strong>Single Instruction Multiple Data (SIMD)</strong> and <strong>Single Instruction Multiple Threads (SIMT)</strong> architectures to achieve parallelism:</p>
 <p><img alt="SIMT" src="../../assets/SIMT.png" /></p>
-<p><strong>SIMD:</strong> A single instruction operates on multiple data elements simultaneously, making it efficient for tasks like matrix operations and image processing.</p>
-<p><strong>SIMT:</strong> Extends SIMD by organizing threads into <strong>warps</strong>, where each thread executes the same instruction but on different data elements.</p>
-<h3 id="what-are-warps">What Are Warps?</h3>
+<ul>
+<li><strong>SIMD:</strong> A single instruction operates on multiple data elements simultaneously, making it efficient for tasks like matrix operations and image processing.</li>
+<li><strong>SIMT:</strong> Extends SIMD by organizing threads into <strong>warps</strong>, where each thread executes the same instruction but on different data elements.</li>
+</ul>
+<h3 id="understanding-warps">Understanding Warps</h3>
 <p>A <strong>warp</strong> is a group of threads that execute the same instruction simultaneously on different data elements. Warps are the fundamental unit of execution in a GPU's <strong>Streaming Multiprocessors (SMs)</strong>. Typically, a warp consists of <strong>32 threads</strong> in modern NVIDIA GPUs, but this number can vary by architecture.</p>
 <ul>
 <li><strong>Warp Scheduling:</strong> A GPU schedules warps dynamically to maximize computational throughput. If one warp is waiting on memory, another can execute to utilize processing resources efficiently.</li>
 <li><strong>Divergence Handling:</strong> If different threads within a warp take different execution paths (due to conditional branching), the warp may have to serialize execution, reducing efficiency.</li>
 </ul>
 <p>By structuring workloads to minimize warp divergence, developers can optimize GPU performance and fully leverage parallel execution capabilities.</p>
-<h3 id="warp-execution-and-latency-hiding">Warp Execution and Latency Hiding</h3>
-<p>GPUs use <strong>warps</strong> (groups of threads executing the same instruction) to efficiently manage parallel workloads. To <strong>hide memory access latency</strong>, GPUs employ <strong>fine-grained multithreading</strong>, switching between warps while waiting for data fetch operations to complete.</p>
-<h3 id="gpu-parallelism-in-practice">GPU Parallelism in Practice</h3>
-<p>GPUs accelerate computation-heavy workloads in various fields:</p>
-<ul>
-<li><strong>Machine Learning &amp; AI:</strong> Training deep neural networks with matrix multiplications and tensor operations.</li>
-<li><strong>Scientific Simulations:</strong> Weather modeling, fluid dynamics, and molecular simulations rely on parallel computations.</li>
-<li><strong>Graphics Rendering:</strong> Real-time rendering in video games and visual effects industries benefits from GPU parallelism.</li>
-</ul>
 <hr />
+<h2 id="cuda-programming-model">CUDA Programming Model</h2>
+<p>CUDA (Compute Unified Device Architecture) is NVIDIA’s parallel computing platform and programming model, designed to enable software developers to leverage GPU acceleration. CUDA allows fine-grained control over GPU execution, making it suitable for high-performance applications such as scientific computing, deep learning, and real-time rendering.</p>
+<h3 id="cuda-execution-model">CUDA Execution Model</h3>
+<p><img alt="" src="../../assets/cuda_execution.png" />
+Grid-Block-Thread Hierarchy <em>Source: <a href="https://developer.nvidia.com/blog/cuda-refresher-cuda-programming-model/">NVIDIA Developer</a></em></p>
+<ul>
+<li><strong>Grid-Block-Thread Hierarchy:</strong> CUDA organizes parallel execution into a hierarchy:<ul>
+<li>A <strong>Grid</strong> consists of multiple <strong>Blocks</strong>.</li>
+<li>A <strong>Block</strong> consists of multiple <strong>Threads</strong>.</li>
+<li>Each <strong>Thread</strong> executes a CUDA kernel function independently.</li>
+</ul>
+</li>
+<li><strong>Warp Execution:</strong> Threads in a block are further grouped into <strong>warps</strong> of 32 threads, which execute in lockstep.</li>
+<li><strong>Memory Model:</strong> CUDA provides various types of memory:<ul>
+<li><strong>Global Memory:</strong> Accessible by all threads, but has high latency.</li>
+<li><strong>Shared Memory:</strong> Faster, but shared among threads in a block.</li>
+<li><strong>Registers and Local Memory:</strong> Used by individual threads for fast access.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../assets/memory_cuda.png" />
+Memory Model <em>Source: <a href="https://developer.nvidia.com/blog/cuda-refresher-cuda-programming-model/">NVIDIA Developer</a></em></p>
+<h3 id="fine-grained-multithreading-in-cuda">Fine-Grained Multithreading in CUDA</h3>
+<p>Fine-grained multithreading is a key mechanism in CUDA architectures that allows GPUs to maintain high utilization despite memory latency. It works by rapidly switching between active warps, ensuring that the GPU's computational resources remain busy.</p>
+<p><img alt="" src="../../assets/fine_warp.png" />
+<em>Source: Dr. Chen Pan UTSA</em></p>
+<ul>
+<li><strong>Thread-Level Parallelism (TLP):</strong> Each Streaming Multiprocessor (SM) manages multiple warps, allowing another warp to execute while one waits for memory access.</li>
+<li><strong>Instruction-Level Parallelism (ILP):</strong> Within a warp, independent instructions can be issued in parallel to optimize execution throughput.</li>
+<li><strong>Occupancy:</strong> The number of active warps per SM impacts overall performance. Maximizing occupancy ensures better latency hiding and higher computational efficiency.</li>
+</ul>
+<p>By designing CUDA kernels to increase TLP and ILP, developers can take full advantage of fine-grained multithreading, reducing idle cycles and enhancing performance.</p>
+<h3 id="streaming-multiprocessors-sms">Streaming Multiprocessors (SMs)</h3>
+<p><img alt="" src="../../assets/sm.png" />
+<em>Source: Dr. Chen Pan UTSA</em></p>
+<p><strong>Streaming Multiprocessors (SMs)</strong> are the fundamental processing units in an NVIDIA GPU. Each SM contains multiple CUDA cores, warp schedulers, and execution pipelines, allowing efficient parallel execution of CUDA threads.</p>
+<ul>
+<li><strong>Warp Scheduling:</strong> Each SM schedules and executes multiple warps concurrently, ensuring high throughput.</li>
+<li><strong>Execution Units:</strong> An SM consists of CUDA cores, Special Function Units (SFUs) for mathematical operations, and Load/Store Units (LD/ST) for memory access.</li>
+<li><strong>Memory Hierarchy within SMs:</strong><ul>
+<li><strong>Shared Memory:</strong> A low-latency memory space shared among threads within a block.</li>
+<li><strong>Registers:</strong> The fastest memory available, allocated per thread.</li>
+<li><strong>L1 Cache:</strong> Improves data locality and reduces global memory access latency.</li>
+</ul>
+</li>
+</ul>
+<p>Optimizing CUDA programs requires balancing workloads across multiple SMs, managing memory efficiently, and reducing warp divergence.</p>
 
 
 
