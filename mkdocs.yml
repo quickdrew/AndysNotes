@@ -27,7 +27,10 @@ nav:
           - Hardware Overview: ai/pages/hardware.md
           - Memory Hierarchy Design: ai/pages/memory.md
           - Parallel Computing: ai/pages/parallelism.md
-      - Neural Networks: ai/pages/neural.md
+      - Models:
+          - Convolutional Neural Networks: 
+              - Overview: ai/pages/neural.md
+              - 1-D CNN Examples: ai/pages/1d_cnn.md
       - Nivida's Jetson Nano: ai/pages/jetson.md
   - Automotive:
       - Overview: Automotive/pages/index.md
