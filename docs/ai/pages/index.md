@@ -4,10 +4,12 @@
 This section contains notes and resources related to **Artificial Intelligence (AI)**, including hardware, programming, and parallel computing concepts. It primarily draws from my **UTSA AI Hardware and Programming** course but applies to broader AI hardware topics.
 
 ## Topics Covered
-- [Hardware and Programming](hardware.md)
+- [Hardware](hardware.md)
     - Covers fundamentals relevant to AI, but not limited to AI.
     - [Memory Hierarchy Design](memory.md)
     - [Parallel Computing](parallelism.md)
+- [Software]
+    - [CUDA C\C++](cuda.md)
 - [Convolutional Neural Networks](neural.md)
     - Concepts and implementation details for training and running neural networks efficiently.
     - [1-D CNN Examples](1d_cnn.md) 

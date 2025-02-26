@@ -23,10 +23,12 @@ nav:
   - Home: index.md
   - Artificial Intelligence: 
       - Overview: ai/pages/index.md
-      - Hardware and Programming: 
+      - Hardware: 
           - Hardware Overview: ai/pages/hardware.md
           - Memory Hierarchy Design: ai/pages/memory.md
           - Parallel Computing: ai/pages/parallelism.md
+      - Software:
+          - Cuda C\C++: ai/pages/cuda.md
       - Models:
           - Convolutional Neural Networks: 
               - Overview: ai/pages/neural.md
@@ -52,6 +54,7 @@ nav:
       - Overview: electronics/pages/index.md
       - Measuring Equipment: electronics/pages/equipment.md
       - Operational Amplifiers: electronics/pages/opamp.md
+      - Analog to Digital Converter: electronics/pages/adc.md
   - Physics:
       - Overview: Physics/pages/index.md
       - Quanta and Fields: 
