@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../memory/">
+        <link rel="prev" href="../parallelism/">
       
       
-        <link rel="next" href="../cuda/">
+        <link rel="next" href="../neural/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Parallel Computing - Andy's Notes</title>
+        <title>Cuda C\C++ - Andy's Notes</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#parallel-computing" class="md-skip">
+        <a href="#cuda-cc-programming-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Parallel Computing
+              Cuda C\C++
             
           </span>
         </div>
@@ -288,19 +288,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -314,7 +312,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Hardware
@@ -367,6 +365,72 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../parallelism/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parallel Computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
     
   
   
@@ -383,7 +447,7 @@
           
   
   <span class="md-ellipsis">
-    Parallel Computing
+    Cuda C\C++
   </span>
   
 
@@ -394,7 +458,7 @@
         
   
   <span class="md-ellipsis">
-    Parallel Computing
+    Cuda C\C++
   </span>
   
 
@@ -416,37 +480,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#flynns-taxonomy-of-parallel-architectures" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Flynn’s Taxonomy of Parallel Architectures
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-of-parallelism" class="md-nav__link">
+  <a href="#heterogeneous-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Types of Parallelism
+      Heterogeneous Computing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types of Parallelism">
+    <nav class="md-nav" aria-label="Heterogeneous Computing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#temporal-parallelism-pipelining" class="md-nav__link">
+  <a href="#host-and-device-relationship" class="md-nav__link">
     <span class="md-ellipsis">
-      Temporal Parallelism (Pipelining)
+      Host and Device relationship
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spatial-parallelism" class="md-nav__link">
+  <a href="#simple-processing-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Spatial Parallelism
+      Simple Processing Flow
     </span>
   </a>
   
@@ -458,37 +522,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-of-processing" class="md-nav__link">
+  <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
-      Types of Processing
+      Hello World
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types of Processing">
+    <nav class="md-nav" aria-label="Hello World">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#scalar-processing" class="md-nav__link">
+  <a href="#host-cpu-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Scalar Processing
+      Host (CPU) Example
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#vector-processing" class="md-nav__link">
+  <a href="#cuda-device-gpu-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Processing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#superscalar-processing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Superscalar Processing
+      CUDA Device (GPU) Example
     </span>
   </a>
   
@@ -500,79 +555,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understanding-instruction-level-parallelism-ilp" class="md-nav__link">
+  <a href="#addition-on-the-device" class="md-nav__link">
     <span class="md-ellipsis">
-      Understanding Instruction-Level Parallelism (ILP)
+      Addition on the Device
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Understanding Instruction-Level Parallelism (ILP)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-addition-on-the-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Addition on the Device
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Addition on the Device">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-is-ilp" class="md-nav__link">
+  <a href="#device-kernel" class="md-nav__link">
     <span class="md-ellipsis">
-      What is ILP?
+      Device Kernel
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ilp-vs-ipc" class="md-nav__link">
+  <a href="#host-code-example" class="md-nav__link">
     <span class="md-ellipsis">
-      ILP vs. IPC
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hazards-and-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hazards and Dependencies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hazards and Dependencies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-data-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Data Dependencies
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-control-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Control Dependencies
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-memory-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Memory Dependencies
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-ilp-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why ILP Matters
+      Host Code Example
     </span>
   </a>
   
@@ -584,139 +597,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understanding-thread-level-parallelism-tlp" class="md-nav__link">
+  <a href="#indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      Understanding Thread-Level Parallelism (TLP)
+      Indexing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Understanding Thread-Level Parallelism (TLP)">
+    <nav class="md-nav" aria-label="Indexing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-tlp-matters" class="md-nav__link">
+  <a href="#1-basic-indexing-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Why TLP Matters
+      1. Basic Indexing Concepts
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#types-of-tlp" class="md-nav__link">
+  <a href="#2-the-indexing-formula" class="md-nav__link">
     <span class="md-ellipsis">
-      Types of TLP
+      2. The Indexing Formula
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-multithreading-uses-tlp" class="md-nav__link">
+  <a href="#3-practical-example" class="md-nav__link">
     <span class="md-ellipsis">
-      How Multithreading Uses TLP
+      3. Practical Example
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#flynns-taxonomy" class="md-nav__link">
+  <a href="#4-multi-dimensional-indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      Flynn’s Taxonomy
+      4. Multi-Dimensional Indexing
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-big-picture-of-tlp" class="md-nav__link">
+  <a href="#5-handling-arbitrary-vector-sizes" class="md-nav__link">
     <span class="md-ellipsis">
-      The Big Picture of TLP
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-graphics-processing-units-gpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understanding Graphics Processing Units (GPUs)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understanding Graphics Processing Units (GPUs)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gpu-vs-cpu-architectural-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      GPU vs. CPU: Architectural Differences
+      5. Handling Arbitrary Vector Sizes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-simd-and-simt-execution-model" class="md-nav__link">
+  <a href="#6-summary" class="md-nav__link">
     <span class="md-ellipsis">
-      The SIMD and SIMT Execution Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#understanding-warps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understanding Warps
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cuda-programming-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      CUDA Programming Model
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CUDA Programming Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cuda-execution-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      CUDA Execution Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fine-grained-multithreading-in-cuda" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fine-Grained Multithreading in CUDA
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#streaming-multiprocessors-sms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Streaming Multiprocessors (SMs)
+      6. Summary
     </span>
   </a>
   
@@ -731,70 +669,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Software
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            Software
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cuda/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cuda C\C++
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -2107,37 +1981,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#flynns-taxonomy-of-parallel-architectures" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Flynn’s Taxonomy of Parallel Architectures
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-of-parallelism" class="md-nav__link">
+  <a href="#heterogeneous-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Types of Parallelism
+      Heterogeneous Computing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types of Parallelism">
+    <nav class="md-nav" aria-label="Heterogeneous Computing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#temporal-parallelism-pipelining" class="md-nav__link">
+  <a href="#host-and-device-relationship" class="md-nav__link">
     <span class="md-ellipsis">
-      Temporal Parallelism (Pipelining)
+      Host and Device relationship
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#spatial-parallelism" class="md-nav__link">
+  <a href="#simple-processing-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Spatial Parallelism
+      Simple Processing Flow
     </span>
   </a>
   
@@ -2149,37 +2023,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types-of-processing" class="md-nav__link">
+  <a href="#hello-world" class="md-nav__link">
     <span class="md-ellipsis">
-      Types of Processing
+      Hello World
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Types of Processing">
+    <nav class="md-nav" aria-label="Hello World">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#scalar-processing" class="md-nav__link">
+  <a href="#host-cpu-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Scalar Processing
+      Host (CPU) Example
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#vector-processing" class="md-nav__link">
+  <a href="#cuda-device-gpu-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Processing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#superscalar-processing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Superscalar Processing
+      CUDA Device (GPU) Example
     </span>
   </a>
   
@@ -2191,79 +2056,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understanding-instruction-level-parallelism-ilp" class="md-nav__link">
+  <a href="#addition-on-the-device" class="md-nav__link">
     <span class="md-ellipsis">
-      Understanding Instruction-Level Parallelism (ILP)
+      Addition on the Device
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Understanding Instruction-Level Parallelism (ILP)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-addition-on-the-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Addition on the Device
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Addition on the Device">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#what-is-ilp" class="md-nav__link">
+  <a href="#device-kernel" class="md-nav__link">
     <span class="md-ellipsis">
-      What is ILP?
+      Device Kernel
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ilp-vs-ipc" class="md-nav__link">
+  <a href="#host-code-example" class="md-nav__link">
     <span class="md-ellipsis">
-      ILP vs. IPC
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hazards-and-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hazards and Dependencies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hazards and Dependencies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-data-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Data Dependencies
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-control-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Control Dependencies
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-memory-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Memory Dependencies
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-ilp-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why ILP Matters
+      Host Code Example
     </span>
   </a>
   
@@ -2275,139 +2098,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understanding-thread-level-parallelism-tlp" class="md-nav__link">
+  <a href="#indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      Understanding Thread-Level Parallelism (TLP)
+      Indexing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Understanding Thread-Level Parallelism (TLP)">
+    <nav class="md-nav" aria-label="Indexing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-tlp-matters" class="md-nav__link">
+  <a href="#1-basic-indexing-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Why TLP Matters
+      1. Basic Indexing Concepts
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#types-of-tlp" class="md-nav__link">
+  <a href="#2-the-indexing-formula" class="md-nav__link">
     <span class="md-ellipsis">
-      Types of TLP
+      2. The Indexing Formula
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-multithreading-uses-tlp" class="md-nav__link">
+  <a href="#3-practical-example" class="md-nav__link">
     <span class="md-ellipsis">
-      How Multithreading Uses TLP
+      3. Practical Example
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#flynns-taxonomy" class="md-nav__link">
+  <a href="#4-multi-dimensional-indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      Flynn’s Taxonomy
+      4. Multi-Dimensional Indexing
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-big-picture-of-tlp" class="md-nav__link">
+  <a href="#5-handling-arbitrary-vector-sizes" class="md-nav__link">
     <span class="md-ellipsis">
-      The Big Picture of TLP
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-graphics-processing-units-gpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understanding Graphics Processing Units (GPUs)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understanding Graphics Processing Units (GPUs)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gpu-vs-cpu-architectural-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      GPU vs. CPU: Architectural Differences
+      5. Handling Arbitrary Vector Sizes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-simd-and-simt-execution-model" class="md-nav__link">
+  <a href="#6-summary" class="md-nav__link">
     <span class="md-ellipsis">
-      The SIMD and SIMT Execution Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#understanding-warps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understanding Warps
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cuda-programming-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      CUDA Programming Model
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CUDA Programming Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cuda-execution-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      CUDA Execution Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fine-grained-multithreading-in-cuda" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fine-Grained Multithreading in CUDA
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#streaming-multiprocessors-sms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Streaming Multiprocessors (SMs)
+      6. Summary
     </span>
   </a>
   
@@ -2433,286 +2181,255 @@
                   
 
 
-<h1 id="parallel-computing">Parallel Computing</h1>
-<p><strong>Parallel architecture</strong> refers to a computer system design that allows multiple processors or computing units to execute tasks concurrently. This approach improves performance, efficiency, and scalability by leveraging parallelism at several levels.</p>
-<p><strong>Parallelism</strong> in computing is the practice of executing multiple computations simultaneously by dividing work into smaller sub-tasks that can be processed independently. Modern systems use various forms of parallelism to meet the demands of complex and data‐intensive applications.</p>
-<h2 id="flynns-taxonomy-of-parallel-architectures">Flynn’s Taxonomy of Parallel Architectures</h2>
-<p>Flynn’s Taxonomy classifies computer architectures based on how instructions and data are processed.</p>
-<p><img alt="FT" src="../../assets/FlynnsTaxonomy.png" /></p>
-<table>
-<thead>
-<tr>
-<th><strong>Category</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>Usage Examples</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>SISD</strong> (Single Instruction, Single Data)</td>
-<td>Traditional sequential processing: one instruction operates on one data element at a time.</td>
-<td>Early CPUs, simple microcontrollers</td>
-</tr>
-<tr>
-<td><strong>SIMD</strong> (Single Instruction, Multiple Data)</td>
-<td>A single instruction is simultaneously applied to multiple data elements.</td>
-<td>GPUs, vector processors, deep learning accelerators</td>
-</tr>
-<tr>
-<td><strong>MISD</strong> (Multiple Instruction, Single Data)</td>
-<td>Multiple instructions process the same data stream. This model is rarely used in practice.</td>
-<td>Fault-tolerant systems in critical applications (e.g., redundant military systems)</td>
-</tr>
-<tr>
-<td><strong>MIMD</strong> (Multiple Instruction, Multiple Data)</td>
-<td>Different processors execute different instructions on separate data streams.</td>
-<td>Multi-core CPUs, distributed computing, cloud systems</td>
-</tr>
-</tbody>
-</table>
-<p>Modern systems often blend characteristics of SIMD and MIMD, creating <strong>hybrid architectures</strong> that balance flexibility with high throughput. For example, GPUs integrate both data-level and thread-level parallelism to handle a variety of workloads.</p>
-<h2 id="types-of-parallelism"><strong>Types of Parallelism</strong></h2>
-<p>Parallelism can be categorized into different types based on how tasks are executed. Two fundamental types are <strong>temporal parallelism (pipelining)</strong> and <strong>spatial parallelism</strong>.  </p>
-<h3 id="temporal-parallelism-pipelining"><strong>Temporal Parallelism (Pipelining)</strong></h3>
-<p>Temporal parallelism divides a task into sequential stages that can be overlapped, improving overall throughput. A great way to understand this is through a <strong>cookie-baking process</strong>:  </p>
+<h1 id="cuda-cc-programming-notes">CUDA C/C++ Programming Notes</h1>
+<h2 id="overview">Overview</h2>
+<p><strong>What is CUDA?</strong><br />
+CUDA is a parallel computing architecture developed by NVIDIA that allows developers to leverage GPU acceleration for general-purpose computing, not just graphics.</p>
+<p><strong>Key points:</strong></p>
 <ul>
-<li>Without parallelism: You roll out the dough (5 min) and then bake it (15 min), taking <strong>20 minutes per batch</strong>.  </li>
-<li>With pipelining: While the first batch is baking, you start preparing the next one. This doesn’t change the time required for a single batch but allows <strong>continuous production</strong>, reducing the wait time between finished batches.  </li>
+<li>Exposes GPU parallelism for general-purpose computing while retaining high performance.</li>
+<li>Based on industry-standard C/C++ with a small set of extensions, like <code>Malloc() -&gt; cudaMalloc()</code> and <code>Memcpy() -&gt; cudaMemcpy()</code></li>
+<li>Provides straightforward APIs to manage devices, memory, and kernels.</li>
+<li>Enables writing and launching CUDA kernels, managing GPU memory, and handling synchronization between the CPU (host) and GPU (device).</li>
 </ul>
-<p>This analogy mirrors how CPUs execute instructions in a <strong>pipeline</strong>, where different stages (fetch, decode, execute, etc.) are processing different instructions simultaneously. Just like a baker needs <strong>separate trays</strong> to avoid mixing batches, processors use <strong>pipeline registers</strong> to store intermediate data. While the total time for the first output remains the same, <strong>subsequent results come out much faster</strong>, boosting overall performance.  </p>
-<p><img alt="Pipe" src="../../assets/pipe.png" />
-<em>Source: Dr. Chen Pan (UTSA)</em></p>
-<h3 id="spatial-parallelism"><strong>Spatial Parallelism</strong></h3>
-<p>Spatial parallelism, on the other hand, involves executing tasks <strong>simultaneously</strong> using separate hardware units. Instead of working in stages, tasks run in parallel from the start.  </p>
-<p>Imagine Ben has a helper and an extra oven. Now, <strong>two batches</strong> can be processed at the same time—effectively <strong>doubling throughput</strong> while keeping the time per batch unchanged.  </p>
-<p>This type of parallelism is commonly seen in:</p>
+<p><strong>Difference between host and device:</strong></p>
 <ul>
-<li><strong>Multithreaded systems:</strong> Where independent threads run on separate cores.</li>
-<li><strong>GPU architectures:</strong> Which execute many threads in parallel using a SIMT (Single Instruction, Multiple Threads) model.</li>
+<li><strong>Host:</strong> CPU</li>
+<li><strong>Device:</strong> GPU</li>
 </ul>
-<h2 id="types-of-processing">Types of Processing</h2>
-<p><strong>Processing</strong> refers to how a CPU executes instructions.</p>
-<h3 id="scalar-processing">Scalar Processing</h3>
-<p>A <strong>scalar</strong> CPU executes one instruction at a time. This category includes <strong>pipelined processors</strong>, which improve instruction throughput by overlapping the execution of multiple instructions through different stages of processing. However, despite the efficiency gains from pipelining, a scalar processor fundamentally handles only one operation per cycle.</p>
-<h3 id="vector-processing">Vector Processing</h3>
-<p>A <strong>vector</strong> CPU also executes one instruction at a time, but it operates on <strong>vector data</strong> instead of single scalar values. This allows the processor to perform computations on multiple elements simultaneously. For example, the instruction:</p>
-<div class="codehilite"><pre><span></span><code>X[0:7] + Y[0:7]
-</code></pre></div>
-
-<p>performs element-wise addition on two vectors of eight elements in a single operation. On a scalar processor, this would require eight separate instructions to achieve the same result.</p>
-<h3 id="superscalar-processing">Superscalar Processing</h3>
-<p>A <strong>superscalar</strong> CPU is capable of executing multiple <strong>unrelated</strong> instructions simultaneously. It achieves this by having multiple execution units that can work in parallel. For example, a superscalar processor could execute the following two instructions concurrently:</p>
-<div class="codehilite"><pre><span></span><code>ADD X + Y
-MUL W * Z
-</code></pre></div>
-
-<p>This parallelism increases overall instruction throughput and efficiency, making superscalar processors well-suited for high-performance computing applications.</p>
+<p><strong>Using <code>__global__</code> to declare a function as device code:</strong></p>
+<ul>
+<li>Executes on the device (GPU)</li>
+<li>Called from the host (CPU)</li>
+</ul>
 <hr />
-<h2 id="understanding-instruction-level-parallelism-ilp">Understanding Instruction-Level Parallelism (ILP)</h2>
-<h3 id="what-is-ilp">What is ILP?</h3>
-<p>Instruction-Level Parallelism (ILP) refers to the extent to which multiple instructions in a program can be executed simultaneously. ILP is an <strong>attribute of the program</strong>, meaning it depends on the nature of the instructions, the <strong>Instruction Set Architecture (ISA)</strong>, and how well the <strong>compiler</strong> organizes the code for parallel execution.</p>
-<h3 id="ilp-vs-ipc">ILP vs. IPC</h3>
-<p>While ILP describes the <strong>potential parallelism</strong> within a program, <strong>Instructions Per Cycle (IPC)</strong> measures the <strong>actual</strong> instruction throughput of a processor. The key differences are:</p>
+<h2 id="heterogeneous-computing">Heterogeneous Computing</h2>
+<h3 id="host-and-device-relationship">Host and Device relationship</h3>
 <ul>
-<li><strong>ILP is theoretical</strong>: It represents the maximum parallelism that can be extracted from a program.</li>
-<li><strong>IPC is practical</strong>: It depends on the actual hardware implementation and various runtime factors.</li>
-<li><strong>ILP sets an upper bound on IPC</strong>, but the achievable IPC is limited by hardware constraints such as instruction latencies, cache behavior, and processor execution capabilities.</li>
+<li><strong>Host:</strong> The CPU and its associated memory; executes serial portions of code.</li>
+<li><strong>Device:</strong> The GPU and its dedicated memory; executes parallel portions of code efficiently.</li>
 </ul>
-<h3 id="hazards-and-dependencies">Hazards and Dependencies</h3>
-<p>To effectively exploit ILP, we must understand various <strong>hazards</strong> (situations that prevent parallel execution). The three main types of dependencies that cause hazards are:</p>
-<h4 id="1-data-dependencies">1. Data Dependencies</h4>
-<p>Data dependencies occur when an instruction depends on the result of a previous instruction. There are three types:</p>
-<ul>
-<li><strong>True Dependency (Read After Write, RAW)</strong>: The second instruction needs data produced by the first instruction.</li>
-</ul>
-<div class="codehilite"><pre><span></span><code>ADD R1, R2, R3   # R1 = R2 + R3  
-SUB R4, R1, R5   # R4 = R1 - R5 (Depends on ADD result)
-</code></pre></div>
-
-<ul>
-<li><strong>Anti Dependency (Write After Read, WAR)</strong>: The second instruction writes to a register before the first instruction reads it.</li>
-</ul>
-<div class="codehilite"><pre><span></span><code>SUB R1, R2, R3   # Reads R2
-ADD R2, R4, R5   # Writes to R2 before SUB reads it
-</code></pre></div>
-
-<ul>
-<li><strong>Output Dependency (Write After Write, WAW)</strong>: Two instructions write to the same register.</li>
-</ul>
-<div class="codehilite"><pre><span></span><code>MUL R1, R2, R3   # Writes to R1
-ADD R1, R4, R5   # Also writes to R1, causing a conflict
-</code></pre></div>
-
-<h4 id="2-control-dependencies">2. Control Dependencies</h4>
-<p>Control dependencies occur when an instruction’s execution depends on the outcome of a previous branch instruction.</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">BEQ</span><span class="w"> </span><span class="nv">R1</span>,<span class="w"> </span><span class="nv">R2</span>,<span class="w"> </span><span class="nv">LABEL</span><span class="w">  </span>#<span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="nv">R1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">R2</span>,<span class="w"> </span><span class="nv">jump</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">LABEL</span>
-<span class="nv">ADD</span><span class="w"> </span><span class="nv">R3</span>,<span class="w"> </span><span class="nv">R4</span>,<span class="w"> </span><span class="nv">R5</span><span class="w">     </span>#<span class="w"> </span><span class="nv">Only</span><span class="w"> </span><span class="nv">executed</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">branch</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">taken</span>
-</code></pre></div>
-
-<p>Processors use <strong>branch prediction</strong> and speculative execution to mitigate control dependencies, but incorrect predictions lead to performance penalties due to pipeline flushes.</p>
-<h4 id="3-memory-dependencies">3. Memory Dependencies</h4>
-<p>Memory dependencies arise when multiple instructions access memory, potentially causing conflicts:</p>
-<ul>
-<li><strong>Load After Store (Read After Write, RAW)</strong>:</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="nx">STORE</span><span class="w"> </span><span class="nx">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">Store</span><span class="w"> </span><span class="nx">R1</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">memory</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">R2</span>
-<span class="nx">LOAD</span><span class="w"> </span><span class="nx">R3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="nx">Read</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">memory</span><span class="w"> </span><span class="nx">location</span>
-</code></pre></div>
-
-<p>The processor must ensure the store completes before the load.</p>
-<ul>
-<li><strong>Store After Load (Write After Read, WAR)</strong>:</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="nx">LOAD</span><span class="w"> </span><span class="nx">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="nx">Load</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">memory</span>
-<span class="nx">STORE</span><span class="w"> </span><span class="nx">R3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">Store</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">new</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">address</span>
-</code></pre></div>
-
-<p>If reordered improperly, the store might overwrite a value before it is used.</p>
-<ul>
-<li><strong>Store After Store (Write After Write, WAW)</strong>:</li>
-</ul>
-<div class="codehilite"><pre><span></span><code><span class="nx">STORE</span><span class="w"> </span><span class="nx">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">Write</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">memory</span>
-<span class="nx">STORE</span><span class="w"> </span><span class="nx">R3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="nx">R2</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="nx">Write</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">different</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">address</span>
-</code></pre></div>
-
-<p>The second store must execute in the correct order to maintain program correctness.</p>
+<p><img alt="" src="../../assets/hetero.png" /></p>
+<h3 id="simple-processing-flow">Simple Processing Flow</h3>
+<p><img alt="" src="../../assets/cuda_gif0.gif" /></p>
 <hr />
-<h3 id="why-ilp-matters">Why ILP Matters</h3>
-<p>ILP is fundamental to modern processor design as it enables higher performance without increasing clock speeds. Exploiting ILP efficiently can lead to significant improvements in <strong>throughput, power efficiency, and execution speed</strong>. However, real-world execution is constrained by <strong>hardware limitations and hazards</strong> such as data, control, and memory dependencies. </p>
-<p>Understanding ILP also ties into broader topics like <strong>superscalar architectures, out-of-order execution, speculative execution, and multi-threading</strong>. Techniques like <strong>register renaming, branch prediction, and speculative execution</strong> help mitigate dependency issues and increase <strong>IPC</strong>, making processors more efficient. </p>
-<p>In the evolution of computing, ILP has been a key driver behind performance gains. While traditional single-core processors aimed to maximize ILP within a single thread, modern computing often combines ILP with <strong>thread-level parallelism (TLP) and data-level parallelism (DLP)</strong> to achieve even greater performance scalability. </p>
+<h2 id="hello-world">Hello World</h2>
+<h3 id="host-cpu-example">Host (CPU) Example</h3>
+<p>A simple C program running entirely on the CPU:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Standard C code executed by the CPU.</li>
+<li>Compiled using a standard C compiler like <code>gcc</code>.</li>
+<li>Outputs <code>Hello World!</code> directly.</li>
+</ul>
+<h3 id="cuda-device-gpu-example">CUDA Device (GPU) Example</h3>
+<p>A basic CUDA C program that launches a kernel (device function) on the GPU:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="c1">// Device kernel (does nothing here)</span>
+<span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">mykernel</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Launch kernel on the GPU</span>
+<span class="w">    </span><span class="n">mykernel</span><span class="o">&lt;&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;&gt;&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Host code continues</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><code>__global__</code> keyword specifies a CUDA kernel (runs on GPU, called from CPU).</li>
+<li>Triple angle brackets <code>&lt;&lt;&lt; &gt;&gt;&gt;</code> indicate kernel launch parameters (1 block, 1 thread).</li>
+<li>Requires NVIDIA's CUDA compiler (<code>nvcc</code>) to compile.</li>
+<li>Kernel launch does nothing visible here; real work happens inside device code.</li>
+<li>Still prints <code>Hello World!</code> from the CPU (host).</li>
+</ul>
 <hr />
-<h2 id="understanding-thread-level-parallelism-tlp">Understanding Thread-Level Parallelism (TLP)</h2>
-<h3 id="why-tlp-matters">Why TLP Matters</h3>
-<p>As extracting additional ILP from a <strong>single sequential thread</strong> becomes increasingly difficult, modern architectures have shifted toward <strong>Thread-Level Parallelism (TLP)</strong> to enhance performance. TLP allows multiple threads to execute concurrently, improving processor utilization and throughput.</p>
-<h3 id="types-of-tlp">Types of TLP</h3>
+<h2 id="addition-on-the-device">Addition on the Device</h2>
+<p>A basic CUDA C program performing addition on the GPU:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
+<span class="c1">// Device kernel for addition</span>
+<span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">d_a</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">d_b</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">d_c</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Allocate memory on GPU</span>
+<span class="w">    </span><span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">d_a</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="w">    </span><span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">d_b</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="w">    </span><span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">d_c</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+
+<span class="w">    </span><span class="c1">// Copy values to GPU</span>
+<span class="w">    </span><span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">d_a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="n">cudaMemcpyHostToDevice</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">d_b</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="n">cudaMemcpyHostToDevice</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Launch kernel on GPU</span>
+<span class="w">    </span><span class="n">add</span><span class="o">&lt;&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;&gt;&gt;</span><span class="p">(</span><span class="n">d_a</span><span class="p">,</span><span class="w"> </span><span class="n">d_b</span><span class="p">,</span><span class="w"> </span><span class="n">d_c</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Copy result back to CPU</span>
+<span class="w">    </span><span class="n">cudaMemcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">d_c</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="n">cudaMemcpyDeviceToHost</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Free GPU memory</span>
+<span class="w">    </span><span class="n">cudaFree</span><span class="p">(</span><span class="n">d_a</span><span class="p">);</span><span class="w"> </span><span class="n">cudaFree</span><span class="p">(</span><span class="n">d_b</span><span class="p">);</span><span class="w"> </span><span class="n">cudaFree</span><span class="p">(</span><span class="n">d_c</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Sum: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <ul>
-<li><strong>TLP from Multiprogramming</strong>: The processor executes multiple independent programs by switching between them, optimizing CPU usage by reducing idle time. This is beneficial in operating systems that need to handle multiple user applications simultaneously, such as running a web browser, a music player, and background system tasks concurrently.</li>
-<li><strong>TLP from Multithreaded Applications</strong>: A single program is divided into multiple concurrent threads, each executing a portion of the task simultaneously. This enhances performance for applications requiring high responsiveness or heavy computation, such as video processing, gaming engines, web servers handling multiple client requests, and parallel database transactions.</li>
+<li><code>__global__</code> defines a kernel function to execute on the GPU.</li>
+<li>Uses CUDA-specific functions for memory management (<code>cudaMalloc</code>, <code>cudaMemcpy</code>, <code>cudaFree</code>).</li>
+<li>Kernel launch syntax (<code>&lt;&lt;&lt;1, 1&gt;&gt;&gt;</code>) specifies execution configuration: 1 block, 1 thread.</li>
+<li>Data must be explicitly transferred between host (CPU) and device (GPU).</li>
+<li>Compiled with NVIDIA's CUDA compiler (<code>nvcc</code>).</li>
 </ul>
-<h3 id="how-multithreading-uses-tlp">How Multithreading Uses TLP</h3>
-<p>Multithreading enables processors to <strong>execute multiple threads in parallel</strong>, improving <strong>utilization</strong> of resources. This is particularly useful when individual threads face stalls (e.g., waiting for memory access).</p>
-<p><img alt="Multithread" src="../../assets/multithread_pipeline.png" />
-<em>Source: Dr. Chen Pan (UTSA)</em></p>
-<p>Each thread maintains its own <strong>user state</strong>, including:</p>
-<ul>
-<li><strong>Program Counter (PC)</strong></li>
-<li><strong>General-Purpose Registers (GPRs)</strong></li>
-<li><strong>Stack and Memory Context</strong></li>
-</ul>
-<h3 id="flynns-taxonomy">Flynn’s Taxonomy</h3>
-<p>Flynn’s Taxonomy categorizes computer architectures based on instruction and data processing.</p>
-<p><img alt="FT" src="../../assets/FlynnsTaxonomy.png" /></p>
-<table>
-<thead>
-<tr>
-<th><strong>Category</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>Usage Examples</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>SISD</strong> (Single Instruction, Single Data)</td>
-<td>Traditional sequential processing: one instruction operates on one data element at a time.</td>
-<td>Early CPUs, simple microcontrollers</td>
-</tr>
-<tr>
-<td><strong>SIMD</strong> (Single Instruction, Multiple Data)</td>
-<td>A single instruction is simultaneously applied to multiple data elements.</td>
-<td>GPUs, vector processors, deep learning accelerators</td>
-</tr>
-<tr>
-<td><strong>MISD</strong> (Multiple Instruction, Single Data)</td>
-<td>Multiple instructions process the same data stream. This model is rarely used in practice.</td>
-<td>Fault-tolerant systems in critical applications (e.g., redundant military systems)</td>
-</tr>
-<tr>
-<td><strong>MIMD</strong> (Multiple Instruction, Multiple Data)</td>
-<td>Different processors execute different instructions on separate data streams.</td>
-<td>Multi-core CPUs, distributed computing, cloud systems</td>
-</tr>
-</tbody>
-</table>
-<p>Modern computing relies on a <strong>blend of SIMD, MIMD, ILP, and TLP</strong> to maximize efficiency. GPUs, for example, utilize <strong>SIMD for high throughput</strong> while leveraging <strong>TLP to manage thousands of concurrent threads</strong>.</p>
 <hr />
-<h3 id="the-big-picture-of-tlp">The Big Picture of TLP</h3>
-<p>ILP and TLP represent two complementary approaches to increasing computational performance. While ILP focuses on extracting <strong>fine-grained parallelism within a single thread</strong>, TLP exploits <strong>coarse-grained parallelism</strong> across multiple threads. Modern architectures integrate both ILP and TLP to achieve optimal performance across diverse workloads, from <strong>single-threaded applications to massively parallel computing environments</strong>.</p>
-<p>Future discussions will explore how modern hardware, such as <strong>multi-core processors, simultaneous multithreading (SMT), and heterogeneous computing</strong>, further enhance parallel execution.</p>
+<h2 id="vector-addition-on-the-device">Vector Addition on the Device</h2>
+<h3 id="device-kernel">Device Kernel</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">c</span><span class="p">[</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Each block handles one element of the addition.</li>
+<li>Blocks run in parallel on the GPU.</li>
+</ul>
+<p><strong>Example of Parallel Execution:</strong></p>
+<ul>
+<li><strong>Block 0:</strong> <code>c[0] = a[0] + b[0];</code></li>
+<li><strong>Block 1:</strong> <code>c[1] = a[1] + b[1];</code></li>
+<li><strong>Block 2:</strong> <code>c[2] = a[2] + b[2];</code></li>
+<li><strong>Block 3:</strong> <code>c[3] = a[3] + b[3];</code></li>
+</ul>
+<h3 id="host-code-example">Host Code Example</h3>
+<div class="codehilite"><pre><span></span><code><span class="cp">#define N 512</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">;</span><span class="w"> </span><span class="c1">// host copies of a, b, c</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">d_a</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">d_b</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">d_c</span><span class="p">;</span><span class="w"> </span><span class="c1">// device copies of a, b, c</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Allocate space for device copies</span>
+<span class="w">    </span><span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">d_a</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">d_b</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="w"> </span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">d_c</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Allocate space for host copies and setup input values</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span><span class="w"> </span><span class="n">random_ints</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">);</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span><span class="w"> </span><span class="n">random_ints</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">);</span>
+<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Copy inputs to device</span>
+<span class="w">    </span><span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">d_a</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">cudaMemcpyHostToDevice</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">d_b</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">cudaMemcpyHostToDevice</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Launch add() kernel on GPU with N blocks</span>
+<span class="w">    </span><span class="n">add</span><span class="o">&lt;&lt;&lt;</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;&gt;&gt;</span><span class="p">(</span><span class="n">d_a</span><span class="p">,</span><span class="w"> </span><span class="n">d_b</span><span class="p">,</span><span class="w"> </span><span class="n">d_c</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Copy result back to host</span>
+<span class="w">    </span><span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">d_c</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">cudaMemcpyDeviceToHost</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Cleanup</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="n">free</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="n">free</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cudaFree</span><span class="p">(</span><span class="n">d_a</span><span class="p">);</span><span class="w"> </span><span class="n">cudaFree</span><span class="p">(</span><span class="n">d_b</span><span class="p">);</span><span class="w"> </span><span class="n">cudaFree</span><span class="p">(</span><span class="n">d_c</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li>Allocates and manages memory explicitly.</li>
+<li>Each GPU block computes one addition in parallel.</li>
+<li>Data transferred between host and GPU explicitly.</li>
+</ul>
 <hr />
-<h2 id="understanding-graphics-processing-units-gpus">Understanding Graphics Processing Units (GPUs)</h2>
-<h3 id="gpu-vs-cpu-architectural-differences">GPU vs. CPU: Architectural Differences</h3>
-<p><img alt="" src="../../assets/gpu_cpu.png" />
-<em>Source: Dr. Chen Pan UTSA</em></p>
-<p>While CPUs are optimized for <strong>low-latency, sequential processing</strong>, GPUs are designed for <strong>high-throughput, massively parallel computation</strong>. This fundamental difference arises from their respective design goals:</p>
-<ul>
-<li><strong>CPUs:</strong> Prioritize fast execution of a few tasks, featuring deep cache hierarchies and complex branch prediction.</li>
-<li><strong>GPUs:</strong> Optimize for parallel execution of thousands of lightweight threads, with a large number of simple cores and minimal caching.</li>
-</ul>
-<p><img alt="" src="../../assets/gpu_cpu2.png" />
-<em>Source: Dr. Chen Pan UTSA</em></p>
-<h3 id="the-simd-and-simt-execution-model">The SIMD and SIMT Execution Model</h3>
-<p>GPUs leverage <strong>Single Instruction Multiple Data (SIMD)</strong> and <strong>Single Instruction Multiple Threads (SIMT)</strong> architectures to achieve parallelism:</p>
-<p><img alt="SIMT" src="../../assets/SIMT.png" /></p>
-<ul>
-<li><strong>SIMD:</strong> A single instruction operates on multiple data elements simultaneously, making it efficient for tasks like matrix operations and image processing.</li>
-<li><strong>SIMT:</strong> Extends SIMD by organizing threads into <strong>warps</strong>, where each thread executes the same instruction but on different data elements.</li>
-</ul>
-<h3 id="understanding-warps">Understanding Warps</h3>
-<p>A <strong>warp</strong> is a group of threads that execute the same instruction simultaneously on different data elements. Warps are the fundamental unit of execution in a GPU's <strong>Streaming Multiprocessors (SMs)</strong>. Typically, a warp consists of <strong>32 threads</strong> in modern NVIDIA GPUs, but this number can vary by architecture.</p>
-<ul>
-<li><strong>Warp Scheduling:</strong> A GPU schedules warps dynamically to maximize computational throughput. If one warp is waiting on memory, another can execute to utilize processing resources efficiently.</li>
-<li><strong>Divergence Handling:</strong> If different threads within a warp take different execution paths (due to conditional branching), the warp may have to serialize execution, reducing efficiency.</li>
-</ul>
-<p>By structuring workloads to minimize warp divergence, developers can optimize GPU performance and fully leverage parallel execution capabilities.</p>
+<p>Below is a new section on <strong>Indexing</strong> that integrates the concepts covered on pages 37–48:</p>
 <hr />
-<h2 id="cuda-programming-model">CUDA Programming Model</h2>
-<p>CUDA (Compute Unified Device Architecture) is NVIDIA’s parallel computing platform and programming model, designed to enable software developers to leverage GPU acceleration. CUDA allows fine-grained control over GPU execution, making it suitable for high-performance applications such as scientific computing, deep learning, and real-time rendering.</p>
-<h3 id="cuda-execution-model">CUDA Execution Model</h3>
-<p><img alt="" src="../../assets/cuda_execution.png" />
-Grid-Block-Thread Hierarchy <em>Source: <a href="https://developer.nvidia.com/blog/cuda-refresher-cuda-programming-model/">NVIDIA Developer</a></em></p>
+<h2 id="indexing">Indexing</h2>
+<p>Efficient indexing is key to mapping threads to data elements in CUDA. In CUDA’s parallel programming model, each thread in a grid must be assigned a unique portion of the data. This section outlines the common strategies and formulas used for indexing in CUDA kernels.</p>
+<h3 id="1-basic-indexing-concepts">1. Basic Indexing Concepts</h3>
+<p>CUDA organizes threads into blocks, and blocks form a grid. Each thread within a block is uniquely identified by <code>threadIdx</code>, while each block in the grid is identified by <code>blockIdx</code>.</p>
+<p><img alt="" src="../../assets/thread0.png" /></p>
+<p><strong>Built-in Variables:</strong>  </p>
 <ul>
-<li><strong>Grid-Block-Thread Hierarchy:</strong> CUDA organizes parallel execution into a hierarchy:<ul>
-<li>A <strong>Grid</strong> consists of multiple <strong>Blocks</strong>.</li>
-<li>A <strong>Block</strong> consists of multiple <strong>Threads</strong>.</li>
-<li>Each <strong>Thread</strong> executes a CUDA kernel function independently.</li>
+<li><code>threadIdx.x</code>: The thread’s index within its block (in the x-dimension).  </li>
+<li><code>blockIdx.x</code>: The block’s index within the grid (in the x-dimension).  </li>
+<li><code>blockDim.x</code>: The number of threads in a block (in the x-dimension). In the example above <code>blockDim.x = 8</code></li>
 </ul>
-</li>
-<li><strong>Warp Execution:</strong> Threads in a block are further grouped into <strong>warps</strong> of 32 threads, which execute in lockstep.</li>
-<li><strong>Memory Model:</strong> CUDA provides various types of memory:<ul>
-<li><strong>Global Memory:</strong> Accessible by all threads, but has high latency.</li>
-<li><strong>Shared Memory:</strong> Faster, but shared among threads in a block.</li>
-<li><strong>Registers and Local Memory:</strong> Used by individual threads for fast access.</li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="../../assets/memory_cuda.png" />
-Memory Model <em>Source: <a href="https://developer.nvidia.com/blog/cuda-refresher-cuda-programming-model/">NVIDIA Developer</a></em></p>
-<h3 id="fine-grained-multithreading-in-cuda">Fine-Grained Multithreading in CUDA</h3>
-<p>Fine-grained multithreading is a key mechanism in CUDA architectures that allows GPUs to maintain high utilization despite memory latency. It works by rapidly switching between active warps, ensuring that the GPU's computational resources remain busy.</p>
-<p><img alt="" src="../../assets/fine_warp.png" />
-<em>Source: Dr. Chen Pan UTSA</em></p>
+<h3 id="2-the-indexing-formula">2. The Indexing Formula</h3>
+<p>When processing one-dimensional arrays, the unique global index for each thread is calculated using:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>
+
 <ul>
-<li><strong>Thread-Level Parallelism (TLP):</strong> Each Streaming Multiprocessor (SM) manages multiple warps, allowing another warp to execute while one waits for memory access.</li>
-<li><strong>Instruction-Level Parallelism (ILP):</strong> Within a warp, independent instructions can be issued in parallel to optimize execution throughput.</li>
-<li><strong>Occupancy:</strong> The number of active warps per SM impacts overall performance. Maximizing occupancy ensures better latency hiding and higher computational efficiency.</li>
+<li><strong>Explanation:</strong>  </li>
+<li><code>threadIdx.x</code> gives the thread’s local position within its block.  </li>
+<li><code>blockIdx.x * blockDim.x</code> offsets the local index by the total number of threads in all preceding blocks.  </li>
+<li>Together, they ensure each thread handles a unique element in the data array.</li>
 </ul>
-<p>By designing CUDA kernels to increase TLP and ILP, developers can take full advantage of fine-grained multithreading, reducing idle cycles and enhancing performance.</p>
-<h3 id="streaming-multiprocessors-sms">Streaming Multiprocessors (SMs)</h3>
-<p><img alt="" src="../../assets/sm.png" />
-<em>Source: Dr. Chen Pan UTSA</em></p>
-<p><strong>Streaming Multiprocessors (SMs)</strong> are the fundamental processing units in an NVIDIA GPU. Each SM contains multiple CUDA cores, warp schedulers, and execution pipelines, allowing efficient parallel execution of CUDA threads.</p>
+<h3 id="3-practical-example">3. Practical Example</h3>
+<p>Consider a kernel launch where each block contains 8 threads. For a thread with:</p>
 <ul>
-<li><strong>Warp Scheduling:</strong> Each SM schedules and executes multiple warps concurrently, ensuring high throughput.</li>
-<li><strong>Execution Units:</strong> An SM consists of CUDA cores, Special Function Units (SFUs) for mathematical operations, and Load/Store Units (LD/ST) for memory access.</li>
-<li><strong>Memory Hierarchy within SMs:</strong><ul>
-<li><strong>Shared Memory:</strong> A low-latency memory space shared among threads within a block.</li>
-<li><strong>Registers:</strong> The fastest memory available, allocated per thread.</li>
-<li><strong>L1 Cache:</strong> Improves data locality and reduces global memory access latency.</li>
+<li><code>threadIdx.x = 5</code>  </li>
+<li><code>blockIdx.x = 2</code>  </li>
+<li><code>M = blockDim.x = 8</code></li>
 </ul>
-</li>
+<p><img alt="" src="../../assets/index.png" /></p>
+<p>This means that the thread processes the 22nd element (using zero-based indexing) of the array.</p>
+<h3 id="4-multi-dimensional-indexing">4. Multi-Dimensional Indexing</h3>
+<p>For higher-dimensional data, CUDA supports three-dimensional configurations:</p>
+<p><strong>2D Indexing:</strong><br />
+When working with images or matrices, you may compute a unique index using both x and y dimensions:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">col</span><span class="p">;</span><span class="w"> </span><span class="c1">// &#39;width&#39; is the number of columns</span>
+</code></pre></div>
+
+<p><strong>3D Indexing:</strong>  </p>
+<p>For volume data, a similar approach extends to three dimensions using <code>threadIdx.z</code>, <code>blockIdx.z</code>, and <code>blockDim.z</code>.</p>
+<h3 id="5-handling-arbitrary-vector-sizes">5. Handling Arbitrary Vector Sizes</h3>
+<p>Often, the total number of data elements is not an exact multiple of the block size. To safely process all elements without accessing out-of-bound memory, include a bounds check in your kernel:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">c</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Kernel Launch:</strong><br />
+  The number of blocks is computed to cover all elements:</li>
 </ul>
-<p>Optimizing CUDA programs requires balancing workloads across multiple SMs, managing memory efficiently, and reducing warp divergence.</p>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="n">add</span><span class="o">&lt;&lt;&lt;</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="o">&gt;&gt;&gt;</span><span class="p">(</span><span class="n">d_a</span><span class="p">,</span><span class="w"> </span><span class="n">d_b</span><span class="p">,</span><span class="w"> </span><span class="n">d_c</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</code></pre></div>
+
+<h3 id="6-summary">6. Summary</h3>
+<ul>
+<li><strong>Indexing in CUDA</strong> is essential for correctly mapping threads to array elements.</li>
+<li>Use the formula <code>index = threadIdx.x + blockIdx.x * blockDim.x</code> for one-dimensional data.</li>
+<li>For multi-dimensional problems, extend the indexing strategy using corresponding dimensions.</li>
+<li>Always consider boundary conditions to prevent memory errors when the data size is not an exact multiple of the block size.</li>
+</ul>
+<p>By mastering these indexing techniques, you can efficiently parallelize data processing across the GPU’s many threads.</p>
+<hr />
+<p>This section brings together the key ideas discussed in the referenced pages and should serve as a practical guide for implementing effective indexing in CUDA applications.</p>
 
 
 

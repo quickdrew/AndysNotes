@@ -210,7 +210,7 @@ Below is a new section on **Indexing** that integrates the concepts covered on p
 
 Efficient indexing is key to mapping threads to data elements in CUDA. In CUDA’s parallel programming model, each thread in a grid must be assigned a unique portion of the data. This section outlines the common strategies and formulas used for indexing in CUDA kernels.
 
-### 1. Basic Indexing Concepts
+### Basic Indexing Concepts
 
 CUDA organizes threads into blocks, and blocks form a grid. Each thread within a block is uniquely identified by `threadIdx`, while each block in the grid is identified by `blockIdx`.
 
@@ -222,20 +222,13 @@ CUDA organizes threads into blocks, and blocks form a grid. Each thread within a
   - `blockIdx.x`: The block’s index within the grid (in the x-dimension).  
   - `blockDim.x`: The number of threads in a block (in the x-dimension). In the example above `blockDim.x = 8`
 
-### 2. The Indexing Formula
-
-When processing one-dimensional arrays, the unique global index for each thread is calculated using:
+**The Indexing Formula:** When processing one-dimensional arrays, the unique global index for each thread is calculated using:
   
 ```c
 int index = threadIdx.x + blockIdx.x * blockDim.x;
 ```
 
-- **Explanation:**  
-  - `threadIdx.x` gives the thread’s local position within its block.  
-  - `blockIdx.x * blockDim.x` offsets the local index by the total number of threads in all preceding blocks.  
-  - Together, they ensure each thread handles a unique element in the data array.
-
-### 3. Practical Example
+### Practical Example
 
 Consider a kernel launch where each block contains 8 threads. For a thread with:
   
@@ -247,7 +240,7 @@ Consider a kernel launch where each block contains 8 threads. For a thread with:
 
 This means that the thread processes the 22nd element (using zero-based indexing) of the array.
 
-### 4. Multi-Dimensional Indexing
+### Multi-Dimensional Indexing
 
 For higher-dimensional data, CUDA supports three-dimensional configurations:
   
@@ -264,7 +257,7 @@ int index = row * width + col; // 'width' is the number of columns
 
 For volume data, a similar approach extends to three dimensions using `threadIdx.z`, `blockIdx.z`, and `blockDim.z`.
 
-### 5. Handling Arbitrary Vector Sizes
+### Handling Arbitrary Vector Sizes
 
 Often, the total number of data elements is not an exact multiple of the block size. To safely process all elements without accessing out-of-bound memory, include a bounds check in your kernel:
 
@@ -284,16 +277,160 @@ __global__ void add(int *a, int *b, int *c, int n) {
 ```c
   add<<<(n + blockDim.x - 1) / blockDim.x, blockDim.x>>>(d_a, d_b, d_c, n);
 ```
-
-### 6. Summary
-
-- **Indexing in CUDA** is essential for correctly mapping threads to array elements.
-- Use the formula `index = threadIdx.x + blockIdx.x * blockDim.x` for one-dimensional data.
-- For multi-dimensional problems, extend the indexing strategy using corresponding dimensions.
-- Always consider boundary conditions to prevent memory errors when the data size is not an exact multiple of the block size.
-
-By mastering these indexing techniques, you can efficiently parallelize data processing across the GPU’s many threads.
+Below is a new section that covers shared memory, 1D stencils, and the use of __syncthreads() in CUDA. You can integrate this section into your notes as follows:
 
 ---
 
-This section brings together the key ideas discussed in the referenced pages and should serve as a practical guide for implementing effective indexing in CUDA applications.
+## Shared Memory, 1D Stencil, and __syncthreads()
+
+### Overview
+
+CUDA provides a fast, user-managed on-chip memory called **shared memory** that all threads within a block can access. This section demonstrates how to leverage shared memory for a 1D stencil operation and explains the role of the synchronization primitive `__syncthreads()`.
+
+### Shared Memory Basics
+
+- **Definition:**  
+  Shared memory is declared with the `__shared__` keyword. It is a limited, high-speed memory region accessible by all threads within the same block.
+  
+- **Purpose:**  
+  It is used to cache data from global memory to reduce redundant memory accesses, thereby improving performance—especially in operations that reuse data, such as stencil computations.
+
+### The 1D Stencil Operation
+
+A stencil operation processes each element of an input array by combining it with its neighboring elements. For example, with a **radius** of 3, each output element is computed by summing 7 consecutive elements from the input array.
+
+![](../assets/stencil.png)
+
+#### Example: 1D Stencil Kernel
+
+```c
+#define BLOCK_SIZE 16
+#define RADIUS 3
+
+__global__ void stencil_1d(int *in, int *out) {
+    // Declare shared memory with additional space for halo elements
+    __shared__ int temp[BLOCK_SIZE + 2 * RADIUS];
+
+    // Calculate global and local indices
+    int gindex = threadIdx.x + blockIdx.x * blockDim.x;
+    int lindex = threadIdx.x + RADIUS;
+
+    // Load the main data element into shared memory
+    temp[lindex] = in[gindex];
+
+    // Load halo elements (neighbors) needed for the stencil
+    if (threadIdx.x < RADIUS) {
+        temp[lindex - RADIUS] = in[gindex - RADIUS];
+        temp[lindex + BLOCK_SIZE] = in[gindex + BLOCK_SIZE];
+    }
+
+    // Synchronize to ensure all shared memory loads are complete
+    __syncthreads();
+
+    // Apply the stencil: sum the element and its neighbors
+    int result = 0;
+    for (int offset = -RADIUS; offset <= RADIUS; offset++) {
+        result += temp[lindex + offset];
+    }
+
+    // Write the result back to global memory
+    out[gindex] = result;
+}
+```
+
+### How the Kernel Works
+
+- **Data Loading:**  
+  Each thread loads one data element from global memory into a designated location in the shared memory array (`temp`). Threads with an index less than `RADIUS` also load extra "halo" elements from the boundaries. These halo elements provide the necessary neighboring data for the stencil computation.
+
+  ![](../assets/halo.png)
+
+- **Synchronization with __syncthreads():**  
+  The call to `__syncthreads()` is essential because it ensures that all threads have finished loading their data into shared memory before any thread begins processing. This barrier prevents data races, ensuring that every thread sees the correct, complete data.
+
+- **Stencil Computation:**  
+  After synchronization, each thread applies the stencil by summing the element at its local index (`lindex`) along with its surrounding elements within the radius. The result is then written back to global memory.
+
+### The Role of __syncthreads()
+
+- **Barrier for Threads:**  
+  `__syncthreads()` acts as a barrier where all threads in a block must reach before any can proceed. This is crucial when threads depend on data loaded by other threads.
+
+- **Preventing Data Hazards:**  
+  It prevents race conditions by ensuring that shared memory writes are completed before any thread begins reading the data for computation.
+
+- **Uniform Execution Requirement:**  
+  All threads within a block must execute the same `__syncthreads()` call (i.e., it should not be placed inside a condition that may evaluate differently across threads) to avoid deadlocks.
+
+### Practical Considerations
+
+- **Handling Boundaries:**  
+  When the total number of elements does not neatly divide into blocks, additional boundary checks may be necessary to prevent out-of-bounds memory access.
+
+- **Performance Optimization:**  
+  Efficient use of shared memory can significantly reduce global memory accesses, especially in stencil operations where the same data may be reused by multiple threads.
+
+---
+
+
+Below is a new section that covers managing the device, based on the content from the provided CUDA slides (ppt pages 60+):
+
+---
+
+## Managing the Device
+
+### Overview
+
+CUDA applications must manage GPU devices effectively to ensure optimal performance, especially in systems with multiple GPUs. This section describes how to query available devices, select the appropriate device for execution, retrieve device properties, and perform advanced operations like peer-to-peer memory copies.
+
+### Querying and Selecting Devices
+
+- **Querying Devices:**  
+  Use `cudaGetDeviceCount(int *count)` to determine the number of CUDA-capable GPUs in your system. This helps in dynamically adjusting your application to the available hardware.
+
+- **Selecting a Device:**  
+  Once you know the available devices, use `cudaSetDevice(int device)` to select the GPU on which your kernels will run. This is essential in multi-GPU systems where you might want to distribute workloads.
+
+- **Getting the Current Device:**  
+  Use `cudaGetDevice(int *device)` to find out which device is currently active.
+
+- **Retrieving Device Properties:**  
+  To get detailed information about a GPU—such as its memory size, number of registers, clock rate, and compute capability—use:
+  
+  ```c
+  cudaDeviceProp prop;
+  cudaGetDeviceProperties(&prop, device);
+  ```
+
+  This information can be used to optimize your code for the specific hardware.
+
+### Advanced Device Management
+
+- **Multi-threading and Device Sharing:**  
+  Multiple host threads can share a single GPU, and a single thread can manage multiple GPUs by switching between them using successive calls to `cudaSetDevice`.
+
+- **Peer-to-Peer Memory Copies:**  
+  CUDA supports direct memory copies between GPUs with `cudaMemcpy(...)`, provided that the operating system and the GPUs support peer-to-peer transfers. This can further enhance performance by bypassing the host memory for inter-device communication.
+
+### Synchronization and Error Handling
+
+- **Synchronizing Host and Device:**  
+  Kernel launches are asynchronous by default. Use `cudaDeviceSynchronize()` to block the host until all preceding CUDA calls have completed. This is crucial before copying results back to the host or when precise timing is required.
+
+- **Error Reporting:**  
+  Every CUDA API call returns an error code. After making an API call, check for errors using:
+  
+  ```c
+  cudaError_t err = cudaGetLastError();
+  if (err != cudaSuccess) {
+      printf("CUDA Error: %s\n", cudaGetErrorString(err));
+  }
+  ```
+  
+  This practice helps in diagnosing issues related to device management and kernel execution.
+
+### Conclusion
+
+Managing the device in CUDA involves more than simply launching kernels. By querying device capabilities, selecting the appropriate GPU, and handling synchronization and errors properly, you ensure that your application fully leverages the available hardware resources for optimal performance.
+
+---
