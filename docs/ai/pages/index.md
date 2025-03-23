@@ -8,7 +8,8 @@ This section contains notes and resources related to **Artificial Intelligence (
     - Covers fundamentals relevant to AI, but not limited to AI.
     - [Memory Hierarchy Design](memory.md)
     - [Parallel Computing](parallelism.md)
-- [Software]
+    - [Cache-Aware Matrix Multiplication & GPU Performance Analysis](cpu-vs-gpu-matrix.md)
+- **Software**:
     - [CUDA C\C++](cuda.md)
 - [Convolutional Neural Networks](neural.md)
     - Concepts and implementation details for training and running neural networks efficiently.
