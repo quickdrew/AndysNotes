@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../parallelism/">
-      
-      
-        <link rel="next" href="../neural/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Cuda C\C++ - Andy's Notes</title>
+        <title>CUDA C/C++ Programming Notes - Andy's Notes</title>
       
     
     
@@ -108,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cuda C\C++
+              CUDA C/C++ Programming Notes
             
           </span>
         </div>
@@ -230,19 +226,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -256,7 +250,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Artificial Intelligence
@@ -270,11 +264,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Overview
+    Home
   </span>
   
 
@@ -326,11 +320,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../hardware/" class="md-nav__link">
+      <a href="../../../hardware.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Hardware Overview
+    Hardware
   </span>
   
 
@@ -347,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../memory/" class="md-nav__link">
+      <a href="../../../memory.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -368,11 +362,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../parallelism/" class="md-nav__link">
+      <a href="../../../parallelism.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Parallel Computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cpu-vs-gpu-matrix.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cache-Aware Matrix Multiplication & GPU Performance Analysis
   </span>
   
 
@@ -394,19 +409,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -420,7 +433,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Software
@@ -431,370 +444,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Cuda C\C++
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../cuda.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cuda C\C++
+    CUDA C/C++
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#heterogeneous-computing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Heterogeneous Computing
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Heterogeneous Computing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#host-and-device-relationship" class="md-nav__link">
-    <span class="md-ellipsis">
-      Host and Device relationship
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#simple-processing-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Simple Processing Flow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hello-world" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hello World
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hello World">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#host-cpu-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Host (CPU) Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cuda-device-gpu-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      CUDA Device (GPU) Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#addition-on-the-device" class="md-nav__link">
-    <span class="md-ellipsis">
-      Addition on the Device
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vector-addition-on-the-device" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vector Addition on the Device
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Vector Addition on the Device">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#device-kernel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Device Kernel
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#host-code-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Host Code Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#indexing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Indexing
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Indexing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-indexing-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Indexing Concepts
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#practical-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Practical Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multi-dimensional-indexing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Multi-Dimensional Indexing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#handling-arbitrary-vector-sizes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Handling Arbitrary Vector Sizes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shared-memory-1d-stencil-and-__syncthreads" class="md-nav__link">
-    <span class="md-ellipsis">
-      Shared Memory, 1D Stencil, and __syncthreads()
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Shared Memory, 1D Stencil, and __syncthreads()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#overview_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#shared-memory-basics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Shared Memory Basics
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-1d-stencil-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      The 1D Stencil Operation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The 1D Stencil Operation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-1d-stencil-kernel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: 1D Stencil Kernel
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-the-kernel-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How the Kernel Works
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-role-of-__syncthreads" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Role of __syncthreads()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#practical-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Practical Considerations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#managing-the-device" class="md-nav__link">
-    <span class="md-ellipsis">
-      Managing the Device
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Managing the Device">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#overview_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#querying-and-selecting-devices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Querying and Selecting Devices
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-device-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced Device Management
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#synchronization-and-error-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Synchronization and Error Handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -829,7 +490,7 @@
             
   
   <span class="md-ellipsis">
-    Models
+    Convolutional Neural Networks
   </span>
   
 
@@ -838,41 +499,6 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
-            <span class="md-nav__icon md-icon"></span>
-            Models
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Convolutional Neural Networks
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_1">
             <span class="md-nav__icon md-icon"></span>
             Convolutional Neural Networks
           </label>
@@ -885,11 +511,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../neural/" class="md-nav__link">
+      <a href="../../../neural.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Overview
+    CNN Concepts
   </span>
   
 
@@ -906,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1d_cnn/" class="md-nav__link">
+      <a href="../../../1d_cnn.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -928,14 +554,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
               
                 
   
@@ -943,11 +561,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../jetson/" class="md-nav__link">
+      <a href="../../../jetson.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nivida's Jetson Nano
+    Nvidia's Jetson Nano
   </span>
   
 
