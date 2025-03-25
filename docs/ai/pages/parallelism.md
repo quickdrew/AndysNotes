@@ -19,30 +19,45 @@ Flynn’s Taxonomy classifies computer architectures based on how instructions a
 
 Modern systems often blend characteristics of SIMD and MIMD, creating **hybrid architectures** that balance flexibility with high throughput. For example, GPUs integrate both data-level and thread-level parallelism to handle a variety of workloads.
 
-## **Types of Parallelism**  
+## **Types of Parallelism**
 
-Parallelism can be categorized into different types based on how tasks are executed. Two fundamental types are **temporal parallelism (pipelining)** and **spatial parallelism**.  
+Parallelism refers to performing multiple operations at once to improve speed and efficiency. Two fundamental forms are:
 
-### **Temporal Parallelism (Pipelining)**  
-Temporal parallelism divides a task into sequential stages that can be overlapped, improving overall throughput. A great way to understand this is through a **cookie-baking process**:  
+---
 
-- Without parallelism: You roll out the dough (5 min) and then bake it (15 min), taking **20 minutes per batch**.  
-- With pipelining: While the first batch is baking, you start preparing the next one. This doesn’t change the time required for a single batch but allows **continuous production**, reducing the wait time between finished batches.  
+### **Temporal Parallelism (Pipelining)**
 
-This analogy mirrors how CPUs execute instructions in a **pipeline**, where different stages (fetch, decode, execute, etc.) are processing different instructions simultaneously. Just like a baker needs **separate trays** to avoid mixing batches, processors use **pipeline registers** to store intermediate data. While the total time for the first output remains the same, **subsequent results come out much faster**, boosting overall performance.  
+Temporal parallelism overlaps stages of a task so that new work can begin before previous work finishes. Think of it like baking cookies:
 
-![Pipe](../assets/pipe.png)
-*Source: Dr. Chen Pan (UTSA)*
+- Without pipelining: roll (5 min) → bake (15 min) → **20 min per batch**
+- With pipelining: start rolling the next batch while the first bakes → **more throughput, same latency**
 
-### **Spatial Parallelism**  
-Spatial parallelism, on the other hand, involves executing tasks **simultaneously** using separate hardware units. Instead of working in stages, tasks run in parallel from the start.  
+This mirrors how CPUs execute instructions in a **pipeline** (e.g., fetch, decode, execute), increasing throughput by overlapping stages.
 
-Imagine Ben has a helper and an extra oven. Now, **two batches** can be processed at the same time—effectively **doubling throughput** while keeping the time per batch unchanged.  
+![](../assets/temporal_parallelism.png)
+*Temporal Parallelism — Source: Dr. Chen Pan (UTSA)*
 
-This type of parallelism is commonly seen in:
 
-- **Multithreaded systems:** Where independent threads run on separate cores.
-- **GPU architectures:** Which execute many threads in parallel using a SIMT (Single Instruction, Multiple Threads) model.
+To make this work, CPUs use **pipeline registers** (like cookie trays) to pass intermediate results from one stage to the next:
+
+![](../assets/pipe.png)
+*Instruction Pipeline — Source: Dr. Chen Pan (UTSA)*
+
+---
+
+### **Spatial Parallelism**
+
+Spatial parallelism executes multiple tasks at the same time using **separate hardware units**—like multiple ovens baking in parallel.
+
+In our analogy, Ben gets help and a second oven:
+
+- Two trays roll and bake **at the same time**
+- **Latency stays the same**, but **throughput doubles**
+
+This is the model used by **multithreaded CPUs** and **GPUs** (SIMT model), where multiple operations are truly concurrent.
+
+![](../assets/spatial_parallelism.png)
+*Spatial Parallelism — Source: Dr. Chen Pan (UTSA)*
 
 ## Types of Processing
 **Processing** refers to how a CPU executes instructions.
@@ -80,6 +95,17 @@ While ILP describes the **potential parallelism** within a program, **Instructio
 - **ILP is theoretical**: It represents the maximum parallelism that can be extracted from a program.
 - **IPC is practical**: It depends on the actual hardware implementation and various runtime factors.
 - **ILP sets an upper bound on IPC**, but the achievable IPC is limited by hardware constraints such as instruction latencies, cache behavior, and processor execution capabilities.
+
+### ILP Calulation
+
+![](../assets/ilp.gif)
+
+**Instruction Level Parallelism (ILP)** is calculated as:
+
+$$
+\text{ILP} = \frac{\text{Number of Instructions}}{\text{Length of the Longest Dependency Path}} = \frac{7}{3} \approx 2.33
+$$
+
 
 ### Hazards and Dependencies
 To effectively exploit ILP, we must understand various **hazards** (situations that prevent parallel execution). The three main types of dependencies that cause hazards are:

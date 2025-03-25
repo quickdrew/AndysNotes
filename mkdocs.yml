@@ -22,18 +22,18 @@ extra_javascript:
 nav:
   - Home: index.md
   - Artificial Intelligence: 
-      - Overview: index.md
+      - Overview: ai/pages/index.md
       - Hardware:
-          - Hardware: hardware.md
-          - Memory Hierarchy Design: memory.md
-          - Parallel Computing: parallelism.md
-          - Cache-Aware Matrix Multiplication & GPU Performance Analysis: cpu-vs-gpu-matrix.md
+          - Hardware: ai/pages/hardware.md
+          - Memory Hierarchy Design: ai/pages/memory.md
+          - Parallel Computing: ai/pages/parallelism.md
+          - Cache-Aware Matrix Multiplication & GPU Performance Analysis: ai/pages/cpu-vs-gpu-matrix.md
       - Software:
-          - CUDA C/C++: cuda.md
+          - CUDA C/C++: ai/pages/cuda.md
       - Convolutional Neural Networks:
-          - CNN Concepts: neural.md
-          - 1-D CNN Examples: 1d_cnn.md
-      - Nvidia's Jetson Nano: jetson.md
+          - CNN Concepts: ai/pages/neural.md
+          - 1-D CNN Examples: ai/pages/1d_cnn.md
+      - Nvidia's Jetson Nano: ai/pages/jetson.md
   - Automotive:
       - Overview: Automotive/pages/index.md
       - Electrical/Electronic Architecture: Automotive/pages/architecture.md
