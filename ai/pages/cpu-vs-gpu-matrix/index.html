@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../parallelism/">
+      
+      
+        <link rel="next" href="../cuda/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -104,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cache-Aware Matrix Multiplication &amp; GPU Performance Analysis
+              Cache-Aware Matrix Multiplication & GPU Performance Analysis
             
           </span>
         </div>
@@ -226,17 +230,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -250,7 +256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Artificial Intelligence
@@ -264,11 +270,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Home
+    Overview
   </span>
   
 
@@ -282,17 +288,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -306,7 +314,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Hardware
@@ -320,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware.md" class="md-nav__link">
+      <a href="../hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -341,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../memory.md" class="md-nav__link">
+      <a href="../memory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -362,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../parallelism.md" class="md-nav__link">
+      <a href="../parallelism/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -380,10 +388,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../cpu-vs-gpu-matrix.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cache-Aware Matrix Multiplication & GPU Performance Analysis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -392,6 +420,221 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-cpu-matrix-multiplication-with-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part I: CPU – Matrix Multiplication with Cache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part I: CPU – Matrix Multiplication with Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Specifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-multiplication-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Multiplication Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions-and-explanations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions and Explanations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Questions and Explanations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-what-is-the-dimension-of-the-matrix-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. What is the dimension of the matrix \( C \)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-memory-constraints-maximum-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2. Memory Constraints &amp; Maximum \( l \)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-dimensions-with-16-bit-integers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3. Dimensions with 16-bit Integers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-total-memory-access-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4. Total Memory Access Time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-leveraging-cache-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5. Leveraging Cache Locality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q6-average-memory-access-time-random-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q6. Average Memory Access Time (Random Access)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q7-conclusion-on-cache-usefulness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q7. Conclusion on Cache Usefulness
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-gpu-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: GPU Matrix Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: GPU Matrix Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#questions-and-explanations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions and Explanations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Questions and Explanations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1-thread-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. Thread Requirement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2-maximizing-gpu-resource-utilization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q2. Maximizing GPU Resource Utilization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3-minimum-dimension-for-square-matrix-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q3. Minimum Dimension for Square Matrix \( C \)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4-minimum-l1-cache-size-per-sm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q4. Minimum L1 Cache Size per SM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5-delay-due-to-compulsory-cache-misses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q5. Delay Due to Compulsory Cache Misses
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -447,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cuda.md" class="md-nav__link">
+      <a href="../cuda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../neural.md" class="md-nav__link">
+      <a href="../neural/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1d_cnn.md" class="md-nav__link">
+      <a href="../1d_cnn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -561,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../jetson.md" class="md-nav__link">
+      <a href="../jetson/" class="md-nav__link">
         
   
   <span class="md-ellipsis">

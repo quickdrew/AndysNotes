@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../hardware/">
+      
+      
+        <link rel="next" href="../parallelism/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -226,17 +230,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -250,7 +256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Artificial Intelligence
@@ -264,11 +270,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Home
+    Overview
   </span>
   
 
@@ -282,17 +288,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -306,7 +314,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Hardware
@@ -320,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware.md" class="md-nav__link">
+      <a href="../hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -338,10 +346,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../memory.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Memory Hierarchy Design
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -350,6 +378,230 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memory-hierarchy-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Hierarchy Basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Hierarchy Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cache-placement-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Placement Strategies:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-write-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Write Strategies:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-miss-classification-3-cs-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Miss Classification (3 Cs Model):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-cache-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimizing Cache Performance:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-memory-access-time-amat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Average Memory Access Time (AMAT):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-memory-in-computer-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Memory in Computer Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Memory in Computer Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-primary-memory-volatile" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. Primary Memory (Volatile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-secondary-memory-non-volatile" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. Secondary Memory (Non-Volatile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-virtual-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. Virtual Memory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-access-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Access Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Technology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Technology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-basic-memory-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic Memory Technologies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-advanced-dram-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Advanced DRAM Technologies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-memory-technology-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memory Technology Optimizations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-reliability-and-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Reliability and Error Correction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-optimizations-to-reduce-cache-miss-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiler Optimizations to Reduce Cache Miss Rate
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiler Optimizations to Reduce Cache Miss Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-loop-interchange-improves-spatial-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Loop Interchange (Improves Spatial Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-blocking-improves-temporal-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Blocking (Improves Temporal Locality)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prioritization-for-matrix-multiplication-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prioritization for Matrix Multiplication Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -362,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../parallelism.md" class="md-nav__link">
+      <a href="../parallelism/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -383,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cpu-vs-gpu-matrix.md" class="md-nav__link">
+      <a href="../cpu-vs-gpu-matrix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -447,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cuda.md" class="md-nav__link">
+      <a href="../cuda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../neural.md" class="md-nav__link">
+      <a href="../neural/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1d_cnn.md" class="md-nav__link">
+      <a href="../1d_cnn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -561,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../jetson.md" class="md-nav__link">
+      <a href="../jetson/" class="md-nav__link">
         
   
   <span class="md-ellipsis">

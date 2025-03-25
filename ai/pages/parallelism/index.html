@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../memory/">
+      
+      
+        <link rel="next" href="../cpu-vs-gpu-matrix/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -226,17 +230,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -250,7 +256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Artificial Intelligence
@@ -264,11 +270,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Home
+    Overview
   </span>
   
 
@@ -282,17 +288,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -306,7 +314,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Hardware
@@ -320,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware.md" class="md-nav__link">
+      <a href="../hardware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -341,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../memory.md" class="md-nav__link">
+      <a href="../memory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -359,10 +367,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../parallelism.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Parallel Computing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -371,6 +399,347 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flynns-taxonomy-of-parallel-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flynn’s Taxonomy of Parallel Architectures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Parallelism
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Parallelism">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temporal-parallelism-pipelining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal Parallelism (Pipelining)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spatial-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spatial Parallelism
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Processing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalar-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superscalar-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superscalar Processing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-instruction-level-parallelism-ilp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Instruction-Level Parallelism (ILP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Instruction-Level Parallelism (ILP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-ilp" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is ILP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ilp-vs-ipc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ILP vs. IPC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ilp-calulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ILP Calulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hazards-and-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hazards and Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hazards and Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Data Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-control-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Control Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-memory-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memory Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-ilp-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why ILP Matters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-thread-level-parallelism-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Thread-Level Parallelism (TLP)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Thread-Level Parallelism (TLP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-tlp-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why TLP Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of TLP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-multithreading-uses-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Multithreading Uses TLP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flynns-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flynn’s Taxonomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-big-picture-of-tlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Big Picture of TLP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-graphics-processing-units-gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Graphics Processing Units (GPUs)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Graphics Processing Units (GPUs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpu-vs-cpu-architectural-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU vs. CPU: Architectural Differences
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-simd-and-simt-execution-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SIMD and SIMT Execution Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-warps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Warps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-programming-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA Programming Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CUDA Programming Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda-execution-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      CUDA Execution Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fine-grained-multithreading-in-cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-Grained Multithreading in CUDA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streaming-multiprocessors-sms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streaming Multiprocessors (SMs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -383,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cpu-vs-gpu-matrix.md" class="md-nav__link">
+      <a href="../cpu-vs-gpu-matrix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -447,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cuda.md" class="md-nav__link">
+      <a href="../cuda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../neural.md" class="md-nav__link">
+      <a href="../neural/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -532,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../1d_cnn.md" class="md-nav__link">
+      <a href="../1d_cnn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -561,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../jetson.md" class="md-nav__link">
+      <a href="../jetson/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1837,6 +2206,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ilp-calulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ILP Calulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hazards-and-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       Hazards and Dependencies
@@ -2090,24 +2468,31 @@
 </table>
 <p>Modern systems often blend characteristics of SIMD and MIMD, creating <strong>hybrid architectures</strong> that balance flexibility with high throughput. For example, GPUs integrate both data-level and thread-level parallelism to handle a variety of workloads.</p>
 <h2 id="types-of-parallelism"><strong>Types of Parallelism</strong></h2>
-<p>Parallelism can be categorized into different types based on how tasks are executed. Two fundamental types are <strong>temporal parallelism (pipelining)</strong> and <strong>spatial parallelism</strong>.  </p>
+<p>Parallelism refers to performing multiple operations at once to improve speed and efficiency. Two fundamental forms are:</p>
+<hr />
 <h3 id="temporal-parallelism-pipelining"><strong>Temporal Parallelism (Pipelining)</strong></h3>
-<p>Temporal parallelism divides a task into sequential stages that can be overlapped, improving overall throughput. A great way to understand this is through a <strong>cookie-baking process</strong>:  </p>
+<p>Temporal parallelism overlaps stages of a task so that new work can begin before previous work finishes. Think of it like baking cookies:</p>
 <ul>
-<li>Without parallelism: You roll out the dough (5 min) and then bake it (15 min), taking <strong>20 minutes per batch</strong>.  </li>
-<li>With pipelining: While the first batch is baking, you start preparing the next one. This doesn’t change the time required for a single batch but allows <strong>continuous production</strong>, reducing the wait time between finished batches.  </li>
+<li>Without pipelining: roll (5 min) → bake (15 min) → <strong>20 min per batch</strong></li>
+<li>With pipelining: start rolling the next batch while the first bakes → <strong>more throughput, same latency</strong></li>
 </ul>
-<p>This analogy mirrors how CPUs execute instructions in a <strong>pipeline</strong>, where different stages (fetch, decode, execute, etc.) are processing different instructions simultaneously. Just like a baker needs <strong>separate trays</strong> to avoid mixing batches, processors use <strong>pipeline registers</strong> to store intermediate data. While the total time for the first output remains the same, <strong>subsequent results come out much faster</strong>, boosting overall performance.  </p>
-<p><img alt="Pipe" src="../../assets/pipe.png" />
-<em>Source: Dr. Chen Pan (UTSA)</em></p>
+<p>This mirrors how CPUs execute instructions in a <strong>pipeline</strong> (e.g., fetch, decode, execute), increasing throughput by overlapping stages.</p>
+<p><img alt="" src="../../assets/temporal_parallelism.png" />
+<em>Temporal Parallelism — Source: Dr. Chen Pan (UTSA)</em></p>
+<p>To make this work, CPUs use <strong>pipeline registers</strong> (like cookie trays) to pass intermediate results from one stage to the next:</p>
+<p><img alt="" src="../../assets/pipe.png" />
+<em>Instruction Pipeline — Source: Dr. Chen Pan (UTSA)</em></p>
+<hr />
 <h3 id="spatial-parallelism"><strong>Spatial Parallelism</strong></h3>
-<p>Spatial parallelism, on the other hand, involves executing tasks <strong>simultaneously</strong> using separate hardware units. Instead of working in stages, tasks run in parallel from the start.  </p>
-<p>Imagine Ben has a helper and an extra oven. Now, <strong>two batches</strong> can be processed at the same time—effectively <strong>doubling throughput</strong> while keeping the time per batch unchanged.  </p>
-<p>This type of parallelism is commonly seen in:</p>
+<p>Spatial parallelism executes multiple tasks at the same time using <strong>separate hardware units</strong>—like multiple ovens baking in parallel.</p>
+<p>In our analogy, Ben gets help and a second oven:</p>
 <ul>
-<li><strong>Multithreaded systems:</strong> Where independent threads run on separate cores.</li>
-<li><strong>GPU architectures:</strong> Which execute many threads in parallel using a SIMT (Single Instruction, Multiple Threads) model.</li>
+<li>Two trays roll and bake <strong>at the same time</strong></li>
+<li><strong>Latency stays the same</strong>, but <strong>throughput doubles</strong></li>
 </ul>
+<p>This is the model used by <strong>multithreaded CPUs</strong> and <strong>GPUs</strong> (SIMT model), where multiple operations are truly concurrent.</p>
+<p><img alt="" src="../../assets/spatial_parallelism.png" />
+<em>Spatial Parallelism — Source: Dr. Chen Pan (UTSA)</em></p>
 <h2 id="types-of-processing">Types of Processing</h2>
 <p><strong>Processing</strong> refers to how a CPU executes instructions.</p>
 <h3 id="scalar-processing">Scalar Processing</h3>
@@ -2136,6 +2521,12 @@ MUL W * Z
 <li><strong>IPC is practical</strong>: It depends on the actual hardware implementation and various runtime factors.</li>
 <li><strong>ILP sets an upper bound on IPC</strong>, but the achievable IPC is limited by hardware constraints such as instruction latencies, cache behavior, and processor execution capabilities.</li>
 </ul>
+<h3 id="ilp-calulation">ILP Calulation</h3>
+<p><img alt="" src="../../assets/ilp.gif" /></p>
+<p><strong>Instruction Level Parallelism (ILP)</strong> is calculated as:</p>
+<div class="arithmatex">\[
+\text{ILP} = \frac{\text{Number of Instructions}}{\text{Length of the Longest Dependency Path}} = \frac{7}{3} \approx 2.33
+\]</div>
 <h3 id="hazards-and-dependencies">Hazards and Dependencies</h3>
 <p>To effectively exploit ILP, we must understand various <strong>hazards</strong> (situations that prevent parallel execution). The three main types of dependencies that cause hazards are:</p>
 <h4 id="1-data-dependencies">1. Data Dependencies</h4>
