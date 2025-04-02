@@ -579,6 +579,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai.pages.rospug.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROSPug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1113,6 +1134,83 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../electronics/pages/protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electronic Protection Strategies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronic Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Electronic Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../electronics/pages/transistor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transistors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../electronics/pages/opamp/" class="md-nav__link">
         
   
@@ -1143,6 +1241,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1985,32 +2091,30 @@
 </ul>
 <h3 id="memory-regions">Memory Regions</h3>
 <p>Most linker files specify the sizes and addresses of <strong>Flash</strong> (program memory) and <strong>RAM</strong> (data memory). For example:</p>
-<div class="codehilite"><pre><span></span><code>MEMORY
+<div class="highlight"><pre><span></span><code>MEMORY
 {
   FLASH (rx) : ORIGIN = 0x08000000, LENGTH = 256K
   RAM  (rwx) : ORIGIN = 0x20000000, LENGTH = 64K
 }
 </code></pre></div>
-
 <h3 id="sections">Sections</h3>
-<p>Code and data sections (e.g., .text, .data, .bss, .rodata) are placed in the corresponding memory regions. For instance:</p>
-<div class="codehilite"><pre><span></span><code>SECTIONS
+<p>Code and data sections (e.g., .text, .data, .bss, .rodata) are placed in the corresponding memory regions. For instance:
+<div class="highlight"><pre><span></span><code>SECTIONS
 {
   .text : {
-     <span class="gs">*(.text)</span>
-<span class="gs">     *</span>(.text*)
+     *(.text)
+     *(.text*)
      ...
   } &gt; FLASH
 
   .data : {
-     <span class="gs">*(.data)</span>
-<span class="gs">     *</span>(.data*)
+     *(.data)
+     *(.data*)
      ...
   } &gt; RAM AT &gt; FLASH
   ...
 }
-</code></pre></div>
-
+</code></pre></div></p>
 <p>By customizing these files, you control where code and variables reside—critical for ensuring the program fits within the microcontroller’s memory constraints and meets performance requirements (e.g., running time-critical code from RAM).</p>
 <hr />
 <h2 id="incremental-compilation">Incremental Compilation</h2>
@@ -2133,7 +2237,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["mermaid"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>

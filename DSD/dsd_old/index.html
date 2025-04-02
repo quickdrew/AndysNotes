@@ -575,6 +575,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai.pages.rospug.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROSPug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1109,6 +1130,83 @@
   
   
     <li class="md-nav__item">
+      <a href="../../electronics/pages/protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electronic Protection Strategies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronic Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Electronic Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../electronics/pages/transistor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transistors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../electronics/pages/opamp/" class="md-nav__link">
         
   
@@ -1139,6 +1237,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1811,31 +1917,26 @@
 </table>
 <h2 id="vectors-in-verilog">Vectors in Verilog</h2>
 <p>Vectors in Verilog are used to represent multi-bit signals, which are crucial when dealing with buses, registers, or large numbers. They allow for grouping multiple bits into a single variable.</p>
-<p>A vector is declared by specifying the range of bits using <code>[MSB:LSB]</code>, where MSB is the most significant bit and LSB is the least significant bit.</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">bus</span><span class="p">;</span><span class="w">   </span><span class="c1">// 4-bit wide wire (vector)</span>
+<p>A vector is declared by specifying the range of bits using <code>[MSB:LSB]</code>, where MSB is the most significant bit and LSB is the least significant bit.
+<div class="highlight"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">bus</span><span class="p">;</span><span class="w">   </span><span class="c1">// 4-bit wide wire (vector)</span>
 <span class="kt">reg</span><span class="w">  </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">  </span><span class="c1">// 8-bit register</span>
 </code></pre></div>
-
-<p>Individual bits or a range of bits within a vector can be accessed as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+Individual bits or a range of bits within a vector can be accessed as follows:
+<div class="highlight"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
 <span class="k">assign</span><span class="w"> </span><span class="n">bit3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mh">3</span><span class="p">];</span><span class="w">     </span><span class="c1">// Accessing the 3rd bit of data</span>
 <span class="k">assign</span><span class="w"> </span><span class="n">lower_nibble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">];</span><span class="w">  </span><span class="c1">// Accessing the lower 4 bits of data</span>
-</code></pre></div>
-
-<p>You can assign values directly to vectors:</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">reg</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+</code></pre></div></p>
+<p>You can assign values directly to vectors:
+<div class="highlight"><pre><span></span><code><span class="kt">reg</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 <span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">4</span><span class="mb">&#39;b1010</span><span class="p">;</span><span class="w">  </span><span class="c1">// Assigning binary value</span>
 <span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">4&#39;hA</span><span class="p">;</span><span class="w">     </span><span class="c1">// Assigning hexadecimal value</span>
-</code></pre></div>
-
-<p>A vector can have zero width when the MSB and LSB are the same, meaning it's a single-bit signal:</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">0</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">single_bit</span><span class="p">;</span><span class="w">  </span><span class="c1">// Equivalent to a scalar</span>
-</code></pre></div>
-
-<p>By default, vectors are unsigned, but they can be declared as signed if needed:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">signed</span><span class="w"> </span><span class="kt">reg</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">signed_data</span><span class="p">;</span><span class="w">  </span><span class="c1">// Signed 8-bit register</span>
-</code></pre></div>
-
+</code></pre></div></p>
+<p>A vector can have zero width when the MSB and LSB are the same, meaning it's a single-bit signal:
+<div class="highlight"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">0</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">single_bit</span><span class="p">;</span><span class="w">  </span><span class="c1">// Equivalent to a scalar</span>
+</code></pre></div></p>
+<p>By default, vectors are unsigned, but they can be declared as signed if needed:
+<div class="highlight"><pre><span></span><code><span class="k">signed</span><span class="w"> </span><span class="kt">reg</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">signed_data</span><span class="p">;</span><span class="w">  </span><span class="c1">// Signed 8-bit register</span>
+</code></pre></div></p>
 <p>In signed vectors, the most significant bit (MSB) is treated as the sign bit.</p>
 <h2 id="primitives">Primitives</h2>
 <p>A Verilog primitive is a pre-defined logic element used in digital designs. These include basic gates like <code>and</code>, <code>or</code>, <code>nand</code>, and <code>xor</code>, with fixed functions that don't require module definitions.</p>
@@ -1847,25 +1948,22 @@
 <p>UDPs are custom-defined logic, either combinational or sequential, declared using the <code>primitive</code> keyword. They use a truth table to define behavior.</p>
 <ul>
 <li><strong>Example (Combinational UDP):</strong>
-    ```verilog<div class="codehilite"><pre><span></span><code><span class="nx">primitive</span><span class="w"> </span><span class="nx">my_and</span><span class="w"> </span><span class="p">(</span><span class="nx">out</span><span class="p">,</span><span class="w"> </span><span class="nx">in1</span><span class="p">,</span><span class="w"> </span><span class="nx">in2</span><span class="p">);</span><span class="w">  </span>
-<span class="nx">output</span><span class="w"> </span><span class="nx">out</span><span class="p">;</span><span class="w">  </span>
-<span class="nx">input</span><span class="w"> </span><span class="nx">in1</span><span class="p">,</span><span class="w"> </span><span class="nx">in2</span><span class="p">;</span>
+    <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">primitive</span><span class="w"> </span><span class="n">my_and</span><span class="w"> </span><span class="p">(</span><span class="n">out</span><span class="p">,</span><span class="w"> </span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="n">in2</span><span class="p">);</span><span class="w">  </span>
+<span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">out</span><span class="p">;</span><span class="w">  </span>
+<span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">in1</span><span class="p">,</span><span class="w"> </span><span class="n">in2</span><span class="p">;</span><span class="w">  </span>
 
-<span class="c1">// The &#39;table&#39; defines the behavior of this custom primitive.</span>
-<span class="c1">// Each row in the table specifies input combinations and the corresponding output.</span>
-<span class="c1">// For an AND gate, the output is 1 only when both inputs are 1.</span>
-<span class="nx">table</span>
-<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// If both inputs are 0, the output is 0.</span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// If both inputs are 1, the output is 1.</span>
-<span class="w">    </span><span class="c1">// For simplicity, intermediate input states (like 0 1 or 1 0) are not explicitly defined here,</span>
-<span class="w">    </span><span class="c1">// but in a full AND gate implementation, these would typically output 0.</span>
-<span class="nx">endtable</span>
+<span class="w">    </span><span class="c1">// The &#39;table&#39; defines the behavior of this custom primitive.</span>
+<span class="w">    </span><span class="c1">// Each row in the table specifies input combinations and the corresponding output.</span>
+<span class="w">    </span><span class="c1">// For an AND gate, the output is 1 only when both inputs are 1.</span>
+<span class="w">    </span><span class="k">table</span>
+<span class="w">        </span><span class="mh">0</span><span class="w"> </span><span class="mh">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// If both inputs are 0, the output is 0.</span>
+<span class="w">        </span><span class="mh">1</span><span class="w"> </span><span class="mh">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mh">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// If both inputs are 1, the output is 1.</span>
+<span class="w">        </span><span class="c1">// For simplicity, intermediate input states (like 0 1 or 1 0) are not explicitly defined here,</span>
+<span class="w">        </span><span class="c1">// but in a full AND gate implementation, these would typically output 0.</span>
+<span class="w">    </span><span class="k">endtable</span>
 
-<span class="nx">endprimitive</span>
-</code></pre></div>
-
-<p>```</p>
-</li>
+<span class="w">    </span><span class="k">endprimitive</span><span class="w">  </span>
+</code></pre></div></li>
 </ul>
 <h2 id="verilog-operator-precedence">Verilog Operator Precedence</h2>
 <p>In Verilog, operators follow a specific order of precedence. This determines how expressions are evaluated when there are multiple operators in the same expression. Below is the list of operators in order of precedence, from highest to lowest:</p>
@@ -1942,39 +2040,33 @@
 <p>Logical shifts move bits and fill the vacated positions with zeros.</p>
 <p><strong>a. Logical Left Shift (<code>&lt;&lt;</code>)</strong>
 Shifts bits to the left by the specified amount, inserting zeros on the right. This is equivalent to multiplying by a power of 2.</p>
-<p><strong>Syntax:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shift_amount</span><span class="p">;</span>
-</code></pre></div>
-
-<p><strong>Example:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">4</span><span class="mb">&#39;b1010</span><span class="p">;</span><span class="w"> </span>
+<p><strong>Syntax:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shift_amount</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">4</span><span class="mb">&#39;b1010</span><span class="p">;</span><span class="w"> </span>
 <span class="k">assign</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mh">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Result: 0100</span>
-</code></pre></div>
-
+</code></pre></div></p>
 <p><strong>b. Logical Right Shift (<code>&gt;&gt;</code>)</strong>
 Shifts bits to the right, inserting zeros on the left.</p>
-<p><strong>Syntax:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">shift_amount</span><span class="p">;</span>
-</code></pre></div>
-
-<p><strong>Example:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">4</span><span class="mb">&#39;b1010</span><span class="p">;</span>
+<p><strong>Syntax:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">shift_amount</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">4</span><span class="mb">&#39;b1010</span><span class="p">;</span>
 <span class="k">assign</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mh">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Result: 0101</span>
-</code></pre></div>
-
+</code></pre></div></p>
 <h3 id="2-arithmetic-shifts">2. Arithmetic Shifts</h3>
 <p>Arithmetic shifts preserve the sign of signed numbers when shifting right.</p>
 <p><strong>a. Arithmetic Right Shift (<code>&gt;&gt;&gt;</code>)</strong>
 Shifts bits to the right, preserving the sign by filling the leftmost bits with the sign bit (MSB).</p>
-<p><strong>Syntax:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">shift_amount</span><span class="p">;</span>
-</code></pre></div>
-
-<p><strong>Example:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="k">signed</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mh">4</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 1100 (two&#39;s complement)</span>
+<p><strong>Syntax:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">shift_amount</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><span class="kt">wire</span><span class="w"> </span><span class="k">signed</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mh">4</span><span class="p">;</span><span class="w">  </span><span class="c1">// Binary: 1100 (two&#39;s complement)</span>
 <span class="k">assign</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="mh">1</span><span class="p">;</span><span class="w">   </span><span class="c1">// Result: 1110</span>
-</code></pre></div>
-
+</code></pre></div></p>
 <h2 id="functions-and-tasks">Functions and Tasks</h2>
 <table>
 <thead>
@@ -2018,16 +2110,15 @@ Shifts bits to the right, preserving the sign by filling the leftmost bits with 
 </tbody>
 </table>
 <h3 id="example-function">Example Function:</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">add</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">add</span><span class="p">;</span>
 <span class="w">  </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 <span class="w">  </span><span class="k">begin</span>
 <span class="w">    </span><span class="n">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 <span class="w">  </span><span class="k">end</span>
 <span class="k">endfunction</span>
 </code></pre></div>
-
 <h3 id="example-task">Example Task:</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">task</span><span class="w"> </span><span class="n">add_sub</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">task</span><span class="w"> </span><span class="n">add_sub</span><span class="p">;</span>
 <span class="w">  </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 <span class="w">  </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">diff</span><span class="p">;</span>
 <span class="w">  </span><span class="k">begin</span>
@@ -2036,9 +2127,8 @@ Shifts bits to the right, preserving the sign by filling the leftmost bits with 
 <span class="w">  </span><span class="k">end</span>
 <span class="k">endtask</span>
 </code></pre></div>
-
 <h3 id="example-task-with-event-control">Example Task (With Event Control):</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">task</span><span class="w"> </span><span class="n">event_control_example</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">task</span><span class="w"> </span><span class="n">event_control_example</span><span class="p">;</span>
 <span class="w">  </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 <span class="w">  </span><span class="k">output</span><span class="w"> </span><span class="kt">reg</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 <span class="w">  </span><span class="k">begin</span>
@@ -2047,9 +2137,8 @@ Shifts bits to the right, preserving the sign by filling the leftmost bits with 
 <span class="w">  </span><span class="k">end</span>
 <span class="k">endtask</span>
 </code></pre></div>
-
 <h3 id="example-task-with-output-and-inout-arguments-called-as-a-separate-statement">Example Task (with <code>output</code> and <code>inout</code> Arguments Called as a Separate Statement):</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">task_example</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">task_example</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">reg</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">sum_result</span><span class="p">,</span><span class="w"> </span><span class="n">diff_result</span><span class="p">;</span>
 
 <span class="w">  </span><span class="k">initial</span><span class="w"> </span><span class="k">begin</span>
@@ -2072,7 +2161,6 @@ Shifts bits to the right, preserving the sign by filling the leftmost bits with 
 <span class="w">  </span><span class="k">end</span>
 <span class="k">endtask</span>
 </code></pre></div>
-
 <h1 id="logic-design">Logic Design</h1>
 <h2 id="boolean-algebra">Boolean Algebra</h2>
 <table>
@@ -2206,19 +2294,19 @@ Shifts bits to the right, preserving the sign by filling the leftmost bits with 
 <li><strong>Sequential = Procedural:</strong> Sequential logic updates state based on clock edges and uses procedural assignments, typically with <strong>non-blocking (<code>&lt;=</code>) assignments</strong>. It is modeled inside <code>always</code> blocks that are sensitive to clock edges (e.g., <code>posedge clk</code>). This describes systems like flip-flops or registers that rely on previous states.</li>
 </ul>
 <p><strong>Example:</strong>
-  <code>verilog
-  always @(posedge clk or posedge reset) begin
-      if (reset)
-          q &lt;= 0;      // Asynchronous reset
-      else
-          q &lt;= d;      // Update q with d at clock edge
-  end</code></p>
+  <div class="highlight"><pre><span></span><code><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="k">posedge</span><span class="w"> </span><span class="n">clk</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">posedge</span><span class="w"> </span><span class="n">reset</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">reset</span><span class="p">)</span>
+<span class="w">        </span><span class="n">q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w">      </span><span class="c1">// Asynchronous reset</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w">      </span><span class="c1">// Update q with d at clock edge</span>
+<span class="k">end</span>
+</code></pre></div></p>
 <ul>
 <li>
 <p><strong>Combinational = Continuous:</strong> Combinational logic depends purely on the current inputs and is described using <strong>continuous (blocking) assignments</strong>. It models circuits like AND, OR gates, where output is updated as soon as inputs change, without regard to clock cycles.</p>
 <p><strong>Example:</strong>
-<code>verilog
-assign y = a &amp; b;  // Output y changes immediately based on a and b</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">assign</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// Output y changes immediately based on a and b</span>
+</code></pre></div></p>
 </li>
 </ul>
 <h3 id="relevant-constructs">Relevant Constructs</h3>
@@ -2226,18 +2314,18 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <li>
 <p><strong><code>always</code> blocks:</strong> Used to describe both sequential and combinational logic. For sequential logic, <code>always @(posedge clk)</code> or <code>always @(negedge clk)</code> is used, whereas for combinational logic, <code>always @(*)</code> is used to capture all input changes automatically.
     <strong>Example:</strong>
-    <code>verilog
-    always @(*) begin
-        result = a | b;  // Combinational logic triggered by any input change
-    end</code></p>
+    <div class="highlight"><pre><span></span><code><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// Combinational logic triggered by any input change</span>
+<span class="k">end</span>
+</code></pre></div></p>
 </li>
 <li>
 <p><strong><code>initial</code> blocks:</strong> Used to define initial conditions in simulations. They execute once at the start of the simulation and are commonly used for testbenches or initializing registers/variables in simulation but are not synthesized into hardware.
     <strong>Example</strong>
-    <code>verilog
-    initial begin
-        reg_x = 0;  // Initialize reg_x to 0 at simulation start
-    end</code></p>
+    <div class="highlight"><pre><span></span><code><span class="k">initial</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">    </span><span class="n">reg_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// Initialize reg_x to 0 at simulation start</span>
+<span class="k">end</span>
+</code></pre></div></p>
 </li>
 </ul>
 <h3 id="key-points">Key Points</h3>
@@ -2272,7 +2360,7 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <li><strong>Game Design</strong>: To model different game states such as playing, paused, or game over.</li>
 </ul>
 <h3 id="example">Example</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">fsm_example</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">fsm_example</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">clk</span><span class="p">,</span><span class="w">        </span><span class="c1">// Clock input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">reset</span><span class="p">,</span><span class="w">      </span><span class="c1">// Asynchronous reset signal (active high)</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">trigger</span><span class="p">,</span><span class="w">    </span><span class="c1">// Trigger input to transition between states</span>
@@ -2341,13 +2429,12 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h1 id="simulations">Simulations</h1>
 <h2 id="delays-in-verilog">Delays in Verilog</h2>
 <p>Propagation delays in Verilog simulate the time it takes for signals to propagate through circuits.</p>
 <h3 id="delayed-assignments">Delayed Assignments</h3>
 <p>In <strong>continuous assignments</strong>, use <code>#delay</code> to specify how long it takes for the output to update after a change in the inputs.</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="k">assign</span><span class="w"> </span><span class="p">#</span><span class="mh">5</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// y updates 5 time units after a or b changes </span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">assign</span><span class="w"> </span><span class="p">#</span><span class="mh">5</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// y updates 5 time units after a or b changes </span>
 <span class="w"> </span><span class="err">```</span>
 
 <span class="p">###</span><span class="w"> </span><span class="n">Why</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">Delays</span><span class="o">?</span>
@@ -2364,7 +2451,6 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <span class="w">    </span><span class="p">#</span><span class="mh">3</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// out updates 3 time units after input changes</span>
 <span class="k">end</span><span class="w"> </span>
 </code></pre></div>
-
 <h3 id="inertial-vs-transport-delays">Inertial vs. Transport Delays</h3>
 <ul>
 <li><strong>Inertial Delay</strong>: This is the default type of delay in Verilog. It filters out glitches, meaning only input pulses longer than the delay propagate to the output. </li>
@@ -2376,8 +2462,8 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <li><strong>Transport Delay</strong>: This models a physical delay without filtering any input pulses. Even if an input changes rapidly, the signal is propagated to the output after the delay.</li>
 <li><strong>Example</strong>: Use <code>transport</code> to force transport delay behavior.</li>
 </ul>
-<p><code>verilog
-  assign #5 y = transport a &amp; b;  // Transport delay, y updates exactly 5 time units after input change</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">assign</span><span class="w"> </span><span class="p">#</span><span class="mh">5</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">transport</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// Transport delay, y updates exactly 5 time units after input change </span>
+</code></pre></div>
 <h3 id="key-differences">Key Differences:</h3>
 <ul>
 <li><strong>Inertial delay</strong>: Mimics real-world circuits where short glitches are filtered.</li>
@@ -2386,13 +2472,12 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <h2 id="wait-statements">Wait Statements</h2>
 <p>In Verilog, the <code>wait</code> statement is used to pause the execution of a block until a certain condition becomes true. Unlike an <code>always</code> or <code>@(posedge clk)</code> block that waits for specific events (like clock edges), the <code>wait</code> statement halts the execution until the specified condition is met. Primarily used with delays to simulate hardware restrictions.</p>
 <h3 id="syntax"><strong>Syntax:</strong></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">wait</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+<div class="highlight"><pre><span></span><code><span class="k">wait</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
 <span class="w">    </span><span class="c1">// Code to execute after the condition is true</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <h3 id="example_1">Example:</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">reg</span><span class="w"> </span><span class="n">signal</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">reg</span><span class="w"> </span><span class="n">signal</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 
 <span class="k">initial</span><span class="w"> </span><span class="k">begin</span>
 <span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span>
@@ -2403,13 +2488,12 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <span class="w">    </span><span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <h1 id="applications_1">Applications</h1>
 <h2 id="4-bit-adder">4-bit Adder</h2>
 <p>A 4-bit adder adds two 4-bit binary numbers together, producing a 4-bit sum output along with a carry-out bit that indicates an overflow if the sum exceeds the capacity of 4 bits.</p>
 <p><img alt="4-bit Full Adder" src="../pictures/4-bit_adder.png" /></p>
 <h3 id="ripple-carry-adder-rca">Ripple Carry Adder (RCA)</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">FullAdder</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">Ci</span><span class="p">,</span><span class="w"> </span><span class="n">Co</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">FullAdder</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">Ci</span><span class="p">,</span><span class="w"> </span><span class="n">Co</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">Ci</span><span class="p">;</span><span class="w">    </span><span class="c1">// Inputs: A, B, and Carry In (Ci)</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Co</span><span class="p">;</span><span class="w">      </span><span class="c1">// Outputs: Sum (S) and Carry Out (Co)</span>
@@ -2436,10 +2520,9 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h3 id="look-ahead-adder-cla">Look-Ahead Adder (CLA)</h3>
 <p>A 4-bit carry look-ahead adder (CLA) is a faster alternative to the ripple carry adder, as it calculates the carries in parallel rather than waiting for each carry to propagate through the stages sequentially. The carry look-ahead adder computes the carry signals using the generate (G) and propagate (P) functions.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">cla_4bit</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">cla_4bit</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">Cin</span><span class="p">,</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">Sum</span><span class="p">,</span>
@@ -2466,7 +2549,6 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h3 id="delay-comparison-carry-look-ahead-adder-cla-vs-ripple-carry-adder-rca">Delay Comparison: Carry Look-Ahead Adder (CLA) vs. Ripple Carry Adder (RCA)</h3>
 <h4 id="1-ripple-carry-adder-rca">1. Ripple Carry Adder (RCA)</h4>
 <ul>
@@ -2518,7 +2600,7 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <h2 id="4-to-1-mux">4-to-1 Mux</h2>
 <p>A 4-to-1 multiplexer selects one of four input signals based on a 2-bit selection input and forwards the selected input to the output.</p>
 <p><img alt="4-to-1 Mux" src="../pictures/Multiplexer-Block-Diagram.png" /></p>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">Mux4to1</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">Mux4to1</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">I0</span><span class="p">,</span><span class="w"> </span><span class="n">I1</span><span class="p">,</span><span class="w"> </span><span class="n">I2</span><span class="p">,</span><span class="w"> </span><span class="n">I3</span><span class="p">,</span><span class="w">  </span><span class="c1">// 4 data inputs</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p">,</span><span class="w">          </span><span class="c1">// 2 select lines</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Y</span><span class="w">               </span><span class="c1">// Output</span>
@@ -2531,12 +2613,11 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h2 id="shift-register">Shift Register</h2>
 <h3 id="4-bit-left-shift">4-bit Left Shift</h3>
 <p>A 4-bit left shift register shifts the contents of the register one bit to the left on each clock cycle, with a new bit introduced at the least significant bit (LSB) and the most significant bit (MSB) being discarded.</p>
 <p><img alt="Left Shift Register" src="../pictures/Shift-Left-Registers.jpg" /></p>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">LeftShiftRegister</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">LeftShiftRegister</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">clk</span><span class="p">,</span><span class="w">           </span><span class="c1">// Clock input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">reset</span><span class="p">,</span><span class="w">         </span><span class="c1">// Reset input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">D_in</span><span class="p">,</span><span class="w">          </span><span class="c1">// Serial data input</span>
@@ -2554,9 +2635,8 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h3 id="8-bit-left-shift">8-bit Left Shift</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">shift_register_8bit</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">shift_register_8bit</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">SI</span><span class="p">,</span><span class="w">     </span><span class="c1">// Serial input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Clk</span><span class="p">,</span><span class="w">    </span><span class="c1">// Clock signal (rising edge)</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">EN</span><span class="p">,</span><span class="w">     </span><span class="c1">// Enable (active high)</span>
@@ -2577,7 +2657,6 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h2 id="8-bit-counter-lab-3">8-bit Counter (Lab 3)</h2>
 <p>Lab simulation: <a href="https://circuitverse.org/users/183511/projects/3-bit-up-down-counter-d9e9961a-4eb6-40fb-abcf-097fc7e38dac">3-Bit Up/Down counter with a clear and load.</a></p>
 <p>This lab involves designing an 8-bit up/down counter using Verilog, implemented on the NEXYS-4 FPGA board. A Vivado project is provided for this example.</p>
@@ -2600,7 +2679,7 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <h3 id="parallel-loading">Parallel Loading</h3>
 <p><strong>Parallel loading</strong> allows a counter to load a preset value into all its flip-flops simultaneously in a single clock cycle. By using input lines (like A-D or D0-D3) and a load signal, the counter can instantly update its value upon the next clock cycle, bypassing the need for sequential counting. This is particularly useful for initializing the counter or synchronizing multiple counters efficiently. In this lab, we used parallel loading to preset the 8-bit counter with values determined by the input switches, adding greater flexibility to the counting process.</p>
 <h2 id="synchronous-4-bit-updown-counter-74hc192">Synchronous 4-bit Up/Down Counter (74HC192)</h2>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">counter_74HC192</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">counter_74HC192</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Clr</span><span class="p">,</span><span class="w">      </span><span class="c1">// Clear the counter</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Load</span><span class="p">,</span><span class="w">     </span><span class="c1">// Load the counter with a value</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Up</span><span class="p">,</span><span class="w">       </span><span class="c1">// Count up when asserted</span>
@@ -2628,11 +2707,10 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h2 id="sr-latch">SR Latch</h2>
 <p><img alt="SR Latch" src="../pictures/sr_latch.png" /></p>
 <h3 id="sr-latch-using-a-boolean-equation">SR Latch Using a Boolean Equation</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">sr_latch_boolean</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">sr_latch_boolean</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w">   </span><span class="c1">// Set input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w">   </span><span class="c1">// Reset input</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="kt">reg</span><span class="w"> </span><span class="n">Q</span><span class="p">,</span><span class="w">   </span><span class="c1">// Output</span>
@@ -2653,9 +2731,8 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h3 id="sr-latch-using-gate-level-description">SR Latch Using Gate-Level Description</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">sr_latch_gate_level</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">sr_latch_gate_level</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w">   </span><span class="c1">// Set input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w">   </span><span class="c1">// Reset input</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Q</span><span class="p">,</span><span class="w">  </span><span class="c1">// Output</span>
@@ -2673,7 +2750,6 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h2 id="4-bit-comparator">4-bit Comparator</h2>
 <p>A <strong>4-bit comparator</strong> is a digital circuit that compares two 4-bit binary numbers and outputs the result of their comparison. It determines whether one number is greater than, less than, or equal to the other.</p>
 <h3 id="inputs">Inputs</h3>
@@ -2783,7 +2859,7 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 </table>
 <h3 id="verilog-implementation">Verilog Implementation</h3>
 <p>A simple implementation in Verilog:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">Comparator4bit</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">Comparator4bit</span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">A_greater</span><span class="p">,</span><span class="w"> </span><span class="n">A_less</span><span class="p">,</span><span class="w"> </span><span class="n">A_equal</span>
 <span class="p">);</span>
@@ -2794,7 +2870,6 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h1 id="nexys-a7">Nexys A7</h1>
 <p><a href="https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual">Nexys A7 Reference Manual</a></p>
 <p><img alt="7 Segment Display" src="../pictures/nexys_segment_display.png" /></p>
@@ -2851,7 +2926,7 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["mermaid"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

@@ -579,6 +579,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai.pages.rospug.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROSPug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1244,6 +1265,83 @@
   
   
     <li class="md-nav__item">
+      <a href="../../electronics/pages/protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electronic Protection Strategies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronic Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Electronic Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../electronics/pages/transistor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transistors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../electronics/pages/opamp/" class="md-nav__link">
         
   
@@ -1274,6 +1372,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2099,19 +2205,19 @@
 <li><strong>Sequential = Procedural:</strong> Sequential logic updates state based on clock edges and uses procedural assignments, typically with <strong>non-blocking (<code>&lt;=</code>) assignments</strong>. It is modeled inside <code>always</code> blocks that are sensitive to clock edges (e.g., <code>posedge clk</code>). This describes systems like flip-flops or registers that rely on previous states.</li>
 </ul>
 <p><strong>Example:</strong>
-  <code>verilog
-  always @(posedge clk or posedge reset) begin
-      if (reset)
-          q &lt;= 0;      // Asynchronous reset
-      else
-          q &lt;= d;      // Update q with d at clock edge
-  end</code></p>
+  <div class="highlight"><pre><span></span><code><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="k">posedge</span><span class="w"> </span><span class="n">clk</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">posedge</span><span class="w"> </span><span class="n">reset</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">reset</span><span class="p">)</span>
+<span class="w">        </span><span class="n">q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w">      </span><span class="c1">// Asynchronous reset</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w">      </span><span class="c1">// Update q with d at clock edge</span>
+<span class="k">end</span>
+</code></pre></div></p>
 <ul>
 <li>
 <p><strong>Combinational = Continuous:</strong> Combinational logic depends purely on the current inputs and is described using <strong>continuous (blocking) assignments</strong>. It models circuits like AND, OR gates, where output is updated as soon as inputs change, without regard to clock cycles.</p>
 <p><strong>Example:</strong>
-<code>verilog
-assign y = a &amp; b;  // Output y changes immediately based on a and b</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">assign</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// Output y changes immediately based on a and b</span>
+</code></pre></div></p>
 </li>
 </ul>
 <h3 id="relevant-constructs">Relevant Constructs</h3>
@@ -2119,18 +2225,18 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <li>
 <p><strong><code>always</code> blocks:</strong> Used to describe both sequential and combinational logic. For sequential logic, <code>always @(posedge clk)</code> or <code>always @(negedge clk)</code> is used, whereas for combinational logic, <code>always @(*)</code> is used to capture all input changes automatically.
     <strong>Example:</strong>
-    <code>verilog
-    always @(*) begin
-        result = a | b;  // Combinational logic triggered by any input change
-    end</code></p>
+    <div class="highlight"><pre><span></span><code><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// Combinational logic triggered by any input change</span>
+<span class="k">end</span>
+</code></pre></div></p>
 </li>
 <li>
 <p><strong><code>initial</code> blocks:</strong> Used to define initial conditions in simulations. They execute once at the start of the simulation and are commonly used for testbenches or initializing registers/variables in simulation but are not synthesized into hardware.
     <strong>Example</strong>
-    <code>verilog
-    initial begin
-        reg_x = 0;  // Initialize reg_x to 0 at simulation start
-    end</code></p>
+    <div class="highlight"><pre><span></span><code><span class="k">initial</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">    </span><span class="n">reg_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// Initialize reg_x to 0 at simulation start</span>
+<span class="k">end</span>
+</code></pre></div></p>
 </li>
 </ul>
 <h3 id="key-points">Key Points</h3>
@@ -2165,7 +2271,7 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
 <li><strong>Game Design</strong>: To model different game states such as playing, paused, or game over.</li>
 </ul>
 <h3 id="example">Example</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">fsm_example</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">fsm_example</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">clk</span><span class="p">,</span><span class="w">        </span><span class="c1">// Clock input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">reset</span><span class="p">,</span><span class="w">      </span><span class="c1">// Asynchronous reset signal (active high)</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">trigger</span><span class="p">,</span><span class="w">    </span><span class="c1">// Trigger input to transition between states</span>
@@ -2280,7 +2386,7 @@ assign y = a &amp; b;  // Output y changes immediately based on a and b</code></
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["mermaid"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

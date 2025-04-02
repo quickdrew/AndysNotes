@@ -579,6 +579,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai.pages.rospug.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROSPug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1226,6 +1247,83 @@
   
   
     <li class="md-nav__item">
+      <a href="../../electronics/pages/protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electronic Protection Strategies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronic Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Electronic Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../electronics/pages/transistor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transistors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../electronics/pages/opamp/" class="md-nav__link">
         
   
@@ -1256,6 +1354,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1935,7 +2041,7 @@
 <p>Propagation delays in Verilog simulate the time it takes for signals to propagate through circuits.</p>
 <h3 id="delayed-assignments">Delayed Assignments</h3>
 <p>In <strong>continuous assignments</strong>, use <code>#delay</code> to specify how long it takes for the output to update after a change in the inputs.</p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="k">assign</span><span class="w"> </span><span class="p">#</span><span class="mh">5</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// y updates 5 time units after a or b changes </span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">assign</span><span class="w"> </span><span class="p">#</span><span class="mh">5</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// y updates 5 time units after a or b changes </span>
 <span class="w"> </span><span class="err">```</span>
 
 <span class="p">###</span><span class="w"> </span><span class="n">Why</span><span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">Delays</span><span class="o">?</span>
@@ -1952,7 +2058,6 @@
 <span class="w">    </span><span class="p">#</span><span class="mh">3</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// out updates 3 time units after input changes</span>
 <span class="k">end</span><span class="w"> </span>
 </code></pre></div>
-
 <h3 id="inertial-vs-transport-delays">Inertial vs. Transport Delays</h3>
 <ul>
 <li><strong>Inertial Delay</strong>: This is the default type of delay in Verilog. It filters out glitches, meaning only input pulses longer than the delay propagate to the output. </li>
@@ -1964,8 +2069,8 @@
 <li><strong>Transport Delay</strong>: This models a physical delay without filtering any input pulses. Even if an input changes rapidly, the signal is propagated to the output after the delay.</li>
 <li><strong>Example</strong>: Use <code>transport</code> to force transport delay behavior.</li>
 </ul>
-<p><code>verilog
-  assign #5 y = transport a &amp; b;  // Transport delay, y updates exactly 5 time units after input change</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">assign</span><span class="w"> </span><span class="p">#</span><span class="mh">5</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">transport</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// Transport delay, y updates exactly 5 time units after input change </span>
+</code></pre></div>
 <h3 id="key-differences">Key Differences:</h3>
 <ul>
 <li><strong>Inertial delay</strong>: Mimics real-world circuits where short glitches are filtered.</li>
@@ -1974,13 +2079,12 @@
 <h2 id="wait-statements">Wait Statements</h2>
 <p>In Verilog, the <code>wait</code> statement is used to pause the execution of a block until a certain condition becomes true. Unlike an <code>always</code> or <code>@(posedge clk)</code> block that waits for specific events (like clock edges), the <code>wait</code> statement halts the execution until the specified condition is met. Primarily used with delays to simulate hardware restrictions.</p>
 <h3 id="syntax"><strong>Syntax:</strong></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">wait</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+<div class="highlight"><pre><span></span><code><span class="k">wait</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
 <span class="w">    </span><span class="c1">// Code to execute after the condition is true</span>
 <span class="k">end</span>
 </code></pre></div>
-
 <h3 id="example">Example:</h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">reg</span><span class="w"> </span><span class="n">signal</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">reg</span><span class="w"> </span><span class="n">signal</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 
 <span class="k">initial</span><span class="w"> </span><span class="k">begin</span>
 <span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span>
@@ -2037,7 +2141,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["mermaid"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

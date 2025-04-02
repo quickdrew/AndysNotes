@@ -579,6 +579,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai.pages.rospug.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROSPug
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1416,6 +1437,83 @@
   
   
     <li class="md-nav__item">
+      <a href="../../electronics/pages/protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electronic Protection Strategies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Electronic Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Electronic Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../electronics/pages/transistor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transistors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../electronics/pages/opamp/" class="md-nav__link">
         
   
@@ -1446,6 +1544,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2312,7 +2418,7 @@
 <p>A 4-bit adder adds two 4-bit binary numbers together, producing a 4-bit sum output along with a carry-out bit that indicates an overflow if the sum exceeds the capacity of 4 bits.</p>
 <p><img alt="4-bit Full Adder" src="../pictures/4-bit_adder.png" /></p>
 <h3 id="ripple-carry-adder-rca">Ripple Carry Adder (RCA)</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">FullAdder</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">Ci</span><span class="p">,</span><span class="w"> </span><span class="n">Co</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">FullAdder</span><span class="w"> </span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">Ci</span><span class="p">,</span><span class="w"> </span><span class="n">Co</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">Ci</span><span class="p">;</span><span class="w">    </span><span class="c1">// Inputs: A, B, and Carry In (Ci)</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Co</span><span class="p">;</span><span class="w">      </span><span class="c1">// Outputs: Sum (S) and Carry Out (Co)</span>
@@ -2339,10 +2445,9 @@
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h3 id="look-ahead-adder-cla">Look-Ahead Adder (CLA)</h3>
 <p>A 4-bit carry look-ahead adder (CLA) is a faster alternative to the ripple carry adder, as it calculates the carries in parallel rather than waiting for each carry to propagate through the stages sequentially. The carry look-ahead adder computes the carry signals using the generate (G) and propagate (P) functions.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">cla_4bit</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">cla_4bit</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">Cin</span><span class="p">,</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">Sum</span><span class="p">,</span>
@@ -2369,7 +2474,6 @@
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h3 id="delay-comparison-carry-look-ahead-adder-cla-vs-ripple-carry-adder-rca">Delay Comparison: Carry Look-Ahead Adder (CLA) vs. Ripple Carry Adder (RCA)</h3>
 <h4 id="1-ripple-carry-adder-rca">1. Ripple Carry Adder (RCA)</h4>
 <ul>
@@ -2421,7 +2525,7 @@
 <h2 id="4-to-1-mux">4-to-1 Mux</h2>
 <p>A 4-to-1 multiplexer selects one of four input signals based on a 2-bit selection input and forwards the selected input to the output.</p>
 <p><img alt="4-to-1 Mux" src="../pictures/Multiplexer-Block-Diagram.png" /></p>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">Mux4to1</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">Mux4to1</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">I0</span><span class="p">,</span><span class="w"> </span><span class="n">I1</span><span class="p">,</span><span class="w"> </span><span class="n">I2</span><span class="p">,</span><span class="w"> </span><span class="n">I3</span><span class="p">,</span><span class="w">  </span><span class="c1">// 4 data inputs</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p">,</span><span class="w">          </span><span class="c1">// 2 select lines</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Y</span><span class="w">               </span><span class="c1">// Output</span>
@@ -2434,12 +2538,11 @@
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h2 id="shift-register">Shift Register</h2>
 <h3 id="4-bit-left-shift">4-bit Left Shift</h3>
 <p>A 4-bit left shift register shifts the contents of the register one bit to the left on each clock cycle, with a new bit introduced at the least significant bit (LSB) and the most significant bit (MSB) being discarded.</p>
 <p><img alt="Left Shift Register" src="../pictures/Shift-Left-Registers.jpg" /></p>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">LeftShiftRegister</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">LeftShiftRegister</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">clk</span><span class="p">,</span><span class="w">           </span><span class="c1">// Clock input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">reset</span><span class="p">,</span><span class="w">         </span><span class="c1">// Reset input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">D_in</span><span class="p">,</span><span class="w">          </span><span class="c1">// Serial data input</span>
@@ -2457,9 +2560,8 @@
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h3 id="8-bit-left-shift">8-bit Left Shift</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">shift_register_8bit</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">shift_register_8bit</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">SI</span><span class="p">,</span><span class="w">     </span><span class="c1">// Serial input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Clk</span><span class="p">,</span><span class="w">    </span><span class="c1">// Clock signal (rising edge)</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">EN</span><span class="p">,</span><span class="w">     </span><span class="c1">// Enable (active high)</span>
@@ -2480,7 +2582,6 @@
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h2 id="8-bit-counter-lab-3">8-bit Counter (Lab 3)</h2>
 <p>Lab simulation: <a href="https://circuitverse.org/users/183511/projects/3-bit-up-down-counter-d9e9961a-4eb6-40fb-abcf-097fc7e38dac">3-Bit Up/Down counter with a clear and load.</a></p>
 <p>This lab involves designing an 8-bit up/down counter using Verilog, implemented on the NEXYS-4 FPGA board. A Vivado project is provided for this example.</p>
@@ -2503,7 +2604,7 @@
 <h3 id="parallel-loading">Parallel Loading</h3>
 <p><strong>Parallel loading</strong> allows a counter to load a preset value into all its flip-flops simultaneously in a single clock cycle. By using input lines (like A-D or D0-D3) and a load signal, the counter can instantly update its value upon the next clock cycle, bypassing the need for sequential counting. This is particularly useful for initializing the counter or synchronizing multiple counters efficiently. In this lab, we used parallel loading to preset the 8-bit counter with values determined by the input switches, adding greater flexibility to the counting process.</p>
 <h2 id="synchronous-4-bit-updown-counter-74hc192">Synchronous 4-bit Up/Down Counter (74HC192)</h2>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">counter_74HC192</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">counter_74HC192</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Clr</span><span class="p">,</span><span class="w">      </span><span class="c1">// Clear the counter</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Load</span><span class="p">,</span><span class="w">     </span><span class="c1">// Load the counter with a value</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Up</span><span class="p">,</span><span class="w">       </span><span class="c1">// Count up when asserted</span>
@@ -2531,11 +2632,10 @@
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h2 id="sr-latch">SR Latch</h2>
 <p><img alt="SR Latch" src="../pictures/sr_latch.png" /></p>
 <h3 id="sr-latch-using-a-boolean-equation">SR Latch Using a Boolean Equation</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">sr_latch_boolean</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">sr_latch_boolean</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w">   </span><span class="c1">// Set input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w">   </span><span class="c1">// Reset input</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="kt">reg</span><span class="w"> </span><span class="n">Q</span><span class="p">,</span><span class="w">   </span><span class="c1">// Output</span>
@@ -2556,9 +2656,8 @@
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h3 id="sr-latch-using-gate-level-description">SR Latch Using Gate-Level Description</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">sr_latch_gate_level</span><span class="w"> </span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">sr_latch_gate_level</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w">   </span><span class="c1">// Set input</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">R</span><span class="p">,</span><span class="w">   </span><span class="c1">// Reset input</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="kt">wire</span><span class="w"> </span><span class="n">Q</span><span class="p">,</span><span class="w">  </span><span class="c1">// Output</span>
@@ -2576,7 +2675,6 @@
 
 <span class="k">endmodule</span>
 </code></pre></div>
-
 <h2 id="4-bit-comparator">4-bit Comparator</h2>
 <p>A <strong>4-bit comparator</strong> is a digital circuit that compares two 4-bit binary numbers and outputs the result of their comparison. It determines whether one number is greater than, less than, or equal to the other.</p>
 <h3 id="inputs">Inputs</h3>
@@ -2686,7 +2784,7 @@
 </table>
 <h3 id="verilog-implementation">Verilog Implementation</h3>
 <p>A simple implementation in Verilog:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">Comparator4bit</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="w"> </span><span class="n">Comparator4bit</span><span class="p">(</span>
 <span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span>
 <span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">A_greater</span><span class="p">,</span><span class="w"> </span><span class="n">A_less</span><span class="p">,</span><span class="w"> </span><span class="n">A_equal</span>
 <span class="p">);</span>
@@ -2743,7 +2841,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["mermaid"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
