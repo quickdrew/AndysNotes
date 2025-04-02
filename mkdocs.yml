@@ -6,6 +6,9 @@ theme:
     - scheme: slate
       primary: teal
       accent: orange
+  features:
+    - mermaid
+
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -13,6 +16,7 @@ markdown_extensions:
   - admonition
   - codehilite
   - toc
+  - pymdownx.superfences
 
 
 extra_javascript:
@@ -34,6 +38,7 @@ nav:
           - CNN Concepts: ai/pages/neural.md
           - 1-D CNN Examples: ai/pages/1d_cnn.md
       - Nvidia's Jetson Nano: ai/pages/jetson.md
+      - ROSPug: ai.pages.rospug.md
   - Automotive:
       - Overview: Automotive/pages/index.md
       - Electrical/Electronic Architecture: Automotive/pages/architecture.md
@@ -53,8 +58,11 @@ nav:
   - Electronics:
       - Overview: electronics/pages/index.md
       - Measuring Equipment: electronics/pages/equipment.md
-      - Operational Amplifiers: electronics/pages/opamp.md
-      - Analog to Digital Converter: electronics/pages/adc.md
+      - Electronic Protection Strategies: electronics/pages/protection.md
+      - Electronic Components: 
+        - Transistors: electronics/pages/transistor.md
+        - Operational Amplifiers: electronics/pages/opamp.md
+        - Analog to Digital Converter: electronics/pages/adc.md
   - Physics:
       - Overview: Physics/pages/index.md
       - Quanta and Fields: 

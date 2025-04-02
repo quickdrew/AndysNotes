@@ -16,6 +16,8 @@ This section contains notes and resources related to **Artificial Intelligence (
     - [1-D CNN Examples](1d_cnn.md) 
 - [Nvidia's Jetson Nano](jetson.md)
     - Notes and experiences using Nvidia’s Jetson Nano for AI and edge computing applications.
+- [ROSPug](rospug.md)
+    - Collection of notes and troubleshooting while using [HiWonder ROSPug](https://www.hiwonder.com/products/rospug)
 
 
 ## Resources
